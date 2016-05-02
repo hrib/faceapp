@@ -2,7 +2,7 @@
 
 scrapePopulationsByState();
 
-private function scrapePopulationsByState(){
+public function scrapePopulationsByState(){
 
         $cssSelector = "table.sk_popcharttable";
 
@@ -59,7 +59,7 @@ public function pullXmlObjBlogExample($siteUrl,$cssSelector){
 
         //Run the phantom script with php exec function, redirect output of script to an $output array;
 
-        echo exec("phantomjs $templateFileCopy 2>&1",$output);
+        echo exec("bin/phantomjs $templateFileCopy 2>&1",$output);
 
         //delete the copied version of the phantom script as we don't need it anymore
 
