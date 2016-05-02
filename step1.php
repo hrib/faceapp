@@ -60,7 +60,7 @@ function pullXmlObjBlogExample($siteUrl,$cssSelector){
 
         echo '<br>aaaaaaaa<br>';
         echo $output;
-        var_dump $output;
+        var_dump($output);
         echo '<br>bbbbb<br>';
         
 
