@@ -58,6 +58,11 @@ function pullXmlObjBlogExample($siteUrl,$cssSelector){
 
         echo exec("bin/phantomjs $templateFileCopy 2>&1",$output);
 
+        echo '<br>aaaaaaaa<br>';
+        echo $output;
+        echo '<br>bbbbb<br>';
+        
+
         //delete the copied version of the phantom script as we don't need it anymore
 
         if ( !unlink( $templateFileCopy ) ) {
@@ -72,7 +77,6 @@ function pullXmlObjBlogExample($siteUrl,$cssSelector){
         array_pop($output);
 
         //remove any whitespace from the array elements and join all the html lines into one string of all the html
-        echo $output;
         $output= array_map('trim', $output);
         $output = join("",$output);
 
