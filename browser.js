@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 
-page.open('http://phantomjs.org/api/webpage/method/evaluate.html', function() {
+page.open('http://www.bing.com', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
