@@ -48,7 +48,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     texto = texto + '<br><br>' + resultingHtml;
     setTimeout(function(){
         page.render('ddd.png');
-        console.log(texto);
+        //console.log(texto);
+        console.log(page.content);
         phantom.exit();
     }, 10000);
   });
