@@ -4,7 +4,7 @@
 //    echo $phantom_script;
 //    $response =  exec ('bin/phantomjs ' . $phantom_script);
 //    echo  htmlspecialchars($response);
-set_time_limit(60); 
+//set_time_limit(60); 
 $pathToPhatomJs = 'bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser.js';
 $stdOut = exec(sprintf('%s %s', $pathToPhatomJs,  $pathToJsScript), $out);
