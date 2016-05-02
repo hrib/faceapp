@@ -15,7 +15,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     var resultingHtml = page.evaluate(function() {
         document.getElementById("sb_form_q").value = "oizzsss";
         z = document.getElementById("sb_form_q").value;
-        return z;
+        document.getElementById("scpl1").click();
+        return document.title;
         //return document.title;
     });
     console.log(resultingHtml);
