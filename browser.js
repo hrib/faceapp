@@ -34,7 +34,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
     page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
-        document.getElementById("sb_form_q").value = "oizzsss"
+        document.getElementById("sb_form_q").value = "interior design"
         var a = document.getElementById("scpl1");
         var e = document.createEvent('MouseEvents');
         e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
@@ -47,6 +47,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     //console.log('aqui');
     texto = texto + '<br><br>' + resultingHtml;
     setTimeout(function(){
+        page.render('ddd.png');
         console.log(texto);
         phantom.exit();
     }, 10000);
