@@ -12,7 +12,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
   //var busca2 = page.evaluateJavaScript('function(){document.getElementById("scpl1").click();}');
   //console.log(window.); // http://phantomjs.org/img/phantomjs-logo.png
 
-
+page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
         document.getElementById("entry_1062721377").value = "oizzsss";
         document.getElementById("entry_696307690").value = "2222";
