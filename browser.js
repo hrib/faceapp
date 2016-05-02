@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 
-page.open('http://www.bing.com/', function() {
+page.open('http://www.bing.com/?scope=images', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
@@ -11,13 +11,12 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
   //var busca2 = page.evaluateJavaScript('function(){document.getElementById("scpl1").click();}');
   //console.log(window.); // http://phantomjs.org/img/phantomjs-logo.png
 
-  page.evaluate(function() {
-        document.getElementById('sb_form_q').value = 'oizzsss';
-        document.getElementById('scpl1').click();
-  }
-
- console.log(document.getElementById('sb_form_q').value);
-
+page.onLoadFinished = function(){
+    var resultingHtml = page.evaluate(function() {
+        return document.documentElement.innerHTML;
+    });
+    console.log(resultingHtml);
+};
 
   //  search = page.evaluate(function() {
         //document.getElementById('sb_form_q').value = 'oizzsss';
