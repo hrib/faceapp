@@ -72,7 +72,7 @@ function pullXmlObjBlogExample($siteUrl,$cssSelector){
         array_pop($output);
 
         //remove any whitespace from the array elements and join all the html lines into one string of all the html
-
+        echo $output;
         $output= array_map('trim', $output);
         $output = join("",$output);
 
