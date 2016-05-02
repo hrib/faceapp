@@ -20,6 +20,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     };
     page.onLoadFinished = function(status) {
         //console.log('Load Finished: ' + status);
+        page.render('ccc.png');
         texto = texto + '<br><br>' + 'Load Finished: ' + status;
     };
     page.onLoadStarted = function() {
