@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 
-page.open('http://www.bing.com/', function() {
+page.open('http://cameraxxx.blogspot.co.uk/', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
@@ -13,9 +13,11 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
 
     var resultingHtml = page.evaluate(function() {
-        document.getElementById("sb_form_q").value = "oizzsss";
-        z = document.getElementById("sb_form_q").value;
-        document.getElementById("scpl1").click();
+        document.getElementById("entry_1062721377").value = "oizzsss";
+        document.getElementById("entry_696307690").value = "2222";
+        //z = document.getElementById("sb_form_q").value;
+        document.getElementById("u363hi_4").click();
+
         return document.title;
         //return document.title;
     });
