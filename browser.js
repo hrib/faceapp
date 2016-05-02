@@ -4,25 +4,31 @@ var page = require('webpage').create();
 page.open('http://www.bing.com/', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
-
+    var texto = "";
     page.onResourceReceived = function(response) {
         if (response.stage !== "end") return;
         console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
+        texto = texto + 'Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url;
     };
     page.onResourceRequested = function(requestData, networkRequest) {
         console.log('Request (#' + requestData.id + '): ' + requestData.url);
+        texto = texto + 'Request (#' + requestData.id + '): ' + requestData.url;
     };
     page.onUrlChanged = function(targetUrl) {
         console.log('New URL: ' + targetUrl);
+        texto = texto + 'New URL: ' + targetUrl;
     };
     page.onLoadFinished = function(status) {
         console.log('Load Finished: ' + status);
+        texto = texto + 'Load Finished: ' + status;
     };
     page.onLoadStarted = function() {
         console.log('Load Started');
+        texto = texto + 'Load Started';
     };
     page.onNavigationRequested = function(url, type, willNavigate, main) {
         console.log('Trying to navigate to: ' + url);
+        texto = texto + 'Trying to navigate to: ' + url;
     };
 
     page.render('bbb.png');
@@ -37,8 +43,10 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     });
     page.render('aaa.png');
     console.log(resultingHtml);
-    console.log('aqui');
+    //console.log('aqui');
+    texto = texto + resultingHtml;
     setTimeout(function(){
+        console.log(texto);
         phantom.exit();
     }, 10000);
   });
