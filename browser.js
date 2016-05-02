@@ -4,11 +4,12 @@ page.open('http://www.bing.com/images/search?q=interior+design', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
-    //search = page.evaluate(function() { 
-    //    return  $('#id60questionText').text();
-    //});
+    search = page.evaluate(function() {
+        return document.title;
+        //return  $('href').text();
+    });
 
-    console.log(page.content);
+    console.log(search);
     //console.log('chupa');
 
     phantom.exit()
