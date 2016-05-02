@@ -8,27 +8,27 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     page.onResourceReceived = function(response) {
         if (response.stage !== "end") return;
         //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
-        texto = texto + 'Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url;
+        texto = texto + '<br><br>' + 'Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url;
     };
     page.onResourceRequested = function(requestData, networkRequest) {
         //console.log('Request (#' + requestData.id + '): ' + requestData.url);
-        texto = texto + 'Request (#' + requestData.id + '): ' + requestData.url;
+        texto = texto + '<br><br>' + 'Request (#' + requestData.id + '): ' + requestData.url;
     };
     page.onUrlChanged = function(targetUrl) {
         //console.log('New URL: ' + targetUrl);
-        texto = texto + 'New URL: ' + targetUrl;
+        texto = texto + '<br><br>' + 'New URL: ' + targetUrl;
     };
     page.onLoadFinished = function(status) {
         //console.log('Load Finished: ' + status);
-        texto = texto + 'Load Finished: ' + status;
+        texto = texto + '<br><br>' + 'Load Finished: ' + status;
     };
     page.onLoadStarted = function() {
         //console.log('Load Started');
-        texto = texto + 'Load Started';
+        texto = texto + '<br><br>' + 'Load Started';
     };
     page.onNavigationRequested = function(url, type, willNavigate, main) {
         //console.log('Trying to navigate to: ' + url);
-        texto = texto + 'Trying to navigate to: ' + url;
+        texto = texto + '<br><br>' + 'Trying to navigate to: ' + url;
     };
 
     page.render('bbb.png');
@@ -44,7 +44,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     page.render('aaa.png');
     //console.log(resultingHtml);
     //console.log('aqui');
-    texto = texto + resultingHtml;
+    texto = texto + '<br><br>' + resultingHtml;
     setTimeout(function(){
         console.log(texto);
         phantom.exit();
