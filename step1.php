@@ -1,8 +1,6 @@
 <?php
 
-scrapePopulationsByState();
 
-public function scrapePopulationsByState(){
 
         $cssSelector = "table.sk_popcharttable";
 
@@ -29,7 +27,6 @@ public function scrapePopulationsByState(){
 
         }
 
-}
 
 public function pullXmlObjBlogExample($siteUrl,$cssSelector){
 
