@@ -1,0 +1,37 @@
+{
+    "name": "hdose/aposta",
+    "description": "aposta",
+    "keywords": ["aposta", "facebook"],
+    "type": "library",
+    "homepage": "https://github.com/hugodose/aposta",
+    "license": "MyPlatform",
+    "authors": [
+        {
+            "name": "Me",
+            "homepage": "https://github.com/hugodose/aposta/contributors"
+        }
+    ],
+    "require": {
+        "herrera-io/silex-pdo": "*",
+        "php": ">=5.4.0",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.8",
+        "guzzlehttp/guzzle": "~5.0"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+    },
+    "autoload": {
+        "psr-4": {
+            "Facebook\\": "src/Facebook/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.x-dev"
+        }
+    }
+}

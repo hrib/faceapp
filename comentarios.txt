@@ -1,0 +1,34 @@
+mbstring nao habilitado no HEROKU, entao substitui por my_mb_substr
+
+function my_mb_substr($string, $offset, $length)
+{
+  $arr = preg_split("//u", $string);
+  $slice = array_slice($arr, $offset + 1, $length);
+  return implode("", $slice);
+}
+
+
+
+src/Facebook/PseudoRandomString/PseudoRandomStringGeneratorTrait.php
+
+            trait PseudoRandomStringGeneratorTrait
+            {
+            
+                public function binToHex($binaryData, $length)
+                {
+                    //if (true !== extension_loaded('mbstring')) {
+                    //    throw new \RuntimeException('Multibyte support required');
+                    //}
+                    //return \mb_substr(\bin2hex($binaryData), 0, $length);
+                    return my_mb_substr(\bin2hex($binaryData), 0, $length);
+                }
+            }
+
+
+ aposta/src/Facebook/HttpClients/FacebookCurlHttpClient.php
+
+        //$rawHeaders = mb_substr($this->rawResponse, 0, $headerSize);
+        //$rawBody = mb_substr($this->rawResponse, $headerSize);
+
+        $rawHeaders = my_mb_substr($this->rawResponse, 0, $headerSize);
+        $rawBody = my_mb_substr($this->rawResponse, $headerSize);
