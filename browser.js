@@ -18,13 +18,13 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         document.getElementById("entry_696307690").value = "2222";
         //z = document.getElementById("sb_form_q").value;
         //document.getElementById("u363hi_4").click();
-
+  
     var a = document.getElementById("u363hi_4");
     var e = document.createEvent('MouseEvents');
     e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
     a.dispatchEvent(e);
     waitforload = true;
-
+    page.render('aaa.png')
         return document.title;
         //return document.title;
     });
