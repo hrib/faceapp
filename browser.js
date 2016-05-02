@@ -8,7 +8,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         return  $('#id60questionText').text();
     });
 
-    console.log(search);
+    console.log('chupa');
 
     phantom.exit()
   });
