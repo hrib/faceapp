@@ -24,7 +24,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
     a.dispatchEvent(e);
     waitforload = true;
-    page.render('aaa.png')
+    page.render('aaa.png');
         return document.title;
         //return document.title;
     });
