@@ -28,7 +28,7 @@
         }
 
 
-public function pullXmlObjBlogExample($siteUrl,$cssSelector){
+function pullXmlObjBlogExample($siteUrl,$cssSelector){
 
         //create configuration object containing jquery selector and target site url to pass to the phantom script
 
