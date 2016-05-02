@@ -13,7 +13,10 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
 
     var resultingHtml = page.evaluate(function() {
-        return document.title;
+        document.getElementById("sb_form_q").value = "oizzsss";
+        z = document.getElementById("sb_form_q").value;
+        return z;
+        //return document.title;
     });
     console.log(resultingHtml);
 
