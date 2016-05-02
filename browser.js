@@ -37,7 +37,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     });
     page.render('aaa.png');
     console.log(resultingHtml);
-
+    console.log('aqui');
     setTimeout(function(){
         phantom.exit();
     }, 10000);
