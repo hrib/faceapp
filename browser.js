@@ -8,9 +8,11 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         document.getElementById('sb_form_q').value = 'oizzsss';
         document.getElementById('scpl1').click();
         
-        //return document.title;
+        return document.title;
         //return  $('href').text();
     });
+
+
 
     console.log(search);
     //console.log('chupa');
