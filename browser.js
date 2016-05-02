@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 
-page.open('http://www.bing.com/images/search?q=interior+design', function() {
+page.open('http://phantomjs.org/api/webpage/method/evaluate.html', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
@@ -9,8 +9,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         //return  $('href').text();
     });
 
-    //console.log(search);
-    console.log('chupa');
+    console.log(search);
+    //console.log('chupa');
 
     phantom.exit()
   });
