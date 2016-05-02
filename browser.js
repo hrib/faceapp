@@ -11,12 +11,11 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
   //var busca2 = page.evaluateJavaScript('function(){document.getElementById("scpl1").click();}');
   //console.log(window.); // http://phantomjs.org/img/phantomjs-logo.png
 
-page.onLoadFinished = function(){
+
     var resultingHtml = page.evaluate(function() {
         return document.title;
     });
     console.log(resultingHtml);
-};
 
   //  search = page.evaluate(function() {
         //document.getElementById('sb_form_q').value = 'oizzsss';
