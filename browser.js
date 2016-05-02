@@ -13,7 +13,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
 page.onLoadFinished = function(){
     var resultingHtml = page.evaluate(function() {
-        return document.documentElement.innerHTML;
+        return document.title;
     });
     console.log(resultingHtml);
 };
