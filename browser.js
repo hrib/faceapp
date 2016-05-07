@@ -51,11 +51,25 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     //console.log('aqui');
     texto = texto + '<br><br>' + resultingHtml;
     setTimeout(function(){
-        document.elementFromPoint(200, 200).click();
+        var a = document.elementFromPoint(200, 200);
+        var e = document.createEvent('MouseEvents');
+        e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
+        waitforload = true;
+        page.render('5.png');
+    }, 5000);
+
+
+    setTimeout(function(){
         page.render('ddd.png');
+        var resHtml = page.evaluate(function() {
+            return document.documentElement.innerHTML;
+        });
+        console.log(resHtml);
+        
         //console.log(texto);
         //console.log(page.content);
-        console.log(resultingHtml);
+        //console.log(resultingHtml);
         phantom.exit();
     }, 10000);
   });
