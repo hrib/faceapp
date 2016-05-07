@@ -51,10 +51,10 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     //console.log('aqui');
     texto = texto + '<br><br>' + resultingHtml;
     setTimeout(function(){
-        var a = document.elementFromPoint(200, 200);
-        var e = document.createEvent('MouseEvents');
-        e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        a.dispatchEvent(e);
+        var aa = document.elementFromPoint(200, 200);
+        var ee = document.createEvent('MouseEvents');
+        ee.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        aa.dispatchEvent(ee);
         waitforload = true;
         page.render('5.png');
     }, 5000);
