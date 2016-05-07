@@ -42,14 +42,20 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         waitforload = true;
         return document.title;
     });
+    
+    
+    
+    
     page.render('aaa.png');
     //console.log(resultingHtml);
     //console.log('aqui');
     texto = texto + '<br><br>' + resultingHtml;
     setTimeout(function(){
+        document.elementFromPoint(200, 200).click();
         page.render('ddd.png');
-        console.log(texto);
-        console.log(page.content);
+        //console.log(texto);
+        //console.log(page.content);
+        console.log(resultingHtml);
         phantom.exit();
     }, 10000);
   });
