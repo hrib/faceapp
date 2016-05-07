@@ -52,12 +52,12 @@ function BingSearch($busca){
     echo '<br>';
     echo '<img src="' . $valor->MediaUrl . '">';
     echo '<br> ________________ <br>';
-    //echo('<ul ID="resultList">');
-    //foreach($jsonobj->d->results as $value){                        
-    //    echo('<li class="resultlistitem"><a href="' . $value->MediaUrl . '">');
-    //    echo('<img src="' . $value->Thumbnail->MediaUrl. '"></li>');
-    //}
-    //echo("</ul>");
+    echo('<ul ID="resultList">');
+    foreach($jsonobj->d->results as $value){                        
+        echo('<li class="resultlistitem"><a href="' . $value->MediaUrl . '">');
+        echo('<img src="' . $value->Thumbnail->MediaUrl. '"></li>');
+    }
+    echo("</ul>");
     //return $value->MediaUrl;
     return $valor->MediaUrl;
 }
