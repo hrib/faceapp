@@ -34,7 +34,7 @@ echo '</table>';
 function BingSearch($busca){
     $url = 'https://api.datamarket.azure.com/Bing/Search/';
     $accountkey = '4bsI4zHy6e5Tr1IcXdYobAQ4gCujDVZ2fi0nXO7sdRk';
-    $searchUrl = $url."Image?$format=json&Query=";
+    $searchUrl = $url."Image?Adult=%27Moderate%27$format=json&Query=";
     $queryItem = $busca;
     $context = stream_context_create(array(
         'http' => array(
@@ -42,7 +42,7 @@ function BingSearch($busca){
         'header'  => "Authorization: Basic " . base64_encode($accountkey . ":" . $accountkey)
         )
     ));
-    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27';
+    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'');
     echo($request);
     $response = file_get_contents($request, 0, $context);
     $jsonobj = json_decode($response);
