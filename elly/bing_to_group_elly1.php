@@ -10,7 +10,8 @@ $myalbumid = '1466932153632337';
 $groupid = array('842223955817133','298375840323419','301278086667948','229780477119126','1439965572953215','561826547222009','1679744542276823','622510464471215','106242386136663','1020175684706954','437963806283720');
 
 //$busca_array = array('selfie gostosa','selfie girls underboobs','Large Underboob Selfies','Wet Underboob','No Bra Selfie','Cougar Selfies','Slutty Selfies','Dirty Selfies iPhone','Selfie Hot But','selfie lingerie','Bikini Selfie','Hot Selfies');
-$busca_array = array('asian selfie girls','selfie girls underboobs asian','elly tran selfie','elly tran lingerie','anri sugihara hot','anri sugihara lingerie','asian girl hot selfie','No Bra asian Selfie','Elly Tran Ha Instagram');
+//$busca_array = array('asian selfie girls','selfie girls underboobs asian','elly tran selfie','elly tran lingerie','anri sugihara hot','anri sugihara lingerie','asian girl hot selfie','No Bra asian Selfie','Elly Tran Ha Instagram');
+$busca_array = array('elly tran selfie','anri sugihara hot','asian boobs','No Bra asian Selfie');
 
 $busca = $busca_array[mt_rand(0, sizeof($busca_array)-1)];
 //$pages_to_copy = array('Anonimasgostosasbr','804933709548543','GostosaD');
@@ -47,7 +48,7 @@ function BingSearch($busca){
     $jsonobj = json_decode($response);
 
     $resultado = $jsonobj->d->results;
-    $valor = $resultado[mt_rand(0,49)];
+    $valor = $resultado[mt_rand(0,24)];
     echo '<br>';
     echo '<img src="' . $valor->MediaUrl . '">';
     echo '<br> ________________ <br>';
