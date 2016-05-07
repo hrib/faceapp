@@ -39,7 +39,7 @@ function BingSearch($busca){
         'header'  => "Authorization: Basic " . base64_encode($accountkey . ":" . $accountkey)
         )
     ));
-    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'');
+    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27';
     echo($request);
     $response = file_get_contents($request, 0, $context);
     $jsonobj = json_decode($response);
