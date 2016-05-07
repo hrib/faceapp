@@ -34,7 +34,7 @@ echo '</table>';
 function BingSearch($busca){
     $url = 'https://api.datamarket.azure.com/Bing/Search/';
     $accountkey = '4bsI4zHy6e5Tr1IcXdYobAQ4gCujDVZ2fi0nXO7sdRk';
-    $searchUrl = $url.'Image?$format=json&Adult="Moderate"&Query=';
+    $searchUrl = $url."Image?$format=json&Adult='Moderate'&Query=";
     $queryItem = $busca;
     $context = stream_context_create(array(
         'http' => array(
