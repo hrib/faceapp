@@ -48,7 +48,7 @@ function BingSearch($busca){
     $jsonobj = json_decode($response);
 
     $resultado = $jsonobj->d->results;
-    $valor = $resultado[mt_rand(0,24)];
+    $valor = $resultado[mt_rand(0,49)];
     echo '<br>';
     echo '<img src="' . $valor->MediaUrl . '">';
     echo '<br> ________________ <br>';
