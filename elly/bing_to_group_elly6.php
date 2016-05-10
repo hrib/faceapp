@@ -7,7 +7,7 @@ $app_secret = 'df003dd0cc3f4218fdc5faddbf085b1c';
 $access_token = 'EAAPeLI5S75oBAMu745rh1Ku7Y2x1pPJCsWP9xPzkB7QYfaY23tLedGKAyvLE6fuFXZCFTWW2NQMEpeNSiSjLjWeu1yxny2YJuKq7ZCwFp4jBQZCY6qztiHlepqriyFjsQF6r2kWIQB0mZBAuEwMNwJf181n1okYU0XQq7xhRHAZDZD';
 $myalbumid = '107879072960845';
 //$groupid = array('561826547222009','1439965572953215','229780477119126','301278086667948','657208374311730','842223955817133','298375840323419','622510464471215','437963806283720','260802810696610','755714287874029','1617322898556878','106242386136663','1679744542276823','1602088460111493','125530347511585','303578036343144');
-$groupid = array('561826547222009');
+$groupid = array('643876078994477');
 
 //$busca_array = array('selfie gostosa','selfie girls underboobs','Large Underboob Selfies','Wet Underboob','No Bra Selfie','Cougar Selfies','Slutty Selfies','Dirty Selfies iPhone','Selfie Hot But','selfie lingerie','Bikini Selfie','Hot Selfies');
 //$busca_array = array('asian selfie girls','selfie girls underboobs asian','elly tran selfie','elly tran lingerie','anri sugihara hot','anri sugihara lingerie','asian girl hot selfie','No Bra asian Selfie','Elly Tran Ha Instagram');
