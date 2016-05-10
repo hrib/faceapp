@@ -2,12 +2,12 @@
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 //require_once '../src/Facebook/autoload.php';
-$app_id = '606368529464047';
-$app_secret = 'be1d03810b35a38264d20dd3517f6415';
-$access_token = 'CAAInfSzNOu8BAAfXYZBrfWnxMSB7uQ63ZBOFhIu1S7EbZAVF5ZBZCtdf07uR4no01ZCoVP0r47jVtZANiTZB0z84I4X8UqNvFjriZBE7RY9kFDZAeT4oX7ZAU2ehXYVY0jKjf7MQTMZAW7c3hCyz1q4MZBhdYIJRvWA6ZCLsQCHO1a8j2rTXH2S99T8u0O8HXhnQHdOwlGT6hhdOcpTgZDZD';
-$myalbumid = '1466932153632337';
+$app_id = '1088707877859226';
+$app_secret = 'df003dd0cc3f4218fdc5faddbf085b1c';
+$access_token = '';
+$myalbumid = '107880039627415';
 //$groupid = array('561826547222009','1439965572953215','229780477119126','301278086667948','657208374311730','842223955817133','298375840323419','622510464471215','437963806283720','260802810696610','755714287874029','1617322898556878','106242386136663','1679744542276823','1602088460111493','125530347511585','303578036343144');
-$groupid = array('842223955817133','298375840323419','301278086667948','229780477119126','1439965572953215','561826547222009','1679744542276823','622510464471215','106242386136663','1020175684706954','437963806283720');
+$groupid = array('1111');
 
 //$busca_array = array('selfie gostosa','selfie girls underboobs','Large Underboob Selfies','Wet Underboob','No Bra Selfie','Cougar Selfies','Slutty Selfies','Dirty Selfies iPhone','Selfie Hot But','selfie lingerie','Bikini Selfie','Hot Selfies');
 //$busca_array = array('asian selfie girls','selfie girls underboobs asian','elly tran selfie','elly tran lingerie','anri sugihara hot','anri sugihara lingerie','asian girl hot selfie','No Bra asian Selfie','Elly Tran Ha Instagram');
