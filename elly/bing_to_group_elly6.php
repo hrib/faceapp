@@ -12,7 +12,7 @@ $groupid = array('643876078994477','788748517902557','668714629912490','16290918
 
 //$busca_array = array('selfie gostosa','selfie girls underboobs','Large Underboob Selfies','Wet Underboob','No Bra Selfie','Cougar Selfies','Slutty Selfies','Dirty Selfies iPhone','Selfie Hot But','selfie lingerie','Bikini Selfie','Hot Selfies');
 //$busca_array = array('asian selfie girls','selfie girls underboobs asian','elly tran selfie','elly tran lingerie','anri sugihara hot','anri sugihara lingerie','asian girl hot selfie','No Bra asian Selfie','Elly Tran Ha Instagram');
-$busca_array = array('elly tran hot','anri sugihara hot','asian boobs','hot asian girl');
+$busca_array = array('elly tran hot','anri sugihara hot','asian boobs','hot asian girl', 'sexy asian female');
 
 $busca = $busca_array[mt_rand(0, sizeof($busca_array)-1)];
 //$pages_to_copy = array('Anonimasgostosasbr','804933709548543','GostosaD');
