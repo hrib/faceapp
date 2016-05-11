@@ -6,6 +6,7 @@ function SendRequest($url, $post, $post_data, $user_agent, $cookies) {
     curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
 
     if($post) {
         curl_setopt($ch, CURLOPT_POST, true);
