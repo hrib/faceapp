@@ -100,7 +100,7 @@ if(strpos($login[1], "Sorry, an error occurred while processing this request."))
     } else {            
         // Decode the array that is returned
         $obj = @json_decode($login[1], true);
-
+        var_dump($obj); 
         if(empty($obj)) {
             echo "Could not decode the response: ".$body;
         } else {
