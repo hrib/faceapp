@@ -107,14 +107,16 @@ if(strpos($login[1], "Sorry, an error occurred while processing this request."))
     } else {            
         // Decode the array that is returned
         $obj = @json_decode($login[1], true);
-        var_dump($obj); 
+        var_dump($obj);
+        echo '<br>';
         if(empty($obj)) {
             echo "Could not decode the response: ".$body;
         } else {
             // Post the picture
             $data = GetPostData($filename);
-            $post = SendRequest('media/upload/', true, $data, $agent, true);    
-
+            $post = SendRequest('media/upload/', true, $data, $agent, true);
+            var_dump($post);
+            echo '<br>';
             if(empty($post[1])) {
                  echo "Empty response received from the server while trying to post the image";
             } else {
