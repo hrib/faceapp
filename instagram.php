@@ -121,7 +121,9 @@ $password = 'wsimetria1';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
-$filename = PegaImagem(); 
+$filename = PegaImagem();
+list($w_orig, $h_orig) = getimagesize($filename);
+echo '<br>' . $w_orig . 'x' . $h_orig . '<br>';
 //londoforher $fbtoken = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
 $fbtoken = 'EAABwzLixnjYBAMXFS65Oio2bQq6KtDe0TBSUZBzfzZAaML5b2cb65vtaQaAV9ZAHCyGmMYA3iZCzV5j1Om5GtY0wnwqdGbjmcruD1frErXSzXAHcxrsRqycZBoPvpBBixzcCLH6ZCHXWwLXiZCTlbJtwLXbebHyE1pP5ihrUgjfWA0iXggg0gxZC6h39zDS3ypEZD';
 
@@ -181,7 +183,7 @@ if(strpos($login[1], "Sorry, an error occurred while processing this request."))
 
                         $media_id = $obj['media_id'];
                         $device_id = "android-".$guid;
-                        $data = '{"share_to_facebook":"1","fb_access_token":"'.$fbtoken.'","device_id":"'.$device_id.'","guid":"'.$guid.'","media_id":"'.$media_id.'","caption":"'.trim($caption).'","device_timestamp":"'.time().'","source_type":"5","filter_type":"0","extra":"{}","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}';   
+                        $data = '{"share_to_facebook":"1","fb_access_token":"'.$fbtoken.'","crop_original_size":"'.$w_orig.','.$h_orig.'","crop_zoom":"'.$w_orig/$h_orig.'","crop_center":"0,0","device_id":"'.$device_id.'","guid":"'.$guid.'","media_id":"'.$media_id.'","caption":"'.trim($caption).'","device_timestamp":"'.time().'","source_type":"5","filter_type":"0","extra":"{}","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}';   
                         $sig = GenerateSignature($data);
                         $new_data = 'signed_body='.$sig.'.'.urlencode($data).'&ig_sig_key_version=4';
 
