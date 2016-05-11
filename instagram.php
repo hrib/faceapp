@@ -1,3 +1,5 @@
+<?php
+
 function SendRequest($url, $post, $post_data, $user_agent, $cookies) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://i.instagram.com/api/v1/'.$url);
@@ -63,12 +65,12 @@ function GetPostData($filename) {
 
 
 // Set the username and password of the account that you wish to post a photo to
-$username = 'ig_username';
-$password = 'ig_password';
+$username = 'london_for_her';
+$password = 'wsimetria1';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
-$filename = 'pictures/test.jpg';
+$filename = 'http://4.bp.blogspot.com/-VdBHvJu6TVw/Tae8ymgEW0I/AAAAAAAAAIA/rYEYbpI3FYk/s1600/square.jpg';
 
 // Set the caption for the photo
 $caption = "Test caption";
@@ -154,3 +156,5 @@ if(strpos($login[1], "Sorry, an error occurred while processing this request."))
         }
     }
 }
+
+?>
