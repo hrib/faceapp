@@ -67,8 +67,8 @@ function GetPostData($filename) {
 
 
 // Set the username and password of the account that you wish to post a photo to
-$username = 'london_for_her';
-$password = 'wsimetria1';
+$username = 'hdose';
+$password = 'isimetria';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
@@ -82,7 +82,7 @@ $filename = $image_filename;
 
 
 // Set the caption for the photo
-$caption = "";
+$caption = "oi";
 
 // Define the user agent
 $agent = GenerateUserAgent();
@@ -136,7 +136,8 @@ if(strpos($login[1], "Sorry, an error occurred while processing this request."))
 
                         $media_id = $obj['media_id'];
                         $device_id = "android-".$guid;
-                        $data = '{"device_id":"'.$device_id.'","guid":"'.$guid.'","media_id":"'.$media_id.'","caption":"'.trim($caption).'","device_timestamp":"'.time().'","source_type":"5","filter_type":"0","extra":"{}","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}';   
+                        $fbtoken = 'EAABwzLixnjYBAMNQ0GVBv9anNqFwcnKZAgKXdOTQAZCnUtxzd96KzYjkGDxvRnGrOZBzVryz2s7Kxs7kB7SUVolPEuHZAH1c26VNHDyABbZCaCHKrrf4bMWwdhLEtzUaqoDYs4UTjVn2ILW26PTPxwT3dQ2uz6i6cp6ZCmF3cmPdSV9JGIk5IUIsVoLSrwDE8ZD';
+                        $data = '{"share_to_facebook":"1","fb_access_token":"'.$fbtoken.'","device_id":"'.$device_id.'","guid":"'.$guid.'","media_id":"'.$media_id.'","caption":"'.trim($caption).'","device_timestamp":"'.time().'","source_type":"5","filter_type":"0","extra":"{}","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}';   
                         $sig = GenerateSignature($data);
                         $new_data = 'signed_body='.$sig.'.'.urlencode($data).'&ig_sig_key_version=4';
 
