@@ -23,7 +23,7 @@
             },
             "require": {
                 "ext-pdo": "*",
-                "php": "=5.5.0"
+                "php": ">=5.3.0,<5.6"
             },
             "require-dev": {
                 "herrera-io/phpunit-test-case": "1.*",
