@@ -1,5 +1,54 @@
 <?php
 
+function PegaImagem(){
+    $busca_array = array('elly tran hot','anri sugihara hot','asian boobs','hot asian girl', 'sexy asian female');
+    $busca = $busca_array[mt_rand(0, sizeof($busca_array)-1)];
+    $fileurl = BingSearch($busca);
+    $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
+    $context = stream_context_create($opts);
+    $header = file_get_contents($fileurl, FALSE, $context);
+    $image_filename = 'image'. mt_rand(0,1000) .'.jpg';
+    echo '<br>' . $image_filename . '<br>';
+    file_put_contents($image_filename, $header);
+    return $image_filename;
+}
+function PegaTexto(){
+    $textos = array("pegaria? :*","pega ou passa? :*","o que acharam? :*","to sem ideia pra foto... ajuda ai.. :*","oq vcs estao fazendo agora hein? :*","essa ficou show! :*","que nota vc da? :*","qual seu signo? :*","De 1 a 10, oq acha? :*","entediada aqui.. alguem online? :*","vamos conversar? comenta seu whatsapp ai! :*","deixa seu whatsapp no comentario!","oi! Add?", "add ou follow?", "adiciona ou segue?", "adiciona?", "me segue", "follow me", "quem me add?", "quem me segue?", "oi! Add? :) ", "add ou follow? :) ", "adiciona ou segue? :) ", "adiciona? :) ", "me segue :) ", "follow me :) ", "quem me add? :) ", "quem me segue? :) ", "oi! Add? :* ", "add ou follow? :* ", "adiciona ou segue? :* ", "adiciona? :* ", "me segue :* ", "follow me :* ", "quem me add? :* ", "quem me segue? :* "); 
+    $message = $textos[mt_rand(0,sizeof($textos)-1)];
+    return $message;
+}
+function BingSearch($busca){
+    $url = 'https://api.datamarket.azure.com/Bing/Search/';
+    $accountkey = '4bsI4zHy6e5Tr1IcXdYobAQ4gCujDVZ2fi0nXO7sdRk';
+    $searchUrl = $url.'Image?$format=json&Query=';
+    $queryItem = $busca;
+    $context = stream_context_create(array(
+        'http' => array(
+        'request_fulluri' => true,
+        'header'  => "Authorization: Basic " . base64_encode($accountkey . ":" . $accountkey)
+        )
+    ));
+    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&$skip=' . mt_rand(0,99);
+    echo($request);
+    $response = file_get_contents($request, 0, $context);
+    $jsonobj = json_decode($response);
+    $resultado = $jsonobj->d->results;
+    $valor = $resultado[mt_rand(0,49)];
+    echo '<br>';
+    echo '<img src="' . $valor->MediaUrl . '">';
+    echo '<br> ________________ <br>';
+    echo('<ul ID="resultList">');
+    foreach($jsonobj->d->results as $value){                        
+        echo('<li class="resultlistitem"><a href="' . $value->MediaUrl . '">');
+        echo('<img src="' . $value->Thumbnail->MediaUrl. '"></li>');
+    }
+    echo("</ul>");
+    //return $value->MediaUrl;
+    return $valor->MediaUrl;
+}
+
+
+
 function SendRequest($url, $post, $post_data, $user_agent, $cookies) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://i.instagram.com/api/v1/'.$url);
@@ -72,19 +121,13 @@ $password = 'wsimetria1';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
-  $fileurl = 'http://4.bp.blogspot.com/-VdBHvJu6TVw/Tae8ymgEW0I/AAAAAAAAAIA/rYEYbpI3FYk/s1600/square.jpg';
-  $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
-  $context = stream_context_create($opts);
-  $header = file_get_contents($fileurl, FALSE, $context);
-  $image_filename = 'image.jpg';
-  file_put_contents($image_filename, $header);
-$filename = $image_filename; 
+$filename = PegaImagem(); 
 //londoforher $fbtoken = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
 $fbtoken = 'EAABwzLixnjYBAMXFS65Oio2bQq6KtDe0TBSUZBzfzZAaML5b2cb65vtaQaAV9ZAHCyGmMYA3iZCzV5j1Om5GtY0wnwqdGbjmcruD1frErXSzXAHcxrsRqycZBoPvpBBixzcCLH6ZCHXWwLXiZCTlbJtwLXbebHyE1pP5ihrUgjfWA0iXggg0gxZC6h39zDS3ypEZD';
 
 
 // Set the caption for the photo
-$caption = "oi";
+$caption = PegaTexto();
 
 // Define the user agent
 $agent = GenerateUserAgent();
