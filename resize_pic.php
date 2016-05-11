@@ -1,11 +1,12 @@
 <?php
 
-$target = http://www.older-mature.net/media/images/2/naked-asian-moms/naked-asian-moms-79394.jpg
+$target = 'http://www.older-mature.net/media/images/2/naked-asian-moms/naked-asian-moms-79394.jpg';
 $newcopy = 'image.jpg';
 $w = 400;
 $h = 400;
 $ext = 'jpg';
 ak_img_resize($target, $newcopy, $w, $h, $ext)
+echo '<img src="' . $newcopy . '">';
 
 function ak_img_resize($target, $newcopy, $w, $h, $ext) {
     list($w_orig, $h_orig) = getimagesize($target);
