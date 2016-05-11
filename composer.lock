@@ -23,7 +23,7 @@
             },
             "require": {
                 "ext-pdo": "*",
-                "php": ">=5.3.3"
+                "php": "=5.5"
             },
             "require-dev": {
                 "herrera-io/phpunit-test-case": "1.*",
@@ -76,7 +76,7 @@
             },
             "require": {
                 "herrera-io/pdo-log": "~1.0",
-                "php": ">=5.3.3",
+                "php": "=5.5",
                 "silex/silex": "1.*"
             },
             "require-dev": {
@@ -131,7 +131,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": "=5.5"
             },
             "type": "library",
             "extra": {
@@ -215,7 +215,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
+                "php": "=5.5",
                 "pimple/pimple": "~1.0",
                 "symfony/event-dispatcher": "~2.3|3.0.*",
                 "symfony/http-foundation": "~2.3|3.0.*",
@@ -292,7 +292,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": "=5.5",
                 "psr/log": "~1.0"
             },
             "conflict": {
@@ -349,7 +349,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "=5.5"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -409,7 +409,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": "=5.5",
                 "symfony/polyfill-mbstring": "~1.1"
             },
             "require-dev": {
@@ -462,7 +462,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": "=5.5",
                 "psr/log": "~1.0",
                 "symfony/debug": "~2.8|~3.0",
                 "symfony/event-dispatcher": "~2.8|~3.0",
@@ -544,7 +544,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "=5.5"
             },
             "suggest": {
                 "ext-mbstring": "For best performance"
@@ -603,7 +603,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "=5.5"
             },
             "conflict": {
                 "symfony/config": "<2.8"
@@ -680,7 +680,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3,<8.0-DEV"
+                "php": "=5.5,<8.0-DEV"
             },
             "require-dev": {
                 "athletic/athletic": "~0.1.8",
@@ -735,7 +735,7 @@
             },
             "require": {
                 "guzzlehttp/ringphp": "^1.1",
-                "php": ">=5.4.0"
+                "php": "=5.5"
             },
             "require-dev": {
                 "ext-curl": "*",
@@ -793,7 +793,7 @@
             },
             "require": {
                 "guzzlehttp/streams": "~3.0",
-                "php": ">=5.4.0",
+                "php": "=5.5",
                 "react/promise": "~2.0"
             },
             "require-dev": {
