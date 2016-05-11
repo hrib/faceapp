@@ -70,10 +70,17 @@ $password = 'wsimetria1';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
-$filename = 'http://4.bp.blogspot.com/-VdBHvJu6TVw/Tae8ymgEW0I/AAAAAAAAAIA/rYEYbpI3FYk/s1600/square.jpg';
+  $fileurl = 'http://4.bp.blogspot.com/-VdBHvJu6TVw/Tae8ymgEW0I/AAAAAAAAAIA/rYEYbpI3FYk/s1600/square.jpg';
+  $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
+  $context = stream_context_create($opts);
+  $header = file_get_contents($fileurl, FALSE, $context);
+  $image_filename = 'image.jpg';
+  file_put_contents($image_filename, $header);
+$filename = $image_filename; 
+
 
 // Set the caption for the photo
-$caption = "Test caption";
+$caption = "";
 
 // Define the user agent
 $agent = GenerateUserAgent();
