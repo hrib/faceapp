@@ -67,7 +67,7 @@ function GetPostData($filename) {
 
 
 // Set the username and password of the account that you wish to post a photo to
-$username = 'london_for_her';
+$username = 'elly.tess7';
 $password = 'wsimetria1';
 
 // Set the path to the file that you wish to post.
@@ -79,7 +79,8 @@ $password = 'wsimetria1';
   $image_filename = 'image.jpg';
   file_put_contents($image_filename, $header);
 $filename = $image_filename; 
-$fbtoken = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
+//londoforher $fbtoken = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
+$fbtoken = 'EAABwzLixnjYBAMXFS65Oio2bQq6KtDe0TBSUZBzfzZAaML5b2cb65vtaQaAV9ZAHCyGmMYA3iZCzV5j1Om5GtY0wnwqdGbjmcruD1frErXSzXAHcxrsRqycZBoPvpBBixzcCLH6ZCHXWwLXiZCTlbJtwLXbebHyE1pP5ihrUgjfWA0iXggg0gxZC6h39zDS3ypEZD';
 
 
 // Set the caption for the photo
