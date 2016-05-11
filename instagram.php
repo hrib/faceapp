@@ -59,7 +59,8 @@ function GetPostData($filename) {
         echo "The image doesn't exist ".$filename;
     } else {
         $post_data = array('device_timestamp' => time(), 
-                        'photo' => '@'.$filename);
+                        'photo' => new CURLFile($filename));
+                        //'photo' => '@'.$filename);
         return $post_data;
     }
 }
