@@ -5,7 +5,7 @@ $newcopy = 'image.jpg';
 $w = 400;
 $h = 400;
 $ext = 'jpg';
-ak_img_resize($target, $newcopy, $w, $h, $ext)
+ak_img_resize($target, $newcopy, $w, $h, $ext);
 echo '<img src="' . $newcopy . '">';
 
 function ak_img_resize($target, $newcopy, $w, $h, $ext) {
