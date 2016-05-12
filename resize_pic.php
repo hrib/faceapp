@@ -24,9 +24,15 @@ $image_out = imagecreatetruecolor($width_out,$height_out);
 $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
 imagefill($image_out,0,0,$bg_color);
 imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
+
+$NovaLateral = imagesx($image_out);
+if($Novowidth > 960){
+    $tci = imagecreatetruecolor(800, 800);
+    imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 800, 800, $NovaLateral, $NovaLateral);
+}
 //imagejpeg($image_out);
 imagejpeg($image_out, $filename);
-echo '<br><img src="' . $filename . '">';
+echo '<br><img src="' . $filename . '">' . imagesx($image_out) .'x'. imagesy($image_out);
 
 
 
