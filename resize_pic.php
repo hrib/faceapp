@@ -1,27 +1,26 @@
 <?php
-require_once 'ext/imagick.so';
-$target = 'http://www.older-mature.net/media/images/2/naked-asian-moms/naked-asian-moms-79394.jpg';
+$target = 'http://the-ark.org/wp-content/uploads/2011/08/Interior-Design.jpg';
 $newcopy = 'image.jpg';
 $w = 400;
 $h = 400;
 $ext = 'jpg';
-//ak_img_resize($target, $newcopy, $w, $h, $ext);
-//echo '<img src="' . $newcopy . '">';
+ak_img_resize($target, $newcopy, $w, $h, $ext);
+echo '<img src="' . $newcopy . '">';
 
-$im = new imagick($target);
-$imageprops = $im->getImageGeometry();
-$width = $imageprops['width'];
-$height = $imageprops['height'];
-if($width > $height){
-    $newHeight = 80;
-    $newWidth = (80 / $height) * $width;
-}else{
-    $newWidth = 80;
-    $newHeight = (80 / $width) * $height;
-}
-$im->resizeImage($newWidth,$newHeight, imagick::FILTER_LANCZOS, 0.9, true);
-$im->cropImage (80,80,0,0);
-$im->writeImage( "image.jpg" );
+//$im = new imagick($target);
+//$imageprops = $im->getImageGeometry();
+//$width = $imageprops['width'];
+//$height = $imageprops['height'];
+//if($width > $height){
+//    $newHeight = 80;
+//    $newWidth = (80 / $height) * $width;
+//}else{
+//    $newWidth = 80;
+//    $newHeight = (80 / $width) * $height;
+//}
+//$im->resizeImage($newWidth,$newHeight, imagick::FILTER_LANCZOS, 0.9, true);
+//$im->cropImage (80,80,0,0);
+//$im->writeImage( "image.jpg" );
 //echo '<img src="image.jpg">';
 
 
