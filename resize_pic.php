@@ -1,9 +1,9 @@
 <?php
-$target = 'http://the-ark.org/wp-content/uploads/2011/08/Interior-Design.jpg';
-$newcopy = 'image.jpg';
+$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
+$newcopy = 'image.gif';
 $w = 400;
 $h = 400;
-$ext = 'jpg';
+$ext = 'gif';
 ak_img_resize($target, $newcopy, $w, $h, $ext);
 echo '<img src="' . $newcopy . '">';
 
