@@ -1,14 +1,5 @@
 <?php
 $target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
-$newcopy = 'image.gif';
-$w = 250;
-$h = 250;
-$ext = 'gif';
-ak_img_resize($target, $newcopy, $w, $h, $ext);
-echo '<img src="' . $newcopy . '">';
-
-
-$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
 $ext = 'gif';
     $img = "";
     $ext = strtolower($ext);
@@ -20,10 +11,27 @@ $ext = 'gif';
       $img = imagecreatefromjpeg($target);
     }
 
+
+//$im=imagecreatefromjpeg ($imgPath);
+$filename = 'image3.jpg';
+$im = $img;
+$width=ImageSX($im); $height=ImageSY($im); $ratio=16/9;
+$width_out=$width; $height_out=$height;
+if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
+$left=round(($width_out-$width)/2);
+$top=round(($height_out-$height)/2);
+$image_out = imagecreatetruecolor($width_out,$height_out);
+$bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
+imagefill($image_out,0,0,$bg_color);
+imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
+//imagejpeg($image_out);
+imagejpeg($image_out, $filename);
+echo '<br><img src="' . $filename . '">';
+
+
+
 //$image = imagecreatefromjpeg($_GET[$target]);
 $image = $img;
-
-
 
 $filename = 'image2.jpg';
 
@@ -66,6 +74,18 @@ echo '<br><img src="' . $filename . '">';
 
 
 
+
+
+
+
+
+$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
+$newcopy = 'image.gif';
+$w = 250;
+$h = 250;
+$ext = 'gif';
+ak_img_resize($target, $newcopy, $w, $h, $ext);
+echo '<img src="' . $newcopy . '">';
 
 
 function ak_img_resize($target, $newcopy, $w, $h, $ext) {
