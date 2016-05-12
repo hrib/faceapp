@@ -7,21 +7,46 @@ $ext = 'gif';
 ak_img_resize($target, $newcopy, $w, $h, $ext);
 echo '<img src="' . $newcopy . '">';
 
-//$im = new imagick($target);
-//$imageprops = $im->getImageGeometry();
-//$width = $imageprops['width'];
-//$height = $imageprops['height'];
-//if($width > $height){
-//    $newHeight = 80;
-//    $newWidth = (80 / $height) * $width;
-//}else{
-//    $newWidth = 80;
-//    $newHeight = (80 / $width) * $height;
-//}
-//$im->resizeImage($newWidth,$newHeight, imagick::FILTER_LANCZOS, 0.9, true);
-//$im->cropImage (80,80,0,0);
-//$im->writeImage( "image.jpg" );
-//echo '<img src="image.jpg">';
+
+
+$image = imagecreatefromjpeg($_GET[$target]);
+$filename = 'image2.jpg';
+
+$thumb_width = 200;
+$thumb_height = 150;
+
+$width = imagesx($image);
+$height = imagesy($image);
+
+$original_aspect = $width / $height;
+$thumb_aspect = $thumb_width / $thumb_height;
+
+if ( $original_aspect >= $thumb_aspect )
+{
+   // If image is wider than thumbnail (in aspect ratio sense)
+   $new_height = $thumb_height;
+   $new_width = $width / ($height / $thumb_height);
+}
+else
+{
+   // If the thumbnail is wider than the image
+   $new_width = $thumb_width;
+   $new_height = $height / ($width / $thumb_width);
+}
+
+$thumb = imagecreatetruecolor( $thumb_width, $thumb_height );
+
+// Resize and crop
+imagecopyresampled($thumb,
+                   $image,
+                   0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
+                   0 - ($new_height - $thumb_height) / 2, // Center the image vertically
+                   0, 0,
+                   $new_width, $new_height,
+                   $width, $height);
+imagejpeg($thumb, $filename, 80);
+echo '<br><img src="' . $filename . '">';
+
 
 
 
