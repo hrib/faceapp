@@ -127,12 +127,13 @@ function BingSearch($busca){
         'header'  => "Authorization: Basic " . base64_encode($accountkey . ":" . $accountkey)
         )
     ));
-    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&$skip=' . mt_rand(0,99); //&ImageFilters=%27Aspect%3ASquare%2BSize%3ALarge%27
+    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&$skip=' . mt_rand(0,149); //&ImageFilters=%27Aspect%3ASquare%2BSize%3ALarge%27
     echo($request);
     $response = file_get_contents($request, 0, $context);
     $jsonobj = json_decode($response);
     $resultado = $jsonobj->d->results;
-    $valor = $resultado[mt_rand(0,49)];
+    //$valor = $resultado[mt_rand(0,49)];
+    $valor = $resultado[1]; //o rand ja esta na query Skip
     echo '<br>';
     echo '<img src="' . $valor->MediaUrl . '">';
     TransformaImg($valor->MediaUrl);
