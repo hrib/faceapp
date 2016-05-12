@@ -33,7 +33,7 @@ function TransformaImg($target){
     }
     //imagejpeg($image_out);
     
-    echo '<br><img src="' . $filename . '">' . imagesx($image_out) .'x'. imagesy($image_out);
+    echo '<br><img src="' . $filename . '">' . imagesx($filename) .'x'. imagesy($filename);
     return $filename;
 }
 
