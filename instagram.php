@@ -39,6 +39,7 @@ function TransformaImg($target){
     }
     $thumb = imagecreatetruecolor( $thumb_width, $thumb_height );
     // Resize and crop
+    imagecopyresampled($thumb,
                        $image,
                        0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
                        0 - ($new_height - $thumb_height) / 2, // Center the image vertically
