@@ -13,20 +13,46 @@ function TransformaImg($target){
     } else { 
       $img = imagecreatefromjpeg($target);
     }
-    $im = $img;
+    
     //crop metade do erro
-    $width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
-    $width_out=$width; $height_out=$height;
-    if ($height>$width) {$height_out=floor($width+($height-$width)/2);} else {$width_out=floor($height+($width-$height)/2);}
-    $imgcrop = imagecreatetruecolor($height_out, $width_out);
-    imagecopyresampled($imgcrop,
-                   $im,
-                   0 - ($width_out - $width) / 2, // Center the image horizontally
-                   0 - ($height_out - $height) / 2, // Center the image vertically
-                   0, 0,
-                   $width_out, $height_out,
-                   $width, $height);
-    imagejpeg($imgcrop, $filename);
+    $image = $img;
+    //$filename = 'image2.jpg';
+    $width = imagesx($image);
+    $height = imagesy($image);
+    $thumb_width = $width;
+    $thumb_height = $height;
+    if($width>$height){$thumb_width = ($height+($width-$height)/2);}else{$thumb_height = ($width+($height-$width)/2);}
+    
+    $original_aspect = $width / $height;
+    $thumb_aspect = $thumb_width / $thumb_height;
+    if ( $original_aspect >= $thumb_aspect )
+    {
+       // If image is wider than thumbnail (in aspect ratio sense)
+       $new_height = $thumb_height;
+       $new_width = $width / ($height / $thumb_height);
+    }
+    else
+    {
+       // If the thumbnail is wider than the image
+       $new_width = $thumb_width;
+       $new_height = $height / ($width / $thumb_width);
+    }
+    $thumb = imagecreatetruecolor( $thumb_width, $thumb_height );
+    // Resize and crop
+                       $image,
+                       0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
+                       0 - ($new_height - $thumb_height) / 2, // Center the image vertically
+                       0, 0,
+                       $new_width, $new_height,
+                       $width, $height);
+    imagejpeg($thumb, $filename, 80);
+    echo '<br><img src="' . $filename . '">';
+
+
+
+
+
+
     
     
     //preenche de preto a outra metade do erro
