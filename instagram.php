@@ -71,6 +71,7 @@ function TransformaImg($target){
         imagefill($image_out,0,0,$bg_color);
         imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
         imagejpeg($image_out, $filename);
+        echo '<br> preto: <img src="' . $filenamecrop . '">';
     } else{
         $filename = $filenamecrop;
     }
@@ -86,7 +87,7 @@ function TransformaImg($target){
     }
     //imagejpeg($image_out);
     
-    echo '<br><img src="' . $filename . '">' . imagesx(imagecreatefromjpeg($filename)) .'x'. imagesy(imagecreatefromjpeg($filename));
+    echo '<br>final: <img src="' . $filename . '">' . imagesx(imagecreatefromjpeg($filename)) .'x'. imagesy(imagecreatefromjpeg($filename));
     return $filename;
 }
 
