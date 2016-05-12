@@ -1,5 +1,5 @@
 <?php
-
+require_once 'ext/imagick.so';
 $target = 'http://www.older-mature.net/media/images/2/naked-asian-moms/naked-asian-moms-79394.jpg';
 $newcopy = 'image.jpg';
 $w = 400;
