@@ -2,7 +2,7 @@
 
 function TransformaImg($target){
     //$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
-    $filename = 'image'.mt_rand(0,1000).'.jpg';
+    $filename = 'imagesqr'.mt_rand(1,1000)*mt_rand(1,1000).'.jpg';
     $ext = 'jpg';
     $img = "";
     $ext = strtolower($ext);
@@ -68,7 +68,7 @@ function BingSearch($busca){
         'header'  => "Authorization: Basic " . base64_encode($accountkey . ":" . $accountkey)
         )
     ));
-    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&ImageFilters=%27Aspect%3ASquare%27&$skip=' . mt_rand(0,99); //%2BSize%3ALarge
+    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&$skip=' . mt_rand(0,99); //&ImageFilters=%27Aspect%3ASquare%2BSize%3ALarge%27
     echo($request);
     $response = file_get_contents($request, 0, $context);
     $jsonobj = json_decode($response);
@@ -166,8 +166,8 @@ $password = 'wsimetria1';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
-$filename = PegaImagem();
-$filename = TransformaImg($filename);
+$filename = PegaImagem(); //salva imagem crua orginal
+$filename = TransformaImg($filename); //transforma imagem em quadrado
 list($w_orig, $h_orig) = getimagesize($filename);
 echo '<br>' . $w_orig . 'x' . $h_orig . '<br>';
 $factor = $w_orig/$h_orig > 1 ? round($w_orig/$h_orig,7) : round($h_orig/$w_orig,7);
