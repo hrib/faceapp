@@ -22,7 +22,7 @@ if($width > $height){
 $im->resizeImage($newWidth,$newHeight, imagick::FILTER_LANCZOS, 0.9, true);
 $im->cropImage (80,80,0,0);
 $im->writeImage( "image.jpg" );
-echo '<img src="image.jpg">';
+//echo '<img src="image.jpg">';
 
 
 
