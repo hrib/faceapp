@@ -1,8 +1,8 @@
 <?php
 $target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
 $newcopy = 'image.gif';
-$w = 400;
-$h = 400;
+$w = 250;
+$h = 250;
 $ext = 'gif';
 ak_img_resize($target, $newcopy, $w, $h, $ext);
 echo '<img src="' . $newcopy . '">';
