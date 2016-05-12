@@ -14,17 +14,35 @@ function TransformaImg($target){
       $img = imagecreatefromjpeg($target);
     }
     $im = $img;
+    //crop metade do erro
+    $width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
+    $width_out=$width; $height_out=$height;
+    if ($height>$width) {$height_out=floor($width+($height-$width)/2);} else {$width_out=floor($height+($width-$height)/2);}
+    $imgcrop = imagecreatetruecolor($height_out, $width_out);
+    imagecopyresampled($imgcrop,
+                   $im,
+                   0 - ($width_out - $width) / 2, // Center the image horizontally
+                   0 - ($height_out - $height) / 2, // Center the image vertically
+                   0, 0,
+                   $width_out, $height_out,
+                   $width, $height);
+    imagejpeg($imgcrop, $filename);
+    
+    
+    //preenche de preto a outra metade do erro
+    $im = imagecreatefromjpeg($filename);
     $width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
     $width_out=$width; $height_out=$height;
     if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
     $left=round(($width_out-$width)/2);
-    $top=round(($height_out-$height)/2);
+    $top=round(($height_out-$height)/2);    
     $image_out = imagecreatetruecolor($width_out,$height_out);
     $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
     imagefill($image_out,0,0,$bg_color);
     imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
     imagejpeg($image_out, $filename);
     $NovaLateral = imagesx($image_out);
+    //se muito grande, resize
     if($NovaLateral > 900){
         echo '<br>'.$NovaLateral.' >900';
         $tci = imagecreatetruecolor(800, 800);
