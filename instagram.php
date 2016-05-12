@@ -25,10 +25,10 @@ function TransformaImg($target){
     imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
     imagejpeg($image_out, $filename);
     $NovaLateral = imagesx($image_out);
-    if($NovaLateral > 500){
-        echo '<br>'.$NovaLateral.' >500';
-        $tci = imagecreatetruecolor(400, 400);
-        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 400, 400, $NovaLateral, $NovaLateral);
+    if($NovaLateral > 900){
+        echo '<br>'.$NovaLateral.' >900';
+        $tci = imagecreatetruecolor(800, 800);
+        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 800, 800, $NovaLateral, $NovaLateral);
         imagejpeg($tci, $filename);
     }
     //imagejpeg($image_out);
@@ -84,7 +84,7 @@ function BingSearch($busca){
     foreach($jsonobj->d->results as $value){                        
         echo('<li class="resultlistitem"><a href="' . $value->MediaUrl . '">');
         echo('<img src="' . $value->Thumbnail->MediaUrl. '"></li>');
-        TransformaImg($value->MediaUrl);
+        TransformaImg($value->Thumbnail->MediaUrl);
     }
     echo("</ul>");
     //return $value->MediaUrl;
