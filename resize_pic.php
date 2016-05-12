@@ -15,7 +15,7 @@ $ext = 'gif';
 //$im=imagecreatefromjpeg ($imgPath);
 $filename = 'image3.jpg';
 $im = $img;
-$width=ImageSX($im); $height=ImageSY($im); $ratio=16/9;
+$width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
 $width_out=$width; $height_out=$height;
 if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
 $left=round(($width_out-$width)/2);
