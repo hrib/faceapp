@@ -3,7 +3,8 @@
 function PegaImagem(){
     $busca_array = array('elly tran hot','anri sugihara hot','asian boobs','hot asian girl', 'sexy asian female');
     $busca = $busca_array[mt_rand(0, sizeof($busca_array)-1)];
-    $fileurl = BingSearch($busca);
+    //$fileurl = BingSearch($busca);
+    $fileurl = 'http://i.imgur.com/FCnKV5M.jpg';
     $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($opts);
     $header = file_get_contents($fileurl, FALSE, $context);
