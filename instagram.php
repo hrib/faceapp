@@ -83,8 +83,8 @@ function TransformaImg($target){
     $ratio = $NovaW/$NovaH;
     if($NovaH > 900 OR $NovaW > 900){
         echo '<br>'.$NovaW.' ou '.$NovaH.' >900';
-        $tci = imagecreatetruecolor(750, 750*$ratio);
-        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 750, 750*$ratio, $NovaW, $NovaH);
+        $tci = imagecreatetruecolor(750*$ratio, 750);
+        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 750*$ratio, 750, $NovaW, $NovaH);
         imagejpeg($tci, $filename);
     } else{
         $filename = $novaimg;
