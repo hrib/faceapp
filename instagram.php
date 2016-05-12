@@ -23,16 +23,16 @@ function TransformaImg($target){
     $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
     imagefill($image_out,0,0,$bg_color);
     imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
-    
+    imagejpeg($image_out, $filename);
     $NovaLateral = imagesx($image_out);
     if($NovaLateral > 500){
         echo '<br>'.$NovaLateral.' >500';
         $tci = imagecreatetruecolor(400, 400);
         imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 400, 400, $NovaLateral, $NovaLateral);
-        imagejpeg($tci, $image_out);
+        imagejpeg($tci, $filename);
     }
     //imagejpeg($image_out);
-    imagejpeg($image_out, $filename);
+    
     echo '<br><img src="' . $filename . '">' . imagesx($image_out) .'x'. imagesy($image_out);
     return $filename;
 }
