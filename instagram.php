@@ -71,23 +71,24 @@ function TransformaImg($target){
         $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
         imagefill($image_out,0,0,$bg_color);
         imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
-        imagejpeg($image_out, $filename);
-        $filenamepreto = $filename
+        imagejpeg($image_out, $filenamepreto);
         echo '<br><img src="' . $filenamepreto . '">preto '. imagesx(imagecreatefromjpeg($filenamepreto)) .'x'. imagesy(imagecreatefromjpeg($filenamepreto));
+        $novaimg = $filenamepreto;
     } else{
-        $filename = $filenamecrop;
+        $novaimg = $filenamecrop;
     }
     //se muito grande, resize
-    $NovaW = imagesx(imagecreatefromjpeg($filename));
-    $NovaH = imagesy(imagecreatefromjpeg($filename));
+    $NovaW = imagesx(imagecreatefromjpeg($novaimg));
+    $NovaH = imagesy(imagecreatefromjpeg($novaimg));
     $ratio = $NovaW/$NovaH;
     if($NovaH > 900 OR $NovaW > 900){
         echo '<br>'.$NovaW.' ou '.$NovaH.' >900';
         $tci = imagecreatetruecolor(750, 750*$ratio);
         imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 750, 750*$ratio, $NovaW, $NovaH);
         imagejpeg($tci, $filename);
+    } else{
+        $filename = $novaimg;
     }
-    //imagejpeg($image_out);
     
     echo '<br><img src="' . $filename . '">final ' . imagesx(imagecreatefromjpeg($filename)) .'x'. imagesy(imagecreatefromjpeg($filename));
     return $filename;
