@@ -3,6 +3,7 @@
 function TransformaImg($target){
     //$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
     $filename = 'imagesqr'.mt_rand(1,1000)*mt_rand(1,1000).'.jpg';
+    $filenamecrop = 'imagecrop'.mt_rand(1,1000)*mt_rand(1,1000).'.jpg';
     $ext = 'jpg';
     $img = "";
     $ext = strtolower($ext);
@@ -46,8 +47,8 @@ function TransformaImg($target){
                        0, 0,
                        $new_width, $new_height,
                        $width, $height);
-    imagejpeg($thumb, $filename, 80);
-    echo '<br><img src="' . $filename . '">';
+    imagejpeg($thumb, $filenamecrop, 80);
+    echo '<br><img src="' . $filenamecrop . '">';
 
 
 
@@ -57,7 +58,7 @@ function TransformaImg($target){
     
     
     //preenche de preto a outra metade do erro
-    $im = imagecreatefromjpeg($filename);
+    $im = imagecreatefromjpeg($filenamecrop);
     $width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
     $width_out=$width; $height_out=$height;
     if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
