@@ -58,23 +58,31 @@ function TransformaImg($target){
     
     
     //preenche de preto a outra metade do erro
-    $im = imagecreatefromjpeg($filenamecrop);
-    $width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
-    $width_out=$width; $height_out=$height;
-    if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
-    $left=round(($width_out-$width)/2);
-    $top=round(($height_out-$height)/2);    
-    $image_out = imagecreatetruecolor($width_out,$height_out);
-    $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
-    imagefill($image_out,0,0,$bg_color);
-    imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
-    imagejpeg($image_out, $filename);
-    $NovaLateral = imagesx($image_out);
+    if($width/$height > 1.20 OR $width/$height < 0.80){
+        $im = imagecreatefromjpeg($filenamecrop);
+        $width=ImageSX($im); $height=ImageSY($im); 
+        if($width>$height){$ratio=1.20;}else{$ratio=0.80;}
+        $width_out=$width; $height_out=$height;
+        if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
+        $left=round(($width_out-$width)/2);
+        $top=round(($height_out-$height)/2);    
+        $image_out = imagecreatetruecolor($width_out,$height_out);
+        $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
+        imagefill($image_out,0,0,$bg_color);
+        imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
+        imagejpeg($image_out, $filename);
+    }else{
+        $filename = $filenamecrop;
+    }
     //se muito grande, resize
-    if($NovaLateral > 900){
-        echo '<br>'.$NovaLateral.' >900';
-        $tci = imagecreatetruecolor(800, 800);
-        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 800, 800, $NovaLateral, $NovaLateral);
+    
+    $NovaW = imagesx((imagecreatefromjpeg($filename));
+    $NovaH = imagesy((imagecreatefromjpeg($filename));
+    $ratio = $NovaW/$NovaH;
+    if($NovaH > 900 OR $NovaW > 900){
+        echo '<br>'.$NovaW.' ou '.$NovaH.' >900';
+        $tci = imagecreatetruecolor(750, 750*$ratio);
+        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 750, 750*$ratio, $NovaW, $NovaH);
         imagejpeg($tci, $filename);
     }
     //imagejpeg($image_out);
