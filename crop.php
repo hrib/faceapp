@@ -30,7 +30,7 @@ class cropImage{
 }  
 
     $image = new cropImage;
-    $image->setImage(load_file_from_url($_GET['src']));
+    $image->setImage(load_file_from_url($_GET['http://i.imgur.com/FCnKV5M.jpg']));
     $image->renderImage();
 
 ?>
