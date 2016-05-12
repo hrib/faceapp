@@ -71,13 +71,12 @@ function TransformaImg($target){
         imagefill($image_out,0,0,$bg_color);
         imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
         imagejpeg($image_out, $filename);
-    }else{
+    } else{
         $filename = $filenamecrop;
     }
     //se muito grande, resize
-    
-    $NovaW = imagesx((imagecreatefromjpeg($filename));
-    $NovaH = imagesy((imagecreatefromjpeg($filename));
+    $NovaW = imagesx(imagecreatefromjpeg($filename));
+    $NovaH = imagesy(imagecreatefromjpeg($filename));
     $ratio = $NovaW/$NovaH;
     if($NovaH > 900 OR $NovaW > 900){
         echo '<br>'.$NovaW.' ou '.$NovaH.' >900';
