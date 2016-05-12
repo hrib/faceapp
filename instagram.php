@@ -188,6 +188,7 @@ if(strpos($login[1], "Sorry, an error occurred while processing this request."))
                         $media_id = $obj['media_id'];
                         $device_id = "android-".$guid;
                         $data = '{"share_to_facebook":"1","fb_access_token":"'.$fbtoken.'","edits":{"crop_original_size":['.$w_orig.','.$h_orig.'],"crop_zoom":'.$factor.',"crop_center":[0.0,-0.0]},"extra":{"source_width":'.$w_orig.'%,"source_height":'.$h_orig.'%},"device_id":"'.$device_id.'","guid":"'.$guid.'","media_id":"'.$media_id.'","caption":"'.trim($caption).'","device_timestamp":"'.time().'","source_type":"5","filter_type":"0","extra":"{}","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}';   
+                        echo '<br>'$data'<br>';
                         $sig = GenerateSignature($data);
                         $new_data = 'signed_body='.$sig.'.'.urlencode($data).'&ig_sig_key_version=4';
 
