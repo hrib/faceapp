@@ -1,5 +1,42 @@
 <?php
 
+function TransformaImg($target){
+    //$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
+    $filename = 'image'.mt_rand(0,1000).'.jpg';
+    $ext = 'jpg';
+    $img = "";
+    $ext = strtolower($ext);
+    if ($ext == "gif"){ 
+      $img = imagecreatefromgif($target);
+    } else if($ext =="png"){ 
+      $img = imagecreatefrompng($target);
+    } else { 
+      $img = imagecreatefromjpeg($target);
+    }
+    $im = $img;
+    $width=ImageSX($im); $height=ImageSY($im); $ratio=1/1;
+    $width_out=$width; $height_out=$height;
+    if ($height_out*$ratio<$width_out) {$height_out=floor($width_out/$ratio);} else {$width_out=floor($height_out*$ratio);}
+    $left=round(($width_out-$width)/2);
+    $top=round(($height_out-$height)/2);
+    $image_out = imagecreatetruecolor($width_out,$height_out);
+    $bg_color = ImageColorAllocate ($image_out, 0, 0, 0);
+    imagefill($image_out,0,0,$bg_color);
+    imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
+    
+    $NovaLateral = imagesx($image_out);
+    if($Novowidth > 960){
+        $tci = imagecreatetruecolor(800, 800);
+        imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 800, 800, $NovaLateral, $NovaLateral);
+    }
+    //imagejpeg($image_out);
+    imagejpeg($image_out, $filename);
+    echo '<br><img src="' . $filename . '">' . imagesx($image_out) .'x'. imagesy($image_out);
+    return $filename;
+}
+
+
+
 function PegaImagem(){
     $busca_array = array('elly tran hot','anri sugihara hot','asian boobs','hot asian girl', 'sexy asian female');
     $busca = $busca_array[mt_rand(0, sizeof($busca_array)-1)];
@@ -39,11 +76,13 @@ function BingSearch($busca){
     $valor = $resultado[mt_rand(0,49)];
     echo '<br>';
     echo '<img src="' . $valor->MediaUrl . '">';
+    TransformaImg($valor->MediaUrl);
     echo '<br> ________________ <br>';
     echo('<ul ID="resultList">');
     foreach($jsonobj->d->results as $value){                        
         echo('<li class="resultlistitem"><a href="' . $value->MediaUrl . '">');
         echo('<img src="' . $value->Thumbnail->MediaUrl. '"></li>');
+        TransformaImg($value->Thumbnail->MediaUrl);
     }
     echo("</ul>");
     //return $value->MediaUrl;
@@ -128,6 +167,7 @@ $password = 'wsimetria1';
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
 $filename = PegaImagem();
+$filename = TransformaImg($filename);
 list($w_orig, $h_orig) = getimagesize($filename);
 echo '<br>' . $w_orig . 'x' . $h_orig . '<br>';
 $factor = $w_orig/$h_orig > 1 ? round($w_orig/$h_orig,7) : round($h_orig/$w_orig,7);
