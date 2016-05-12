@@ -8,8 +8,23 @@ ak_img_resize($target, $newcopy, $w, $h, $ext);
 echo '<img src="' . $newcopy . '">';
 
 
+$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
+$ext = 'gif';
+    $img = "";
+    $ext = strtolower($ext);
+    if ($ext == "gif"){ 
+      $img = imagecreatefromgif($target);
+    } else if($ext =="png"){ 
+      $img = imagecreatefrompng($target);
+    } else { 
+      $img = imagecreatefromjpeg($target);
+    }
 
-$image = imagecreatefromjpeg($_GET[$target]);
+//$image = imagecreatefromjpeg($_GET[$target]);
+$image = $img;
+
+
+
 $filename = 'image2.jpg';
 
 $thumb_width = 200;
