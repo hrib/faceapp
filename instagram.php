@@ -3,8 +3,8 @@
 function PegaImagem(){
     $busca_array = array('elly tran hot','anri sugihara hot','asian boobs','hot asian girl', 'sexy asian female');
     $busca = $busca_array[mt_rand(0, sizeof($busca_array)-1)];
-    //$fileurl = BingSearch($busca);
-    $fileurl = 'http://i.imgur.com/FCnKV5M.jpg';
+    $fileurl = BingSearch($busca);
+    //$fileurl = 'http://i.imgur.com/FCnKV5M.jpg';
     $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($opts);
     $header = file_get_contents($fileurl, FALSE, $context);
@@ -29,7 +29,7 @@ function BingSearch($busca){
         'header'  => "Authorization: Basic " . base64_encode($accountkey . ":" . $accountkey)
         )
     ));
-    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&$skip=' . mt_rand(0,99);
+    $request = $searchUrl . urlencode( '\'' . $queryItem . '\'').'&Adult=%27Moderate%27&qft=+filterui:aspect-square&$skip=' . mt_rand(0,99);
     echo($request);
     $response = file_get_contents($request, 0, $context);
     $jsonobj = json_decode($response);
@@ -129,7 +129,7 @@ $filename = PegaImagem();
 list($w_orig, $h_orig) = getimagesize($filename);
 echo '<br>' . $w_orig . 'x' . $h_orig . '<br>';
 $factor = $w_orig/$h_orig > 1 ? round($w_orig/$h_orig,7) : round($h_orig/$w_orig,7);
-$factor = 1.2005470;
+//$factor = 1.2005470;
 //$fbtoken = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
 //$fbtoken = 'EAABwzLixnjYBAMXFS65Oio2bQq6KtDe0TBSUZBzfzZAaML5b2cb65vtaQaAV9ZAHCyGmMYA3iZCzV5j1Om5GtY0wnwqdGbjmcruD1frErXSzXAHcxrsRqycZBoPvpBBixzcCLH6ZCHXWwLXiZCTlbJtwLXbebHyE1pP5ihrUgjfWA0iXggg0gxZC6h39zDS3ypEZD';
 $fbtoken = 'EAABwzLixnjYBAJbATMzvNrXQ2TgOUZAZBVGHWjDZAlZCtajF5oZBRCCLVoGZCnwyjdfXJp1ePwqkmxtBqN4FXKiPGhV9yyI8D1Ab8ZBPPDV0RqZBhJRtkjUqCAdKi1S21tl5c4k9ZCJs04ekaqzgd8FLBgRl4pvgWU03CmGiTGZAuSo73d5wN0NndaTZAJwEftdAMcZD';
