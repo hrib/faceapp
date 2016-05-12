@@ -25,7 +25,7 @@ function TransformaImg($target){
     imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
     
     $NovaLateral = imagesx($image_out);
-    if($Novowidth > 960){
+    if($NovaLateral > 960){
         $tci = imagecreatetruecolor(800, 800);
         imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 800, 800, $NovaLateral, $NovaLateral);
     }
