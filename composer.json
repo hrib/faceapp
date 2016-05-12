@@ -1,14 +1,14 @@
 {
-    "name": "hdose/aposta",
+    "name": "hrib/aposta",
     "description": "aposta",
     "keywords": ["aposta", "facebook"],
     "type": "library",
-    "homepage": "https://github.com/hugodose/aposta",
+    "homepage": "https://github.com/hrib/aposta",
     "license": "MyPlatform",
     "authors": [
         {
             "name": "Me",
-            "homepage": "https://github.com/hugodose/aposta/contributors"
+            "homepage": "https://github.com/hrib/aposta/contributors"
         }
     ],
     "require": {
