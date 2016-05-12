@@ -29,6 +29,7 @@ function TransformaImg($target){
         echo '<br>'.$NovaLateral.' >500';
         $tci = imagecreatetruecolor(400, 400);
         imagecopyresampled($tci, $image_out, 0, 0, 0, 0, 400, 400, $NovaLateral, $NovaLateral);
+        imagejpeg($tci, $image_out);
     }
     //imagejpeg($image_out);
     imagejpeg($image_out, $filename);
