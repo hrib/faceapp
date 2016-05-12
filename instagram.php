@@ -4,6 +4,7 @@ function TransformaImg($target){
     //$target = 'https://media4.giphy.com/media/l41lZMjgleWARCZwI/200_s.gif';
     $filename = 'imagesqr'.mt_rand(1,1000)*mt_rand(1,1000).'.jpg';
     $filenamecrop = 'imagecrop'.mt_rand(1,1000)*mt_rand(1,1000).'.jpg';
+    $filenamepreto = 'imagepreto'.mt_rand(1,1000)*mt_rand(1,1000).'.jpg';
     $ext = 'jpg';
     $img = "";
     $ext = strtolower($ext);
@@ -71,7 +72,8 @@ function TransformaImg($target){
         imagefill($image_out,0,0,$bg_color);
         imagecopy($image_out, $im, $left, $top, 0, 0, $width,$height);
         imagejpeg($image_out, $filename);
-        echo '<br><img src="' . $filename . '">preto';
+        $filenamepreto = $filename
+        echo '<br><img src="' . $filenamepreto . '">preto';
     } else{
         $filename = $filenamecrop;
     }
