@@ -5,8 +5,29 @@ $newcopy = 'image.jpg';
 $w = 400;
 $h = 400;
 $ext = 'jpg';
-ak_img_resize($target, $newcopy, $w, $h, $ext);
-echo '<img src="' . $newcopy . '">';
+//ak_img_resize($target, $newcopy, $w, $h, $ext);
+//echo '<img src="' . $newcopy . '">';
+
+$im = new imagick($target);
+$imageprops = $im->getImageGeometry();
+$width = $imageprops['width'];
+$height = $imageprops['height'];
+if($width > $height){
+    $newHeight = 80;
+    $newWidth = (80 / $height) * $width;
+}else{
+    $newWidth = 80;
+    $newHeight = (80 / $width) * $height;
+}
+$im->resizeImage($newWidth,$newHeight, imagick::FILTER_LANCZOS, 0.9, true);
+$im->cropImage (80,80,0,0);
+$im->writeImage( "image.jpg" );
+echo '<img src="image.jpg">';
+
+
+
+
+
 
 function ak_img_resize($target, $newcopy, $w, $h, $ext) {
     list($w_orig, $h_orig) = getimagesize($target);
