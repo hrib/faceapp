@@ -53,7 +53,7 @@ foreach($lista_de_pages as $page){
           
           $testString = $comentario['message'];
           $z =  preg_replace("/[^0-9xX]/", "#", $testString);
-          echo $z.'<br>';
+          echo '<br>'$testString.':'.$z.'<br>';
           $tags = explode('#',$z);
           foreach ($tags as $tag)
           {
