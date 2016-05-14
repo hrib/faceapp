@@ -15,14 +15,14 @@ if (!pg_num_rows($result)) {
 } else {
   print "Tables in your database:\n";
   while ($row = pg_fetch_row($result)) { 
-    print("- $row[0] :"); 
-    print("- $row[1] :"); 
-    print("- $row[2] :"); 
-    print("- $row[3] :"); 
-    print("- $row[4] :");
-    print("- $row[5] :"); 
-    print("- $row[6] :"); 
-    print("- $row[7]\n");
+    print("$row[0] :"); 
+    print("$row[1] :"); 
+    print("$row[2] :"); 
+    print("$row[3] :"); 
+    print("$row[4] :");
+    print("$row[5] :"); 
+    print("$row[6] :"); 
+    print("$row[7]\n");
   }
 }
 print "\n";
