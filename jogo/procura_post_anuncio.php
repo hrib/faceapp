@@ -60,14 +60,14 @@ foreach($lista_de_pages as $page){
               echo $tag.'<br>';
               $Valido = 0;
               for($a=0;$a=strlen($tag)-1;$a++){
-                if(is_numeric(substr($tag,$a)) OR substr($tag,$a) = 'x' OR substr($tag,$a) = 'X'){
+                if(is_numeric(substr($tag,$a,1)) OR substr($tag,$a,1) = 'x' OR substr($tag,$a,1) = 'X'){
                   $Valido = 1;
                 }else{
                   $Valido = 0;
                   break;
                 }
               }
-              if($Valido = 1){
+              if($Valido == 1){
                 $UserAposta = $tag;
                 break;
               }
