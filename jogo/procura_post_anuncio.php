@@ -10,27 +10,37 @@ $fb = new Facebook\Facebook([
   'default_access_token' => $app_id . '|' . $app_secret
 ]);
 $lista_de_pages = array('theballisonthetable','798157940318724');
+echo '<table>';
 foreach($lista_de_pages as $page){
   $response = $fb->get('/'.$page.'?fields=feed.limit(500)');
   $graphNode = $response->getGraphNode();
   foreach ($graphNode['feed'] as $key => $value) {
-    echo '<br>' .$page.':'. $key . ':' . $value['id'] . ':' . $value['message'] . '<br>';
-    echo '___________________________________________________';
+    echo '<tr>';
+    echo '<td>' .$page.':'. $key . ':' . $value['id'] . ':' . $value['message'] . '</td>';
+    echo '</tr>';
     if (strpos($value['message'], '#apostinha') !== false) {
       echo '<br>Achou Post #apostinha<br>';    
       $response = $fb->get($value['id'].'?fields=comments.limit(999)');
       //var_dump($response->getDecodedBody());
       $graphNode = $response->getGraphNode();
       //echo $graphNode['feed'][0]['message'] . '<br><br>';
+      echo '<table>';
       foreach ($graphNode['comments'] as $key => $comentario) {
-          echo '<br>' . $key .  ':' . $comentario['message'] . '<br>';
+          echo '<tr>';
+          echo '<td>' . $key .  ':' . $comentario['message'] . '</td>';
           //echo '<br>' . $key .  ':' . $comentario['created_time'] . '<br>';
-          echo '<br>' . $key .  ':' . $comentario['from']['name'] . '<br>';
-          echo '<br>' . $key .  ':' . $comentario['from']['id'] . '<br>';
+          echo '<td>' . $key .  ':' . $comentario['from']['name'] . '</td>';
+          echo '<td>' . $key .  ':' . $comentario['from']['id'] . '</td>';
+          echo '<td>' . var_dump($value['created_time']) . '</td>'; //precisa disso pra funcionar
+          $created_timeSTR = $value['created_time']->date;
+          $created_time = strtotime($created_timeSTR);  //unix
+          echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
+          echo '</tr>';
       }
+      echo '</table>';
     }
   }
 }
-
+echo '</table>';
 echo '<br>fim<br>';
 ?>
