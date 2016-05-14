@@ -26,13 +26,12 @@ $zquery = "CREATE TABLE Apostas ("
     . "UserApostaTime VARCHAR(50)"
     . ");";
 
-$zquery = "INSERT INTO dados (id1, id2, id3, id4) VALUES"
-    . "('xmassage', '121011974285544429', '129b28ee403af9889f18c3fd6f3b9135c8', 'E12AAOYYpZCPyZB0BALd0WuUAuWTWKHIUCGzvCiB8jY3RwLZAUpdpvb7d7tmhIbmNcZAuIxX1vYsZAQQkSuHQ3TknkLDGHLQcnJ2oyVJZCtaRXPqCmblfcNjy3S5ZCgw574urWAggppaIKCP6rpQvD0ObUKh8pnnH7KOzo2352mZCHuzgZDZD'),"
-    . "('xxx', 'xxxx', 'xxx', 'xx');";
+$query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime FROM Apostas) VALUES"
+    . "('xxx', 'xxxx', 'xxx', 'xx', 'xxx', 'xxxx', 'xxx', 'xx');";
 
 $zquery = "UPDATE dados SET id2 = '121011974285544429' , id3 = '129b28ee403af9889f18c3fd6f3b9135c8', id4 = 'E12AAOYYpZCPyZB0BALd0WuUAuWTWKHIUCGzvCiB8jY3RwLZAUpdpvb7d7tmhIbmNcZAuIxX1vYsZAQQkSuHQ3TknkLDGHLQcnJ2oyVJZCtaRXPqCmblfcNjy3S5ZCgw574urWAggppaIKCP6rpQvD0ObUKh8pnnH7KOzo2352mZCHuzgZDZD' WHERE id1 = 'xmassage'; ";
 
-$query = "SELECT JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime FROM Apostas";
+$zquery = "SELECT JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime FROM Apostas";
 
 echo $query.'<br>';
 $result = $db->query($query);
