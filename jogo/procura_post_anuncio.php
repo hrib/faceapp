@@ -58,22 +58,25 @@ foreach($lista_de_pages as $page){
           foreach ($tags as $tag)
           {
               echo $tag.'<br>';
-              $Valido = 0;
-              for($a=0;$a < strlen($tag);$a++){
-                if((is_numeric(substr($tag,$a,1)) == TRUE) OR (substr($tag,$a,1) == 'x') OR (substr($tag,$a,1) == 'X')){
-                  echo substr($tag,$a,1);
-                  echo ':valido<br>';
-                  $Valido = 1;
-                }else{
-                  echo substr($tag,$a,1);
-                  echo ':invalido<br>';
+              if( (strlen($tag) >= 3) AND ((strpos($tag,'x') !== FALSE) OR (strpos($tag,'X') !== FALSE)))
+              {
                   $Valido = 0;
-                  break;
-                }
-              }
-              if($Valido == 1){
-                $UserAposta = $tag;
-                break;
+                  for($a=0;$a < strlen($tag);$a++){
+                    if((is_numeric(substr($tag,$a,1)) == TRUE) OR (substr($tag,$a,1) == 'x') OR (substr($tag,$a,1) == 'X') ){
+                      echo substr($tag,$a,1);
+                      echo ':valido<br>';
+                      $Valido = 1;
+                    }else{
+                      echo substr($tag,$a,1);
+                      echo ':invalido<br>';
+                      $Valido = 0;
+                      break;
+                    }
+                  }
+                  if($Valido == 1){
+                    $UserAposta = $tag;
+                    break;
+                  }
               }
           }
           
