@@ -51,10 +51,11 @@ foreach($lista_de_pages as $page){
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
           
-          $testString = $comentario['message'];
-          $z =  preg_replace("/[^0-9xX]/", "#", $testString);
-          echo '<br>'.$testString.':'.$z.'<br>';
-          $tags = explode('#',$z);
+          
+          $string_aux =  preg_replace("/[^0-9xX]/", "#", $comentario['message']);
+          echo '<br>'.$comentario['message'].':'.$string_aux.'<br>';
+          $tags = explode('#',$string_aux);
+          $UserAposta = '';
           foreach ($tags as $tag)
           {
               echo $tag.'<br>';
@@ -75,13 +76,11 @@ foreach($lista_de_pages as $page){
                   }
                   if($Valido == 1){
                     $UserAposta = $tag;
+                    InsereTabela($JogoID, $page, $post['id'], $comentario['id'], $comentario['from']['id'], $comentario['from']['name'], $UserAposta, $created_time);
                     break;
                   }
               }
           }
-          
-          
-          InsereTabela($JogoID, $page, $post['id'], $comentario['id'], $comentario['from']['id'], $comentario['from']['name'], $UserAposta, $created_time);
       }
     }
   }
