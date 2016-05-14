@@ -17,13 +17,14 @@ foreach($lista_de_pages as $page){
   foreach ($graphNode['feed'] as $key => $value) {
     echo '<tr>';
     echo '<td>' .$page.':'. $key . ':' . $value['id'] . ':' . $value['message'] . '</td>';
+    echo '</tr>';
     if (strpos($value['message'], '#apostinha') !== false) {
       //echo '<br>Achou Post #apostinha<br>';    
       $response = $fb->get($value['id'].'?fields=comments.limit(999)');
       //var_dump($response->getDecodedBody());
       $graphNode = $response->getGraphNode();
       //echo $graphNode['feed'][0]['message'] . '<br><br>';
-      
+      echo '<tr>';
       echo '<table border="1" style="font-family:arial; font-size:7px;">';
       foreach ($graphNode['comments'] as $key => $comentario) {
           echo '<tr>';
@@ -38,8 +39,9 @@ foreach($lista_de_pages as $page){
           echo '</tr>';
       }
       echo '</table>';
+      echo '</tr>';
     }
-    echo '</tr>';
+
   }
 }
 echo '</table>';
