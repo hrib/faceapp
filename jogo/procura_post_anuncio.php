@@ -24,8 +24,8 @@ foreach($lista_de_pages as $page){
       //var_dump($response->getDecodedBody());
       $graphNode = $response->getGraphNode();
       //echo $graphNode['feed'][0]['message'] . '<br><br>';
-      echo '<tr>';
-      echo '<table border="1" style="font-family:arial; font-size:7px;">';
+      //echo '<tr>';
+      //echo '<table border="1" style="font-family:arial; font-size:7px;">';
       foreach ($graphNode['comments'] as $key => $comentario) {
           echo '<tr>';
           echo '<td>' . $key .  ':' . $comentario['message'] . '</td>';
@@ -38,8 +38,8 @@ foreach($lista_de_pages as $page){
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
       }
-      echo '</table>';
-      echo '</tr>';
+      //echo '</table>';
+      //echo '</tr>';
     }
 
   }
