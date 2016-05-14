@@ -53,18 +53,24 @@ foreach($lista_de_pages as $page){
           
           $testString = $comentario['message'];
           $z =  preg_replace("/[^0-9xX]/", "#", $testString);
-          echo '<br>'$testString.':'.$z.'<br>';
+          echo '<br>'.$testString.':'.$z.'<br>';
           $tags = explode('#',$z);
           foreach ($tags as $tag)
           {
               echo $tag.'<br>';
-              //$tags_sem_espaco = explode(' ',$tag);
-              //foreach($tags_sem_espaco as $tag_sem_espaco)
-              //{
-                //echo $tag_sem_espaco.'<br>';
-              $UserAposta = $tag;
-                //break;
-              //}
+              $Valido = 0;
+              for(a=0,a=strlen($tag)-1,a++){
+                if(is_numeric(substr($tag,$a)) OR substr($tag,$a) = 'x' OR substr($tag,$a) = 'X'){
+                  $Valido = 1;
+                }else{
+                  $Valido = 0;
+                  break;
+                }
+              }
+              if($Valido = 1){
+                $UserAposta = $tag;
+                break;
+              }
           }
           
           
