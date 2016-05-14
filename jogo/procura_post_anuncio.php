@@ -50,16 +50,21 @@ foreach($lista_de_pages as $page){
           $created_time = strtotime($created_timeSTR); //unix
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
-          $tags = explode('#',$comentario['message']);
+          
+          $testString = $comentario['message'];
+          $z =  preg_replace("/[^0-9xX]/", "", $testString);
+          echo $z.'<br>';
+          $tags = explode('#',$z);
           foreach ($tags as $tag)
           {
-              $tags_sem_espaco = explode(' ',$tag);
-              foreach($tags_sem_espaco as $tag_sem_espaco)
-              {
-                echo $tag_sem_espaco.'<br>';
-                $UserAposta = $tag_sem_espaco;
-                break;
-              }
+              echo $tag.'<br>';
+              //$tags_sem_espaco = explode(' ',$tag);
+              //foreach($tags_sem_espaco as $tag_sem_espaco)
+              //{
+                //echo $tag_sem_espaco.'<br>';
+                //$UserAposta = $tag_sem_espaco;
+                //break;
+              //}
           }
           
           
