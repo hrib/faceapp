@@ -61,8 +61,12 @@ foreach($lista_de_pages as $page){
               $Valido = 0;
               for($a=0;$a=strlen($tag)-1;$a++){
                 if((is_numeric(substr($tag,$a,1)) == TRUE) OR (substr($tag,$a,1) == 'x') OR (substr($tag,$a,1) == 'X')){
+                  echo substr($tag,$a,1);
+                  echo ':valido<br>';
                   $Valido = 1;
                 }else{
+                  echo substr($tag,$a,1);
+                  echo ':invalido<br>';
                   $Valido = 0;
                   break;
                 }
