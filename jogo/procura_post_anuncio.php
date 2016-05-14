@@ -49,6 +49,7 @@ foreach($lista_de_pages as $page){
           $tags = explode('#',$comentario['message']);
           foreach ($tags as $tag)
           {
+              echo $tag.'<br>';
               $UserAposta = $tag;
               break;
           }
