@@ -105,6 +105,6 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
   $result = $db->query($query);
   echo var_dump($result);
   $result->closeCursor();
-  }
+}
   
 ?>
