@@ -57,7 +57,7 @@ foreach($lista_de_pages as $page){
               foreach($tags_sem_espaco as $tag_sem_espaco)
               {
                 echo $tag_sem_espaco.'<br>';
-                $UserAposta = $tag;
+                $UserAposta = $tag_sem_espaco;
                 break;
               }
           }
