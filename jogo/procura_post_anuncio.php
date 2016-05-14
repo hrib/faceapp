@@ -90,7 +90,7 @@ echo '<br>fim<br>';
 
 
 function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName, $UserAposta, $UserApostaTime){
-  //$dbopts = parse_url(getenv('DATABASE_URL'));
+  $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "pgsql:"
       . "host=" . $dbopts["host"] . ";"
       . "dbname=". ltrim($dbopts["path"],'/') . ";"
@@ -98,13 +98,13 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
       . "port=" . $dbopts["port"] . ";"
       . "sslmode=require;"
       . "password=" . $dbopts["pass"];
-  //$db = new PDO($dsn);
+  $db = new PDO($dsn);
   $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES"
       . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', ".$UserID.", '".$UserName."', '".$UserAposta."', ".$UserApostaTime.");";
-  echo '<br>'.$query;
-  //$result = $db->query($query);
-  //echo var_dump($result);
-  //$result->closeCursor();
+  echo '<br>'.$query.'<br>';
+  $result = $db->query($query);
+  echo var_dump($result);
+  $result->closeCursor();
   }
   
 ?>
