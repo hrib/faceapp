@@ -17,13 +17,13 @@ foreach($lista_de_pages as $page){
   foreach ($graphNode['feed'] as $key => $value) {
     echo '<tr>';
     echo '<td>' .$page.':'. $key . ':' . $value['id'] . ':' . $value['message'] . '</td>';
-    echo '</tr>';
     if (strpos($value['message'], '#apostinha') !== false) {
       //echo '<br>Achou Post #apostinha<br>';    
       $response = $fb->get($value['id'].'?fields=comments.limit(999)');
       //var_dump($response->getDecodedBody());
       $graphNode = $response->getGraphNode();
       //echo $graphNode['feed'][0]['message'] . '<br><br>';
+      
       echo '<table border="1" style="font-family:arial; font-size:7px;">';
       foreach ($graphNode['comments'] as $key => $comentario) {
           echo '<tr>';
@@ -31,7 +31,7 @@ foreach($lista_de_pages as $page){
           //echo '<br>' . $key .  ':' . $comentario['created_time'] . '<br>';
           echo '<td>' . $key .  ':' . $comentario['from']['name'] . '</td>';
           echo '<td>' . $key .  ':' . $comentario['from']['id'] . '</td>';
-          echo '<td>' . var_dump($value['created_time']) . '</td>'; //precisa disso pra funcionar
+          //echo '<td>' . var_dump($value['created_time']) . '</td>'; //precisa disso pra funcionar
           $created_timeSTR = $value['created_time']->date;
           $created_time = strtotime($created_timeSTR);  //unix
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
@@ -39,6 +39,7 @@ foreach($lista_de_pages as $page){
       }
       echo '</table>';
     }
+    echo '</tr>';
   }
 }
 echo '</table>';
