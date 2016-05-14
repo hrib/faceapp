@@ -100,7 +100,7 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
   $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES"
-      . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', ".$UserID.", '".$UserName."', '".$UserAposta."', ".$UserApostaTime.");";
+      . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', ".$UserID.", '".$UserName."', '".$UserAposta."', '".$UserApostaTime."');";
   echo '<br>'.$query.'<br>';
   $result = $db->query($query);
   echo var_dump($result);
