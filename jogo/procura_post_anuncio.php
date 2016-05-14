@@ -12,7 +12,7 @@ $fb = new Facebook\Facebook([
 $lista_de_pages = array('theballisonthetable','798157940318724');
 echo '<table>';
 foreach($lista_de_pages as $page){
-  $response = $fb->get('/'.$page.'?fields=feed.limit(500)');
+  $response = $fb->get('/'.$page.'?fields=feed.limit(100)');
   $graphNode = $response->getGraphNode();
   foreach ($graphNode['feed'] as $key => $value) {
     echo '<tr>';
