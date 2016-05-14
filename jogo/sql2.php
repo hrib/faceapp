@@ -22,7 +22,7 @@ if (!pg_num_rows($result)) {
     print("- $row[4] :");
     print("- $row[5] :"); 
     print("- $row[6] :"); 
-    print("- $row[7] :");
+    print("- $row[7]\n");
   }
 }
 print "\n";
