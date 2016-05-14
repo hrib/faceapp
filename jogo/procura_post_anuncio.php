@@ -26,10 +26,14 @@ foreach($lista_de_pages as $page){
       $tags = explode('#',$post['message']);
       foreach ($tags as $tag)
       {
-        echo $tag.'<br>';
-        if (strpos($tag, 'Jogo_') !== false) {
-          $JogoID = substr($tag,6);
-          break;
+        $tags_sem_espaco = explode(' ',$tag);
+        foreach($tags_sem_espaco as $tag_sem_espaco)
+        {
+          echo $tag_sem_espaco.'<br>';
+          if (strpos($tag_sem_espaco, 'Jogo_') !== false) {
+            $JogoID = substr($tag_sem_espaco,6);
+            break;
+          }
         }
       }
       
@@ -49,9 +53,13 @@ foreach($lista_de_pages as $page){
           $tags = explode('#',$comentario['message']);
           foreach ($tags as $tag)
           {
-              echo $tag.'<br>';
-              $UserAposta = $tag;
-              break;
+              $tags_sem_espaco = explode(' ',$tag);
+              foreach($tags_sem_espaco as $tag_sem_espaco)
+              {
+                echo $tag_sem_espaco.'<br>';
+                $UserAposta = $tag;
+                break;
+              }
           }
           
           
