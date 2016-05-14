@@ -22,6 +22,13 @@ foreach($lista_de_pages as $page){
     echo '<td>' .$page.':'. $key . ':' . $post['id'] . ':' . $post['message'] . '</td>';
     echo '</tr>';
     if (strpos($post['message'], '#apostinha') !== false) {
+      
+      $tags = explode('#',$post['message']);
+      foreach ($tags as $tag)
+      {
+        echo $tag.'<br>';
+      }
+      
       $response = $fb->get($post['id'].'?fields=comments.limit(999)');
       $graphNodePost = $response->getGraphNode();
       foreach ($graphNodePost['comments'] as $key => $comentario) {
