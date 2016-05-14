@@ -14,7 +14,7 @@ if (!pg_num_rows($result)) {
   print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
 } else {
   print "Tables in your database:\n";
-  while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+  while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); print("- $row[1]\n"); print("- $row[2]\n"); print("- $row[3]\n"); print("- $row[4]\n");}
 }
 print "\n";
 ?>
