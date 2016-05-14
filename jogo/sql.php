@@ -26,7 +26,7 @@ $zquery = "CREATE TABLE Apostas ("
     . "UserApostaTime VARCHAR(50)"
     . ");";
 
-$query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime FROM Apostas) VALUES"
+$query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime FROM Apostas) VALUES "
     . "('xxx', 'xxxx', 'xxx', 'xx', 'xxx', 'xxxx', 'xxx', 'xx');";
 echo $query.'<br>';
 $result = $db->query($query);
