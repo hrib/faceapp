@@ -10,7 +10,7 @@ $fb = new Facebook\Facebook([
   'default_access_token' => $app_id . '|' . $app_secret
 ]);
 $lista_de_pages = array('theballisonthetable','798157940318724');
-echo '<table>';
+echo '<table border="1" style="font-family:arial; font-size:7px;">';
 foreach($lista_de_pages as $page){
   $response = $fb->get('/'.$page.'?fields=feed.limit(100)');
   $graphNode = $response->getGraphNode();
@@ -19,12 +19,12 @@ foreach($lista_de_pages as $page){
     echo '<td>' .$page.':'. $key . ':' . $value['id'] . ':' . $value['message'] . '</td>';
     echo '</tr>';
     if (strpos($value['message'], '#apostinha') !== false) {
-      echo '<br>Achou Post #apostinha<br>';    
+      //echo '<br>Achou Post #apostinha<br>';    
       $response = $fb->get($value['id'].'?fields=comments.limit(999)');
       //var_dump($response->getDecodedBody());
       $graphNode = $response->getGraphNode();
       //echo $graphNode['feed'][0]['message'] . '<br><br>';
-      echo '<table>';
+      echo '<table border="1" style="font-family:arial; font-size:7px;">';
       foreach ($graphNode['comments'] as $key => $comentario) {
           echo '<tr>';
           echo '<td>' . $key .  ':' . $comentario['message'] . '</td>';
