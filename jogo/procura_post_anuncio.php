@@ -17,27 +17,48 @@ echo '<table border="1" style="font-family:arial; font-size:7px;">';
 foreach($lista_de_pages as $page){
   $response = $fb->get('/'.$page.'?fields=feed.limit(100)');
   $graphNode = $response->getGraphNode();
-  foreach ($graphNode['feed'] as $key => $value) {
+  foreach ($graphNode['feed'] as $key => $post) {
     echo '<tr>';
-    echo '<td>' .$page.':'. $key . ':' . $value['id'] . ':' . $value['message'] . '</td>';
+    echo '<td>' .$page.':'. $key . ':' . $post['id'] . ':' . $post['message'] . '</td>';
     echo '</tr>';
-    if (strpos($value['message'], '#apostinha') !== false) {
-      $response = $fb->get($value['id'].'?fields=comments.limit(999)');
-      $graphNode = $response->getGraphNode();
-      foreach ($graphNode['comments'] as $key => $comentario) {
+    if (strpos($post['message'], '#apostinha') !== false) {
+      $response = $fb->get($post['id'].'?fields=comments.limit(999)');
+      $graphNodePost = $response->getGraphNode();
+      foreach ($graphNodePost['comments'] as $key => $comentario) {
           echo '<tr>';
+          echo '<td>' . $key .  ':' . $comentario['id'] . '</td>';
           echo '<td>' . $key .  ':' . $comentario['message'] . '</td>';
           echo '<td>' . $key .  ':' . $comentario['from']['name'] . '</td>';
           echo '<td>' . $key .  ':' . $comentario['from']['id'] . '</td>';
-          $myDate = $comentario['created_time'];
-          $created_timeSTR = $myDate->format('Y-m-d H:i:s'); 
+          $created_timeOBJ = $comentario['created_time'];
+          $created_timeSTR = $created_timeOBJ->format('Y-m-d H:i:s'); 
           $created_time = strtotime($created_timeSTR); //unix
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
+          InsereTabela($JogoID, $page, $post['id'], $comentario['id'], $comentario['from']['id'], $comentario['from']['name'], $UserAposta, $created_time);
       }
     }
   }
 }
 echo '</table>';
 echo '<br>fim<br>';
+
+
+function InsereTabela(JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime){
+  $dbopts = parse_url(getenv('DATABASE_URL'));
+  $dsn = "pgsql:"
+      . "host=" . $dbopts["host"] . ";"
+      . "dbname=". ltrim($dbopts["path"],'/') . ";"
+      . "user=" . $dbopts["user"] . ";"
+      . "port=" . $dbopts["port"] . ";"
+      . "sslmode=require;"
+      . "password=" . $dbopts["pass"];
+  $db = new PDO($dsn);
+  $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES"
+      . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', ".$UserID.", '".$UserName."', '".$UserAposta."', '.$UserApostaTime.');";
+  $result = $db->query($query);
+  echo var_dump($result);
+  $result->closeCursor();
+  }
+  
 ?>
