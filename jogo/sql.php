@@ -42,10 +42,14 @@ echo '<br><br>';
 echo "<table>";
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
-    echo "<td>" . $row["id1"] . "</td>";
-    echo "<td>" . htmlspecialchars($row["id2"]) . "</td>";
-    echo "<td>" . htmlspecialchars($row["id3"]) . "</td>";
-    echo "<td>" . htmlspecialchars($row["id4"]) . "</td>";
+    echo "<td>" . $row["JogoID"] . "</td>";
+    echo "<td>" . htmlspecialchars($row["PageID"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["PostID"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["CommentID"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["UserID"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["UserName"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["UserAposta"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["UserApostaTime"]) . "</td>";
     echo "</tr>";
 }
 echo "</table>";
