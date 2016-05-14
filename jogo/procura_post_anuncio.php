@@ -51,7 +51,7 @@ echo '</table>';
 echo '<br>fim<br>';
 
 
-function InsereTabela(JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime){
+function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName, $UserAposta, $UserApostaTime){
   $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "pgsql:"
       . "host=" . $dbopts["host"] . ";"
