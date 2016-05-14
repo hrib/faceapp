@@ -99,7 +99,7 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
       . "sslmode=require;"
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
-  $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES"
+  $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES "
       . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', '".$UserID."', '".$UserName."', '".$UserAposta."', '".$UserApostaTime."');";
   echo '<br>'.$query.'<br>';
   $result = $db->query($query);
