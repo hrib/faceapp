@@ -37,7 +37,7 @@ foreach($lista_de_pages as $page){
           //$created_time = strtotime($created_timeSTR);  //unix
           $myDate = $comentario['created_time'];
           $created_timeSTR = $myDate->format('Y-m-d H:i:s'); 
-          $created_time = strtotime($created_timeSTR) //unix
+          $created_time = strtotime($created_timeSTR); //unix
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
       }
