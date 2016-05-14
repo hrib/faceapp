@@ -76,7 +76,7 @@ foreach($lista_de_pages as $page){
                   }
                   if($Valido == 1){
                     $UserAposta = $tag;
-                    InsereTabela($JogoID, $page, $post['id'], $comentario['id'], $comentario['from']['id'], $comentario['from']['name'], $UserAposta, $created_time);
+                    InsereTabela($JogoID, $page, $post['id'], $comentario['id'], $comentario['from']['id'], $comentario['from']['name'], $UserAposta, $created_timeSTR);
                     break;
                   }
               }
