@@ -34,6 +34,11 @@ foreach($lista_de_pages as $page){
           echo '<td>' . $key .  ':' . $comentario['from']['id'] . '</td>';
           echo '<td>' . var_dump($comentario['created_time']) . '</td>'; //precisa disso pra funcionar
           $created_timeSTR = $comentario['created_time']->date;
+          echo '<br>';
+          echo $comentario['created_time']['date'];
+          echo '<br>';
+          echo $created_timeSTR;
+          echo '<br>';
           $created_time = strtotime($created_timeSTR);  //unix
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
