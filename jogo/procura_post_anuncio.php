@@ -59,7 +59,7 @@ foreach($lista_de_pages as $page){
           {
               echo $tag.'<br>';
               $Valido = 0;
-              for(a=0,a=strlen($tag)-1,a++){
+              for(a=0;a=strlen($tag)-1;a++){
                 if(is_numeric(substr($tag,$a)) OR substr($tag,$a) = 'x' OR substr($tag,$a) = 'X'){
                   $Valido = 1;
                 }else{
