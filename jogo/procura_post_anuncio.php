@@ -27,6 +27,10 @@ foreach($lista_de_pages as $page){
       foreach ($tags as $tag)
       {
         echo $tag.'<br>';
+        if (strpos($tag, 'Jogo_') !== false) {
+          $JogoID = substr($tag,6);
+          break;
+        }
       }
       
       $response = $fb->get($post['id'].'?fields=comments.limit(999)');
@@ -42,6 +46,14 @@ foreach($lista_de_pages as $page){
           $created_time = strtotime($created_timeSTR); //unix
           echo '<td>' . $key . ':' . $created_timeSTR . '</td>';
           echo '</tr>';
+          $tags = explode('#',$comentario['message']);
+          foreach ($tags as $tag)
+          {
+              $UserAposta = $tag;
+              break;
+          }
+          
+          
           InsereTabela($JogoID, $page, $post['id'], $comentario['id'], $comentario['from']['id'], $comentario['from']['name'], $UserAposta, $created_time);
       }
     }
@@ -63,6 +75,7 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
   $db = new PDO($dsn);
   $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES"
       . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', ".$UserID.", '".$UserName."', '".$UserAposta."', '.$UserApostaTime.');";
+  echo '<br>'.$query;
   $result = $db->query($query);
   echo var_dump($result);
   $result->closeCursor();
