@@ -13,6 +13,9 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 $result = pg_query($pg_conn, $query);
 var_dump($result);
 echo '<br>';
+var_dump(pg_fetch_row($result));
+echo '<br>';
+
 while ($row = pg_fetch_row($result)) { 
     foreach($row as $valor)
     {
