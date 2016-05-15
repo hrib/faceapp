@@ -101,6 +101,7 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
   $db = new PDO($dsn);
   
   $query = "SELECT Count(*) from Apostas WHERE JogoID = '".$JogoID."' AND UserID = '".$UserID."';";
+  echo '<br>'.$query.'<br>';
   $result = $db->query($query);
   while ($row = pg_fetch_row($result)) { 
     foreach($row as $valor)
