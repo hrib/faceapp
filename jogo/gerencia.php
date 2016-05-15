@@ -24,7 +24,7 @@ while ($row = pg_fetch_row($result)) {
 ?>
 
   <h2>Input</h2>
-  <form action="/gerencia.php" method="post">
+  <form action="/jogo/gerencia.php" method="post">
     <div><textarea name="name" rows="1" cols="20"></textarea></div>
     <div><textarea name="content" rows="1" cols="20"></textarea></div>
     <div><textarea name="sql" rows="5" cols="100"></textarea></div>
