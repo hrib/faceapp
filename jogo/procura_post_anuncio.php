@@ -102,7 +102,7 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
   
   $query = "SELECT Count(*) from Apostas WHERE JogoID = '".$JogoID."' AND UserID = '".$UserID."';";
   $row = pg_fetch_row($db->query($query));
-  echo $row[0];
+  var_dump($row);
   
   $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES "
       . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', '".$UserID."', '".$UserName."', '".$UserAposta."', '".$UserApostaTime."');";
