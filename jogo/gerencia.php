@@ -18,7 +18,7 @@ while ($row = pg_fetch_row($result)) {
     {
       print("$valor :");
     }
-    print "\n";
+    echo '<br>';
 }
 
 ?>
