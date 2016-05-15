@@ -101,8 +101,14 @@ function InsereTabela($JogoID, $PageID, $PostID, $CommentID, $UserID, $UserName,
   $db = new PDO($dsn);
   
   $query = "SELECT Count(*) from Apostas WHERE JogoID = '".$JogoID."' AND UserID = '".$UserID."';";
-  $row = pg_fetch_row($db->query($query));
-  var_dump($row);
+  $result = $db->query($query);
+  while ($row = pg_fetch_row($result)) { 
+    foreach($row as $valor)
+    {
+      print("$valor :");
+    }
+    echo '<br>';
+  }
   
   $query = "INSERT INTO Apostas (JogoID, PageID, PostID, CommentID, UserID, UserName, UserAposta, UserApostaTime) VALUES "
       . "('".$JogoID."', '".$PageID."', '".$PostID."', '".$CommentID."', '".$UserID."', '".$UserName."', '".$UserAposta."', '".$UserApostaTime."');";
