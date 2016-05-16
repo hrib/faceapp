@@ -235,7 +235,7 @@ $factor = $w_orig/$h_orig > 1 ? round($w_orig/$h_orig,7) : round($h_orig/$w_orig
 $fbtokenelly1 = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
 //$fbtoken = 'EAABwzLixnjYBAMXFS65Oio2bQq6KtDe0TBSUZBzfzZAaML5b2cb65vtaQaAV9ZAHCyGmMYA3iZCzV5j1Om5GtY0wnwqdGbjmcruD1frErXSzXAHcxrsRqycZBoPvpBBixzcCLH6ZCHXWwLXiZCTlbJtwLXbebHyE1pP5ihrUgjfWA0iXggg0gxZC6h39zDS3ypEZD';
 $fbtokenelly2 = 'EAABwzLixnjYBAFuBAzQwPnGVWG0HuOooMpEBVOf8gl42YljIjfh1eNEmzpnmwwmBGDEBZCoYUF0Ll00Ue4JHzX7EUfOjLRQjdZAI0kXZCCiys8fnOtvl5IPnyGZAUhfmfSinIqZCGiHDkKnhSQVf5820oTjqa8QRqZB6ZBcr7Cj9c0TthK0o2eM';
-$arraytoken = ($fbtokenelly1, $fbtokenelly2, 'vazio', 'vazio');
+$arraytoken = array($fbtokenelly1, $fbtokenelly2, 'vazio', 'vazio');
 $fbtoken = $arraytoken(mt_rand(0,sizeof($arraytoken)-1));
 
 
