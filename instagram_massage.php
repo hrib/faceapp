@@ -220,7 +220,7 @@ function GetPostData($filename) {
 // Set the username and password of the account that you wish to post a photo to
 $username = 'xmassageuk';
 $password = 'wsimetria1';
-$urlvideo = 'https://www.instagram.com/p/BCwNcQbCf7X/?taken-by=london_for_her';
+$urlvideo = 'https://www.facebook.com/1325563600793849/videos/1347988081884734/';
 $filename = "video.mp4";
 file_put_contents($filename, file_get_contents());
 //$username = 'london_for_her';
