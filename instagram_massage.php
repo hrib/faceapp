@@ -222,7 +222,7 @@ $username = 'xmassageuk';
 $password = 'wsimetria1';
 $urlvideo = 'https://video.xx.fbcdn.net/v/t43.1792-2/13121807_1126003104132774_561150169_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=218&oh=1a813036c0540d858170eeb7266e4c85&oe=573E4DA3';
 $filename = "video.mp4";
-file_put_contents($filename, file_get_contents());
+file_put_contents($filename, file_get_contents($urlvideo));
 //$username = 'london_for_her';
 //$password = 'wwwwwwwwwsimetria1';
 
