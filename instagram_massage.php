@@ -210,7 +210,7 @@ function GetPostData($filename) {
         echo "The image doesn't exist ".$filename;
     } else {
         $post_data = array('device_timestamp' => time(), 
-                        'photo' => new CURLFile($filename));
+                        'video' => new CURLFile($filename));
                         //'photo' => '@'.$filename);
         return $post_data;
     }
@@ -218,19 +218,21 @@ function GetPostData($filename) {
 
 
 // Set the username and password of the account that you wish to post a photo to
-$username = 'elly.tess7';
+$username = 'xmassageuk';
 $password = 'wsimetria1';
-
+$urlvideo = 'https://www.instagram.com/p/BCwNcQbCf7X/?taken-by=london_for_her';
+$filename = "video.mp4";
+file_put_contents($filename, file_get_contents());
 //$username = 'london_for_her';
 //$password = 'wwwwwwwwwsimetria1';
 
 // Set the path to the file that you wish to post.
 // This must be jpeg format and it must be a perfect square
-$filename = PegaImagem(); //salva imagem crua orginal
-$filename = TransformaImg($filename); //transforma imagem em quadrado
-list($w_orig, $h_orig) = getimagesize($filename);
-echo '<br>' . $w_orig . 'x' . $h_orig . '<br>';
-$factor = $w_orig/$h_orig > 1 ? round($w_orig/$h_orig,7) : round($h_orig/$w_orig,7);
+//$filename = PegaImagem(); //salva imagem crua orginal
+//$filename = TransformaImg($filename); //transforma imagem em quadrado
+//list($w_orig, $h_orig) = getimagesize($filename);
+//echo '<br>' . $w_orig . 'x' . $h_orig . '<br>';
+//$factor = $w_orig/$h_orig > 1 ? round($w_orig/$h_orig,7) : round($h_orig/$w_orig,7);
 //$factor = 1.2005470;
 $fbtokenelly1 = 'EAABwzLixnjYBAFo1iDGTMIHaZBbrGulCliqx8IRoR6QZCtmax2MBukdJtrPqoMZBfkJNqaBqXUdaRVwexcVaVM5ZAzz27EcVZATaiZBE3NnZAsMdF4l9ZCqzjcwaJCFZBgKNndLkuZAwbx0LdhQvGpnZAkyoLPTvdHyAWBhz1UC0f31cySHjbyZAts7r2SVSVsCPZC5sZD';
 //$fbtoken = 'EAABwzLixnjYBAMXFS65Oio2bQq6KtDe0TBSUZBzfzZAaML5b2cb65vtaQaAV9ZAHCyGmMYA3iZCzV5j1Om5GtY0wnwqdGbjmcruD1frErXSzXAHcxrsRqycZBoPvpBBixzcCLH6ZCHXWwLXiZCTlbJtwLXbebHyE1pP5ihrUgjfWA0iXggg0gxZC6h39zDS3ypEZD';
