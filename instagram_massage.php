@@ -220,8 +220,8 @@ function GetPostData($filename) {
 // Set the username and password of the account that you wish to post a photo to
 $username = 'xmassageuk';
 $password = 'wsimetria1';
-$urlvideo = 'https://video.xx.fbcdn.net/v/t43.1792-2/13185023_1122006934530084_2137460055_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=167&oh=d513940abd35bcd3f52cf8235a64be0e&oe=573D2C6B';
-$filename = "video.mp4";
+$urlvideo = 'https://video.xx.fbcdn.net/v/t43.1792-2/13106853_546718348786652_1187629347_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=195&oh=f4dc96dd86fdfc06a497ba5252907b8f&oe=573E695D';
+$filename = "videoteste.mp4";
 file_put_contents($filename, file_get_contents($urlvideo));
 //$username = 'london_for_her';
 //$password = 'wwwwwwwwwsimetria1';
