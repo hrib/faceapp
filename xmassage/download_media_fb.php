@@ -34,9 +34,8 @@ foreach ($graphNode as $pagina) {
       echo '<td>' . $sorteio_media . ':'. $sorteio_texto .'</td>';
       echo '<td>' . $pagina['posts'][$sorteio_media]['source'] . '</td>';
       echo '<td>' . $pagina['posts'][$sorteio_media]['full_picture'] . '</td>';
-      echo '<td>' . $pagina['posts'][$sorteio_texto]['message'] . '</td>';
+      echo '<td>' . $textos[$sorteio_texto] .'</td>';
       echo '<td>' . $media .':'. $tipo_media .'</td>';
-      echo '<td>';
       echo '</tr>';
 }
 echo '</table>';
