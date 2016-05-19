@@ -4,7 +4,8 @@ require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 
 
 $pageOriginal = '1582615585402238';  //pagina que contem as midias
-
+$app_id = getenv('FB_APP_ID');
+$app_secret = getenv('FB_APP_SECRET');
 
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
