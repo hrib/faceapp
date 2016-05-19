@@ -22,10 +22,6 @@ $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 
 
-        $preview = 'resultado.mp4';
-        $command = '/app/vendor/ffmpeg/ffmpeg -i "'.$media.' -vf "scale=iw*min(405/iw\,320/ih):ih*min(405/iw\,320/ih),pad=405:320:(405-iw)/2:(320-ih)/2" '.$preview.'" 2>&1';
-        @exec($command);
-
 
 if($tipo_media == 'jpg'){
   echo '<br>JPG<br>';
@@ -33,8 +29,12 @@ if($tipo_media == 'jpg'){
   Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
+  $resizemedia = 'resize'.$media;
+  shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
+  echo $resizemedia;
+
   require_once('../Instagram/uploadVideo.php');
-  Instagram_UploadVideo($Insta_username, $Insta_passw, $media, $texto);
+  Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
 
 ?>
