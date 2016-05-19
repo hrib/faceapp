@@ -25,11 +25,11 @@ foreach ($graphNode as $pagina) {
     $media = 'media' . mt_rand(1,999) * mt_rand(1,999);
     if($pagina['posts'][$sorteio_media]['source']<>""){
       $tipo_media = 'video';
-      $media = $media.'mp4';
+      $media = $media.'.mp4';
       file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['source']));
     }else{
       $tipo_media = 'foto';
-      $media = $media.'jpg';
+      $media = $media.'.jpg';
       file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
     }
       echo '<tr>';
