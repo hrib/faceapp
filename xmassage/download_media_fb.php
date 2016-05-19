@@ -20,7 +20,6 @@ echo '<table border="1" style="font-family:arial; font-size:7px;">';
 foreach ($graphNode as $pagina) {
     $n_posts =  sizeof($pagina['posts']);
     $sorteio_media = mt_rand(0, $n_posts - 1);
-    $sorteio_media = 39;
     $textos = Array('#massage','#sensual','#book');
     $sorteio_texto = mt_rand(0, sizeof($textos) - 1);
     $media = 'media' . mt_rand(1,999) * mt_rand(1,999);
