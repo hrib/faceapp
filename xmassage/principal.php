@@ -16,7 +16,7 @@ echo '<br>'.$texto.'<br>';
 
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
 $media = dirname(__FILE__).'/'.$retorno_media[0];
-$media = 'http://scontent.cdninstagram.com/t50.2886-16/13248122_273519396328112_1078893652_s.mp4;
+$media = 'http://scontent.cdninstagram.com/t50.2886-16/13248122_273519396328112_1078893652_s.mp4';
 
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
