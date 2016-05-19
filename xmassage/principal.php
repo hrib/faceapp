@@ -21,10 +21,12 @@ $media = 'http://scontent.cdninstagram.com/t50.2886-16/13248122_273519396328112_
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 
-if($tipo_media = 'jpg'){
+if($tipo_media == 'jpg'){
+  echo '<br>JPG<br>';
   require_once('../Instagram/uploadPhoto.php');
   Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
+  echo '<br>MP4<br>';
   require_once('../Instagram/uploadVideo.php');
   Instagram_UploadVideo($Insta_username, $Insta_passw, $media, $texto);
 }
