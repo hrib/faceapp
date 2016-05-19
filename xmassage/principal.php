@@ -34,7 +34,7 @@ if($tipo_media == 'jpg'){
   echo $resizemedia;
 
   require_once('../Instagram/uploadVideo.php');
-  Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
+  Instagram_UploadVideo($Insta_username, $Insta_passw, $media, $texto);
 }
 
 ?>
