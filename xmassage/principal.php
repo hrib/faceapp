@@ -21,6 +21,12 @@ $media = dirname(__FILE__).'/'.$retorno_media[0];
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 
+
+        $preview = 'resultado.mp4';
+        $command = '/app/vendor/ffmpeg/ffmpeg -i "'.$media.' -vf "scale=iw*min(405/iw\,320/ih):ih*min(405/iw\,320/ih),pad=405:320:(405-iw)/2:(320-ih)/2" '.$preview.'" 2>&1';
+        @exec($command);
+
+
 if($tipo_media == 'jpg'){
   echo '<br>JPG<br>';
   require_once('../Instagram/uploadPhoto.php');
