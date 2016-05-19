@@ -2,8 +2,7 @@
 
 require 'src/Instagram.php';
 
-function Instagram_UploadPhoto($username, $password, $photo, $caption)
-{
+function Instagram_UploadPhoto($username, $password, $photo, $caption){
     /////// CONFIG ///////
     //$username = '';
     //$password = '';
