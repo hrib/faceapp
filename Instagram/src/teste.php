@@ -2,7 +2,7 @@
 
 
 
-$file = 'http://scontent.cdninstagram.com/t50.2886-16/13248122_273519396328112_1078893652_s.mp4';
+$file = 'http://scontent.cdninstagram.com/t50.2886-16/13263135_582356541932632_1625233560_n.mp4';
 $output_filename = 'imagem.jpg';
 $output_filename2 = 'imagem2.jpg';
 
