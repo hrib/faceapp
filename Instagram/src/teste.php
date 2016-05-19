@@ -21,6 +21,11 @@ echo '<br>'.$total_seconds.'<img src="'.$output_filename2.'"><br>';
 
 shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$file.' -vf scale=480:480 out.mp4');
 echo 'out.mp4';
+
+
+shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$file.' -vf scale=iw*min(405/iw\,320/ih):ih*min(405/iw\,320/ih),pad=405:320:(405-iw)/2:(320-ih)/2 outb.mp4');
+echo 'outb.mp4';
+
 $preview = 'resultado.mp4';
 $command = '/app/vendor/ffmpeg/ffmpeg -i "'.$media.'" -vf "scale=iw*min(405/iw\,320/ih):ih*min(405/iw\,320/ih),pad=405:320:(405-iw)/2:(320-ih)/2" "'.$preview.'" 2>&1';
 @exec($command);
