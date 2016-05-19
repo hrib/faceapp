@@ -26,7 +26,7 @@ foreach ($graphNode as $pagina) {
     $media = 'media' . mt_rand(1,999) * mt_rand(1,999);
     file_put_contents($media.".mp4", file_get_contents($pagina['posts'][$sorteio_media]['source']));
     file_put_contents($media.".jpg", file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
-    if($pagina['posts'][$sorteio]['source']<>""){
+    if($pagina['posts'][$sorteio_media]['source']<>""){
       $tipo_media = 'video';
     }else{
       $tipo_media = 'foto';
