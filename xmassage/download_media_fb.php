@@ -21,9 +21,9 @@ foreach ($graphNode as $pagina) {
     $sorteio_media = mt_rand(0, $n_posts - 1);
     $textos = Array('#massage','#sensual','#book');
     $sorteio_texto = mt_rand(0, sizeof($textos) - 1);
-    $rand_name = mt_rand(1,999) * mt_rand(1,999);
-    file_put_contents("video".$rand_name.".mp4", file_get_contents($pagina['posts'][$sorteio_media]['source']));
-    file_put_contents("image".$rand_name.".jpg", file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
+    $media = 'media' . mt_rand(1,999) * mt_rand(1,999);
+    file_put_contents($media.".mp4", file_get_contents($pagina['posts'][$sorteio_media]['source']));
+    file_put_contents($media.".jpg", file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
     if($pagina['posts'][$sorteio]['source']<>""){
       $tipo_media = 'video';
     }else{
@@ -34,6 +34,7 @@ foreach ($graphNode as $pagina) {
       echo '<td>' . $pagina['posts'][$sorteio_media]['source'] . '</td>';
       echo '<td>' . $pagina['posts'][$sorteio_media]['full_picture'] . '</td>';
       echo '<td>' . $pagina['posts'][$sorteio_texto]['message'] . '</td>';
+      echo '<td>' . $media .':'. $tipo_media .'</td>';
       echo '<td>';
       echo '</tr>';
 }
