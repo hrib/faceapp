@@ -28,7 +28,7 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
         file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
       }
         echo '<tr>';
-        echo '<td>' . $sorteio_media . ':'. $sorteio_texto .'</td>';
+        echo '<td>' . $sorteio_media . '</td>';
         echo '<td>' . $pagina['posts'][$sorteio_media]['source'] . '</td>';
         echo '<td>' . $pagina['posts'][$sorteio_media]['full_picture'] . '</td>';
         echo '<td>' . $media .':'. $tipo_media .'</td>';
