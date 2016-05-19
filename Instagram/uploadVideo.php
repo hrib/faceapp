@@ -9,7 +9,7 @@ function Instagram_UploadVideo($username, $password, $video, $caption){
     //$password = '';
     $debug = true;
     
-    //$video = 'http://ak3.picdn.net/shutterstock/videos/7764553/preview/stock-footage-electronic-recycling-plant-pov-cart-p-h-mp-pov-point-of-view-continuous-shot-of-cell-ph.mp4';     // path to the video
+    $video = 'http://ak3.picdn.net/shutterstock/videos/7764553/preview/stock-footage-electronic-recycling-plant-pov-cart-p-h-mp-pov-point-of-view-continuous-shot-of-cell-ph.mp4';     // path to the video
     //$caption = 'zzzzzzzzzzzzzzzzzzzzzzzz';     // caption
     //////////////////////
     
