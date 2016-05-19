@@ -29,7 +29,7 @@ if($tipo_media == 'jpg'){
   Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
-  $resizemedia = 'resize'.$media;
+  $resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
 
