@@ -23,7 +23,7 @@ shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$file.' -vf scale=480:480 out.mp4');
 echo 'out.mp4';
 
 
-shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$file.' -vf "scale=iw*min(640/iw\,320/ih):ih*min(640/iw\,320/ih),pad=640:320:(640-iw)/2:(320-ih)/2" outb.mp4');
+shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$file.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" outb.mp4');
 echo 'outb.mp4';
 
 
