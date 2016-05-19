@@ -1,8 +1,6 @@
 <?php
 session_start(); 
 require_once('download_media_fb.php');
-require_once('../Instagram/uploadVideo.php');
-require_once('../Instagram/uploadPhoto.php');
 
 
 $pageOriginal = '1582615585402238';  //pagina que contem as midias
@@ -21,7 +19,12 @@ $media = dirname(__FILE__).'/'.$retorno_media[0];
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 
-if($tipo_media = 'jpg'){Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);}else{Instagram_UploadVideo($Insta_username, $Insta_passw, $media, $texto);};
-
+if($tipo_media = 'jpg'){
+  require_once('../Instagram/uploadPhoto.php');
+  Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
+}else{
+  require_once('../Instagram/uploadVideo.php');
+  Instagram_UploadVideo($Insta_username, $Insta_passw, $media, $texto);
+}
 
 ?>
