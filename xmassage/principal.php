@@ -76,7 +76,7 @@ if($tipo_media == 'foto'){
   $out = 'imgout.jpg';
   $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
   @exec($command);
-  echo '<br>comando1:<img src="'.$out.'"><br>';
+  echo '<br>comando1 principal:<img src="'.$out.'"><br>';
   echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).'<br>';
   echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).'<br>';
   
