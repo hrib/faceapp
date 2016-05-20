@@ -40,7 +40,7 @@ function createVideoIcon($file)
 
         //capture video preview
         $preview = 'imagem.jpg';
-        $command = $ffmpeg.' -i "'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
+        $command = $ffmpeg.' -i "/app/xmassage/'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "/app/xmassage/'.$preview.'" 2>&1';
         @exec($command);
         echo '<br>comando1:<img src="'.$preview.'"><br>';
         
