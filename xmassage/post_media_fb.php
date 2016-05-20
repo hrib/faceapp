@@ -27,17 +27,17 @@ function Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto,
     ];
   }
     
-    try {
-      $response = $fb->post($target, $data, $page_access_token);
-    } catch(Facebook\Exceptions\FacebookResponseException $e) {
-      // When Graph returns an error
-      echo 'Graph returned an error: ' . $e->getMessage();
-      exit;
-    } catch(Facebook\Exceptions\FacebookSDKException $e) {
-      // When validation fails or other local issues
-      echo 'Facebook SDK returned an error: ' . $e->getMessage();
-      exit;
-    }
+  try {
+   $response = $fb->post($target, $data, $page_access_token);
+   } catch(Facebook\Exceptions\FacebookResponseException $e) {
+     // When Graph returns an error
+     echo 'Graph returned an error: ' . $e->getMessage();
+     exit;
+   } catch(Facebook\Exceptions\FacebookSDKException $e) {
+     // When validation fails or other local issues
+     echo 'Facebook SDK returned an error: ' . $e->getMessage();
+     exit;
+   }
 }
 
 
