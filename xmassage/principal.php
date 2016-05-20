@@ -64,7 +64,7 @@ if($tipo_media == 'foto'){
 }else{
   echo '<br>MP4<br>';
   
-  $out = 'imgout.jpg' 
+  $out = 'imgout.jpg';
   $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$media.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
   @exec($command);
   echo '<br>comando1:<img src="'.$out.'"><br>';
