@@ -72,13 +72,13 @@ if($tipo_media == 'foto'){
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
   
-  $videoteste = $resizemedia;
-  $out = 'imgout.jpg';
-  $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
-  @exec($command);
-  echo '<br>comando1 principal:<img src="'.$out.'"><br>';
-  echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).'<br>';
-  echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).'<br>';
+  //$videoteste = $resizemedia;
+  //$out = 'imgout.jpg';
+  //$command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
+  //@exec($command);
+  //echo '<br>comando1 principal:<img src="'.$out.'"><br>';
+  //echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).'<br>';
+  //echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).'<br>';
   
   
   
