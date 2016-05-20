@@ -17,7 +17,7 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
   foreach ($graphNode as $pagina) {
       $n_posts =  sizeof($pagina['posts']);
       $sorteio_media = mt_rand(0, $n_posts - 1);
-      $sorteio_media = 39;
+      //$sorteio_media = 39;
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999);
       
       if($pagina['posts'][$sorteio_media]['source']<>""){
