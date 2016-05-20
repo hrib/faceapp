@@ -39,14 +39,15 @@ $media = dirname(__FILE__).'/'.$retorno_media[0];
 
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
+echo '<br><img src="'.$media.'"><br>';
 
 
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
   //require_once('../Instagram/uploadPhoto.php');
-  require_once('/app/Instagram/uploadPhoto.php');
-  Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
+  //require_once('/app/Instagram/uploadPhoto.php');
+  //Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
   $resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
