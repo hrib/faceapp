@@ -6,7 +6,7 @@
 //}else if (n = 2){
   include 'clone_post_theball.php';
 //}else{
-  include 'clone_post_xmassage.php';
+  //include 'clone_post_xmassage.php';
 //}
 
 function PostClone($fb, $myalbumid, $mypageid, $page_access_token, $message, $link, $picture){
