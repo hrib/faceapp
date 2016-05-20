@@ -47,12 +47,12 @@ echo '<br><img src="'.$retorno_media[0].'"><br>';
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
   //require_once('../Instagram/uploadPhoto.php');
-  //require_once('/app/Instagram/uploadPhoto.php');
-  //Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
+  require_once('/app/Instagram/uploadPhoto.php');
+  Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
-  //$resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
-  $resizemedia = 'xmassage/resize'.$retorno_media[0];
+  $resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
+  //$resizemedia = 'xmassage/resize'.$retorno_media[0];
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
 
