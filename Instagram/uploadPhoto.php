@@ -3,10 +3,16 @@
 require 'src/Instagram.php';
 
 function Instagram_UploadPhoto($username, $password, $photo, $caption){
+    
+
+    echo imagesx($photo).':'.imagesy($photo).'<br>';
+    
+    
+    
     /////// CONFIG ///////
     //$username = '';
     //$password = '';
-    $debug = true;
+    $debug = false;
     
     //$photo = 'http://s.libertaddigital.com/fotos/galerias/brasilenos-neymar-barcelona-campnou/romario.jpg';     // path to the photo
     //$caption = 'phpteste';     // caption
