@@ -1,6 +1,4 @@
 <?php
-session_start();
-require_once 'src/Facebook/autoload.php';
 
 function Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget){
     
