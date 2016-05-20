@@ -35,8 +35,6 @@ echo '<br>'.$texto.'<br>';
 
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
 $media = dirname(__FILE__).'/'.$retorno_media[0];
-//$media = '/xmassage/'.$retorno_media[0];
-
 
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
@@ -52,11 +50,10 @@ if($tipo_media == 'foto'){
 }else{
   echo '<br>MP4<br>';
   $resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
-  //$resizemedia = 'xmassage/resize'.$retorno_media[0];
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
 
-  require_once('../Instagram/uploadVideo.php');
+  require_once('/app/Instagram/uploadVideo.php');
   Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
 
