@@ -33,50 +33,27 @@ $t14 = 'Did you have time to enjoy yourself this week? Book a sensual massage! '
 
 $textos = Array($t1, $t2, $t3, $t4, $t5, $t6, $t7, $t8, $t9, $t10, $t11, $t12, $t13, $t14);
 $textos_hashtags = array(' #spa',' #massage',' #sensual',' #tantric',' #tantra',' #relax',' #pleasure',' #oil',' #oilmassage',' #meditation',' #vibe',' #enjoy',' #skin',' #touch',' #forher',' #her',' #therapy',' #london',' #power',' #positive',' #life',' #connection',' #health',' #vibe',' #happyness');
-
 $sorteio_texto = mt_rand(0, sizeof($textos) - 1);
 $texto = $textos[$sorteio_texto] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)];
 echo '<br>'.$texto.'<br>';
 
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
-//$media = dirname(__FILE__).'/'.$retorno_media[0];
 $media = $retorno_media[0];
-
-
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
 
-
-Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget)
+Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget);
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
-  //require_once('../Instagram/uploadPhoto.php');
   require_once('/app/Instagram/uploadPhoto.php');
   Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
-  
-
-  
-  //$media_path = dirname(__FILE__).'/'.$media;
   $resizemedia = 'resize'.$media;
-  //$resizemedia_path = dirname(__FILE__).'/'.$resizemedia;
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
-  
-  //$videoteste = $resizemedia;
-  //$out = 'imgout.jpg';
-  //$command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
-  //@exec($command);
-  //echo '<br>comando1 principal:<img src="'.$out.'"><br>';
-  //echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).'<br>';
-  //echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).'<br>';
-  
-  
-  
-
   require_once('/app/Instagram/uploadVideo.php');
   Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
