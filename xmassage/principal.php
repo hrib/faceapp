@@ -41,7 +41,7 @@ echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
 
 $url = $retorno_media[2];
-$image2 = 'imagex.jpf'
+$image2 = 'imagex.jpg';
 file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
 
