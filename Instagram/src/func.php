@@ -40,10 +40,19 @@ function createVideoIcon($file)
 
         //capture video preview
         $preview = 'imagem.jpg';
-        $command = $ffmpeg.' -i "/app/xmassage/'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
-        @exec($command);
-        echo '<br>comando1:<img src="'.$preview.'"><br>';
-        echo imagesx(imagecreatefromjpeg($preview)).':'.imagesy(imagecreatefromjpeg($preview)).'<br>';
+        //$command = $ffmpeg.' -i "/app/xmassage/'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
+        $command = $ffmpeg.' -i "'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
+
+    $videoteste = $file;
+    $out = 'imgout3.jpg';
+    $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
+    @exec($command);
+    echo '<br>comando3 func:<img src="'.$out.'"><br>';
+    echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout3.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout3.jpg')).'<br>';
+    echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout3.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout3.jpg')).'<br>';
+  
+
+
         
         return createIconGD($preview);
     }
