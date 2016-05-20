@@ -42,7 +42,8 @@ function createVideoIcon($file)
         $preview = 'imagem.jpg';
         //$command = $ffmpeg.' -i "/app/xmassage/'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
         $command = $ffmpeg.' -i "'.$file.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
-
+        @exec($command);
+        
     $videoteste = $file;
     $out = 'imgout3.jpg';
     $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
