@@ -19,6 +19,7 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
       $sorteio_media = mt_rand(0, $n_posts - 1);
       //$sorteio_media = 39;
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999);
+      
       if($pagina['posts'][$sorteio_media]['source']<>""){
         $tipo_media = 'video';
         $media = $media.'.mp4';
@@ -32,8 +33,7 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
         $header = file_get_contents($pagina['posts'][$sorteio_media]['full_picture'], FALSE, $context);
         //$image_filename = 'image' . $myalbumid . '.jpg';
         file_put_contents($media, $header);
-        
-        
+        $url = $pagina['posts'][$sorteio_media]['full_picture'];
         //file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
       }
         echo '<tr>';
@@ -44,7 +44,7 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
         echo '</tr>';
   }
   echo '</table>';
-  return array($media,$tipo_media);
+  return array($media,$tipo_media,$url);
 }
 
 ?>
