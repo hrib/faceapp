@@ -35,7 +35,7 @@ echo '<br>'.$texto.'<br>';
 
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
 //$media = dirname(__FILE__).'/'.$retorno_media[0];
-$media = 'xmassage/'.$retorno_media[0];
+$media = '/xmassage/'.$retorno_media[0];
 
 
 $tipo_media = $retorno_media[1];
