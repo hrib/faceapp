@@ -26,7 +26,15 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
       }else{
         $tipo_media = 'foto';
         $media = $media.'.jpg';
-        file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
+        
+        $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
+        $context = stream_context_create($opts);
+        $header = file_get_contents($pagina['posts'][$sorteio_media]['full_picture'], FALSE, $context);
+        //$image_filename = 'image' . $myalbumid . '.jpg';
+        file_put_contents($media, $header);
+        
+        
+        //file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
       }
         echo '<tr>';
         echo '<td>' . $sorteio_media . '</td>';
