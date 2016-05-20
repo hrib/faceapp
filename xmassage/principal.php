@@ -45,13 +45,19 @@ $image2 = 'imagex.jpg';
 file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
 $media = dirname(__FILE__).'/'.$image2;
+
+echo imagesx($retorno_media[0]).':'.imagesy($retorno_media[0]).'<br>';
+echo imagesx($image2).':'.imagesy($image2).'<br>';
+echo imagesx($media).':'.imagesy($media).'<br>';
+
+
 $media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg';
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
   //require_once('../Instagram/uploadPhoto.php');
-  //require_once('/app/Instagram/uploadPhoto.php');
-  //Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
+  require_once('/app/Instagram/uploadPhoto.php');
+  Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
   $resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
