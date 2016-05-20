@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('download_media_fb.php');
 require_once('post_media_fb.php');
 
