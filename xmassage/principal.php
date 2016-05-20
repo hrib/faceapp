@@ -44,7 +44,7 @@ $url = $retorno_media[2];
 $image2 = 'imagex.jpg';
 file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
-$media = $image2;
+$media = dirname(__FILE__).'/'.$image2;
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
