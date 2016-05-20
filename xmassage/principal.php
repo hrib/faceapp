@@ -51,7 +51,7 @@ echo imagesx(imagecreatefromjpeg($image2)).':'.imagesy(imagecreatefromjpeg($imag
 echo imagesx(imagecreatefromjpeg($media)).':'.imagesy(imagecreatefromjpeg($media)).'<br>';
 
 
-$media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg';
+//$media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg';
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
