@@ -45,6 +45,7 @@ $image2 = 'imagex.jpg';
 file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
 $media = dirname(__FILE__).'/'.$image2;
+$media = $image2;
 
 echo imagesx(imagecreatefromjpeg($retorno_media[0])).':'.imagesy(imagecreatefromjpeg($retorno_media[0])).'<br>';
 echo imagesx(imagecreatefromjpeg($image2)).':'.imagesy(imagecreatefromjpeg($image2)).'<br>';
