@@ -34,8 +34,9 @@ $texto = $textos[$sorteio_texto] . $textos_hashtags[mt_rand(0, sizeof($textos_ha
 echo '<br>'.$texto.'<br>';
 
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
-$media = dirname(__FILE__).'/'.$retorno_media[0];
-//$media = 'http://ak3.picdn.net/shutterstock/videos/7764553/preview/stock-footage-electronic-recycling-plant-pov-cart-p-h-mp-pov-point-of-view-continuous-shot-of-cell-ph.mp4';
+//$media = dirname(__FILE__).'/'.$retorno_media[0];
+$media = 'xmassage/'.$retorno_media[0];
+
 
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
