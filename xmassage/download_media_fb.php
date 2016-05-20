@@ -27,14 +27,12 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
       }else{
         $tipo_media = 'foto';
         $media = $media.'.jpg';
-        
-        $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
-        $context = stream_context_create($opts);
-        $header = file_get_contents($pagina['posts'][$sorteio_media]['full_picture'], FALSE, $context);
-        //$image_filename = 'image' . $myalbumid . '.jpg';
-        file_put_contents($media, $header);
-        $url = $pagina['posts'][$sorteio_media]['full_picture'];
-        //file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
+        file_put_contents($media, file_get_contents($pagina['posts'][$sorteio_media]['full_picture']));
+        //$opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
+        //$context = stream_context_create($opts);
+        //$header = file_get_contents($pagina['posts'][$sorteio_media]['full_picture'], FALSE, $context);
+        //file_put_contents($media, $header);
+        //$url = $pagina['posts'][$sorteio_media]['full_picture'];
       }
         echo '<tr>';
         echo '<td>' . $sorteio_media . '</td>';
@@ -42,9 +40,9 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
         echo '<td>' . $pagina['posts'][$sorteio_media]['full_picture'] . '</td>';
         echo '<td>' . $media .':'. $tipo_media .'</td>';
         echo '</tr>';
-  }
+      }
   echo '</table>';
-  return array($media,$tipo_media,$url);
+  return array($media,$tipo_media);
 }
 
 ?>
