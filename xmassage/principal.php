@@ -34,22 +34,24 @@ $texto = $textos[$sorteio_texto] . $textos_hashtags[mt_rand(0, sizeof($textos_ha
 echo '<br>'.$texto.'<br>';
 
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
-$media = dirname(__FILE__).'/'.$retorno_media[0];
+//$media = dirname(__FILE__).'/'.$retorno_media[0];
+$media = $retorno_media[0];
+
 
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
 
-$url = $retorno_media[2];
-$image2 = 'imagex.jpg';
-file_put_contents($image2, file_get_contents($url));
-echo '<br><img src="'.$image2.'"><br>';
-$media = dirname(__FILE__).'/'.$image2;
-$media = $image2;
+//$url = $retorno_media[2];
+//$image2 = 'imagex.jpg';
+//file_put_contents($image2, file_get_contents($url));
+//echo '<br><img src="'.$image2.'"><br>';
+//$media = dirname(__FILE__).'/'.$image2;
+//$media = $image2;
 
-echo imagesx(imagecreatefromjpeg($retorno_media[0])).':'.imagesy(imagecreatefromjpeg($retorno_media[0])).'<br>';
-echo imagesx(imagecreatefromjpeg($image2)).':'.imagesy(imagecreatefromjpeg($image2)).'<br>';
-echo imagesx(imagecreatefromjpeg($media)).':'.imagesy(imagecreatefromjpeg($media)).'<br>';
+//echo imagesx(imagecreatefromjpeg($retorno_media[0])).':'.imagesy(imagecreatefromjpeg($retorno_media[0])).'<br>';
+//echo imagesx(imagecreatefromjpeg($image2)).':'.imagesy(imagecreatefromjpeg($image2)).'<br>';
+//echo imagesx(imagecreatefromjpeg($media)).':'.imagesy(imagecreatefromjpeg($media)).'<br>';
 
 
 //$media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg';
