@@ -15,7 +15,7 @@ function Instagram_UploadVideo($username, $password, $video, $caption){
     $out = 'imgout2.jpg';
     $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$videoteste.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
     @exec($command);
-    echo '<br>comando1:<img src="'.$out.'"><br>';
+    echo '<br>comando2 uploadvideo:<img src="'.$out.'"><br>';
     echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout2.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout2.jpg')).'<br>';
     echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout2.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout2.jpg')).'<br>';
   
