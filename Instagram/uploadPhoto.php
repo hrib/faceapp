@@ -5,7 +5,7 @@ require 'src/Instagram.php';
 function Instagram_UploadPhoto($username, $password, $photo, $caption){
     
 
-    echo imagesx($photo).':'.imagesy($photo).'<br>';
+    echo imagesx(imagecreatefromjpeg($photo)).':'.imagecreatefromjpeg(imagesy($photo)).'<br>';
     
     
     
