@@ -41,8 +41,9 @@ echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
 
 $url = $retorno_media[2];
-file_put_contents('imagex.jpg', file_get_contents($url));
-echo '<br><img src="'.$imagex.'"><br>';
+$image2 = 'imagex.jpf'
+file_put_contents($image2, file_get_contents($url));
+echo '<br><img src="'.$image2.'"><br>';
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
