@@ -40,7 +40,7 @@ $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
 
-$url = $retorno_media[2]
+$url = $retorno_media[2];
 file_put_contents('imagex.jpg', file_get_contents($url));
 echo '<br><img src="'.$imagex.'"><br>';
 
