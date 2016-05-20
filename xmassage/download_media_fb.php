@@ -1,6 +1,5 @@
 <?php
-session_start(); 
-require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
+
 
 
 function Download_Media_fb($pageOriginal, $app_id, $app_secret){
