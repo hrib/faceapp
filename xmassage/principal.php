@@ -44,12 +44,13 @@ $url = $retorno_media[2];
 $image2 = 'imagex.jpg';
 file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
+$media = $image2;
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
   //require_once('../Instagram/uploadPhoto.php');
-  //require_once('/app/Instagram/uploadPhoto.php');
-  //Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
+  require_once('/app/Instagram/uploadPhoto.php');
+  Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
 }else{
   echo '<br>MP4<br>';
   $resizemedia = dirname(__FILE__).'/resize'.$retorno_media[0];
