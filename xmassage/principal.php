@@ -46,9 +46,9 @@ file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
 $media = dirname(__FILE__).'/'.$image2;
 
-echo imagesx($retorno_media[0]).':'.imagesy($retorno_media[0]).'<br>';
-echo imagesx($image2).':'.imagesy($image2).'<br>';
-echo imagesx($media).':'.imagesy($media).'<br>';
+echo imagesx(imagecreatefromjpeg($retorno_media[0])).':'.imagesy(imagecreatefromjpeg($retorno_media[0])).'<br>';
+echo imagesx(imagecreatefromjpeg($image2)).':'.imagesy(imagecreatefromjpeg($image2)).'<br>';
+echo imagesx(imagecreatefromjpeg($media)).':'.imagesy(imagecreatefromjpeg($media)).'<br>';
 
 
 $media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg';
