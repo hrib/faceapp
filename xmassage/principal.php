@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 require_once('download_media_fb.php');
+require_once('post_media_fb.php');
 
 
 $pageOriginal = '1582615585402238';  //pagina que contem as midias
@@ -8,6 +9,10 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
+
+$pageTarget = '1325563600793849';
+$page_access_token = getenv('FB_TOKEN_APOSTAGOL_XMASSAGE');
+$albumTarget = '1330244656992410';
 
 $t1 = 'Using massage oils helps in getting the right balance between grip and slip on the skin, and the smell enhances the experience by stimulating a second sense that we pay relatively little attention to most of the time. ';
 $t2 = 'The Legs “Move up the legs in long, smooth strokes, using the full surface of your palm and keeping your fingers together. The purpose of sensual massage is to build excitement, so stroke over her buttocks.
@@ -42,19 +47,8 @@ $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
 
-//$url = $retorno_media[2];
-//$image2 = 'imagex.jpg';
-//file_put_contents($image2, file_get_contents($url));
-//echo '<br><img src="'.$image2.'"><br>';
-//$media = dirname(__FILE__).'/'.$image2;
-//$media = $image2;
 
-//echo imagesx(imagecreatefromjpeg($retorno_media[0])).':'.imagesy(imagecreatefromjpeg($retorno_media[0])).'<br>';
-//echo imagesx(imagecreatefromjpeg($image2)).':'.imagesy(imagecreatefromjpeg($image2)).'<br>';
-//echo imagesx(imagecreatefromjpeg($media)).':'.imagesy(imagecreatefromjpeg($media)).'<br>';
-
-
-//$media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg';
+Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget)
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
