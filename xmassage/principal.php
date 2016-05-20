@@ -64,14 +64,19 @@ if($tipo_media == 'foto'){
 }else{
   echo '<br>MP4<br>';
   
+  
+  $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$media.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$preview.'" 2>&1';
+  @exec($command);
+  echo '<br>comando1:<img src="'.$preview.'"><br>';
+  
   $media_path = dirname(__FILE__).'/'.$media;
   $resizemedia = 'resize'.$media;
   //$resizemedia_path = dirname(__FILE__).'/'.$resizemedia;
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media_path.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
 
-  require_once('/app/Instagram/uploadVideo.php');
-  Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
+  //require_once('/app/Instagram/uploadVideo.php');
+  //Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
 
 ?>
