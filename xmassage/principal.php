@@ -66,8 +66,8 @@ if($tipo_media == 'foto'){
   
   $media_path = dirname(__FILE__).'/'.$media;
   $resizemedia = 'resize'.$media;
-  $resizemedia_path = dirname(__FILE__).'/'.$resizemedia;
-  shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media_path.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia_path);
+  //$resizemedia_path = dirname(__FILE__).'/'.$resizemedia;
+  shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media_path.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
 
   require_once('/app/Instagram/uploadVideo.php');
