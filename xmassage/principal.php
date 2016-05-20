@@ -45,6 +45,7 @@ $image2 = 'imagex.jpg';
 file_put_contents($image2, file_get_contents($url));
 echo '<br><img src="'.$image2.'"><br>';
 $media = dirname(__FILE__).'/'.$image2;
+$media = 'http://i.dailymail.co.uk/i/pix/2014/04/13/article-2603599-00F50A9D00000578-962_634x750.jpg'
 
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
