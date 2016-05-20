@@ -68,6 +68,9 @@ if($tipo_media == 'foto'){
   $command = '/app/vendor/ffmpeg/ffmpeg  -i "'.$media.'" -f mjpeg -ss 00:00:03 -vframes 1 "'.$out.'" 2>&1';
   @exec($command);
   echo '<br>comando1:<img src="'.$out.'"><br>';
+  echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/xmassage/imgout.jpg')).'<br>';
+  echo imagesx(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).':'.imagesy(imagecreatefromjpeg('http://apostagol.herokuapp.com/imgout.jpg')).'<br>';
+  
   
   $media_path = dirname(__FILE__).'/'.$media;
   $resizemedia = 'resize'.$media;
