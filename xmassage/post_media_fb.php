@@ -11,7 +11,7 @@ function Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto,
     'default_access_token' => $app_id . '|' . $app_secret
   ]);
 
-  if (strpos($media, 'mp4') !== false)){
+  if (strpos($media, 'mp4') !== false){
     $target = '/' . $pageTarget . '/videos';
     $data = [
       'title' => $texto,
