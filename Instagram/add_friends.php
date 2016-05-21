@@ -1,6 +1,10 @@
 <?php
 
     require 'src/Instagram.php';
+    
+    $username = getenv('INSTA_USR_LONDONFORHER');
+    $password = getenv('INSTA_PSW_LONDONFORHER');
+    $debug = true;
 
     $i = new Instagram($username, $password, $debug);
     try {
