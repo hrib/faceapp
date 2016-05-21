@@ -4,7 +4,7 @@
     
     $username = getenv('INSTA_USR_LONDONFORHER');
     $password = getenv('INSTA_PSW_LONDONFORHER');
-    $debug = true;
+    $debug = false;
 
     $i = new Instagram($username, $password, $debug);
     try {
