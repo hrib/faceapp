@@ -3,7 +3,7 @@
     $token = getenv('INS_APP_TOKEN');
     $id_to_get_followers = '327771661';
     
-    $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_tonken='.$token;
+    $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token;
     $result_followedby = file_get_contents($url_followedby, false);
     var_dump($result_followedby);
     foreach($result_followedby->data as $follower){
