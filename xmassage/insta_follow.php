@@ -6,7 +6,9 @@
     $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_tonken='.$token;
     $result_followedby = file_get_contents($url_followedby, false);
     var_dump($result_followedby);
-    
+    foreach($result_followedby->data as $follower){
+        echo $follower->username;
+    }
     
     $id_to_follow = 'xxx';
     $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
