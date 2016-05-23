@@ -1,7 +1,7 @@
 <?php
     
     $token = getenv('INS_APP_TOKEN');
-    $id_to_get_followers = '2988722378';
+    $id_to_get_followers = '327771661';
     
     $url = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token.'&count=50';
     $ch = curl_init();
