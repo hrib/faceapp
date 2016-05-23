@@ -19,10 +19,10 @@
         $relacionamento = checaRelacao($follower->id, $token);
         $acao = '-';
         if($relacionamento == 'none'){
-            //modificaRelacao($follower->id, $token, 'follow'); 
+            $execute = modificaRelacao($follower->id, $token, 'follow'); 
             $acao = 'follow';
-            //set_time_limit(10); 
-            //sleep(5);
+            set_time_limit(10); 
+            sleep(2);
         }
         echo '<tr>';
         echo '<td>'. $follower->username .'</td>';
@@ -33,9 +33,9 @@
     }
     echo '</table>';
     
-    $userID = '340150905';
-    $z = modificaRelacao($userID, $token, 'follow');
-    var_dump($z);
+    //$userID = '340150905';
+    //$z = modificaRelacao($userID, $token, 'follow');
+    //var_dump($z);
  
     function checaRelacao($userID, $token){
         $id_to_follow = $userID;
@@ -54,6 +54,7 @@
     
     
     function modificaRelacao($userID, $token, $action){
+        echo $userID;
         $id_to_follow = $userID;
         $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
         $data = array('action' => $action, 'access_token' => $token);
