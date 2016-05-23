@@ -26,6 +26,7 @@
     
     foreach($resjson->data as $follower){
         echo $follower->username;
+        echo '<br>';
     }
  
     
@@ -48,22 +49,9 @@
     if ($result === FALSE) { /* Handle error */ }
     echo $result;
     echo '<br>';
-    echo '<br>';
-    
-    var_dump($result);
+
     $resjson = json_decode($result);
-    var_dump($resjson);
-    echo $resjson['data']['outgoing_status'];
-    
-    var_dump($resjson->data);
-    echo '<br>';
-    echo '<br>';
-    var_dump($resjson->data->outgoing_status);
-    echo '<br>';
-    echo '<br>';
-    var_dump($resjson->data);
-    echo '<br>';
-    echo '<br>';
+
     
 
 ?>
