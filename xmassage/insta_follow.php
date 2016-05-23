@@ -26,7 +26,7 @@
     
     
     
-    $id_to_follow = 'xxx';
+    $id_to_follow = '40911127';
     $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
     $data = array('action' => 'follow', 'access_token' => $token);
     
