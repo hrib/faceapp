@@ -61,7 +61,7 @@
     echo '<br>';
     
     var_dump($result);
-    $resjson = json_encode($result);
+    $resjson = json_decode($result);
     var_dump($resjson);
     echo $resjson['data']['outgoing_status'];
     
