@@ -58,5 +58,6 @@
     if ($result === FALSE) { /* Handle error */ }
     
     var_dump($result);
+    echo $result['data']['outgoing_status'];
 
 ?>
