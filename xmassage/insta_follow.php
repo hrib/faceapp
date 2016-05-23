@@ -18,11 +18,10 @@
         
     // Get the response and close the channel.
     $response = curl_exec($ch);
-    //var_dump($response);
     curl_close($ch);
     
     $resjson = json_decode($response);
-    
+    var_dump($resjson);    
     
     foreach($resjson->data as $follower){
         echo $follower->username;
