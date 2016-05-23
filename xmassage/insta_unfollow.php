@@ -3,7 +3,7 @@
     $token = getenv('INS_APP_TOKEN');
     $id_to_get_followers = 'self';
     
-    for ($x = 0; $x <= 51; $x++) {
+    for ($x = 0; $x <= 75; $x++) {
         $url = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/follows?access_token='.$token.'&count=100&cursor='.$next_cursor; //.'&count=50'
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -16,27 +16,32 @@
         $next_cursor = $resjson->pagination->next_cursor;
         echo '<br>'.$next_cursor.'<br>';
         //var_dump($resjson); 
-        echo '<table border="1">';
-        $conta = 0;
-        foreach($resjson->data as $follower){
-            $acao = '-';
-            if(($relacionamento == 'none') AND ($conta < 10)){
-                //set_time_limit(10); 
-                //sleep(2);
-                //$acao = modificaRelacao($follower->id, $token, 'follow'); 
-                //$acao = 'fakefollow';
-                //$conta = $conta + 1;
-                //sleep(2);
+        
+        if($next_cursor == ""){
+            echo '<table border="1">';
+            $conta = 0;
+            foreach($resjson->data as $follower){
+                $acao = '-';
+                if($conta < 10){
+                    //set_time_limit(10); 
+                    //sleep(2);
+                    //$acao = modificaRelacao($follower->id, $token, 'unfollow'); 
+                    $acao = 'fakeUNfollow';
+                    $conta = $conta + 1;
+                    //sleep(2);
+                }
+                echo '<tr>';
+                echo '<td>'. $x .'</td>';
+                echo '<td>'. $follower->username .'</td>';
+                echo '<td>'. $follower->id .'</td>';
+                echo '<td>'. $acao .'</td>';
+                //echo '<td>'. $relacionamento .'</td>';
+                //echo '<td>'. $acao .'</td>';
+                echo '</tr>';
             }
-            echo '<tr>';
-            echo '<td>'. $x .'</td>';
-            echo '<td>'. $follower->username .'</td>';
-            echo '<td>'. $follower->id .'</td>';
-            //echo '<td>'. $relacionamento .'</td>';
-            //echo '<td>'. $acao .'</td>';
-            echo '</tr>';
+            echo '</table>';
+            break;
         }
-        echo '</table>';
     }
 
     function modificaRelacao($userID, $token, $action){
