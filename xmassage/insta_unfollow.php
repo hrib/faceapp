@@ -13,7 +13,7 @@
         curl_close($ch);
         
         $resjson = json_decode($response);
-        $next_cursor = $resjson->pagination->next_cursor
+        $next_cursor = $resjson->pagination->next_cursor;
         //var_dump($resjson); 
         echo '<table border="1">';
         $conta = 0;
