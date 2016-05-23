@@ -4,7 +4,9 @@
     $id_to_get_followers = '327771661';
     
     $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token;
-    $url_followedby = urlencode($url_followedby);
+    $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed%2Dby%3Faccess_token%3D'.$token;
+    
+    //$url_followedby = urlencode($url_followedby);
     $result_followedby = file_get_contents($url_followedby);
     var_dump($result_followedby);
     foreach($result_followedby->data as $follower){
