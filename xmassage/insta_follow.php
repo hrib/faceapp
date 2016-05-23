@@ -19,7 +19,7 @@ function UsuariosQuePostaramTag($tag, $token){
     //var_dump($resjson);    
     
     echo '<table border="1">';
-    count = 0;
+    $count = 0;
     foreach($resjson->data as $post){
         set_time_limit(10); 
         sleep(2);
@@ -30,7 +30,7 @@ function UsuariosQuePostaramTag($tag, $token){
         echo '<td>'. $acao .'</td>';
         //echo '<td><img src="'. $post->images->thumbnail->url .'"></td>';
         echo '</tr>';
-        count = count + 1;
+        $count = $count + 1;
         if($count >= 10){break;}
     }
     echo '</table>';
