@@ -1,7 +1,7 @@
 <?php
     
     $token = getenv('INS_APP_TOKEN');
-    $id_to_get_followers = '327771661';
+    $id_to_get_followers = '2988722378';
     
     $url = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token;
     $ch = curl_init();
@@ -14,7 +14,7 @@
     $resjson = json_decode($response);
     //var_dump($resjson);    
     
-    echo '<table>';
+    echo '<table border="1">';
     foreach($resjson->data as $follower){
         $relacionamento = checaRelacao($follower->id, $token);
         echo '<tr>';
