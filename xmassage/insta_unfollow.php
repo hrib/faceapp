@@ -23,12 +23,12 @@
             foreach($resjson->data as $follower){
                 $acao = '-';
                 if($conta < 10){
-                    //set_time_limit(10); 
+                    set_time_limit(10); 
                     //sleep(2);
-                    //$acao = modificaRelacao($follower->id, $token, 'unfollow'); 
-                    $acao = 'fakeUNfollow';
+                    $acao = modificaRelacao($follower->id, $token, 'unfollow'); 
+                    //$acao = 'fakeUNfollow';
                     $conta = $conta + 1;
-                    //sleep(2);
+                    sleep(2);
                 }
                 echo '<tr>';
                 echo '<td>'. $x .'</td>';
