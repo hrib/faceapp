@@ -11,6 +11,21 @@
         echo $follower->username;
     }
     
+    $curl = curl_init();
+    // Set some options - we are passing in a useragent too here
+    curl_setopt_array($curl, array(
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => $url_followedby,
+        CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+    ));
+    // Send the request & save response to $resp
+    $resp = curl_exec($curl);
+    // Close request to clear up some resources
+    curl_close($curl);
+    var_dump($resp);
+    
+    
+    
     $id_to_follow = 'xxx';
     $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
     $data = array('action' => 'follow', 'access_token' => $token);
