@@ -5,7 +5,7 @@
     $action = 'follow';
  
         $id_to_follow = $userID;
-        $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
+        $url = 'http://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
         $data = array('action' => $action, 'access_token' => $token);
         
         // use key 'http' even if you send the request to https://...
