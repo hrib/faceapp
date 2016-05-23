@@ -68,7 +68,7 @@
         if ($result === FALSE) { /* Handle error */ }
         echo '<br>';
         echo '<br>';
-        var_dump $result;
+        var_dump($result);
         echo '<br>';
         $resjson = json_decode($result);
     }
