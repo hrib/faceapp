@@ -58,6 +58,8 @@
     if ($result === FALSE) { /* Handle error */ }
     
     var_dump($result);
-    echo $result['data']['outgoing_status'];
+    $resjson = json_encode($result);
+    var_dump($resjson);
+    echo $resjson['data']['outgoing_status'];
 
 ?>
