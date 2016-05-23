@@ -19,15 +19,19 @@ function UsuariosQuePostaramTag($tag, $token){
     //var_dump($resjson);    
     
     echo '<table border="1">';
+    count = 0;
     foreach($resjson->data as $post){
-            //set_time_limit(10); 
-            //sleep(2);
-            //$acao = modificaRelacao($follower->id, $token, 'follow'); 
+        set_time_limit(10); 
+        sleep(2);
+        $acao = modificaRelacao($post->caption->from->id, $token, 'follow'); 
         echo '<tr>';
         echo '<td>'. $post->caption->from->username .'</td>';
         echo '<td>'. $post->caption->from->id .'</td>';
-        echo '<td><img src="'. $post->images->thumbnail->url .'"></td>';
+        echo '<td>'. $acao .'</td>';
+        //echo '<td><img src="'. $post->images->thumbnail->url .'"></td>';
         echo '</tr>';
+        count = count + 1;
+        if($count >= 10){break;}
     }
     echo '</table>';
 }
