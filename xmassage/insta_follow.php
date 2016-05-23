@@ -20,10 +20,11 @@
         $relacionamento = checaRelacao($follower->id, $token);
         $acao = '-';
         if(($relacionamento == 'none') AND ($conta < 10)){
-            $acao = modificaRelacao($follower->id, $token, 'follow'); 
+            //$acao = modificaRelacao($follower->id, $token, 'follow'); 
+            $acao = 'fakefollow';
             $conta = $conta + 1;
-            set_time_limit(10); 
-            sleep(2);
+            //set_time_limit(10); 
+            //sleep(2);
         }
         echo '<tr>';
         echo '<td>'. $follower->username .'</td>';
@@ -34,9 +35,6 @@
     }
     echo '</table>';
     
-    //$userID = '340150905';
-    //$z = modificaRelacao($userID, $token, 'follow');
-    //var_dump($z);
  
     function checaRelacao($userID, $token){
         $id_to_follow = $userID;
