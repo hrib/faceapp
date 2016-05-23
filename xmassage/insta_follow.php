@@ -19,7 +19,7 @@
         $relacionamento = checaRelacao($follower->id, $token);
         $acao = '-';
         if($relacionamento == 'none'){
-            modificaRelacao($follower->id, $token, 'follow'); 
+            //modificaRelacao($follower->id, $token, 'follow'); 
             $acao = 'follow';
             set_time_limit(10); 
             sleep(5);
