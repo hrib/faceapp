@@ -18,7 +18,6 @@
         echo '<table border="1">';
         $conta = 0;
         foreach($resjson->data as $follower){
-            //$relacionamento = checaRelacao($follower->id, $token);
             $acao = '-';
             if(($relacionamento == 'none') AND ($conta < 10)){
                 //set_time_limit(10); 
