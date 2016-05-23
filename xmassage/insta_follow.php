@@ -32,7 +32,10 @@
         echo '</tr>';
     }
     echo '</table>';
-    modificaRelacao($follower->id, $token, 'follow');
+    
+    $userID = '340150905';
+    $z = modificaRelacao($userID, $token, 'follow');
+    var_dump($z);
  
     function checaRelacao($userID, $token){
         $id_to_follow = $userID;
@@ -71,6 +74,7 @@
         var_dump($result);
         echo '<br>';
         $resjson = json_decode($result);
+        return $resjson;
     }
 
     
