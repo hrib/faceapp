@@ -31,7 +31,7 @@
     echo '<br>';
     
     
-    $url_followedby2 = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed%2Dby';
+    $url_followedby2 = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by';
     $data = array('access_token' => $token);
     // use key 'http' even if you send the request to https://...
     $options = array(
