@@ -3,9 +3,24 @@
     $token = getenv('INS_APP_TOKEN');
     $id_to_get_followers = '327771661';
     
+    function file_url($url){
+        $parts = parse_url($url);
+        $path_parts = array_map('rawurldecode', explode('/', $parts['path']));
+        return
+            $parts['scheme'] . '://' .
+            $parts['host'] .
+            implode('/', array_map('rawurlencode', $path_parts))
+        ;
+    }
+    
+    
+    
+    
+    
     $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token;
     $url_followedby = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed%2Dby%3Faccess_token%3D'.$token;
-    
+    $url_followedby = file_url($url_followedby );
+    echo $url_followedby;
     //$url_followedby = urlencode($url_followedby);
     $result_followedby = file_get_contents($url_followedby);
     var_dump($result_followedby);
