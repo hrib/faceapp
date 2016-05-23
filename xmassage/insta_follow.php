@@ -32,6 +32,7 @@
         echo '</tr>';
     }
     echo '</table>';
+    modificaRelacao($follower->id, $token, 'follow');
  
     function checaRelacao($userID, $token){
         $id_to_follow = $userID;
@@ -65,7 +66,9 @@
         $context  = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { /* Handle error */ }
-        echo $result;
+        echo '<br>';
+        echo '<br>';
+        var_dump $result;
         echo '<br>';
         $resjson = json_decode($result);
     }
