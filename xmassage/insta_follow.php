@@ -2,7 +2,40 @@
     
     $token = getenv('INS_APP_TOKEN');
     $id_to_get_followers = '327771661';
+    $tag = 'London';
+    //FollowSeguidoresdoUsuario($id_to_get_followers, $token);
+    UsuariosQuePostaramTag($tag, $token);
+
+function UsuariosQuePostaramTag($tag, $token){
+    $url = 'https://api.instagram.com/v1/tags/'.$tag.'/media/recent?access_token='.$token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($ch);
+    curl_close($ch);
     
+    $resjson = json_decode($response);
+    //var_dump($resjson);    
+    
+    echo '<table border="1">';
+    foreach($resjson->data as $post){
+            //set_time_limit(10); 
+            //sleep(2);
+            //$acao = modificaRelacao($follower->id, $token, 'follow'); 
+        echo '<tr>';
+        echo '<td>'. $post->caption->from->username .'</td>';
+        echo '<td>'. $post->caption->from->id .'</td>';
+        echo '<td><img src="'. $post->images->thumbnail->url .'"></td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+
+
+    
+    
+function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
     $url = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token.'&count=50';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -35,7 +68,7 @@
         echo '</tr>';
     }
     echo '</table>';
-    
+}
  
     function checaRelacao($userID, $token){
         $id_to_follow = $userID;
