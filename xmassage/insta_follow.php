@@ -20,8 +20,8 @@
         $relacionamento = checaRelacao($follower->id, $token);
         $acao = '-';
         if(($relacionamento == 'none') AND ($conta < 10)){
-            //$acao = modificaRelacao($follower->id, $token, 'follow'); 
-            $acao = 'fakefollow';
+            $acao = modificaRelacao($follower->id, $token, 'follow'); 
+            //$acao = 'fakefollow';
             $conta = $conta + 1;
             //set_time_limit(10); 
             //sleep(2);
