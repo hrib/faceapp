@@ -21,8 +21,8 @@
         if($relacionamento == 'none'){
             //modificaRelacao($follower->id, $token, 'follow'); 
             $acao = 'follow';
-            set_time_limit(10); 
-            sleep(5);
+            //set_time_limit(10); 
+            //sleep(5);
         }
         echo '<tr>';
         echo '<td>'. $follower->username .'</td>';
