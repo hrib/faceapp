@@ -21,20 +21,10 @@
     //var_dump($response);
     curl_close($ch);
     
-    var_dump($response[0]);
-    echo '<br>';
-    echo '<br>';
-    var_dump($response->pagination);
-    echo '<br>';
-    echo '<br>';
-    var_dump($response->pagination->netx_url);
-    echo '<br>';
-    echo '<br>';
-    var_dump($response->data);
-    echo '<br>';
-    echo '<br>';
+    $resjson = json_decode($response);
     
-    foreach($response->data as $follower){
+    
+    foreach($resjson->data as $follower){
         echo $follower->username;
     }
  
@@ -65,10 +55,6 @@
     var_dump($resjson);
     echo $resjson['data']['outgoing_status'];
     
-    
-    var_dump($resjson[0]);
-    echo '<br>';
-    echo '<br>';
     var_dump($resjson->data);
     echo '<br>';
     echo '<br>';
