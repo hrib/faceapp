@@ -56,6 +56,9 @@
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     if ($result === FALSE) { /* Handle error */ }
+    echo $result;
+    echo '<br>';
+    echo '<br>';
     
     var_dump($result);
     $resjson = json_encode($result);
