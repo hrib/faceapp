@@ -21,6 +21,9 @@
     //var_dump($response);
     curl_close($ch);
     
+    var_dump($response[0]);
+    echo '<br>';
+    echo '<br>';
     var_dump($response->pagination);
     echo '<br>';
     echo '<br>';
