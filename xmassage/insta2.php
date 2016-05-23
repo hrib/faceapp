@@ -1,7 +1,7 @@
 <?php
     
     $token = getenv('INS_APP_TOKEN');
-    $userID = '2988722378';
+    $userID = '340150905';
     $action = 'follow';
  
         $id_to_follow = $userID;
