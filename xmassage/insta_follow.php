@@ -36,7 +36,7 @@
  
     function checaRelacao($userID, $token){
         $id_to_follow = $userID;
-        $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship?access_token='.$token;
+        $url = 'http://api.instagram.com/v1/users/'.$id_to_follow.'/relationship?access_token='.$token;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
