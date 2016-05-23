@@ -25,7 +25,7 @@
         echo '<br>';
         $resjson = json_decode($result);
     
-    $z = modificaRelacao($userID, $token, $action)
+    $z = modificaRelacao($userID, $token, $action);
     var_dump($z); 
 
     function modificaRelacao($userID, $token, $action){
