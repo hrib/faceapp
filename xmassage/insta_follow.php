@@ -23,7 +23,7 @@
     echo $url_followedby;
     //$url_followedby = urlencode($url_followedby);
     $result_followedby = file_get_contents($url_followedby);
-    var_dump($result_followedby);
+    //var_dump($result_followedby);
     foreach($result_followedby->data as $follower){
         echo $follower->username;
     }
