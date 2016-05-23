@@ -18,8 +18,18 @@
         
     // Get the response and close the channel.
     $response = curl_exec($ch);
-    var_dump($response);
+    //var_dump($response);
     curl_close($ch);
+    
+    var_dump($response->pagination);
+    echo '<br>';
+    echo '<br>';
+    var_dump($response->pagination->netx_url);
+    echo '<br>';
+    echo '<br>';
+    var_dump($response->data);
+    echo '<br>';
+    echo '<br>';
     
     foreach($response->data as $follower){
         echo $follower->username;
