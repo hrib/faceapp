@@ -3,7 +3,7 @@
     $token = getenv('INS_APP_TOKEN');
     $id_to_get_followers = '2988722378';
     
-    $url = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token.'&count=10';
+    $url = 'https://api.instagram.com/v1/users/'.$id_to_get_followers.'/followed-by?access_token='.$token.'&count=50';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -15,12 +15,13 @@
     //var_dump($resjson);    
     
     echo '<table border="1">';
+    $conta = 0;
     foreach($resjson->data as $follower){
         $relacionamento = checaRelacao($follower->id, $token);
         $acao = '-';
-        if($relacionamento == 'none'){
-            $execute = modificaRelacao($follower->id, $token, 'follow'); 
-            $acao = 'follow';
+        if(($relacionamento == 'none') AND ($conta < 10)){
+            $acao = modificaRelacao($follower->id, $token, 'follow'); 
+            $conta = $conta + 1;
             set_time_limit(10); 
             sleep(2);
         }
@@ -75,7 +76,7 @@
         var_dump($result);
         echo '<br>';
         $resjson = json_decode($result);
-        return $resjson;
+        return $resjson->data->outgoing_status;
     }
 
     
