@@ -25,7 +25,7 @@ function UsuariosQuePostaramTag($tag, $token){
     foreach($resjson->data as $post){
         set_time_limit(10); 
         sleep(2);
-        $acao = modificaRelacao($post->caption->from->id, $token, 'follow'); 
+        $acao = modificaRelacaoCURL($post->caption->from->id, $token, 'follow'); 
         echo '<tr>';
         echo '<td>'. $post->caption->from->username .'</td>';
         echo '<td>'. $post->caption->from->id .'</td>';
@@ -116,6 +116,37 @@ function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
         var_dump($result);
         echo '<br>';
         $resjson = json_decode($result);
+        return $resjson->data->outgoing_status;
+    }
+    
+    function modificaRelacaoCURL($userID, $token, $action){
+        echo $userID;
+        $id_to_follow = $userID;
+        $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
+        $headerData = array('Accept: application/json');
+        $data = array('action' => $action, 'access_token' => $token);
+        $paramString = '&' . http_build_query($data);
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headerData);
+        //curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
+        //curl_setopt($ch, CURLOPT_TIMEOUT, 90);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_POST, count($data));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, ltrim($paramString, '&'));
+        
+        
+        $jsonData = curl_exec($ch);
+        curl_close($ch);
+        
+        echo '<br>';
+        echo '<br>';
+        var_dump($jsonData);
+        echo '<br>';
+        $resjson = json_decode($jsonData);
         return $resjson->data->outgoing_status;
     }
 
