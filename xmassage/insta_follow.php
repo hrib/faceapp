@@ -34,7 +34,7 @@ function UsuariosQuePostaramTag($tag, $token){
         echo '</tr>';
         $count = $count + 1;
         $ultimoid = $post->caption->from->id;
-        if($count >= 1){break;}
+        if($count >= 2){break;}
     }
     echo '</table>';
     return $ultimoid;
