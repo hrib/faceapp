@@ -4,9 +4,10 @@
     $username = getenv('INSTA_USR_LONDONFORHER');
     $password = getenv('INSTA_PSW_LONDONFORHER');
     $debug = true;
-    $media_id = '1258212803463406564_3235184663';
     
-    $recipients = Array('185121648');
+    $media_id = '1258212803463406564_3235184663';
+    $recipients = Array('2082431132');
+    $text = 'I would like to invite you to check my instagram. 30% discount for new clients. :)';
 
     $i = new Instagram($username, $password, $debug);
     
@@ -18,7 +19,7 @@
     }
     
     try {
-        $i->direct_share($media_id, $recipients, $text = null);
+        $i->direct_share($media_id, $recipients, $text);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
