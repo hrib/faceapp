@@ -6,7 +6,7 @@
     $debug = false;
     $media_id = '1258212803463406564_3235184663';
     
-    $recipients = Array('204879346');
+    $recipients = Array('3111227949');
 
     $i = new Instagram($username, $password, $debug);
     
