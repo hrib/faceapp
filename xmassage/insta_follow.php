@@ -33,8 +33,8 @@ function UsuariosQuePostaramTag($tag, $token){
         //echo '<td><img src="'. $post->images->thumbnail->url .'"></td>';
         echo '</tr>';
         $count = $count + 1;
-        if($count >= 5){break;}
         $ultimoid = $post->caption->from->id;
+        if($count >= 1){break;}
     }
     echo '</table>';
     return $ultimoid;
