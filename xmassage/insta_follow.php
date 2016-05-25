@@ -4,7 +4,9 @@
     $id_to_get_followers = '327771661';
     $tag = 'London';
     //FollowSeguidoresdoUsuario($id_to_get_followers, $token);
-    UsuariosQuePostaramTag($tag, $token);
+    $ultimoid = UsuariosQuePostaramTag($tag, $token);
+    require_once 'insta_directmessage.php';
+    CompartilhaMedia($ultimoid);
 
 function UsuariosQuePostaramTag($tag, $token){
     $url = 'https://api.instagram.com/v1/tags/'.$tag.'/media/recent?access_token='.$token;
@@ -31,9 +33,11 @@ function UsuariosQuePostaramTag($tag, $token){
         //echo '<td><img src="'. $post->images->thumbnail->url .'"></td>';
         echo '</tr>';
         $count = $count + 1;
-        if($count >= 10){break;}
+        if($count >= 30){break;}
+        $ultimoid = $post->caption->from->id;
     }
     echo '</table>';
+    return $ultimoid;
 }
 
 
