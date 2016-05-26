@@ -123,7 +123,8 @@ function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
         echo $userID;
         $id_to_follow = $userID;
         $url = 'https://api.instagram.com/v1/users/'.$id_to_follow.'/relationship';
-        $headerData = array('Accept: application/json');
+        //$headerData = array('Accept: application/json');
+        $headerData = array('Content-type: application/x-www-form-urlencoded\r\n');
         $data = array('action' => $action, 'access_token' => $token);
         $paramString = '&' . http_build_query($data);
         
