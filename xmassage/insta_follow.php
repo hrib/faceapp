@@ -60,7 +60,7 @@ function QuemSigo($token){
     
     echo '<table border="1">';
     $count = 0;
-    $randnum = mt_rand(5,20);
+    $randnum = mt_rand(1,20);
     foreach($resjson->data as $sigo){
         set_time_limit(10); 
         sleep(2);
