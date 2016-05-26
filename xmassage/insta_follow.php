@@ -7,6 +7,41 @@
     $ultimoid = UsuariosQuePostaramTag($tag, $token);
     require_once 'insta_directmessage.php';
     //CompartilhaMedia($ultimoid);
+    QuemSigo($token);
+
+
+
+function QuemSigo($token){
+    $url = 'https://api.instagram.com/v1/users/self/follows?access_token='.$token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    
+    $resjson = json_decode($response);
+    //var_dump($resjson);    
+    
+    echo '<table border="1">';
+    $count = 0;
+    foreach($resjson->data as $sigo){
+        set_time_limit(10); 
+        sleep(2);
+        echo '<tr>';
+        echo '<td>'. $sigo->username .'</td>';
+        echo '<td>'. $sigo->id .'</td>';
+        echo '</tr>';
+        $count = $count + 1;
+        $ultimoid = $sigo->id;
+        if($count >= 10){break;}
+    }
+    echo '</table>';
+    return $ultimoid;
+}
+
+
+
 
 function UsuariosQuePostaramTag($tag, $token){
     $url = 'https://api.instagram.com/v1/tags/'.$tag.'/media/recent?access_token='.$token;
