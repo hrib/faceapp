@@ -25,7 +25,7 @@ function CompartilhaMedia($userid){
     try {
         $i->direct_share($media_id, $recipients, $text);
     } catch (Exception $e) {
-        var_dump($e->getMessage());
+        $e->getMessage();
     }
 }
 ?>
