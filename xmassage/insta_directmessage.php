@@ -3,7 +3,7 @@
     //CompartilhaMedia('3111227949'); 
 
 
-function CompartilhaMedia($userid, $mediaid){    
+function CompartilhaMedia($userid, $media_id){    
     $username = getenv('INSTA_USR_LONDONFORHER');
     $password = getenv('INSTA_PSW_LONDONFORHER');
     $debug = true;
