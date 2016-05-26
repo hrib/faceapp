@@ -5,9 +5,44 @@
     $tag = 'London';
     //FollowSeguidoresdoUsuario($id_to_get_followers, $token);
     $ultimoid = UsuariosQuePostaramTag($tag, $token);
+    $sigoid = QuemSigo($token);   
+    $mediaid = MediaRecente($token);   
+    
     require_once 'insta_directmessage.php';
     //CompartilhaMedia($ultimoid);
-    QuemSigo($token);
+    CompartilhaMedia($sigoid, $mediaid);
+
+
+
+function MediaRecente($token){
+    $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='.$token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    
+    $resjson = json_decode($response);
+    //var_dump($resjson);    
+    
+    echo '<table border="1">';
+    $count = 0;
+    $randnum = mt_rand(1,20);
+    foreach($resjson->data as $media){
+        set_time_limit(10); 
+        sleep(2);
+        echo '<tr>';
+        echo '<td>'. $media->caption->text .'</td>';
+        echo '<td>'. $media->id .'</td>';
+        echo '</tr>';
+        $count = $count + 1;
+        $ultimoid = $media->id;
+        if($count >= $randnum){break;}
+    }
+    echo '</table>';
+    return $ultimoid;
+}
 
 
 
@@ -25,6 +60,7 @@ function QuemSigo($token){
     
     echo '<table border="1">';
     $count = 0;
+    $randnum = mt_rand(5,20);
     foreach($resjson->data as $sigo){
         set_time_limit(10); 
         sleep(2);
@@ -34,7 +70,7 @@ function QuemSigo($token){
         echo '</tr>';
         $count = $count + 1;
         $ultimoid = $sigo->id;
-        if($count >= 10){break;}
+        if($count >= $randnum){break;}
     }
     echo '</table>';
     return $ultimoid;
