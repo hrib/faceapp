@@ -1,5 +1,7 @@
 <?php
     require __DIR__.'/../Instagram/src/Instagram.php';
+    CompartilhaMedia('40911127'); 
+
 
 function CompartilhaMedia($userid){    
     $username = getenv('INSTA_USR_LONDONFORHER');
