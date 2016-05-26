@@ -3,15 +3,15 @@
     //CompartilhaMedia('3111227949'); 
 
 
-function CompartilhaMedia($userid){    
+function CompartilhaMedia($userid, $mediaid){    
     $username = getenv('INSTA_USR_LONDONFORHER');
     $password = getenv('INSTA_PSW_LONDONFORHER');
     $debug = true;
     
-    $media_id = '1258383939186778883_3235184663';
+    //$media_id = '1258383939186778883_3235184663';
     $recipients = Array($userid);
     //$text = 'I would like to invite you to check my instagram. 30% discount for new clients. :)';
-    $text = 'Have you seen this?';
+    $text = '';
 
     $i = new Instagram($username, $password, $debug);
     
