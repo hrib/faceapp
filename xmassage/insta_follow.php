@@ -148,6 +148,7 @@ function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
         var_dump($jsonData);
         echo '<br>';
         $resjson = json_decode($jsonData);
+        var_dump(json_last_error($jsonData));
         var_dump($resjson);
         echo '<br>';
         echo '<br>';
