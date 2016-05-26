@@ -30,8 +30,6 @@ function MediaRecente($token){
     $count = 0;
     $randnum = mt_rand(1,20);
     foreach($resjson->data as $media){
-        set_time_limit(10); 
-        sleep(2);
         echo '<tr>';
         echo '<td>'. $media->caption->text .'</td>';
         echo '<td>'. $media->id .'</td>';
@@ -62,8 +60,6 @@ function QuemSigo($token){
     $count = 0;
     $randnum = mt_rand(1,20);
     foreach($resjson->data as $sigo){
-        set_time_limit(10); 
-        sleep(2);
         echo '<tr>';
         echo '<td>'. $sigo->username .'</td>';
         echo '<td>'. $sigo->id .'</td>';
