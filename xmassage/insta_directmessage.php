@@ -1,6 +1,6 @@
 <?php
     require __DIR__.'/../Instagram/src/Instagram.php';
-    CompartilhaMedia('40911127'); 
+    //CompartilhaMedia('40911127'); 
 
 
 function CompartilhaMedia($userid){    
