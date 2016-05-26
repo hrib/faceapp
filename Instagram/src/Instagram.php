@@ -480,6 +480,9 @@ class Instagram
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
         $resp = curl_exec($ch);
+        
+        var_dump($resp);
+        
         $header_len = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
         $header = substr($resp, 0, $header_len);
         $upload = json_decode(substr($resp, $header_len), true);
