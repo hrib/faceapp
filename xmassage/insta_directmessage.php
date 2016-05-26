@@ -8,7 +8,7 @@ function CompartilhaMedia($userid){
     $password = getenv('INSTA_PSW_LONDONFORHER');
     $debug = true;
     
-    $media_id = '1258212803463406564_3235184663';
+    $media_id = '1258383939186778883_3235184663';
     $recipients = Array($userid);
     $text = 'I would like to invite you to check my instagram. 30% discount for new clients. :)';
 
