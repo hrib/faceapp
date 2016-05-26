@@ -154,7 +154,7 @@ function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
         var_dump($header);
         echo '<br>';        
         echo '<br>';
-        var_dump($body);
+        //var_dump($body);
         echo '<br>';
 
 
