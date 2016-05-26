@@ -139,22 +139,26 @@ function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
         
         
         $jsonData = curl_exec($ch);
-        curl_close($ch);
+        
         
         echo '<br>';
         echo '<br>';
         var_dump($jsonData);
         echo '<br>';
-        //$z = html_entity_decode($jsonData);
-        //var_dump($z);
-        //echo '<br>';
-        //$resjson = json_decode($z);
-        //var_dump($resjson);
-        //echo '<br>';
-        //$erro = json_last_error();
-        //var_dump($erro);
-        //echo '<br>';
-        $resjson = json_decode($jsonData);
+
+        $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $header = substr($jsonData, 0, $header_size);
+        $body = substr($jsonData, $header_size);
+        curl_close($ch);
+        echo '<br>';
+        var_dump($header);
+        echo '<br>';        
+        echo '<br>';
+        var_dump($body);
+        echo '<br>';
+
+
+        $resjson = json_decode($body);
         //var_dump(json_last_error($jsonData));
         //var_dump($resjson);
         echo '<br>';
