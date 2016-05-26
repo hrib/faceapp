@@ -133,7 +133,7 @@ function FollowSeguidoresdoUsuario($id_to_get_followers, $token){
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headerData);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        //curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_POST, count($data));
         curl_setopt($ch, CURLOPT_POSTFIELDS, ltrim($paramString, '&'));
         
