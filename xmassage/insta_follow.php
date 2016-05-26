@@ -6,7 +6,7 @@
     //FollowSeguidoresdoUsuario($id_to_get_followers, $token);
     $ultimoid = UsuariosQuePostaramTag($tag, $token);
     require_once 'insta_directmessage.php';
-    //CompartilhaMedia($ultimoid);
+    CompartilhaMedia($ultimoid);
 
 function UsuariosQuePostaramTag($tag, $token){
     $url = 'https://api.instagram.com/v1/tags/'.$tag.'/media/recent?access_token='.$token;
