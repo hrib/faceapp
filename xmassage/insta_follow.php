@@ -2,7 +2,8 @@
     
     $token = getenv('INS_APP_TOKEN');
     //$id_to_get_followers = '327771661';
-    $tag = 'London';
+    $tag_list = Array('londoneye','londoners','londonlife','londongirl');
+    $tag = mt_rand(0,sizeof($tag_list)-1);
     //FollowSeguidoresdoUsuario($id_to_get_followers, $token);
     $ultimoid = UsuariosQuePostaramTag($tag, $token);
     $sigoid = QuemSigo($token);   
