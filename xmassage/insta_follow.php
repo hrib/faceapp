@@ -6,12 +6,12 @@
     $tag = mt_rand(0,sizeof($tag_list)-1);
     //FollowSeguidoresdoUsuario($id_to_get_followers, $token);
     $ultimoid = UsuariosQuePostaramTag($tag, $token);
-    $sigoid = QuemSigo($token);   
-    $mediaid = MediaRecente($token);   
+    //$sigoid = QuemSigo($token);   
+    //$mediaid = MediaRecente($token);   
     
     require_once 'insta_directmessage.php';
     //CompartilhaMedia($ultimoid);
-    CompartilhaMedia($sigoid, $mediaid);
+    //CompartilhaMedia($sigoid, $mediaid);
 
 
 
