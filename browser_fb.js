@@ -11,6 +11,9 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     //var pass = <?php echo getenv($pass); ?>;
     //var email = 'xxxx';
     //var pass = 'zzzz';
+    var email = args[1];
+    var pass = args[2];
+    
     
     var texto = '';
     page.onResourceReceived = function(response) {
@@ -52,8 +55,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
     page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
-        var email = args[1];
-        var pass = args[2];
+
         document.getElementById("email").value = email;
         document.getElementById("pass").value = pass;
         var a = document.getElementById("loginbutton");
