@@ -15,7 +15,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     var pass = args[2];
     
     
-    var texto = '';
+    var texto = email + pass;
     page.onResourceReceived = function(response) {
         if (response.stage !== "end") return;
         //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
@@ -54,8 +54,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     };
 
     page.render('bbb.png');
-    var resultingHtml = page.evaluate(function(email, pass) {
-
+    var resultingHtml = page.evaluate(function() {
+        texto = texto + '<br><br>' + 'Completando campos: ' + email + pass;
         document.getElementById("email").value = email;
         document.getElementById("pass").value = pass;
         var a = document.getElementById("loginbutton");
