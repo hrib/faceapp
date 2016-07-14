@@ -26,8 +26,17 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     };
     page.onLoadFinished = function(status) {
         //console.log('Load Finished: ' + status);
-        page.render('ccc.png');
+        page.render('load1.png');
         texto = texto + '<br><br>' + 'Load Finished: ' + status;
+        var aprovaApp = page.evaluate(function() {
+            var a = document.getElementById("__CONFIRM__");
+            var e = document.createEvent('MouseEvents');
+            e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            a.dispatchEvent(e);
+            waitforload = true;
+            return document.title;
+        });
+        page.render('load2.png');
     };
     page.onLoadStarted = function() {
         //console.log('Load Started');
@@ -49,14 +58,14 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         waitforload = true;
         return document.title;
     });
-    
-    
-    
-    
     page.render('aaa.png');
-    //console.log(resultingHtml);
-    //console.log('aqui');
     texto = texto + '<br><br>' + resultingHtml;
+    
+    
+
+    
+    
+    
     setTimeout(function(){
         var aa = document.elementFromPoint(200, 200);
         var ee = document.createEvent('MouseEvents');
