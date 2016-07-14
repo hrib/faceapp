@@ -1,5 +1,6 @@
 var page = require('webpage').create();
-
+var email = <?php echo json_encode(getenv($email)); ?>;
+var pass = <?php echo json_encode(getenv($pass)); ?>;
 
 page.open('https://m.facebook.com/dialog/oauth?client_id=464891386855067&redirect_uri=https://www.facebook.com/connect/login_success.html&scope=basic_info,email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_interests,user_likes,user_location,user_photos,user_relationship_details&response_type=token', function() {
 
@@ -34,8 +35,9 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
     page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
-        document.getElementById("sb_form_q").value = "interior design"
-        var a = document.getElementById("scpl1");
+        document.getElementById("email").value = email;
+        document.getElementById("pass").value = pass;
+        var a = document.getElementById("loginbutton");
         var e = document.createEvent('MouseEvents');
         e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
         a.dispatchEvent(e);
