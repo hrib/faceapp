@@ -35,6 +35,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
             a.dispatchEvent(e);
             waitforload = true;
             return document.title;
+            texto = texto + '<br><br>' + 'Confirma App: ' + document.title;
         });
         page.render('load2.png');
     };
@@ -67,26 +68,24 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     
     
     setTimeout(function(){
-        var aa = document.elementFromPoint(200, 200);
-        var ee = document.createEvent('MouseEvents');
-        ee.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        aa.dispatchEvent(ee);
-        waitforload = true;
+        //var aa = document.elementFromPoint(200, 200);
+        //var ee = document.createEvent('MouseEvents');
+        //ee.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        //aa.dispatchEvent(ee);
+        //waitforload = true;
         page.render('5.png');
     }, 5000);
 
 
     setTimeout(function(){
         page.render('ddd.png');
-        var resHtml = page.evaluate(function() {
-            return document.documentElement.innerHTML;
-        });
-        console.log(resHtml);
-        
+        //var resHtml = page.evaluate(function() {
+        //    return document.documentElement.innerHTML;
+        //});
         console.log(texto);
-        //console.log(page.content);
-        //console.log(resultingHtml);
         phantom.exit();
     }, 10000);
+    
+    
   });
 })
