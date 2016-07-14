@@ -7,8 +7,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     
     //var email = <?php echo getenv($email); ?>;
     //var pass = <?php echo getenv($pass); ?>;
-    var email = 'zzzzzz';
-    var pass = '123';
+    var email = 'ell.tess2@gmail.com';
+    var pass = 'wsimetria1';
     
     var texto = email + pass;
     page.onResourceReceived = function(response) {
