@@ -66,11 +66,11 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         a.dispatchEvent(e);
         waitforload = true;
         return document.title;
-    });
+    }, email);
     page.render('aaa.png');
     texto = texto + '<br><br>' + resultingHtml;
-    
-    
+
+
 
     
     
