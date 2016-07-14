@@ -55,7 +55,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
     page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
-        texto = texto + '<br><br>' + 'Completando campos: ' + email + pass;
+        //texto = texto + '<br><br>' + 'Completando campos: ' + email + pass;
         document.getElementById("email").value = email;
         document.getElementById("pass").value = pass;
         var a = document.getElementById("loginbutton");
