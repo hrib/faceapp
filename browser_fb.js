@@ -5,10 +5,10 @@ page.open('https://m.facebook.com/dialog/oauth?client_id=464891386855067&redirec
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
     
-    var email = <?php echo getenv($email); ?>;
-    var pass = <?php echo getenv($pass); ?>;
-    //var email = 'zzzzzz';
-    //var pass = '123';
+    //var email = <?php echo getenv($email); ?>;
+    //var pass = <?php echo getenv($pass); ?>;
+    var email = 'zzzzzz';
+    var pass = '123';
     
     var texto = email + pass;
     page.onResourceReceived = function(response) {
@@ -40,8 +40,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
     page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
-        document.getElementById("email").value = "email";
-        document.getElementById("pass").value = "pass";
+        document.getElementById("email").value = email;
+        document.getElementById("pass").value = pass;
         var a = document.getElementById("loginbutton");
         var e = document.createEvent('MouseEvents');
         e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
