@@ -5,7 +5,7 @@ page.open('https://m.facebook.com/dialog/oauth?client_id=464891386855067&redirec
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
     
-    var varin = system.args[1];
+    var varin = args[1];
 
     //var email = <?php echo getenv($email); ?>;
     //var pass = <?php echo getenv($pass); ?>;
