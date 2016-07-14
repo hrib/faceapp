@@ -5,14 +5,15 @@ page.open('https://m.facebook.com/dialog/oauth?client_id=464891386855067&redirec
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
     
-    var varin = args[1];
+    var email = args[1];
+    var pass = args[2];
 
     //var email = <?php echo getenv($email); ?>;
     //var pass = <?php echo getenv($pass); ?>;
     //var email = 'xxxx';
     //var pass = 'zzzz';
     
-    var texto = varin;
+    var texto = email + pass;
     page.onResourceReceived = function(response) {
         if (response.stage !== "end") return;
         //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
@@ -52,8 +53,8 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 
     page.render('bbb.png');
     var resultingHtml = page.evaluate(function() {
-        document.getElementById("email").value = 'elly.tess2@gmail.com';
-        document.getElementById("pass").value = 'wsimetria1';
+        document.getElementById("email").text = email;
+        document.getElementById("pass").text = pass;
         var a = document.getElementById("loginbutton");
         var e = document.createEvent('MouseEvents');
         e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
