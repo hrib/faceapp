@@ -56,17 +56,17 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     page.render('bbb.png');
     
     
-    var resultingHtml = page.evaluate(function(email) {
+    var resultingHtml = page.evaluate(function(args) {
         //texto = texto + '<br><br>' + 'Completando campos: ' + email + pass;
-        document.getElementById("email").value = email;
-        document.getElementById("pass").value = '111';
+        document.getElementById("email").value = args[1];
+        document.getElementById("pass").value = args[2];
         var a = document.getElementById("loginbutton");
         var e = document.createEvent('MouseEvents');
         e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
         a.dispatchEvent(e);
         waitforload = true;
         return document.title;
-    }, email);
+    }, args);
     page.render('aaa.png');
     texto = texto + '<br><br>' + resultingHtml;
 
