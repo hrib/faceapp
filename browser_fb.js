@@ -12,7 +12,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     //var email = 'xxxx';
     //var pass = 'zzzz';
     
-    var texto = '';
+    var texto = varin;
     page.onResourceReceived = function(response) {
         if (response.stage !== "end") return;
         //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
