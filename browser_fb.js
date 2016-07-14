@@ -1,7 +1,7 @@
 var page = require('webpage').create();
 
 
-page.open('http://www.bing.com/', function() {
+page.open('https://m.facebook.com/dialog/oauth?client_id=464891386855067&redirect_uri=https://www.facebook.com/connect/login_success.html&scope=basic_info,email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_interests,user_likes,user_location,user_photos,user_relationship_details&response_type=token', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
     var texto = "";
@@ -67,7 +67,7 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
         });
         console.log(resHtml);
         
-        //console.log(texto);
+        console.log(texto);
         //console.log(page.content);
         //console.log(resultingHtml);
         phantom.exit();
