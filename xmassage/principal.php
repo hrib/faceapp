@@ -46,17 +46,17 @@ echo '<br><img src="'.$retorno_media[0].'"><br>';
 
 Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget);
 
-if($tipo_media == 'foto'){
-  echo '<br>JPG<br>';
-  require_once('/app/Instagram/uploadPhoto.php');
+//if($tipo_media == 'foto'){
+  //echo '<br>JPG<br>';
+  //require_once('/app/Instagram/uploadPhoto.php');
   //Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
-}else{
-  echo '<br>MP4<br>';
-  $resizemedia = 'resize'.$media;
-  shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
-  echo $resizemedia;
-  require_once('/app/Instagram/uploadVideo.php');
+//}else{
+  //echo '<br>MP4<br>';
+  //$resizemedia = 'resize'.$media;
+  //shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
+  //echo $resizemedia;
+  //require_once('/app/Instagram/uploadVideo.php');
   //Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
-}
+//}
 
 ?>
