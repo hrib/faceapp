@@ -1,5 +1,11 @@
 <?php
     
+    $aleatorio = mt_rand(0, 23);
+    if($aleatorio < 19){
+        echo $aleatorio . " fim";  
+        exit;
+    }
+    
     $token = getenv('INS_APP_TOKEN');
     //$id_to_get_followers = '327771661';
     $tag_list = Array('londoneye','londoners','londonlife','londongirl');
