@@ -1,5 +1,12 @@
 <?php
 session_start(); 
+
+$aleatorio = mt_rand(0, 23);
+if($aleatorio < 21){
+ echo $aleatorio . " fim";  
+ exit;
+}
+
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('download_media_fb.php');
 require_once('post_media_fb.php');
