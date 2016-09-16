@@ -41,7 +41,7 @@ function Download_Media_fb($pageOriginal, $app_id, $app_secret){
         echo '</tr>';
       }
   echo '</table>';
-  //return array($media,$tipo_media);
+  return array($media,$tipo_media);
 }
 
 ?>
