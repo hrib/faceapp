@@ -5,9 +5,12 @@
 //    $response =  exec ('bin/phantomjs ' . $phantom_script);
 //    echo  htmlspecialchars($response);
 //set_time_limit(60); 
-//$pathToPhatomJs = 'bin/phantomjs';
-$pathToPhatomJs = '../bin/phantomjs';
-$pathToJsScript = '../wapp/browser.js';
+$pathToPhatomJs = 'bin/phantomjs';
+$pathToJsScript = 'browser_wapp.js';
+
+//$pathToPhatomJs = '../bin/phantomjs';
+//$pathToJsScript = '../wapp/browser.js';
+
 $stdOut = exec(sprintf('%s %s', $pathToPhatomJs,  $pathToJsScript), $out);
 echo $stdOut;
     
