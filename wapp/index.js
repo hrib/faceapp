@@ -1,6 +1,3 @@
-<?
-session_start();
-
 var page = require('webpage').create();
 
 page.open('https://web.whatsapp.com/', function() {
@@ -77,4 +74,3 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
   });
 })
 
-?>
