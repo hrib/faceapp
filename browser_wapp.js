@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 
-page.open('http://web.whatsapp.com/', function() {
+page.open('https://web.whatsapp.com/', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
