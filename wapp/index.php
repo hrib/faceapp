@@ -1,26 +1,80 @@
 <?
 session_start();
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://web.whatsapp.com/');
-//curl_setopt($ch, CURLOPT_POSTFIELDS, 'charset_test=â‚¬,Â´,â‚¬,Â´,æ°´,Ð”,Ð„&email=' . urlencode($login_email) . '&pass=' . urlencode($login_pass) . '&login=Login');
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept-Charset: utf-8',
-    'Accept-Language: en-us,en;q=0.7,bn-bd;q=0.3',
-    'Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5'));
-//curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd() . '/mirazmac_cookie.txt'); // The cookie file
-//curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd() . '/mirazmac_cookie.txt'); // cookie jar
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windo`enter code here`ws; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/31.0");
-//curl_setopt($ch, CURLOPT_REFERER, "http://m.facebook.com");
-$ExecMain = curl_exec($ch) or die(curl_error($ch));
-var_dump($ExecMain);
+var page = require('webpage').create();
+
+page.open('https://web.whatsapp.com/', function() {
+
+page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
+    var texto = "";
+    page.onResourceReceived = function(response) {
+        if (response.stage !== "end") return;
+        //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
+        texto = texto + '<br><br>' + 'Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url;
+    };
+    page.onResourceRequested = function(requestData, networkRequest) {
+        //console.log('Request (#' + requestData.id + '): ' + requestData.url);
+        texto = texto + '<br><br>' + 'Request (#' + requestData.id + '): ' + requestData.url;
+    };
+    page.onUrlChanged = function(targetUrl) {
+        //console.log('New URL: ' + targetUrl);
+        texto = texto + '<br><br>' + 'New URL: ' + targetUrl;
+    };
+    page.onLoadFinished = function(status) {
+        //console.log('Load Finished: ' + status);
+        page.render('ccc.png');
+        texto = texto + '<br><br>' + 'Load Finished: ' + status;
+    };
+    page.onLoadStarted = function() {
+        //console.log('Load Started');
+        texto = texto + '<br><br>' + 'Load Started';
+    };
+    page.onNavigationRequested = function(url, type, willNavigate, main) {
+        //console.log('Trying to navigate to: ' + url);
+        texto = texto + '<br><br>' + 'Trying to navigate to: ' + url;
+    };
+
+    page.render('bbb.png');
+    var resultingHtml = page.evaluate(function() {
+        document.getElementById("sb_form_q").value = "interior design"
+        var a = document.getElementById("scpl1");
+        var e = document.createEvent('MouseEvents');
+        e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
+        waitforload = true;
+        return document.title;
+    });
+    
+    
+    
+    
+    page.render('aaa.png');
+    //console.log(resultingHtml);
+    //console.log('aqui');
+    texto = texto + '<br><br>' + resultingHtml;
+    setTimeout(function(){
+        var aa = document.elementFromPoint(200, 200);
+        var ee = document.createEvent('MouseEvents');
+        ee.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        aa.dispatchEvent(ee);
+        waitforload = true;
+        page.render('5.png');
+    }, 5000);
 
 
-
+    setTimeout(function(){
+        page.render('ddd.png');
+        var resHtml = page.evaluate(function() {
+            return document.documentElement.innerHTML;
+        });
+        console.log(resHtml);
+        
+        //console.log(texto);
+        //console.log(page.content);
+        //console.log(resultingHtml);
+        phantom.exit();
+    }, 10000);
+  });
+})
 
 ?>
