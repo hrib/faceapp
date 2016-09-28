@@ -14,9 +14,11 @@ $originaluserid = 35380841; //3505274959;
 $retorno = MediaRecente($originaluserid, $token);
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
-echo '<br>comment = '. $ret_comments;
 preg_match_all("/(#\w+)/", $ret_comments, $matches);
-var_dump( $matches );
+$meus_comments = $matches[0] . ' ' . $matches[1] . ' ' . $matches[2] . ' ' . $matches[3] . ' ' . $matches[4] . ' ' . $matches[5] . ' ' . $matches[6] . ' ' . $matches[7] . ' ' . $matches[8] . ' ' . $matches[9] . ' ' . $matches[10] . ' ' . $matches[11] . ' ' . $matches[12] . ' ' . $matches[13] . ' ' . $matches[14] . ' ' . $matches[15] . ' ' . $matches[16] . ' ' . $matches[17] . ' ' . $matches[18] . ' ' . $matches[19] . ' ' . $matches[20] ;
+//echo '<br>comment = '. $ret_comments;
+//var_dump( $matches );
+
 
 
 function MediaRecente($originaluserid, $token){
@@ -88,7 +90,7 @@ function CommentsMediaRecente($mediaID, $token){
 
 
 
-$texto = $retorno[0];
+$texto = $retorno[0] . ' /n /r 'r 'n ' . $meus_comments;
 $tipo = $retorno[1];
 $media_url = $retorno[2];
 
