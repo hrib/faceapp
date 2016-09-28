@@ -72,32 +72,13 @@ function CommentsMediaRecente($mediaID, $token){
     var_dump($resjson);    
     echo '<br>';
     echo '<table border="1">';
-    $count = 0;
-    $randnum = mt_rand(1,20);
-    foreach($resjson->data as $media){
+    foreach($resjson->data as $comment){
         echo '<tr>';
-        echo '<td>'. $media->caption->text .'</td>';
-        echo '<td>'. $media->type .'</td>';
-        if($media->type == 'image'){
-          $media_url = $media->images->standard_resolution->url;
-        }else{
-          $media_url = $media->videos->standard_resolution->url;
-        }
-        echo '<td>'. $media_url .'</td>';
-        echo '<td><img src="'.$media_url.'"></td>';
+        echo '<td>'. $comment->text .'</td>';
         echo '</tr>';
-
-        $media_text = $media->caption->text;
-        $media_tipo = $media->type;
-        
-        $mediadata = [$media_text, $media_tipo, $media_url];
-        
-        $count = $count + 1;
-        $ultimoid = $media->id;
-        if($count >= $randnum){break;}
     }
     echo '</table>';
-    return $mediadata;
+    return $resjson->data[1]->text;
 }
 
 
