@@ -53,14 +53,18 @@ echo '<br>'.$retorno[0].'<br>';
 echo '<br>'.$retorno[1].'<br>';
 echo '<br><img src="'.$retorno[2].'"><br>';
 
+$texto = $retorno[0];
+$tipo = $retorno[1];
+$media = $retorno[2];
 
-if($tipo_media == 'foto'){
+if($tipo == 'image'){
   echo '<br>JPG<br>';
   require_once('/app/Instagram/uploadPhoto.php');
   Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
-//}else{
+}else{
   echo '<br>MP4<br>';
   $resizemedia = 'resize'.$media;
+  $resizemedia = 'resize.jpg';
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
   require_once('/app/Instagram/uploadVideo.php');
