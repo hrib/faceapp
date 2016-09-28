@@ -9,7 +9,7 @@ if($aleatorio < 21){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
 $token = getenv('INS_APP_TOKEN');
-$originaluserid = 35380841; //3505274959;
+$originaluserid = 3505274959; //35380841; //
 
 $retorno = MediaRecente($originaluserid, $token);
 $mediaID = $retorno[3];
