@@ -31,7 +31,7 @@ function MediaRecente($originaluserid, $token){
         echo '<tr>';
         echo '<td>'. $media->caption->text .'</td>';
         echo '<td>'. $media->images->standard_resolution->url .'</td>';
-        echo '<td>'. $media->images->type .'</td>';
+        echo '<td>'. $media->type .'</td>';
         echo '<td><img src="'.$media->images->standard_resolution->url.'"></td>';
         echo '</tr>';
         $count = $count + 1;
