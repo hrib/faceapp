@@ -22,7 +22,7 @@ function MediaRecente($originaluserid, $token){
     curl_close($ch);
     
     $resjson = json_decode($response);
-    var_dump($resjson);    
+    //var_dump($resjson);    
     echo '<br>';
     echo '<table border="1">';
     $count = 0;
@@ -34,17 +34,20 @@ function MediaRecente($originaluserid, $token){
         echo '<td>'. $media->type .'</td>';
         echo '<td><img src="'.$media->images->standard_resolution->url.'"></td>';
         echo '</tr>';
+        $mediaurl = $media->images->standard_resolution->url;
+        $mediatext = $media->caption->text;
+        $mediadata = [$mediaurl, $mediatext];
         $count = $count + 1;
         $ultimoid = $media->id;
         if($count >= $randnum){break;}
     }
     echo '</table>';
-    return $ultimoid;
+    return $mediadata;
 }
 
 
-//echo '<br>'.$media.'<br>';
-//echo '<br><img src="'.$retorno_media[0].'"><br>';
+echo '<br>'.$retorno[0].'<br>';
+echo '<br><img src="'.$retorno[1].'"><br>';
 
 
 if($tipo_media == 'foto'){
