@@ -14,6 +14,7 @@ $originaluserid = 35380841; //3505274959;
 $retorno = MediaRecente($originaluserid, $token);
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
+echo '<br>comment = '. $ret_comments;
 
 
 function MediaRecente($originaluserid, $token){
