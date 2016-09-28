@@ -79,9 +79,10 @@ function CommentsMediaRecente($mediaID, $token){
         echo '<tr>';
         echo '<td>'. $comment->text .'</td>';
         echo '</tr>';
+        $texto_acumulado = $texto_acumulado . ' ' . $comment->text;
     }
     echo '</table>';
-    return $resjson->data[0]->text;
+    return $texto_acumulado;
 }
 
 
