@@ -22,7 +22,7 @@ function MediaRecente($originaluserid, $token){
     curl_close($ch);
     
     $resjson = json_decode($response);
-    //var_dump($resjson);    
+    var_dump($resjson);    
     echo '<br>';
     echo '<table border="1">';
     $count = 0;
