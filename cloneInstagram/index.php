@@ -16,8 +16,8 @@ $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
 preg_match_all("/(#\w+)/", $ret_comments, $matches);
 $meus_comments = $matches[0] . ' ' . $matches[1] . ' ' . $matches[2] . ' ' . $matches[3] . ' ' . $matches[4] . ' ' . $matches[5] . ' ' . $matches[6] . ' ' . $matches[7] . ' ' . $matches[8] . ' ' . $matches[9] . ' ' . $matches[10] . ' ' . $matches[11] . ' ' . $matches[12] . ' ' . $matches[13] . ' ' . $matches[14] . ' ' . $matches[15] . ' ' . $matches[16] . ' ' . $matches[17] . ' ' . $matches[18] . ' ' . $matches[19] . ' ' . $matches[20] ;
-//echo '<br>comment = '. $ret_comments;
-//var_dump( $matches );
+echo '<br><br>comment = '. $meus_comments .'<br><br>';
+var_dump( $matches );
 
 
 
