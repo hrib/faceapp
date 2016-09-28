@@ -15,7 +15,9 @@ $retorno = MediaRecente($originaluserid, $token);
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
 preg_match_all("/(#\w+)/", $ret_comments, $matches);
-$meus_comments = $matches[0] . ' ' . $matches[1] . ' ' . $matches[2] . ' ' . $matches[3] . ' ' . $matches[4] . ' ' . $matches[5] . ' ' . $matches[6] . ' ' . $matches[7] . ' ' . $matches[8] . ' ' . $matches[9] . ' ' . $matches[10] . ' ' . $matches[11] . ' ' . $matches[12] . ' ' . $matches[13] . ' ' . $matches[14] . ' ' . $matches[15] . ' ' . $matches[16] . ' ' . $matches[17] . ' ' . $matches[18] . ' ' . $matches[19] . ' ' . $matches[20] ;
+//$meus_comments = $matches[0] . ' ' . $matches[1] . ' ' . $matches[2] . ' ' . $matches[3] . ' ' . $matches[4] . ' ' . $matches[5] . ' ' . $matches[6] . ' ' . $matches[7] . ' ' . $matches[8] . ' ' . $matches[9] . ' ' . $matches[10] . ' ' . $matches[11] . ' ' . $matches[12] . ' ' . $matches[13] . ' ' . $matches[14] . ' ' . $matches[15] . ' ' . $matches[16] . ' ' . $matches[17] . ' ' . $matches[18] . ' ' . $matches[19] . ' ' . $matches[20] ;
+$meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] . ' ' . $matches[0][11] . ' ' . $matches[0][12] . ' ' . $matches[0][13] . ' ' . $matches[0][14] . ' ' . $matches[0][15] . ' ' . $matches[0][16] . ' ' . $matches[0][17] . ' ' . $matches[0][18] . ' ' . $matches[0][19] . ' ' . $matches[0][20] ;
+
 echo '<br><br>comment = '. $meus_comments .'<br><br>';
 var_dump( $matches );
 
