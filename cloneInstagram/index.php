@@ -34,9 +34,12 @@ function MediaRecente($originaluserid, $token){
         echo '<td>'. $media->type .'</td>';
         echo '<td><img src="'.$media->images->standard_resolution->url.'"></td>';
         echo '</tr>';
-        $mediaurl = $media->images->standard_resolution->url;
-        $mediatext = $media->caption->text;
-        $mediadata = [$mediaurl, $mediatext];
+
+        $media_text = $media->caption->text;
+        $media_tipo = $media->type;
+        $media_url = $media->images->standard_resolution->url;
+        $mediadata = [$media_text, $media_tipo, $media_url];
+        
         $count = $count + 1;
         $ultimoid = $media->id;
         if($count >= $randnum){break;}
@@ -47,7 +50,8 @@ function MediaRecente($originaluserid, $token){
 
 
 echo '<br>'.$retorno[0].'<br>';
-echo '<br><img src="'.$retorno[1].'"><br>';
+echo '<br>'.$retorno[1].'<br>';
+echo '<br><img src="'.$retorno[2].'"><br>';
 
 
 if($tipo_media == 'foto'){
