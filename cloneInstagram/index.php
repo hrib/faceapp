@@ -15,6 +15,8 @@ $retorno = MediaRecente($originaluserid, $token);
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
 echo '<br>comment = '. $ret_comments;
+preg_match_all("/(#\w+)/", $ret_comments, $matches);
+var_dump( $matches );
 
 
 function MediaRecente($originaluserid, $token){
