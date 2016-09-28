@@ -30,9 +30,9 @@ function MediaRecente($originaluserid, $token){
     foreach($resjson->data as $media){
         echo '<tr>';
         echo '<td>'. $media->caption->text .'</td>';
-        echo '<td>'. $media->standard_resolution->url .'</td>';
-        echo '<td>'. $media->type .'</td>';
-        echo '<td><img src="'.$media->standard_resolution->url.'"></td>';
+        echo '<td>'. $media->images->standard_resolution->url .'</td>';
+        echo '<td>'. $media->images->type .'</td>';
+        echo '<td><img src="'.$media->images->standard_resolution->url.'"></td>';
         echo '</tr>';
         $count = $count + 1;
         $ultimoid = $media->id;
