@@ -79,7 +79,7 @@ function CommentsMediaRecente($mediaID, $token){
         echo '</tr>';
     }
     echo '</table>';
-    return $resjson->data[1]->text;
+    return $resjson->data[0]->text;
 }
 
 
