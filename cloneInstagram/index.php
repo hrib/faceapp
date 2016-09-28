@@ -90,7 +90,7 @@ function CommentsMediaRecente($mediaID, $token){
 
 
 
-$texto = $retorno[0] . ' /n /r ' . $meus_comments;
+$texto = $retorno[0] . ' \n \r /n /r ' . $meus_comments;
 $tipo = $retorno[1];
 $media_url = $retorno[2];
 
