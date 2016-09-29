@@ -108,7 +108,7 @@ if($tipo == 'image'){
   file_put_contents($media, file_get_contents($media_url));
   require_once('/app/Instagram/uploadPhoto.php');
   $ret_upload = Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
- echo '<br>' . $ret_upload . '<br>';
+  echo '<br>retorno = ' . $ret_upload . '<br>';
 }else{
   echo '<br>MP4<br>';
   $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.mp4';
@@ -120,21 +120,6 @@ if($tipo == 'image'){
   Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
 
-require_once('/app/Instagram/src/Instagram.php');
-     
-    try {
-        $i->login();
-    } catch (InstagramException $e) {
-        $e->getMessage();
-        exit();
-    }
-    
-    try {
-        $i->comment($mediaId, $commentText);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
- 
  
 
 ?>
