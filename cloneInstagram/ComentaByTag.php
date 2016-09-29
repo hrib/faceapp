@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-    $hashtagString = $matches[0][0];
+    $hashtagString = str_replace("","#", $matches[0][0]);
     echo '<br><br> hashtag = ' . $hashtagString . '<br>';
     try {
         $ret_tags = $i->getHashtagFeed($hashtagString, $maxid = null);
