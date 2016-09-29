@@ -62,9 +62,11 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     }
     //var_dump($ret_mediacomments);
 
-    $TOPcomment = $ret_mediacomments["comments"][0]["text"] . $ret_mediacomments["comments"][1]["text"] . $ret_mediacomments["comments"][2]["text"];
+    $TOPcomment = $ret_mediacomments["comments"][0]["text"] . $ret_mediacomments["comments"][1]["text"] . $ret_mediacomments["comments"][2]["text"] . ' #instagram ' ;
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
-    $meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] . ' ' . $matches[0][11] . ' ' . $matches[0][12] . ' ' . $matches[0][13] . ' ' . $matches[0][14] . ' ' . $matches[0][15] . ' ' . $matches[0][16] . ' ' . $matches[0][17] . ' ' . $matches[0][18] . ' ' . $matches[0][19] . ' ' . $matches[0][20] ;
+    //$meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] . ' ' . $matches[0][11] . ' ' . $matches[0][12] . ' ' . $matches[0][13] . ' ' . $matches[0][14] . ' ' . $matches[0][15] . ' ' . $matches[0][16] . ' ' . $matches[0][17] . ' ' . $matches[0][18] . ' ' . $matches[0][19] . ' ' . $matches[0][20] ;
+    $meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] ;
+        
     echo '<br><br> Top comment = ' . $TOPcomment . '<br>';
     echo '<br><br> Meus comments = ' . $meus_comments . '<br>';
 
@@ -104,13 +106,13 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     $mediaId_posted = $ret_upload['media']['id'];
     echo '<br>mediaid = ' . $mediaId_posted . '<br>';
     
-    //try {
-    //    $comenta = $i->comment($mediaId_posted, $meus_comments);
-    //} catch (Exception $e) {
-    //    echo $e->getMessage();
-    //}
+    try {
+        $comenta = $i->comment($mediaId_posted, $meus_comments);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
     //$comenta = $i->comment($mediaId_posted, $meus_comments);
-    //var_dump($comenta);
+    var_dump($comenta);
  
 
 function PegaPosts($feed){
