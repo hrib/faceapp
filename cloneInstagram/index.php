@@ -19,7 +19,7 @@ preg_match_all("/(#\w+)/", $ret_comments, $matches);
 $meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] . ' ' . $matches[0][11] . ' ' . $matches[0][12] . ' ' . $matches[0][13] . ' ' . $matches[0][14] . ' ' . $matches[0][15] . ' ' . $matches[0][16] . ' ' . $matches[0][17] . ' ' . $matches[0][18] . ' ' . $matches[0][19] . ' ' . $matches[0][20] ;
 
 echo '<br><br>comment = '. $meus_comments .'<br><br>';
-var_dump( $matches );
+//var_dump( $matches );
 
 
 
@@ -33,7 +33,7 @@ function MediaRecente($originaluserid, $token){
     curl_close($ch);
     
     $resjson = json_decode($response);
-    var_dump($resjson);    
+    //var_dump($resjson);    
     echo '<br>';
     echo '<table border="1">';
     $count = 0;
