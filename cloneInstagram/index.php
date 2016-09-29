@@ -12,6 +12,9 @@ $token = getenv('INS_APP_TOKEN');
 $originaluserid = 2071958799; //35380841; //3505274959; //
 
 $retorno = MediaRecente($originaluserid, $token);
+$mywall = MediaRecente('self', $token);
+if($retorno[0] = $mywall[0]){exit;}
+
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
 preg_match_all("/(#\w+)/", $ret_comments, $matches);
@@ -36,8 +39,8 @@ function MediaRecente($originaluserid, $token){
     //var_dump($resjson);    
     echo '<br>';
     echo '<table border="1">';
-    $count = 0;
-    $randnum = mt_rand(1,10);
+    //$count = 0;
+    //$randnum = mt_rand(1,10);
     foreach($resjson->data as $media){
         echo '<tr>';
         echo '<td>'. $media->caption->text .'</td>';
@@ -58,9 +61,10 @@ function MediaRecente($originaluserid, $token){
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
         
-        $count = $count + 1;
-        $ultimoid = $media->id;
-        if($count >= $randnum){break;}
+        //$count = $count + 1;
+        //$ultimoid = $media->id;
+        //if($count >= $randnum){break;}
+        break;
     }
     echo '</table>';
     return $mediadata;
