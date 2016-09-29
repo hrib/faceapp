@@ -32,4 +32,6 @@ function Instagram_UploadPhoto($username, $password, $photo, $caption){
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+    
+    return $e->getMessage();
 }
