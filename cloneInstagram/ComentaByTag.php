@@ -9,7 +9,7 @@ session_start();
     } catch (Exception $e) {
         echo $e->getMessage();
     }
-    var_dump($ret_tags);
+    //var_dump($ret_tags);
     
     echo '<br>';
     echo '<table border="1">';
@@ -28,14 +28,21 @@ session_start();
         echo '<td>'. $post_url .'</td>';
         echo '<td><img src="'.$post_url.'"></td>';
         echo '</tr>';
-        $post_text = $post["caption"]["text"];
-        $post_tipo = $post["media_type"];
-        $post_id = $post["id"];
+
         
-        $postdata = [$post_text, $post_tipo, $post_url, $post_id];
-        //break; //pega so TOP post
+        $post_id = $post["id"];
+        if(($post["user"]["pk"] <> $originaluserid) AND $post["user"]["username"] <> $Insta_username)){
+            break; //pega so TOP post
+        }
     }
     echo '</table>';
+
+    try {
+        $ret_like = $i->like($post_id);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    var_dump($ret_like);
 
 
 ?>
