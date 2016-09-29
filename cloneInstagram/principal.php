@@ -62,7 +62,7 @@ function PegaPosts($feed){
         $media_id = $media->id;
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
-        break;
+        //break;
     }
     echo '</table>';
     return $mediadata;
