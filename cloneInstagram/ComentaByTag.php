@@ -31,7 +31,7 @@ session_start();
 
         
         $post_id = $post["id"];
-        if(($post["user"]["pk"] <> $originaluserid) AND $post["user"]["username"] <> $Insta_username)){
+        if(($post["user"]["pk"] <> $originaluserid) AND ($post["user"]["username"] <> $Insta_username)){
             break; //pega so TOP post
         }
     }
