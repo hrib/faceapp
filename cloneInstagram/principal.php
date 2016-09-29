@@ -1,15 +1,19 @@
 <?php
 session_start(); 
 
-$aleatorio = mt_rand(1, 10);
-if($aleatorio < 6){
+$aleatorio = mt_rand(1, 9);
+if($aleatorio < 4){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
-$originaluserid = 2071958799; //35380841; //3505274959; //
-}else{
+$originaluserid = 2071958799; //manda..  carro
+}else if($aleatorio < 7){
 $Insta_username = getenv('INSTA_USR_2');
 $Insta_passw = getenv('INSTA_PSW_2');
-$originaluserid = 1443400890; 
+$originaluserid = 1443400890; // fashionzine
+}else {
+$Insta_username = getenv('INSTA_USR_3');
+$Insta_passw = getenv('INSTA_PSW_3');
+$originaluserid = 43175003; // @louisewawrzynska  
 }
 
 
