@@ -64,8 +64,15 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       echo '<br>JPG<br>';
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
       file_put_contents($media, file_get_contents($media_url));
-      require_once('/app/Instagram/uploadPhoto.php');
-      $ret_upload = Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
+        
+            try {
+                $ret = $i->uploadPhoto($media, $texto);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+
+      //require_once('/app/Instagram/uploadPhoto.php');
+      //$ret_upload = Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
     }else{
       echo '<br>MP4<br>';
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.mp4';
@@ -73,8 +80,17 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       $resizemedia = 'resize'.$media;
       shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
       echo $resizemedia;
-      require_once('/app/Instagram/uploadVideo.php');
-      $ret_upload = Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
+        
+            try {
+                $ret = $i->uploadVideo($resizemedia, $texto);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+        
+        
+        
+      //require_once('/app/Instagram/uploadVideo.php');
+      //$ret_upload = Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
     }
     echo '<br>retorno = ' . var_dump($ret_upload) . '<br>';
     $mediaId_posted = $ret_upload['media']['id'];
