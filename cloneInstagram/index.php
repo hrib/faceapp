@@ -92,7 +92,7 @@ function CommentsMediaRecente($mediaID, $token){
 
 
 
-$texto = $retorno[0] . ' \n \r /n /r \u2029 ' . $meus_comments;
+$texto = $retorno[0];
 $texto = str_replace("@","#", $texto);
 $tipo = $retorno[1];
 $media_url = $retorno[2];
@@ -108,7 +108,7 @@ if($tipo == 'image'){
   file_put_contents($media, file_get_contents($media_url));
   require_once('/app/Instagram/uploadPhoto.php');
   $ret_upload = Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
-  echo '<br>retorno = ' . var_dump($ret_upload) . '<br>';
+  //echo '<br>retorno = ' . var_dump($ret_upload) . '<br>';
 }else{
   echo '<br>MP4<br>';
   $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.mp4';
@@ -117,9 +117,26 @@ if($tipo == 'image'){
   shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
   echo $resizemedia;
   require_once('/app/Instagram/uploadVideo.php');
-  Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
+  $ret_upload = Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
+$mediaId = $ret_upload->media->id;
 
+
+require_once('/app/Instagram/src/Instagram.php');
+     
+    try {
+        $i->login();
+    } catch (InstagramException $e) {
+        $e->getMessage();
+        exit();
+    }
+    
+    try {
+        $i->comment($mediaId, $meus_comments);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+ 
  
 
 ?>
