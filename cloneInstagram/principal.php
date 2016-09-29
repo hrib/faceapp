@@ -48,18 +48,18 @@ function PegaPosts($feed){
         echo '<tr>';
         echo '<td>'. $media["caption"]["text"] .'</td>';
         echo '<td>'. $media["id"] .'</td>';
-        echo '<td>'. $media["caption"]["type"] .'</td>';
+        echo '<td>'. $media["media_type"] .'</td>';
         //if($media->type == 'image'){
-        //  $media_url = $media->images->standard_resolution->url;
+          $media_url = $media["image_versions2"]["candidates"][0]["url"];
         //}else{
         //  $media_url = $media->videos->standard_resolution->url;
         //}
-        //echo '<td>'. $media_url .'</td>';
-        //echo '<td><img src="'.$media_url.'"></td>';
+        echo '<td>'. $media_url .'</td>';
+        echo '<td><img src="'.$media_url.'"></td>';
         echo '</tr>';
 
         $media_text = $media["caption"]["text"];
-        $media_tipo = $media["caption"]["type"];
+        $media_tipo = $media["media_type"];
         $media_id = $media["id"];
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
