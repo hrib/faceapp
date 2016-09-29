@@ -1,15 +1,24 @@
 <?php
 session_start(); 
-$aleatorio = mt_rand(0, 23);
-if($aleatorio < 21){
- echo $aleatorio . " fim";  
- //exit;
-}
-
+$aleatorio = mt_rand(1, 10);
+if($aleatorio < 6){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
-$token = getenv('INS_APP_TOKEN');
 $originaluserid = 2071958799; //35380841; //3505274959; //
+}else{
+$Insta_username = getenv('INSTA_USR_2');
+$Insta_passw = getenv('INSTA_PSW_2');
+$originaluserid = 1443400890; 
+}
+
+$token = getenv('INS_APP_TOKEN');
+
+
+
+
+
+
+
 
 $retorno = MediaRecente($originaluserid, $token);
 $texto = $retorno[0];
