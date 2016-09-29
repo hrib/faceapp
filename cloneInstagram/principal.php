@@ -40,22 +40,22 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //$originalpost = PegaPosts($ret_originalfeed);
 
 function PegaPosts($feed){
-    $resjson = json_decode($feed);
-    var_dump($resjson);    
+    //$resjson = json_decode($feed);
+    //var_dump($resjson);    
     echo '<br>';
     echo '<table border="1">';
-    foreach($resjson->data as $media){
+    foreach($feed["items"] as $media){
         echo '<tr>';
         echo '<td>'. $media->caption->text .'</td>';
         echo '<td>'. $media->id .'</td>';
         echo '<td>'. $media->type .'</td>';
-        if($media->type == 'image'){
-          $media_url = $media->images->standard_resolution->url;
-        }else{
-          $media_url = $media->videos->standard_resolution->url;
-        }
-        echo '<td>'. $media_url .'</td>';
-        echo '<td><img src="'.$media_url.'"></td>';
+        //if($media->type == 'image'){
+        //  $media_url = $media->images->standard_resolution->url;
+        //}else{
+        //  $media_url = $media->videos->standard_resolution->url;
+        //}
+        //echo '<td>'. $media_url .'</td>';
+        //echo '<td><img src="'.$media_url.'"></td>';
         echo '</tr>';
 
         $media_text = $media->caption->text;
