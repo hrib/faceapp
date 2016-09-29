@@ -12,8 +12,13 @@ $token = getenv('INS_APP_TOKEN');
 $originaluserid = 2071958799; //35380841; //3505274959; //
 
 $retorno = MediaRecente($originaluserid, $token);
+$texto = $retorno[0];
+$texto = str_replace("@","#", $texto);
+$tipo = $retorno[1];
+$media_url = $retorno[2];
+
 $mywall = MediaRecente('self', $token);
-if($retorno[0] == $mywall[0]){exit;}
+if($texto == $mywall[0]){exit;}
 
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
@@ -23,6 +28,9 @@ $meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . 
 
 echo '<br><br>comment = '. $meus_comments .'<br><br>';
 //var_dump( $matches );
+
+
+
 
 
 
@@ -96,10 +104,6 @@ function CommentsMediaRecente($mediaID, $token){
 
 
 
-$texto = $retorno[0];
-$texto = str_replace("@","#", $texto);
-$tipo = $retorno[1];
-$media_url = $retorno[2];
 
 echo '<br>'.$texto.'<br>';
 echo '<br>'.$tipo.'<br>';
