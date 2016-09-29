@@ -141,6 +141,9 @@ function PegaPosts($feed){
     echo '</table>';
     return $mediadata;
 }
+
+require_once('ComentaByTag.php');
+
 exit;
 
 
