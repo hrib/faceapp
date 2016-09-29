@@ -123,7 +123,8 @@ $mediaId = $ret_upload->media->id;
 
 
 require_once('/app/Instagram/src/Instagram.php');
-     
+$i = new Instagram($Insta_username, $Insta_passw, $debug = false);
+
     try {
         $i->login();
     } catch (InstagramException $e) {
