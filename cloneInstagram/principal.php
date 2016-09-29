@@ -52,6 +52,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+    var_dump($ret_mediacomments);
 
     $TOPcomment = $ret_mediacomments["preview_comments"][0]["text"] . ' #teste #teste1 fim #teste3';
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
@@ -59,7 +60,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     echo '<br><br> Top comment = ' . $TOPcomment . '<br>';
     echo '<br><br> Meus comments = ' . $meus_comments . '<br>';
 
-
+exit;
 
     if($tipo == 1){
       echo '<br>JPG<br>';
