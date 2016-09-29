@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 
+    preg_match_all("/(#\w+)/", $originalpost[0], $matches);
     $hashtagString = str_replace("","#", $matches[0][0]);
     echo '<br><br> hashtag = ' . $hashtagString . '<br><br>';
     try {
