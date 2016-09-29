@@ -12,7 +12,7 @@ $Insta_passw = getenv('INSTA_PSW_2');
 $originaluserid = 1443400890; // fashionzine
 }else {
 $Insta_username = getenv('INSTA_USR_3');
-$Insta_passw = getenv('INSTA_PSW_3');
+$Insta_passw = getenv('INSTA_PSW_2');
 $originaluserid = 43175003; // @louisewawrzynska  
 }
 
