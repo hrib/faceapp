@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+
 $aleatorio = mt_rand(1, 10);
 if($aleatorio < 6){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
@@ -11,32 +12,61 @@ $Insta_passw = getenv('INSTA_PSW_2');
 $originaluserid = 1443400890; 
 }
 
-$token = getenv('INS_APP_TOKEN');
-
 
 require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     try {
         $i->login();
     } catch (InstagramException $e) {
-        $e->getMessage();
+        echo $e->getMessage();
         exit();
     }
     
     try {
-        $z = $i->getSelfUserFeed();
-        var_dump($z);
+        $ret_myfeed = $i->getSelfUserFeed();
     } catch (Exception $e) {
         echo $e->getMessage();
     }
 
     try {
-        $y = $i->getUserFeed($originaluserid);
-        var_dump($y);
+        $ret_originalfeed  = $i->getUserFeed($originaluserid);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
 
+    $mypost = PegaPosts($ret_myfeed);
+    var_dump($mypost);
+    //$originalpost = PegaPosts($ret_originalfeed);
+
+function PegaPosts($feed){
+    $resjson = json_decode($feed);
+    var_dump($resjson);    
+    echo '<br>';
+    echo '<table border="1">';
+    foreach($resjson->data as $media){
+        echo '<tr>';
+        echo '<td>'. $media->caption->text .'</td>';
+        echo '<td>'. $media->id .'</td>';
+        echo '<td>'. $media->type .'</td>';
+        if($media->type == 'image'){
+          $media_url = $media->images->standard_resolution->url;
+        }else{
+          $media_url = $media->videos->standard_resolution->url;
+        }
+        echo '<td>'. $media_url .'</td>';
+        echo '<td><img src="'.$media_url.'"></td>';
+        echo '</tr>';
+
+        $media_text = $media->caption->text;
+        $media_tipo = $media->type;
+        $media_id = $media->id;
+        
+        $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
+        break;
+    }
+    echo '</table>';
+    return $mediadata;
+}
 exit;
 
 $retorno = MediaRecente($originaluserid, $token);
