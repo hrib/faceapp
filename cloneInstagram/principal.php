@@ -34,6 +34,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         echo $e->getMessage();
     }
 
+    var_dump($ret_myfeed);
     $mypost = PegaPosts($ret_myfeed);
     var_dump($mypost);
     //$originalpost = PegaPosts($ret_originalfeed);
