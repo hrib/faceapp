@@ -109,8 +109,8 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //} catch (Exception $e) {
     //    echo $e->getMessage();
     //}
-    $comenta = $i->comment($mediaId_posted, $meus_comments);
-    var_dump($comenta);
+    //$comenta = $i->comment($mediaId_posted, $meus_comments);
+    //var_dump($comenta);
  
 
 function PegaPosts($feed){
