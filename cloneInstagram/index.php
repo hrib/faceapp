@@ -13,7 +13,7 @@ $originaluserid = 2071958799; //35380841; //3505274959; //
 
 $retorno = MediaRecente($originaluserid, $token);
 $mywall = MediaRecente('self', $token);
-if($retorno[0] = $mywall[0]){exit;}
+if($retorno[0] == $mywall[0]){exit;}
 
 $mediaID = $retorno[3];
 $ret_comments = CommentsMediaRecente($mediaID, $token);
