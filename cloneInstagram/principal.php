@@ -104,11 +104,12 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     $mediaId_posted = $ret_upload['media']['id'];
     echo '<br>mediaid = ' . $mediaId_posted . '<br>';
     
-    try {
-        $comenta = $i->comment($mediaId_posted, $meus_comments);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
+    //try {
+    //    $comenta = $i->comment($mediaId_posted, $meus_comments);
+    //} catch (Exception $e) {
+    //    echo $e->getMessage();
+    //}
+    $comenta = $i->comment($mediaId_posted, $meus_comments);
     var_dump($comenta);
  
 
