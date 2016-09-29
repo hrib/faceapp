@@ -66,7 +66,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       file_put_contents($media, file_get_contents($media_url));
         
             try {
-                $ret = $i->uploadPhoto($media, $texto);
+                $ret_upload = $i->uploadPhoto($media, $texto);
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
@@ -82,7 +82,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       echo $resizemedia;
         
             try {
-                $ret = $i->uploadVideo($resizemedia, $texto);
+                $ret_upload = $i->uploadVideo($resizemedia, $texto);
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
