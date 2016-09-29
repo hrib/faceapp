@@ -46,9 +46,9 @@ function PegaPosts($feed){
     echo '<table border="1">';
     foreach($feed["items"] as $media){
         echo '<tr>';
-        echo '<td>'. $media->caption->text .'</td>';
-        echo '<td>'. $media->id .'</td>';
-        echo '<td>'. $media->type .'</td>';
+        echo '<td>'. $media["caption"]["text"] .'</td>';
+        echo '<td>'. $media["id"] .'</td>';
+        echo '<td>'. $media["type"] .'</td>';
         //if($media->type == 'image'){
         //  $media_url = $media->images->standard_resolution->url;
         //}else{
@@ -58,9 +58,9 @@ function PegaPosts($feed){
         //echo '<td><img src="'.$media_url.'"></td>';
         echo '</tr>';
 
-        $media_text = $media->caption->text;
-        $media_tipo = $media->type;
-        $media_id = $media->id;
+        $media_text = $media["caption"]["text"];
+        $media_tipo = $media["type"];
+        $media_id = $media["id"];
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
         //break;
