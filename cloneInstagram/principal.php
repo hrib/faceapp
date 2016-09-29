@@ -10,7 +10,7 @@ $originaluserid = 2071958799; //manda..  carro
 $Insta_username = getenv('INSTA_USR_2');
 $Insta_passw = getenv('INSTA_PSW_2');
 $originaluserid = 1443400890; // fashionzine
-}else {
+}else if($aleatorio < 10){
 $Insta_username = getenv('INSTA_USR_3');
 $Insta_passw = getenv('INSTA_PSW_2');
 $originaluserid = 43175003; // @louisewawrzynska  
