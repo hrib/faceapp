@@ -18,6 +18,8 @@ session_start();
         echo '<td>'. $post["caption"]["text"] .'</td>';
         echo '<td>'. $post["id"] .'</td>';
         echo '<td>'. $post["media_type"] .'</td>';
+        echo '<td>'. $post["user_id"] .'</td>';
+        echo '<td>'. $post["user"]["username"] .'</td>';
         if($post["media_type"]  == 1){
           $post_url = $post["image_versions2"]["candidates"][0]["url"];
         }else{
