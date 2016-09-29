@@ -34,10 +34,12 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         echo $e->getMessage();
     }
 
-    var_dump($ret_myfeed);
+    //var_dump($ret_myfeed);
     $mypost = PegaPosts($ret_myfeed);
-    var_dump($mypost);
-    //$originalpost = PegaPosts($ret_originalfeed);
+    //var_dump($mypost);
+    $originalpost = PegaPosts($ret_originalfeed);
+    var_dump($originalpost);
+    
 
 function PegaPosts($feed){
     //$resjson = json_decode($feed);
@@ -49,11 +51,11 @@ function PegaPosts($feed){
         echo '<td>'. $media["caption"]["text"] .'</td>';
         echo '<td>'. $media["id"] .'</td>';
         echo '<td>'. $media["media_type"] .'</td>';
-        //if($media->type == 'image'){
+        if($media["media_type"]  == 1){
           $media_url = $media["image_versions2"]["candidates"][0]["url"];
-        //}else{
-        //  $media_url = $media->videos->standard_resolution->url;
-        //}
+        }else{
+          $media_url = $media["video_versions"][0]["url"];
+        }
         echo '<td>'. $media_url .'</td>';
         echo '<td><img src="'.$media_url.'"></td>';
         echo '</tr>';
