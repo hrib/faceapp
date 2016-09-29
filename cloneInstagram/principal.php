@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-$aleatorio = mt_rand(1, 9);
+$aleatorio = mt_rand(1, 12);
 if($aleatorio < 4){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
@@ -14,6 +14,10 @@ $originaluserid = 1443400890; // fashionzine
 $Insta_username = getenv('INSTA_USR_3');
 $Insta_passw = getenv('INSTA_PSW_2');
 $originaluserid = 43175003; // @louisewawrzynska  
+}else {
+$Insta_username = getenv('INSTA_USR_4');
+$Insta_passw = getenv('INSTA_PSW_2');
+$originaluserid = 3674749893; // @1lifeforyou  
 }
 
 
