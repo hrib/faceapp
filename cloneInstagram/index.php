@@ -1,43 +1,14 @@
 <?php
 session_start(); 
-$aleatorio = mt_rand(1, 10);
-if($aleatorio < 6){
+
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
 $originaluserid = 2071958799; //35380841; //3505274959; //
-}else{
-$Insta_username = getenv('INSTA_USR_2');
-$Insta_passw = getenv('INSTA_PSW_2');
-$originaluserid = 1443400890; 
-}
+
 
 $token = getenv('INS_APP_TOKEN');
 
 
-require_once('/app/Instagram/src/Instagram.php');
-$i = new Instagram($Insta_username, $Insta_passw, $debug = false);
-    try {
-        $i->login();
-    } catch (InstagramException $e) {
-        $e->getMessage();
-        exit();
-    }
-    
-    try {
-        $z = $i->getSelfUserFeed();
-        var_dump($z);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-
-    try {
-        $y = $i->getUserFeed($originaluserid);
-        var_dump($y);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-
-exit;
 
 $retorno = MediaRecente($originaluserid, $token);
 $texto = $retorno[0];
@@ -158,7 +129,7 @@ echo '<br>retorno = ' . var_dump($ret_upload) . '<br>';
 $mediaId = $ret_upload['media']['id'];
 echo '<br>mediaid = ' . $mediaId . '<br>';
 
-//require_once('/app/Instagram/src/Instagram.php');
+require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
     try {
