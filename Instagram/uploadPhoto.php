@@ -28,10 +28,10 @@ function Instagram_UploadPhoto($username, $password, $photo, $caption){
     }
     
     try {
-        $i->uploadPhoto($photo, $caption);
+        $ret = $i->uploadPhoto($photo, $caption);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
     
-    return $e->getMessage();
+    return $ret;
 }
