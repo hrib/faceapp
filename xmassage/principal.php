@@ -53,6 +53,8 @@ echo '<br><img src="'.$retorno_media[0].'"><br>';
 
 Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget);
 
+exit; // TRAVEI A EXECUCAO DO INSTAGRAM ABAIXO PQ NAO TENHO CONTA DE XMASSAGE
+
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
   require_once('/app/Instagram/uploadPhoto.php');
