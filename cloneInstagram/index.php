@@ -120,7 +120,7 @@ if($tipo == 'image'){
   $ret_upload = Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
 $mediaId = $ret_upload->media->id;
-
+echo '<br>mediaid = ' . $mediaId . '<br>';
 
 require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
@@ -133,7 +133,8 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     }
     
     try {
-        $i->comment($mediaId, $meus_comments);
+        $z = $i->comment($mediaId, $meus_comments);
+        var_dump($z);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
