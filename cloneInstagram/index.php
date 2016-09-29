@@ -1,5 +1,7 @@
 <?php
 session_start(); 
+//esse script usa API oficial e precisa de TOKEN. Usar o outro script que usa API informal sem token!
+
 
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
