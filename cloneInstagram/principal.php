@@ -36,7 +36,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
     $mypost = PegaPosts($ret_myfeed);
     $originalpost = PegaPosts($ret_originalfeed);
-    $mediaId =  $originalpost[3]   
+    $mediaId =  $originalpost[3];   
 
     try {
         $ret_mediacomments  = $i->getMediaComments($mediaId);
