@@ -48,7 +48,7 @@ function PegaPosts($feed){
         echo '<tr>';
         echo '<td>'. $media["caption"]["text"] .'</td>';
         echo '<td>'. $media["id"] .'</td>';
-        echo '<td>'. $media["type"] .'</td>';
+        echo '<td>'. $media["caption"]["type"] .'</td>';
         //if($media->type == 'image'){
         //  $media_url = $media->images->standard_resolution->url;
         //}else{
@@ -59,7 +59,7 @@ function PegaPosts($feed){
         echo '</tr>';
 
         $media_text = $media["caption"]["text"];
-        $media_tipo = $media["type"];
+        $media_tipo = $media["caption"]["type"];
         $media_id = $media["id"];
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
