@@ -119,7 +119,7 @@ if($tipo == 'image'){
   $ret_upload = Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
 echo '<br>retorno = ' . var_dump($ret_upload) . '<br>';
-$mediaId = $ret_upload->media->id;
+$mediaId = $ret_upload['media']['id'];
 echo '<br>mediaid = ' . $mediaId . '<br>';
 
 require_once('/app/Instagram/src/Instagram.php');
