@@ -37,7 +37,7 @@ function MediaRecente($originaluserid, $token){
     echo '<br>';
     echo '<table border="1">';
     $count = 0;
-    $randnum = mt_rand(1,20);
+    $randnum = mt_rand(1,10);
     foreach($resjson->data as $media){
         echo '<tr>';
         echo '<td>'. $media->caption->text .'</td>';
@@ -108,7 +108,7 @@ if($tipo == 'image'){
   file_put_contents($media, file_get_contents($media_url));
   require_once('/app/Instagram/uploadPhoto.php');
   $ret_upload = Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
-  echo '<br>retorno = ' . $ret_upload . '<br>';
+  echo '<br>retorno = ' . var_dump($ret_upload) . '<br>';
 }else{
   echo '<br>MP4<br>';
   $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.mp4';
