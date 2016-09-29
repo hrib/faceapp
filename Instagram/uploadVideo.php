@@ -36,8 +36,10 @@ function Instagram_UploadVideo($username, $password, $video, $caption){
     }
     
     try {
-        $i->uploadVideo($video, $caption);
+        $ret = $i->uploadVideo($video, $caption);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+    
+    return $ret;
 }
