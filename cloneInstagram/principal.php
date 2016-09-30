@@ -55,11 +55,18 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //if($texto == $mypost[0]){exit;}
 
 
-    $string = 'max_id=17854332247077403';
-    $string = '';
+    //$string = 'max_id=17854332247077403';
+    //$string = '';
     try {
         //$ret_mediacomments  = $i->getMediaComments($mediaId);
-        $ret_mediacomments = $i->getMediaCommentsPagination($mediaId, $string);
+        //$ret_mediacomments = $i->getMediaCommentsPagination($mediaId, $string);
+        $helper = ''; //$ret_mediacomments["next_max_id"];
+        do {
+            if (!is_null($helper)) {
+                $ret_mediacomments = $i->getMediaCommentsPagination($mediaId, 'max_id=' . $helper);
+                $helper = $ret_mediacomments["next_max_id"];
+            } 
+        } while (!is_null($helper));
     } catch (Exception $e) {
         echo $e->getMessage();
     }
