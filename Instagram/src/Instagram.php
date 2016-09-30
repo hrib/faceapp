@@ -1423,7 +1423,7 @@ class Instagram
   
   public function getMediaCommentsPagination($mediaId, $paginationstring)
   {
-      return $this->request("media/$mediaId/comments/?")[1];
+      return $this->request("media/$mediaId/comments/?". $paginationstring)[1];
   }
 
   /**
