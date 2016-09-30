@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-set_time_limit(100);
+
 
     preg_match_all("/(#\w+)/", $originalpost[0] . $TOPcomment , $hasgtags);
     $hashtagString = str_replace("#","", $hasgtags[0][0]);
