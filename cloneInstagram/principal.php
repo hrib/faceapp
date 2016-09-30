@@ -3,7 +3,7 @@ session_start();
 set_time_limit(100);
 ini_set('max_execution_time', 100);
 
-$aleatorio = mt_rand(5, 5);
+$aleatorio = mt_rand(1, 5);
 if($aleatorio <= 1){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
