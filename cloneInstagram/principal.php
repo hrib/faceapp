@@ -51,8 +51,8 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         $media_url = $originalpost[2];
         $mediaId =  $originalpost[3];
     
-    $mediaId = '1350642061510837027_1443400890';
-    //if($texto == $mypost[0]){exit;}
+    //$mediaId = '1350642061510837027_1443400890';
+    if($texto == $mypost[0]){exit;}
 
 
     //$string = 'max_id=17854332247077403';
