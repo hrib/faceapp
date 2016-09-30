@@ -2,7 +2,7 @@
 session_start(); 
 
 
-    preg_match_all("/(#\w+)/", $originalpost[0] . $TOPcomment , $hasgtags);
+    preg_match_all("/(#\w+)/", $originalpost[0] . $TOPcomment . ' #like4like', $hasgtags);
     $hashtagString = str_replace("#","", $hasgtags[0][0]);
     echo '<br><br> hashtag = ' . $hashtagString . '<br><br>';
     try {
