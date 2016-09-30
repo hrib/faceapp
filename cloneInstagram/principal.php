@@ -56,7 +56,8 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
 
     try {
-        $ret_mediacomments  = $i->getMediaComments($mediaId);
+        //$ret_mediacomments  = $i->getMediaComments($mediaId);
+        $ret_mediacommentsPagination  = $i->getMediaComments($mediaId, 'next_max_id=17842746376151985');
     } catch (Exception $e) {
         echo $e->getMessage();
     }
@@ -139,7 +140,7 @@ function PegaPosts($feed){
         $media_id = $media["id"];
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
-        //break; //pega so TOP post
+        break; //pega so TOP post
     }
     echo '</table>';
     return $mediadata;
