@@ -70,13 +70,23 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
-    echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
+    //echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
     var_dump($ret_mediacomments);
 
     $TOPcomment = $ret_mediacomments["comments"][0]["text"] . ' ' . $ret_mediacomments["comments"][1]["text"] . ' ' . $ret_mediacomments["comments"][2]["text"] . ' #instagram ' ;
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
     //$meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] . ' ' . $matches[0][11] . ' ' . $matches[0][12] . ' ' . $matches[0][13] . ' ' . $matches[0][14] . ' ' . $matches[0][15] . ' ' . $matches[0][16] . ' ' . $matches[0][17] . ' ' . $matches[0][18] . ' ' . $matches[0][19] . ' ' . $matches[0][20] ;
-    $meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] ;
+
+    $usedtags = substr_count($texto , '#');
+    echo '<br><br> tags used on texto = ' . $usedtags;
+
+    $x = 0
+    while($x <= (29 - $usedtags)) {
+        $meus_comments = $meus_comments . ' ' . $matches[0][$x];
+        $x++;
+    } 
+    
+    //$meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] ;
         
     echo '<br><br> Top comment = ' . $TOPcomment . '<br>';
     echo '<br><br> Meus comments = ' . $meus_comments . '<br>';
