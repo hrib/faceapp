@@ -90,14 +90,14 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     var_dump($ret_mediacomments);
 
     $extratagsarray = array('#london', '#like', '#love', '#sky', '#life', '#party', '#men', '#girls', '#style', '#happy', '#fashion', '#attitude');
-    $extratagsarray2 = shuffle($extratagsarray);
+    shuffle($extratagsarray);
     
     $y = 0;
-    while($y < count($extratagsarray2)) {
-        $extratags = $extratags . ' ' . $extratagsarray2[$y];
+    while($y < count($extratagsarray)) {
+        $extratags = $extratags . ' ' . $extratagsarray[$y];
         $y++;
     } 
-    echo '<br><br> extra tags = ' . $extratags . ' | count = ' . count($extratagsarray) . ' | count2 = ' . count($extratagsarray2) . '<br>';
+    echo '<br><br> extra tags = ' . $extratags . ' | count = ' . count($extratagsarray) . '<br>';
 
     $TOPcomment = $ret_mediacomments["comments"][0]["text"] . ' ' . $ret_mediacomments["comments"][1]["text"] . ' ' . $ret_mediacomments["comments"][2]["text"] . ' ' . $extratags;
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
