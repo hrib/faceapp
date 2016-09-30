@@ -97,6 +97,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         $extratags = $extratags . ' ' . $extratagsarray[$y];
         $y++;
     } 
+    echo '<br><br> extra tags = ' . $extratags . ' | count = ' . count($extratagsarray) . '<br>';
 
     $TOPcomment = $ret_mediacomments["comments"][0]["text"] . ' ' . $ret_mediacomments["comments"][1]["text"] . ' ' . $ret_mediacomments["comments"][2]["text"] . ' ' . $extratags;
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
