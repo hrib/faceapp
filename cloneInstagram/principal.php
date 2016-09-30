@@ -48,7 +48,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
     $originalpost = PegaPosts($ret_originalfeed);
         $texto =  $originalpost[0]; 
-        $texto = str_replace("@","#", $texto)
+        $texto = str_replace("@","#", $texto);
         $tipo = $originalpost[1];
         $media_url = $originalpost[2];
         $mediaId =  $originalpost[3];
