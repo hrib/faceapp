@@ -59,7 +59,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     $string = '';
     try {
         //$ret_mediacomments  = $i->getMediaComments($mediaId);
-        $ret_mediacommentsPagination  = $i->getMediaComments($mediaId, $string);
+        $ret_mediacommentsPagination  = $i->getMediaCommentsPagination($mediaId, $string);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
