@@ -60,7 +60,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
-    //var_dump($ret_mediacomments);
+    var_dump($ret_mediacomments);
 
     $TOPcomment = $ret_mediacomments["comments"][0]["text"] . $ret_mediacomments["comments"][1]["text"] . $ret_mediacomments["comments"][2]["text"] . ' #instagram ' ;
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
