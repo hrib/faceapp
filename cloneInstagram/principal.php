@@ -139,7 +139,7 @@ function PegaPosts($feed){
         $media_id = $media["id"];
         
         $mediadata = [$media_text, $media_tipo, $media_url, $media_id];
-        break; //pega so TOP post
+        //break; //pega so TOP post
     }
     echo '</table>';
     return $mediadata;
