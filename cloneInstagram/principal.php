@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-$aleatorio = mt_rand(7, 8);
+$aleatorio = mt_rand(5, 6);
 if($aleatorio < 4){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
