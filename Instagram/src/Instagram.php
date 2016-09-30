@@ -1420,6 +1420,11 @@ class Instagram
   {
       return $this->request("media/$mediaId/comments/?")[1];
   }
+  
+  public function getMediaCommentsPagination($mediaId, $paginationstring)
+  {
+      return $this->request("media/$mediaId/comments/?". $paginationstring)[1];
+  }
 
   /**
    * Set name and phone (Optional).
