@@ -50,14 +50,16 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         $tipo = $originalpost[1];
         $media_url = $originalpost[2];
         $mediaId =  $originalpost[3];
+    
+    $mediaId = '1350642061510837027_1443400890';
+    //if($texto == $mypost[0]){exit;}
 
-    if($texto == $mypost[0]){exit;}
 
-
-
+    //$string = 'next_max_id=17842746376151985';
+    $string = '';
     try {
         //$ret_mediacomments  = $i->getMediaComments($mediaId);
-        $ret_mediacommentsPagination  = $i->getMediaComments($mediaId, 'next_max_id=17842746376151985');
+        $ret_mediacommentsPagination  = $i->getMediaComments($mediaId, $string);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
