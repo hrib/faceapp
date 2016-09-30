@@ -55,7 +55,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //if($texto == $mypost[0]){exit;}
 
 
-    $string = 'next_max_id=17854332247077403';
+    $string = 'max_id=17854332247077403';
     $string = '';
     try {
         //$ret_mediacomments  = $i->getMediaComments($mediaId);
