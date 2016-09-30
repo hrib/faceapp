@@ -47,14 +47,21 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     $mypost = PegaPosts($ret_myfeed);
 
     $originalpost = PegaPosts($ret_originalfeed);
-        $texto =  $originalpost[0];   
+        $texto =  $originalpost[0]; 
+        $texto = str_replace("@","#", $texto)
         $tipo = $originalpost[1];
         $media_url = $originalpost[2];
         $mediaId =  $originalpost[3];
 
-        $chave = substr($mediaId, 10 , 4);
-        $texto = str_replace("@","#", $texto) . ' #' . $chave;
-        
+    $chave = substr($mediaId, 10 , 4);
+    $usedtags = substr_count($texto , '#');
+    echo '<br><br> tags used on texto = ' . $usedtags;
+    if($usedtags < 30){
+        $texto = $texto . ' #' . $chave;
+        $usedtags = $usedtags + 1;
+    }else{
+        $texto = $texto . ' !' . $chave;
+    }
             
     //$mediaId = '1350642061510837027_1443400890';
     if($texto == $mypost[0]){exit;}
@@ -82,8 +89,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     preg_match_all("/(#\w+)/", $TOPcomment, $matches);
     //$meus_comments = $matches[0][0] . ' ' . $matches[0][1] . ' ' . $matches[0][2] . ' ' . $matches[0][3] . ' ' . $matches[0][4] . ' ' . $matches[0][5] . ' ' . $matches[0][6] . ' ' . $matches[0][7] . ' ' . $matches[0][8] . ' ' . $matches[0][9] . ' ' . $matches[0][10] . ' ' . $matches[0][11] . ' ' . $matches[0][12] . ' ' . $matches[0][13] . ' ' . $matches[0][14] . ' ' . $matches[0][15] . ' ' . $matches[0][16] . ' ' . $matches[0][17] . ' ' . $matches[0][18] . ' ' . $matches[0][19] . ' ' . $matches[0][20] ;
 
-    $usedtags = substr_count($texto , '#');
-    echo '<br><br> tags used on texto = ' . $usedtags;
+
 
     $x = 0;
     while($x <= (29 - $usedtags)) {
