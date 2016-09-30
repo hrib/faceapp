@@ -80,7 +80,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     $usedtags = substr_count($texto , '#');
     echo '<br><br> tags used on texto = ' . $usedtags;
 
-    $x = 0
+    $x = 0;
     while($x <= (29 - $usedtags)) {
         $meus_comments = $meus_comments . ' ' . $matches[0][$x];
         $x++;
