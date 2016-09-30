@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-$aleatorio = mt_rand(5, 6);
+$aleatorio = mt_rand(1, 12);
 if($aleatorio < 4){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
@@ -56,7 +56,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
 
     $string = 'max_id=17854332247077403';
-    $string = '';
+    //$string = '';
     try {
         //$ret_mediacomments  = $i->getMediaComments($mediaId);
         $ret_mediacomments = $i->getMediaCommentsPagination($mediaId, $string);
