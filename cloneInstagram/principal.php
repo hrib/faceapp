@@ -63,7 +63,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
-    echo '<br><br> next page id = ' . $ret_mediacomments["next_page_id"] . '<br><br> ';
+    echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
     var_dump($ret_mediacomments);
 
     $TOPcomment = $ret_mediacomments["comments"][0]["text"] . ' ' . $ret_mediacomments["comments"][1]["text"] . ' ' . $ret_mediacomments["comments"][2]["text"] . ' #instagram ' ;
