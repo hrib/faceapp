@@ -89,7 +89,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
     var_dump($ret_mediacomments);
 
-    $extratagsarray = ['#london', '#like', '#love', '#sky', '#life', '#party', '#men', '#girls', '#style', '#happy', '#fashion', '#attitude'];
+    $extratagsarray = array('#london', '#like', '#love', '#sky', '#life', '#party', '#men', '#girls', '#style', '#happy', '#fashion', '#attitude');
     $extratagsarray = shuffle($extratagsarray);
     
     $y = 0;
