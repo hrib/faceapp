@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+set_time_limit(100);
 
 $aleatorio = mt_rand(1, 12);
 if($aleatorio < 4){
@@ -82,7 +83,9 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
     $x = 0;
     while($x <= (29 - $usedtags)) {
-        $meus_comments = $meus_comments . ' ' . $matches[0][$x];
+        if(!is_null($matches[0][$x])){
+            $meus_comments = $meus_comments . ' ' . $matches[0][$x];
+        }
         $x++;
     } 
     
@@ -127,13 +130,15 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     $mediaId_posted = $ret_upload['media']['id'];
     echo '<br>mediaid = ' . $mediaId_posted . '<br>';
     
-    try {
-        $comenta = $i->comment($mediaId_posted, $meus_comments);
-    } catch (Exception $e) {
-        echo $e->getMessage();
+    if(!is_null($meus_comments)){
+        try {
+            $comenta = $i->comment($mediaId_posted, $meus_comments);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+        //$comenta = $i->comment($mediaId_posted, $meus_comments);
+        var_dump($comenta);
     }
-    //$comenta = $i->comment($mediaId_posted, $meus_comments);
-    var_dump($comenta);
  
 
 function PegaPosts($feed){
