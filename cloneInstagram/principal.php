@@ -3,6 +3,10 @@ session_start();
 set_time_limit(100);
 ini_set('max_execution_time', 100);
 
+$Insta_username_antiblock = getenv('INSTA_USR_LONDONFORHER');
+$Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
+
+
 $aleatorio = mt_rand(1, 5);
 if($aleatorio <= 1){
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
@@ -28,7 +32,7 @@ $originaluserid = 22183904; // @matthewzorpas
 
 
 require_once('/app/Instagram/src/Instagram.php');
-$i = new Instagram($Insta_username, $Insta_passw, $debug = false);
+$i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = false);
     try {
         $i->login();
     } catch (InstagramException $e) {
@@ -37,16 +41,26 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     }
     
     try {
+        $ret_originalfeed  = $i->getUserFeed($originaluserid);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
+$i = new Instagram($Insta_username, $Insta_passw, $debug = false);
+    try {
+        $i->login();
+    } catch (InstagramException $e) {
+        echo $e->getMessage();
+        exit();
+    }
+
+    try {
         $ret_myfeed = $i->getSelfUserFeed();
     } catch (Exception $e) {
         echo $e->getMessage();
     }
 
-    try {
-        $ret_originalfeed  = $i->getUserFeed($originaluserid);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
+
 
     $mypost = PegaPosts($ret_myfeed);
 
