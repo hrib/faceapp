@@ -9,9 +9,9 @@ login();
 function login(){
 
 
-$cria_firstname = 'fulano';
-$cria_lastname = 'detal';
-$cria_reg_email__ = 'fulano.de.tal.qqum@gmail.com';
+$cria_firstname = 'MArcos';
+$cria_lastname = 'detali';
+$cria_reg_email__ = 'fulano.de.tal.qq1@gmail.com';
 $cria_sex= '2';
 $cria_birthday_day = '01';
 $cria_birthday_month = '13';
