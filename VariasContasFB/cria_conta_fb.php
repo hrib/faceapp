@@ -18,7 +18,7 @@ function login(){
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://m.facebook.com/reg/');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'charset_test=â‚¬,Â´,â‚¬,Â´,æ°´,Ð”,Ð„&firstname=' . urlencode($cria_nome) . '&lastname=' . urlencode($cria_lastname) . '&reg_email__=' . urlencode($cria_reg_email__) . '&sex=' . urlencode($cria_sex) . '&birthday_day=' . urlencode($cria_birthday_day) . '&birthday_month=' . urlencode($cria_birthday_month) . '&birthday_year=' . urlencode($cria_birthday_year) . '&reg_passwd__=' . urlencode($cria_reg_passwd__) . '&lsd=AVqytuuQ&ccp=5&reg_instance=Uh1KVFAJB_vx6P_pZcV8ldcO&submission_request=true&multi_page_js_state=passed&helper=&i=&mbt=24&submit=Sign Up');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'charset_test=â‚¬,Â´,â‚¬,Â´,æ°´,Ð”,Ð„&firstname=' . urlencode($cria_nome) . '&lastname=' . urlencode($cria_lastname) . '&reg_email__=' . urlencode($cria_reg_email__) . '&sex=' . urlencode($cria_sex) . '&birthday_day=' . urlencode($cria_birthday_day) . '&birthday_month=' . urlencode($cria_birthday_month) . '&birthday_year=' . urlencode($cria_birthday_year) . '&reg_passwd__=' . urlencode($cria_reg_passwd__) . '&lsd=AVqytuuQ&ccp=5&reg_instance=Uh1KVFAJB_vx6P_pZcV8ldcO&submission_request=true&multi_page_js_state=passed&helper=&i=&mbt=24&submit=Sign+Up');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
