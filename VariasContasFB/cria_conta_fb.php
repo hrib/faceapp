@@ -11,10 +11,10 @@ function login(){
 
 $cria_firstname = 'MArcos';
 $cria_lastname = 'detali';
-$cria_reg_email__ = 'fulano.de.tal.qq1@gmail.com';
+$cria_reg_email__ = 'fulano.de.tal.1@gmail.com';
 $cria_sex= '2';
 $cria_birthday_day = '01';
-$cria_birthday_month = '13';
+$cria_birthday_month = '01';
 $cria_birthday_year = '1983';
 $cria_reg_passwd__ = 'senhaqqum';
     
