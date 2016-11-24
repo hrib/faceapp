@@ -34,7 +34,7 @@ curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd() . '/mirazmac_cookie.txt'); // The 
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd() . '/mirazmac_cookie.txt'); // cookie jar
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windo`enter code here`ws; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3");
-curl_setopt($ch, CURLOPT_REFERER, "http://m.facebook.com");
+curl_setopt($ch, CURLOPT_REFERER, "https://m.facebook.com/reg/");
 $fbMain = curl_exec($ch) or die(curl_error($ch));
 var_dump($fbMain);
 
