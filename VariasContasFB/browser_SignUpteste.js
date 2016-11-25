@@ -13,11 +13,11 @@ page.open('https://www.facebook.com', function(status){
             var resultingHtml = page.evaluate(function(args) {
                 document.getElementById("u_0_1").value = args[1];
                 document.getElementById("u_0_3").value = args[2];
-                var a = document.getElementById("u_0_e");
-                var e = document.createEvent('MouseEvents');
-                e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                a.dispatchEvent(e);
-                waitforload = true;
+                //var a = document.getElementById("u_0_e");
+                //var e = document.createEvent('MouseEvents');
+                //e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                //a.dispatchEvent(e);
+                //waitforload = true;
                 return document.title;
             }, args);
             page.render('fb2.png');
