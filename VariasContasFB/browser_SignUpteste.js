@@ -11,7 +11,8 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-           page.onLoadFinished = function(status_fim) {
+           page.onLoadFinished = function(texto) {
+              page.render('fb2.png');
               texto = texto + '<br>' + 'Loaded'
               //var aprovaApp = page.evaluate(function() {
                   //document.getElementById("u_0_1").value = "teste";
@@ -19,14 +20,14 @@ page.open('https://www.facebook.com', function(status){
                   //texto = texto + '<br>' + 'Page Eval'
                   //return document.title;
               //});
-
-               page.render('fb2.png');
+              return texto
            };
            
-           setTimeout(function(){
+           setTimeout(function(texto){
               page.render('fb3.png');
               //document.getElementById("u_0_1").value = "teste";
               texto = texto + '<br>' + 'Pos 5seg'
+              return texto
            }, 5000);
            
            
