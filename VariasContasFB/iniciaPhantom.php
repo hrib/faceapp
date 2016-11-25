@@ -9,7 +9,7 @@ $varin1 = 'meuemail';
 $varin2 = 'meupass';
 // --ssl-protocol=any
 // --ignore-ssl-errors=yes
-$stdOut = exec(sprintf('%s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $varin1, $varin2), $out);
+$stdOut = exec(sprintf('%s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $varin1, $varin2), $out);
 echo $stdOut;
 echo '</br>Fim Phantom</br>';   
 ?>
