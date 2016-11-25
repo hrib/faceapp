@@ -11,7 +11,7 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-           page.onLoadFinished = function(texto) {
+           page.onLoadFinished = function() {
               page.render('fb2.png');
               texto = texto + '<br>' + 'Loaded'
               //var aprovaApp = page.evaluate(function() {
@@ -23,12 +23,14 @@ page.open('https://www.facebook.com', function(status){
               return texto
            };
            
-           setTimeout(function(texto){
+           setTimeout(function(){
               page.render('fb3.png');
-              //document.getElementById("u_0_1").value = "teste";
-              texto = texto + '<br>' + 'Pos 5seg'
-              return texto
-           }, 5000);
+              document.getElementById("u_0_1").value = "teste";
+           }, 3000);
+           
+           setTimeout(function(){
+              page.render('fb4.png');
+           }, 6000);
            
            
            
