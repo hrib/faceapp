@@ -1,7 +1,5 @@
 <?php
 session_start();
-session_regenerate_id();
-
 
 
 login();
@@ -18,11 +16,11 @@ $cria_birthday_month = '01';
 $cria_birthday_year = '1983';
 $cria_reg_passwd__ = 'senhaqqum';
 
-echo ('&firstname=' . urlencode($cria_firstname) . '&lastname=' . urlencode($cria_lastname) . '&reg_email__=' . urlencode($cria_reg_email__) . '&sex=' . urlencode($cria_sex) . '&birthday_day=' . urlencode($cria_birthday_day) . '&birthday_month=' . urlencode($cria_birthday_month) . '&birthday_year=' . urlencode($cria_birthday_year) . '&reg_passwd__=' . urlencode($cria_reg_passwd__) . '&submit=' . urlencode('Sign+Up') . '&lsd=' . urlencode('AVqytuuQ')  . '&ccp=' . urlencode('5')  . '&mbt=' . urlencode('24')  . '&submission_request=' . urlencode('true')  . '&multi_page_js_state=' . urlencode('passed'));
+echo ('&firstname=' . urlencode($cria_firstname) . '&lastname=' . urlencode($cria_lastname) . '&reg_email__=' . urlencode($cria_reg_email__) . '&sex=' . urlencode($cria_sex) . '&birthday_day=' . urlencode($cria_birthday_day) . '&birthday_month=' . urlencode($cria_birthday_month) . '&birthday_year=' . urlencode($cria_birthday_year) . '&reg_passwd__=' . urlencode($cria_reg_passwd__) . '&submit=' . urlencode('Sign+Up') . '&lsd=' . urlencode('AVqytuuQ')  . '&ccp=' . urlencode('5')  . '&mbt=' . urlencode('24')  . '&submission_request=' . urlencode('true')  . '&multi_page_js_state=' . urlencode('passed') . '&reg_instance=Uh1KVFAJB_vx6P_pZcV8ldcO');
     
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://m.facebook.com/reg/');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'charset_test=â‚¬,Â´,â‚¬,Â´,æ°´,Ð”,Ð„&firstname=' . urlencode($cria_firstname) . '&lastname=' . urlencode($cria_lastname) . '&reg_email__=' . urlencode($cria_reg_email__) . '&sex=' . urlencode($cria_sex) . '&birthday_day=' . urlencode($cria_birthday_day) . '&birthday_month=' . urlencode($cria_birthday_month) . '&birthday_year=' . urlencode($cria_birthday_year) . '&reg_passwd__=' . urlencode($cria_reg_passwd__) . '&submit=Sign+Up&lsd=' . urlencode('AVqytuuQ')  . '&ccp=' . urlencode('5')  . '&mbt=' . urlencode('24')  . '&submission_request=' . urlencode('true')  . '&multi_page_js_state=' . urlencode('passed')  );
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'charset_test=â‚¬,Â´,â‚¬,Â´,æ°´,Ð”,Ð„&firstname=' . urlencode($cria_firstname) . '&lastname=' . urlencode($cria_lastname) . '&reg_email__=' . urlencode($cria_reg_email__) . '&sex=' . urlencode($cria_sex) . '&birthday_day=' . urlencode($cria_birthday_day) . '&birthday_month=' . urlencode($cria_birthday_month) . '&birthday_year=' . urlencode($cria_birthday_year) . '&reg_passwd__=' . urlencode($cria_reg_passwd__) . '&submit=' . urlencode('Sign Up') . '&lsd=' . urlencode('AVqytuuQ')  . '&ccp=' . urlencode('5')  . '&mbt=' . urlencode('24')  . '&submission_request=' . urlencode('true')  . '&multi_page_js_state=' . urlencode('passed') . '&reg_instance=Uh1KVFAJB_vx6P_pZcV8ldcO');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
