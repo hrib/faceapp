@@ -3,9 +3,6 @@ echo 'Iniciando Phantom. </br>';
 $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_SignUpteste.js';
 
-echo '</br>' . $pathToPhatomJs . '</br>';
-echo '</br>' . $pathToJsScript . '</br>';
-
 //$varin1 = getenv('email');
 //$varin2 = getenv('pass');
 $varin1 = 'meuemail';
