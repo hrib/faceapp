@@ -33,13 +33,13 @@ page.open('https://www.facebook.com', function(status){
            
            setTimeout(function(){
               page.render('fb3a.png');
-              var aprovaApp = page.evaluate(function() {
-                  page.render('fb3b.png');
-                  document.getElementById("u_0_1").value = "teste";
+              //var aprovaApp = page.evaluate(function() {
+                //  page.render('fb3b.png');
+                  //document.getElementById("u_0_1").value = "teste";
                   //document.getElementById("u_0_3").value = args[2];
                   //texto = texto + '<br>' + 'Page Eval'
-                  return document.title;
-              });
+                  //return document.title;
+              //});
            }, 3000);
            
            setTimeout(function(){
