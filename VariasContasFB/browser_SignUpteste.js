@@ -4,7 +4,7 @@ var args = require('system').args;
 
 page.open('http://www.globo.com', function() {
 
-page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
+//page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
  
 
     setTimeout(function(){
@@ -14,5 +14,5 @@ page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
     }, 10000);
     
     
-  });
+//  });
 })
