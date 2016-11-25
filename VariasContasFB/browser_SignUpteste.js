@@ -23,6 +23,14 @@ page.open('https://www.facebook.com', function(status){
               return texto
            };
            
+           var title = page.evaluate(function() {
+               page.render('fb3c.png');
+               return document.title;
+           });
+           texto = texto + '<br>' + title
+         
+           
+           
            setTimeout(function(){
               page.render('fb3a.png');
               var aprovaApp = page.evaluate(function() {
@@ -30,7 +38,7 @@ page.open('https://www.facebook.com', function(status){
                   document.getElementById("u_0_1").value = "teste";
                   //document.getElementById("u_0_3").value = args[2];
                   //texto = texto + '<br>' + 'Page Eval'
-                  //return document.title;
+                  return document.title;
               });
            }, 3000);
            
