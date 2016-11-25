@@ -9,15 +9,28 @@ page.open('https://www.facebook.com', function(status){
     
         console.log("status: " + status);
         if(status === "success"){
-            document.getElementById("u_0_1").value = 'teste';
-            //document.getElementById("u_0_3").value = args[2];
-            page.render('fb2.png');
+            
+           page.onLoadFinished = function(status) {
+              var aprovaApp = page.evaluate(function() {
+                  document.getElementById("u_0_1").value = "teste";
+                  //document.getElementById("u_0_3").value = args[2];
+                  return document.title;
+              });
+           page.render('fb2.png');
+           };
+
+
             console.log("no error");
         } else {
             console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
         }
         page.render('fb1.png');
-        phantom.exit();
+         
+        setTimeout(function(){
+           page.render('fim.png');
+           phantom.exit();
+        }, 10000);
+
     //});
     
 });
