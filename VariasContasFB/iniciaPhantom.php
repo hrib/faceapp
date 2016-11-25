@@ -1,7 +1,7 @@
 <?php
 echo 'Iniciando Phantom. </br>';
 $pathToPhatomJs = '../bin/phantomjs';
-$pathToJsScript = dirname(__FILE__). '/browser_SignUp.js';
+$pathToJsScript = dirname(__FILE__). '/browser_SignUpteste.js';
 
 echo '</br>' . $pathToJsScript . '</br>';
 
