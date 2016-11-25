@@ -2,7 +2,7 @@ var page = require('webpage').create();
 var args = require('system').args;
 
 
-page.open('https://www.facebook.com/r.php', function() {
+page.open('http://www.globo.com', function() {
 
 page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
     var texto = "";
