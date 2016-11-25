@@ -12,22 +12,21 @@ page.open('https://www.facebook.com', function(status){
         if(status === "success"){
             
            page.onLoadFinished = function(status) {
+              texto = texto + '<br>' + 'Loaded'
               var aprovaApp = page.evaluate(function() {
                   document.getElementById("u_0_1").value = "teste";
                   //document.getElementById("u_0_3").value = args[2];
-                  texto = texto + '<br><br>' + 'Page Eval'
+                  texto = texto + '<br>' + 'Page Eval'
                   return document.title;
               });
-           texto = texto + '<br><br>' + 'Loaded'
+
            page.render('fb2.png');
            };
 
-            texto = texto + '<br><br>' + 'no error'
-
-            console.log(texto);
-            console.log('<br>Monta<br>');
+           texto = texto + '<br>' + 'no error'
+           console.log(texto);
         } else {
-            console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
+           console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
         }
         page.render('fb1.png');
          
