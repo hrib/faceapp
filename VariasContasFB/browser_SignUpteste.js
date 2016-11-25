@@ -1,5 +1,5 @@
-var system = require('system');
-//var args = require('system').args;
+//var system = require('system');
+var args = require('system').args;
 var page = require('webpage').create();
 page.open('https://www.facebook.com', function(status){
 
