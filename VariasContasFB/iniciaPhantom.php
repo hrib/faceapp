@@ -11,7 +11,7 @@ echo '</br>' . $pathToJsScript . '</br>';
 $varin1 = 'meuemail';
 $varin2 = 'meupass';
 
-$stdOut = exec(sprintf('%s %s %s %s', $pathToPhatomJs,  $pathToJsScript, $varin1, $varin2), $out);
+//$stdOut = exec(sprintf('%s %s %s %s', $pathToPhatomJs,  $pathToJsScript, $varin1, $varin2), $out);
 echo $stdOut;
 echo '</br>Fim Phantom</br>';   
 ?>
