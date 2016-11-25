@@ -11,7 +11,7 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-           page.onLoadFinished = function(status) {
+           page.onLoadFinished = function(status_fim) {
               texto = texto + '<br>' + 'Loaded'
               var aprovaApp = page.evaluate(function() {
                   document.getElementById("u_0_1").value = "teste";
