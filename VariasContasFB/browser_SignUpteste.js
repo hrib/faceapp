@@ -23,8 +23,9 @@ page.open('https://www.facebook.com', function(status){
            };
 
             texto = texto + '<br><br>' + 'no error'
-            console.log('<br>Monta<br>');
+
             console.log(texto);
+            console.log('<br>Monta<br>');
         } else {
             console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
         }
