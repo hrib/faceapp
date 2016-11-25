@@ -7,6 +7,7 @@ page.open('https://www.facebook.com', function(status){
     } else {
         console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
     }
+    page.render('fb.png');
     phantom.exit();
 
 });
