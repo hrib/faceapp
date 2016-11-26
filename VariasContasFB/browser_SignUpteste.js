@@ -31,6 +31,7 @@ page.open('https://www.facebook.com', function(status){
          
            page.onLoadFinished = function(s2) {
               texto = texto + '<br>' + 'Loaded';
+              page.render('Loaded.png');
            };
            
            var title2 = page.evaluate(function (s) {
