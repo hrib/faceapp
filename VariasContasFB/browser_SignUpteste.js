@@ -46,10 +46,17 @@ page.open('https://www.facebook.com', function(status){
               page.render('t3.png');
                
               page.evaluate(function (args) {
-                  document.getElementById("u_0_1").value = "teste1xeval2";
-                  document.getElementById("u_0_3").value = args[2];
+                 document.getElementById("u_0_1").value = args[1];
+                 document.getElementById("u_0_3").value = args[2];
+                 document.getElementById("u_0_6").value = 'emailqqmeu1265@gmail.com'; 
+                 document.getElementById("u_0_9").value = 'emailqqmeu1265@gmail.com';
+                 document.getElementById("u_0_b").value = 'senhaqq';
+                 document.getElementById("day").value = '10';
+                 document.getElementById("month").value = '11';
+                 document.getElementById("year").value = '1985';
+                 document.getElementsByName("sex").value = '1'; 
               }, args);
-              texto = texto + '<br>' + 'Page Eval';
+              //texto = texto + '<br>' + 'Page Eval';
                   
            }, 3000);
            
