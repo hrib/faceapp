@@ -35,21 +35,20 @@ page.open('https://www.facebook.com', function(status){
            //};
            
            var title2 = page.evaluate(function (s) {
-              //page.render('eval1.png'); //page.render nao funciona aqui
-              document.getElementById("u_0_1").value = "teste1xeval1";
+              //page.render nao funciona aqui e da erro na funcao
+              document.getElementById("u_0_1").value = "1axeval1";
+              document.getElementById("u_0_3").value = "1bxeval1";
               return document.title;
-               //document.querySelector(s).innerText;
            }, 'title2');
            texto = texto + '<br>' + title2;
            
            setTimeout(function(){
               page.render('t3.png');
                
-              page.evaluate(function (s2) {
-               //   page.render('eval2.png');
+              page.evaluate(function (args) {
                   document.getElementById("u_0_1").value = "teste1xeval2";
-                  //document.getElementById("u_0_3").value = "teste2";
-              });
+                  document.getElementById("u_0_3").value = args[2];
+              }, args);
               texto = texto + '<br>' + 'Page Eval';
                   
            }, 3000);
