@@ -25,11 +25,15 @@ page.open('https://www.facebook.com', function(status){
            
            var title = page.evaluate(function() {
                page.render('fb3c.png');
-               return document.title;
+               return 'entrou1'; //document.title;
            });
            texto = texto + '<br>' + title
          
-           
+           var title2 = page.evaluate(function (s) {
+               return 'entrou2';
+               //document.querySelector(s).innerText;
+           }, 'title2');
+           texto = texto + '<br>' + title2
            
            setTimeout(function(){
               page.render('fb3a.png');
