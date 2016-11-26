@@ -54,7 +54,8 @@ page.open('https://www.facebook.com', function(status){
                  document.getElementById("day").value = '10';
                  document.getElementById("month").value = '11';
                  document.getElementById("year").value = '1985';
-                 document.getElementsByName("sex").value = '1'; 
+                 document.getElementById("u_0_i").checked = falsee;
+                 document.getElementById("u_0_j").checked = true;
               }, args);
               //texto = texto + '<br>' + 'Page Eval';
                   
