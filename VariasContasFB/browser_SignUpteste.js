@@ -51,10 +51,10 @@ page.open('https://www.facebook.com', function(status){
                  //document.getElementById("u_0_6").value = 'emailqqmeu1265@gmail.com'; 
                  //document.getElementById("u_0_9").value = 'emailqqmeu1265@gmail.com';
                  
-                 document.getElementsByName("firstname")[0].value = args[1]; 
-                 document.getElementsByName("lastname")[0].value = args[2]; 
-                 document.getElementsByName("reg_email__")[0].value = 'emailqq'; 
-                 document.getElementsByName("reg_email_confirmation__")[0].value = 'emailqq'; 
+                 document.getElementsByName("firstname")[0].value = 'manue'; 
+                 document.getElementsByName("lastname")[0].value = 'loaco'; 
+                 document.getElementsByName("reg_email__")[0].value = 'emailqqnaput1@gmail.com'; 
+                 document.getElementsByName("reg_email_confirmation__")[0].value = 'emailqqnaput1@gmail.com'; 
                  document.getElementsByName("reg_passwd__")[0].value = 'senhaqq'; 
                  
                  document.getElementById("day").value = '10';
