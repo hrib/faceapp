@@ -11,29 +11,29 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-           var LoadFim = page.onLoadFinished(function(s) {
-              page.render('fb2.png');
+           //var LoadFim = page.onLoadFinished(function(s) {
+           //   page.render('fb2.png');
               //var aprovaApp = page.evaluate(function() {
                   //document.getElementById("u_0_1").value = "teste";
                   //document.getElementById("u_0_3").value = args[2];
                   //texto = texto + '<br>' + 'Page Eval'
                   //return document.title;
               //});
-              return 'Loaded';
-           }, 'LoadFim');
-           texto = texto + '<br>' + LoadFim
+           //   return 'Loaded';
+           //}, 'LoadFim');
+           //texto = texto + '<br>' + LoadFim
                     
            var title = page.evaluate(function(s) {
                page.render('fb3c.png');
                return 'entrou1'; //document.title;
            });
-           texto = texto + '<br>' + title
+           texto = texto + '<br>' + title;
          
            var title2 = page.evaluate(function (s) {
                return 'entrou2';
                //document.querySelector(s).innerText;
            }, 'title2');
-           texto = texto + '<br>' + title2
+           texto = texto + '<br>' + title2;
            
            setTimeout(function(){
               page.render('fb3a.png');
@@ -53,7 +53,7 @@ page.open('https://www.facebook.com', function(status){
            
            
 
-           texto = texto + '<br>' + 'no error'
+           texto = texto + '<br>' + 'no error';
            console.log(texto);
         } else {
            console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
