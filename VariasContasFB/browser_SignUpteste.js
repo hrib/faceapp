@@ -35,7 +35,8 @@ page.open('https://www.facebook.com', function(status){
            //};
            
            var title2 = page.evaluate(function (s) {
-               return 'entrou2';
+              page.render('eval1.png');
+              return document.title;
                //document.querySelector(s).innerText;
            }, 'title2');
            texto = texto + '<br>' + title2;
@@ -44,11 +45,11 @@ page.open('https://www.facebook.com', function(status){
               page.render('t3.png');
                
               page.evaluate(function (s) {
-                  page.render('eval.png');
-                  document.getElementById("u_0_1").value = "teste1";
-                  document.getElementById("u_0_3").value = "teste2";
+                  page.render('eval2.png');
+                  //document.getElementById("u_0_1").value = "teste1";
+                  //document.getElementById("u_0_3").value = "teste2";
               });
-              texto = texto + '<br>' + 'Page Eval'
+              texto = texto + '<br>' + 'Page Eval';
                   
            }, 3000);
            
