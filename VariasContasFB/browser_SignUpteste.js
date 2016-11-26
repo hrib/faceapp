@@ -29,8 +29,8 @@ page.open('https://www.facebook.com', function(status){
            //});
            //texto = texto + '<br>' + title;
          
-           page.onLoadFinished = function(status) {
-              console.log('Status: ' + status);
+           page.onLoadFinished = function(s2) {
+              console.log('Status: ' + s2);
            };
            
            var title2 = page.evaluate(function (s) {
