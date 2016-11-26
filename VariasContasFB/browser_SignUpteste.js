@@ -11,23 +11,23 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-           //var LoadFim = page.onLoadFinished(function(s) {
-           //   page.render('fb2.png');
+           page.onLoadFinished = function(sfim) {
+              page.render('fb2.png');
               //var aprovaApp = page.evaluate(function() {
                   //document.getElementById("u_0_1").value = "teste";
                   //document.getElementById("u_0_3").value = args[2];
                   //texto = texto + '<br>' + 'Page Eval'
                   //return document.title;
               //});
-           //   return 'Loaded';
-           //}, 'LoadFim');
-           //texto = texto + '<br>' + LoadFim
+              return 'Loaded';
+           };
+           texto = texto + '<br>' + sfim
                     
-           var title = page.evaluate(function(s) {
-               page.render('fb3c.png');
-               return 'entrou1'; //document.title;
-           });
-           texto = texto + '<br>' + title;
+           //var title = page.evaluate(function(s) {
+           //    page.render('fb3c.png');
+           //    return 'entrou1'; //document.title;
+           //});
+           //texto = texto + '<br>' + title;
          
            var title2 = page.evaluate(function (s) {
                return 'entrou2';
