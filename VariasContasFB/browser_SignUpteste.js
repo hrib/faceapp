@@ -51,8 +51,8 @@ page.open('https://www.facebook.com', function(status){
                  document.getElementById("u_0_6").value = 'emailqqmeu1265@gmail.com'; 
                  document.getElementById("u_0_9").value = 'emailqqmeu1265@gmail.com';
                  
-                 document.getElementsByName("firstname")[0] = 'nome'; 
-                 document.getElementsByName("reg_email__")[0] = 'emailqq'; 
+                 document.getElementsByName("firstname")[0].value = 'nome'; 
+                 document.getElementsByName("reg_email__")[0].value = 'emailqq'; 
                  
                  document.getElementById("u_0_b").value = 'senhaqq';
                  document.getElementById("day").value = '10';
