@@ -29,10 +29,10 @@ page.open('https://www.facebook.com', function(status){
            //});
            //texto = texto + '<br>' + title;
          
-           page.onLoadFinished = function(s2) {
-              texto = texto + '<br>' + 'Loaded';
-              page.render('Loaded.png');
-           };
+           //page.onLoadFinished = function(s2) {
+              //texto = texto + '<br>' + 'Loaded';
+              //page.render('Loaded.png');
+           //};
            
            var title2 = page.evaluate(function (s) {
                return 'entrou2';
@@ -46,7 +46,7 @@ page.open('https://www.facebook.com', function(status){
                 //  page.render('fb3b.png');
                   //document.getElementById("u_0_1").value = "teste";
                   //document.getElementById("u_0_3").value = args[2];
-                  //texto = texto + '<br>' + 'Page Eval'
+               texto = texto + '<br>' + 'Page Eval'
                   //return document.title;
               //});
            }, 3000);
