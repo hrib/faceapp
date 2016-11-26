@@ -29,6 +29,10 @@ page.open('https://www.facebook.com', function(status){
            //});
            //texto = texto + '<br>' + title;
          
+           page.onLoadFinished = function(status) {
+              console.log('Status: ' + status);
+           };
+           
            var title2 = page.evaluate(function (s) {
                return 'entrou2';
                //document.querySelector(s).innerText;
