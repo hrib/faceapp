@@ -63,7 +63,7 @@ page.open('https://www.facebook.com', function(status){
                  
                  document.getElementsByName("sex")[0].checked = false; 
                  document.getElementsByName("sex")[1].checked = true; 
-                 
+                 document.getElementsByName('websubmit')[0].click();
                  //document.getElementById("u_0_i").checked = false;
                  //document.getElementById("u_0_j").checked = true;
               }, args);
