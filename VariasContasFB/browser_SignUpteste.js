@@ -41,18 +41,19 @@ page.open('https://www.facebook.com', function(status){
            texto = texto + '<br>' + title2;
            
            setTimeout(function(){
-              page.render('fb3a.png');
-              //var aprovaApp = page.evaluate(function() {
-                //  page.render('fb3b.png');
-                  //document.getElementById("u_0_1").value = "teste";
-                  //document.getElementById("u_0_3").value = args[2];
-               texto = texto + '<br>' + 'Page Eval'
-                  //return document.title;
-              //});
+              page.render('t3.png');
+               
+              page.evaluate(function (s) {
+                  page.render('eval.png');
+                  document.getElementById("u_0_1").value = "teste1";
+                  document.getElementById("u_0_3").value = "teste2";
+              });
+              texto = texto + '<br>' + 'Page Eval'
+                  
            }, 3000);
            
            setTimeout(function(){
-              page.render('fb4.png');
+              page.render('t4.png');
            }, 6000);
            
            
