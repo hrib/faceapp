@@ -35,7 +35,7 @@ page.open('https://www.facebook.com', function(status){
            //};
            
            var title2 = page.evaluate(function (s) {
-              page.render('eval1.png');
+              //page.render('eval1.png');
               return 'eval1';
                //document.querySelector(s).innerText;
            }, 'title2');
