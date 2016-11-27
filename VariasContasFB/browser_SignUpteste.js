@@ -3,8 +3,8 @@ var args = require('system').args;
 var page = require('webpage').create();
 
 page.onFilePicker = function(oldFile) {
-   //page.render('carregando.png'); 
-   return('/square.jpg');
+   page.render('carregando.png'); 
+   return('http://proprofs-cdn.s3.amazonaws.com/images/games/user_images/misc/4288844624.png');
 }
 
 
