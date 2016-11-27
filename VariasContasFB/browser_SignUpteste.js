@@ -66,9 +66,10 @@ page.open('https://www.facebook.com', function(status){
            }, 3000);
            
            setTimeout(function(){
-              page.render('t6.png');
+              page.render('t6a.png');
               page.open('https://www.facebook.com/profile.php?id=100009147304465', function(status){
-              }
+                 page.render('t6b.png');
+              });
            }, 6000);
            
            
