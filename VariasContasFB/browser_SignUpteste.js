@@ -73,9 +73,11 @@ page.open('https://www.facebook.com', function(status){
  
           setTimeout(function(){
               page.render('pessoal.png');
-              var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]'); 
-              //console.log(a[0]);
-              a[0].click();
+              page.evaluate(function (args) {
+                 var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]'); 
+                 //console.log(a[0]);
+                 a[0].click();
+              }, args);   
            }, 6000);
            
 
