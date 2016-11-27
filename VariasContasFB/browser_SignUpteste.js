@@ -10,15 +10,10 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-           page.onLoadFinished = function() {
-              var title2 = page.evaluate(function (s) {
-                 document.getElementsByName("firstname")[0].value = 'loaded'; 
-                 document.getElementsByName("lastname")[0].value = 'loaded'; 
-                 return document.title;
-              }, 'title2');
+           //page.onLoadFinished = function() {
            
-           };
-           page.render('loaded.png');
+           //};
+           //page.render('loaded.png');
            
            //var title2 = page.evaluate(function (s) {
               //page.render nao funciona aqui e da erro na funcao
@@ -27,15 +22,29 @@ page.open('https://www.facebook.com', function(status){
            //   return document.title;
            //}, 'title2');
            //texto = texto + '<br>' + title2;
+
+           setTimeout(function(){
+              page.render('t2.png');
+               
+              page.evaluate(function (args) {
+                 
+                 document.getElementsByName("email")[0].value = args[1]; 
+                 document.getElementsByName("pass")[0].value = args[2]; 
+                 document.getElementById("loginbutton").click();
+
+              }, args);
+              //texto = texto + '<br>' + 'Page Eval';
+                  
+           }, 2000);
+
+           
+           
+           
            
            setTimeout(function(){
               page.render('t3.png');
                
               page.evaluate(function (args) {
-                 //document.getElementById("u_0_1").value = args[1];
-                 //document.getElementById("u_0_3").value = args[2];
-                 //document.getElementById("u_0_6").value = 'emailqqmeu1265@gmail.com'; 
-                 //document.getElementById("u_0_9").value = 'emailqqmeu1265@gmail.com';
                  
                  document.getElementsByName("firstname")[0].value = 'manue'; 
                  document.getElementsByName("lastname")[0].value = 'loaco'; 
