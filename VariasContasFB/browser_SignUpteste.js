@@ -106,6 +106,6 @@ page.open('https://www.facebook.com', function(status){
         setTimeout(function(){
            page.render('fim.png');
            phantom.exit();
-        }, 10000);
+        }, 15000);
     
 });
