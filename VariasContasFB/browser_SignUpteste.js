@@ -4,7 +4,7 @@ var page = require('webpage').create();
 
 page.onFilePicker = function(oldFile) {
    //page.render('carregando.png'); 
-   return('https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11380802_821303507977860_1944379994_n.jpg');
+   return('/square.jpg');
 }
 
 
@@ -90,7 +90,7 @@ page.open('https://www.facebook.com', function(status){
           
            setTimeout(function(){
               page.render('upload.png');
-              page.uploadFile('input[name=file1]', 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11380802_821303507977860_1944379994_n.jpg'); 
+              page.uploadFile('input[name=file1]', '/square.jpg'); 
               //page.evaluate(function (args) {
               //   document.getElementsByName('file1')[0].click();
               //}, args);   
