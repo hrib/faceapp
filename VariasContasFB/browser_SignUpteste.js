@@ -3,7 +3,7 @@ var args = require('system').args;
 var page = require('webpage').create();
 
 page.onFilePicker = function(oldFile) {
-   page.render('carregando.png'); 
+   //page.render('carregando.png'); 
    return('https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11380802_821303507977860_1944379994_n.jpg');
 }
 
