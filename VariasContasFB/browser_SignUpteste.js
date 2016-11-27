@@ -116,7 +116,7 @@ page.open('https://www.facebook.com', function(status){
            setTimeout(function(){
               page.render('uploaded.png');
               page.evaluate(function (args) {
-                 var a = document.querySelectorAll('[type="submit"]'); 
+                 var a = document.querySelectorAll('[data-testid="react-composer-post-button"]'); 
                  a[0].click();
               }, args);   
            }, 10000);
