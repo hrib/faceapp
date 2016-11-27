@@ -87,11 +87,11 @@ page.open('https://www.facebook.com', function(status){
            
            
            
-           setTimeout(function(){
-              page.render('logou.png');
-              page.open('https://m.facebook.com/photos/upload/?profile_pic&upload_source=profile_pic_upload&profile_pic_source=tagged_photos_page', function(status){
-              });
-           }, 4000);
+           //setTimeout(function(){
+              //page.render('logou.png');
+              //page.open('https://m.facebook.com/photos/upload/?profile_pic&upload_source=profile_pic_upload&profile_pic_source=tagged_photos_page', function(status){
+              //});
+           //}, 4000);
  
           // Like post on friends wall 
           //setTimeout(function(){
@@ -104,8 +104,8 @@ page.open('https://www.facebook.com', function(status){
           
            setTimeout(function(){
               page.render('upload.png'); 
-              //page.uploadFile('input[name="composer_photo[]"]', '/square.jpg'); 
-              page.uploadFile('input[name="file1"]', 'square.jpg'); 
+              page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
+              //page.uploadFile('input[name="file1"]', 'square.jpg'); 
               
               //page.evaluate(function (args) {
                 // document.getElementsByName('file1')[0].click();
