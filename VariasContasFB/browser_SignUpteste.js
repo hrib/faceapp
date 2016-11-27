@@ -75,12 +75,12 @@ page.open('https://www.facebook.com', function(status){
           
            setTimeout(function(){
               page.render('uploaddesktop1.png'); 
-              page.evaluate(function (args) {
-                 var a = document.querySelectorAll('[name*="composer_photo"]');
+              //page.evaluate(function (args) {
+                 //var a = document.querySelectorAll('[name*="composer_photo"]');
                  //var a = document.querySelectorAll('[accept*="video"]'); 
-                 console.log(a[0]);
-                 a[0].click();
-              }, args);   
+                 //console.log(a[0]);
+                 //a[0].click();
+              //}, args);   
            }, 6000);
            
             
