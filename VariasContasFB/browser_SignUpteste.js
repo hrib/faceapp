@@ -67,6 +67,8 @@ page.open('https://www.facebook.com', function(status){
            
            setTimeout(function(){
               page.render('t6.png');
+              page.open('https://www.facebook.com/profile.php?id=100009147304465', function(status){
+              }
            }, 6000);
            
            
