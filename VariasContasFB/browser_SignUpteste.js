@@ -66,13 +66,17 @@ page.open('https://www.facebook.com', function(status){
            }, 3000);
            
            setTimeout(function(){
-              page.render('t6a.png');
-              page.open('https://www.facebook.com/profile.php?id=100009147304465', function(status){
-                 page.render('t6b.png');
+              page.render('logou.png');
+              page.open('https://www.facebook.com/profile.php?id=100009466980633', function(status){
               });
+           }, 4000);
+ 
+          setTimeout(function(){
+              page.render('pessoal.png');
+              var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]'); 
+              //console.log(a[0]);
+              a[0].click();
            }, 6000);
-           
-           
            
 
            texto = texto + '<br>' + 'no error';
@@ -81,7 +85,6 @@ page.open('https://www.facebook.com', function(status){
            console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
         }
         
-        page.render('fb1.png');
         setTimeout(function(){
            page.render('fim.png');
            phantom.exit();
