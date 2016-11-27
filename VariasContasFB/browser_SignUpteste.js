@@ -2,10 +2,10 @@
 var args = require('system').args;
 var page = require('webpage').create();
 
-page.onFilePicker = function(oldFile) {
-   page.render('carregando.png'); 
-   return('square.jpg');
-}
+//page.onFilePicker = function(oldFile) {
+//   page.render('carregando.png'); 
+//   return('square.jpg');
+//}
 
 
 page.open('https://www.facebook.com', function(status){
@@ -81,7 +81,7 @@ page.open('https://www.facebook.com', function(status){
                  //console.log(a[0]);
                  //a[0].click();
               //}, args);   
-           }, 6000);
+           }, 4000);
            
             
            
@@ -110,15 +110,15 @@ page.open('https://www.facebook.com', function(status){
               //page.evaluate(function (args) {
                 // document.getElementsByName('file1')[0].click();
               //}, args);   
-           }, 8000);
+           }, 6000);
            
            
            setTimeout(function(){
               page.render('uploaded.png');
-              //page.evaluate(function (args) {
-                 //var a = document.querySelectorAll('[type="submit"]'); 
-                 //a[0].click();
-              //}, args);   
+              page.evaluate(function (args) {
+                 var a = document.querySelectorAll('[type="submit"]'); 
+                 a[0].click();
+              }, args);   
            }, 10000);
            
            
