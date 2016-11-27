@@ -104,7 +104,7 @@ page.open('https://www.facebook.com', function(status){
           
            setTimeout(function(){
               page.render('upload.png'); 
-              page.uploadFile('input[name="composer_photo[]"]', '/VariasContas/square.jpg'); 
+              page.uploadFile('input[name="composer_photo[]"]', 'http://proprofs-cdn.s3.amazonaws.com/images/games/user_images/misc/4288844624.png'); 
               //page.evaluate(function (args) {
                 // document.getElementsByName('file1')[0].click();
               //}, args);   
