@@ -91,9 +91,9 @@ page.open('https://www.facebook.com', function(status){
            setTimeout(function(){
               page.render('upload.png');
               page.uploadFile('input[name=file1]', '/square.jpg'); 
-              //page.evaluate(function (args) {
-              //   document.getElementsByName('file1')[0].click();
-              //}, args);   
+              page.evaluate(function (args) {
+                 document.getElementsByName('file1')[0].click();
+              }, args);   
            }, 6000);
            
            
