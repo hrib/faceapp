@@ -4,7 +4,7 @@ var page = require('webpage').create();
 
 page.onFilePicker = function(oldFile) {
    page.render('carregando.png'); 
-   return('http://proprofs-cdn.s3.amazonaws.com/images/games/user_images/misc/4288844624.png');
+   return('/square.jpg');
 }
 
 
@@ -104,7 +104,7 @@ page.open('https://www.facebook.com', function(status){
           
            setTimeout(function(){
               page.render('upload.png'); 
-              page.uploadFile('input[name="composer_photo[]"]', 'http://proprofs-cdn.s3.amazonaws.com/images/games/user_images/misc/4288844624.png'); 
+              page.uploadFile('input[name="composer_photo[]"]', '/square.jpg'); 
               //page.evaluate(function (args) {
                 // document.getElementsByName('file1')[0].click();
               //}, args);   
