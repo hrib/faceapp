@@ -113,10 +113,10 @@ page.open('https://www.facebook.com', function(status){
            
            setTimeout(function(){
               page.render('uploaded.png');
-              page.evaluate(function (args) {
+              //page.evaluate(function (args) {
                  //var a = document.querySelectorAll('[type="submit"]'); 
                  //a[0].click();
-              }, args);   
+              //}, args);   
            }, 10000);
            
            
