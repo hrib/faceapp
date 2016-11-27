@@ -1,6 +1,14 @@
 //var system = require('system');
 var args = require('system').args;
 var page = require('webpage').create();
+
+page.onFilePicker = function(oldFile) 
+{
+   page.render('carregando.png'); 
+   return('https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11380802_821303507977860_1944379994_n.jpg');
+}
+
+
 page.open('https://www.facebook.com', function(status){
 
    var email = args[1];
@@ -67,19 +75,27 @@ page.open('https://www.facebook.com', function(status){
            
            setTimeout(function(){
               page.render('logou.png');
-              page.open('https://www.facebook.com/profile.php?id=100009466980633', function(status){
+              //page.open('https://www.facebook.com/profile.php?id=100009466980633', function(status){
+              page.open('https://m.facebook.com/photos/upload/?profile_pic&upload_source=profile_pic_upload&profile_pic_source=tagged_photos_page', function(status){
               });
            }, 4000);
  
-          setTimeout(function(){
-              page.render('pessoal.png');
+          // Like post on friends wall 
+          //setTimeout(function(){
+          //    page.render('pessoal.png');
+          //    page.evaluate(function (args) {
+          //       var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]'); 
+          //       a[0].click();
+          //    }, args);   
+          // }, 6000);
+          
+           setTimeout(function(){
+              page.render('upload.png');
               page.evaluate(function (args) {
-                 var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]'); 
-                 //console.log(a[0]);
-                 a[0].click();
+                 document.getElementsByName('file1')[0].click();
               }, args);   
            }, 6000);
-           
+          
 
            texto = texto + '<br>' + 'no error';
            console.log(texto);
