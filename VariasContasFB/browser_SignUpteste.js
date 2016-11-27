@@ -4,7 +4,7 @@ var page = require('webpage').create();
 
 page.onFilePicker = function(oldFile) {
    page.render('carregando.png'); 
-   return('/square.jpg');
+   return('square.jpg');
 }
 
 
@@ -105,7 +105,7 @@ page.open('https://www.facebook.com', function(status){
            setTimeout(function(){
               page.render('upload.png'); 
               //page.uploadFile('input[name="composer_photo[]"]', '/square.jpg'); 
-              page.uploadFile('input[name="file1"]', '/square.jpg'); 
+              page.uploadFile('input[name="file1"]', 'square.jpg'); 
               
               //page.evaluate(function (args) {
                 // document.getElementsByName('file1')[0].click();
