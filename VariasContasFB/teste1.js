@@ -9,6 +9,30 @@ page.onLoadFinished = function(status) {
 };
 
 
+page.onResourceReceived = function(response) {
+    if (response.stage !== "end") return;
+    //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
+    texto = texto + '<br><br>' + 'Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url;
+};
+page.onResourceRequested = function(requestData, networkRequest) {
+    //console.log('Request (#' + requestData.id + '): ' + requestData.url);
+    texto = texto + '<br><br>' + 'Request (#' + requestData.id + '): ' + requestData.url;
+};
+page.onUrlChanged = function(targetUrl) {
+    //console.log('New URL: ' + targetUrl);
+    texto = texto + '<br><br>' + 'New URL: ' + targetUrl;
+};
+
+page.onLoadStarted = function() {
+    //console.log('Load Started');
+    texto = texto + '<br><br>' + 'Load Started';
+};
+page.onNavigationRequested = function(url, type, willNavigate, main) {
+    //console.log('Trying to navigate to: ' + url);
+    texto = texto + '<br><br>' + 'Trying to navigate to: ' + url;
+};
+
+
 page.open('https://www.facebook.com', function(status){
     
         console.log("status: " + status);
