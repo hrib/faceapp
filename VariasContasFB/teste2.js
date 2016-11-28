@@ -17,27 +17,11 @@ page.open('https://www.facebook.com', function(status){
         console.log("status: " + status);
         if(status === "success"){
             
-
-           setTimeout(function(){
-              page.render('t2.png');
-               
-              page.evaluate(function (args) {
-                 
-                 document.getElementsByName("email")[0].value = args[1]; 
-                 document.getElementsByName("pass")[0].value = args[2]; 
-                 document.getElementById("loginbutton").click();
-
-              }, args);
-              //texto = texto + '<br>' + 'Page Eval';
-                  
-           }, 2000);
-
-           
-           
+         
  
           
            setTimeout(function(){
-              page.render('logou.png'); 
+              page.render('logou2.png'); 
   
            }, 6000);
            
