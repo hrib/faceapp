@@ -4,7 +4,7 @@ var page = require('webpage').create();
 var texto = args[1] + args[2];
 
 page.onLoadFinished = function(status) {
-    console.log("Log Load Finished: " + status);
+    //console.log("Log Load Finished: " + status);
     texto = texto + '<br>' + 'Load Finished: ' + status; 
     page.render('finished.png');
 };
