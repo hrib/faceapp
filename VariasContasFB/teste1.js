@@ -1,4 +1,3 @@
-//var system = require('system');
 var args = require('system').args;
 var page = require('webpage').create();
 
