@@ -69,19 +69,34 @@ page.open('https://www.facebook.com', function(status){
           //    }, args);   
           // }, 6000);
         
-        //post pic to wall
+
+        //navigate to profile page        
+        setTimeout(function(){
+            page.evaluate(function (args) {
+                document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
+            }, args);
+            page.render('myprofile.png'); 
+        }, 7000);
+        //post profile pic
+        setTimeout(function(){
+            page.evaluate(function (args) {
+                document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/]')[0].click(); 
+            }, args);
+            page.render('click_input.png'); 
+        }, 12000);
+        
+       
+        //post pic to wall       
         setTimeout(function(){
             page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
             page.render('input_image.png'); 
-        }, 7000);
-           
-           
+        }, 70000);
         setTimeout(function(){
             page.evaluate(function (args) {
                 document.querySelectorAll('[data-testid="react-composer-post-button"]')[0].click(); 
             }, args);
             page.render('submit_image.png'); 
-        }, 13000);
+        }, 120000);
            
            
           
