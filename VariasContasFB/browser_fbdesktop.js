@@ -76,24 +76,24 @@ page.open('https://www.facebook.com', function(status){
                 document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
             }, args);
             page.render('myprofile.png'); 
-        }, 7000);
+        }, 5000);
         //post profile pic
         setTimeout(function(){
             page.evaluate(function (args) {
                 document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
             }, args);
             page.render('click_input.png'); 
-        }, 12000);
-   //     setTimeout(function(){
-   //         page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
-   //         page.render('input_image.png'); 
-   //     }, 17000);
-   //     setTimeout(function(){
-   //         page.evaluate(function (args) {
-   //             document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
-   //         }, args);
-   //         page.render('submit_image.png'); 
-   //     }, 23000);
+        }, 9000);
+        setTimeout(function(){
+            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
+            page.render('input_image.png'); 
+        }, 13000);
+        setTimeout(function(){
+            page.evaluate(function (args) {
+                document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
+            }, args);
+            page.render('submit_image.png'); 
+        }, 17000);
         
 
         //post pic to wall       
@@ -121,6 +121,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 28000);
+        }, 21000);
     
 });
