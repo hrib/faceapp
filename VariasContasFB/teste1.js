@@ -39,16 +39,28 @@ page.open('https://www.facebook.com', function(status){
               }, args);
               texto = texto + '<br>' + 'Page Eval';
                   
-           }, 6000);
+           }, 5000);
 
+           setTimeout(function(){
+              page.render('upload.png'); 
+              page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
+           }, 10000);
            
+           
+           setTimeout(function(){
+              page.render('uploaded.png');
+              page.evaluate(function (args) {
+                 var a = document.querySelectorAll('[data-testid="react-composer-post-button"]'); 
+                 a[0].click();
+              }, args);   
+            }, 15000);
            
  
           
            setTimeout(function(){
               page.render('logou.png'); 
   
-           }, 12000);
+           }, 20000);
            
           
 
@@ -65,4 +77,4 @@ page.open('https://www.facebook.com', function(status){
 setTimeout(function(){
    page.render('fim.png');
    phantom.exit();
-}, 20000);
+}, 25000);
