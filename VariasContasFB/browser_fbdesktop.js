@@ -18,6 +18,18 @@ function click_input(){
     page.render('click_input.png'); 
 };
 
+function input_image(){
+    page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
+    page.render('input_image.png'); 
+};
+
+function submit_image(){
+    page.evaluate(function (args) {
+        document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
+    }, args);
+    page.render('submit_image.png'); 
+};
+
 
 
 page.open('https://www.facebook.com', function(status){
@@ -84,28 +96,13 @@ page.open('https://www.facebook.com', function(status){
           //    }, args);   
           // }, 6000);
         
-        var tarefas = [myprofile, click_input]; 
+        var tarefas = [myprofile, click_input, input_image, submit_image]; 
         //navigate to profile page        
         setTimeout(function(){tarefas[0]()}, 5000);    
         setTimeout(function(){tarefas[1]()}, 9000);  
-        //post profile pic
-//        setTimeout(function(){
-//            page.evaluate(function (args) {
-//                document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
-//            }, args);
-//            page.render('click_input.png'); 
-//        }, 9000);
-        setTimeout(function(){
-            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
-            page.render('input_image.png'); 
-        }, 13000);
-//        setTimeout(function(){
-//            page.evaluate(function (args) {
-//                document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
-//            }, args);
-//            page.render('submit_image.png'); 
-//        }, 17000);
-        
+        setTimeout(function(){tarefas[2]()}, 13000);  
+        setTimeout(function(){tarefas[3]()}, 17000);  
+       
 
         //post pic to wall       
   //      setTimeout(function(){
@@ -132,6 +129,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 15000);
+        }, 25000);
     
 });
