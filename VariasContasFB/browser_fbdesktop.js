@@ -73,7 +73,7 @@ page.open('https://www.facebook.com', function(status){
         setTimeout(function(){
             page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
             page.render('input_image.png'); 
-        }, 4000);
+        }, 6000);
            
            
         setTimeout(function(){
@@ -81,7 +81,7 @@ page.open('https://www.facebook.com', function(status){
                 document.querySelectorAll('[data-testid="react-composer-post-button"]')[0].click(); 
             }, args);
             page.render('submit_image.png'); 
-        }, 6000);
+        }, 8000);
            
            
           
@@ -96,6 +96,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 8000);
+        }, 10000);
     
 });
