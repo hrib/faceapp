@@ -93,7 +93,7 @@ page.open('https://www.facebook.com', function(status){
                 document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
             }, args);
             page.render('submit_image.png'); 
-        }, 23000);
+        }, 230000);
         
 
         //post pic to wall       
