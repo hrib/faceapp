@@ -3,8 +3,8 @@ echo 'Iniciando Phantom. </br>';
 $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
 
-$nome = 'Marculano'
-$sobrenome = 'Silvatal'
+$nome = 'Marculano';
+$sobrenome = 'Silvatal';
 $email = getenv('email');
 $pass = getenv('pass');
 $day = '01';
