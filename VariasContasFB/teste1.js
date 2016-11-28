@@ -4,24 +4,19 @@ var page = require('webpage').create();
 var texto = args[1] + args[2];
 
 page.onLoadFinished = function(status) {
-    console.log('LoadFinished ');
     texto = texto + '<br>' + 'Loaded: ' + status; 
     page.render('finished.png');
 };
 
-
-
 page.onUrlChanged = function(targetUrl) {
-    console.log('Log New URL: ' + targetUrl);
     texto = texto + '<br>' + 'New URL: ' + targetUrl;
 };
 
 page.onLoadStarted = function() {
-    console.log('Log onLoad Started');
     texto = texto + '<br>' + 'Load Started';
 };
+
 page.onNavigationRequested = function(url, type, willNavigate, main) {
-    //console.log('Trying to navigate to: ' + url);
     texto = texto + '<br>' + 'Trying to navigate to: ' + url;
 };
 
