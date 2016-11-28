@@ -2,10 +2,9 @@
 var args = require('system').args;
 var page = require('webpage').create();
 
-//page.onFilePicker = function(oldFile) {
-//   page.render('carregando.png'); 
-//   return('square.jpg');
-//}
+page.onLoadFinished = function(status) {
+    page.render('finished.png');
+};
 
 
 page.open('https://www.facebook.com', function(status){
