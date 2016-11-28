@@ -1,16 +1,15 @@
 var args = require('system').args;
 var page = require('webpage').create();
 
+var texto = args[1] + args[2];
+
 page.onLoadFinished = function(status) {
+    texto = texto + '<br>' + 'Loaded' 
     page.render('finished.png');
 };
 
 
 page.open('https://www.facebook.com', function(status){
-
-   var email = args[1];
-   var pass = args[2];
-   var texto = email + pass;
     
         console.log("status: " + status);
         if(status === "success"){
@@ -26,7 +25,7 @@ page.open('https://www.facebook.com', function(status){
                  document.getElementById("loginbutton").click();
 
               }, args);
-              //texto = texto + '<br>' + 'Page Eval';
+              texto = texto + '<br>' + 'Page Eval';
                   
            }, 2000);
 
@@ -41,7 +40,7 @@ page.open('https://www.facebook.com', function(status){
            
           
 
-           texto = texto + '<br>' + 'no error';
+           texto = texto + '<br>' + 'Nenhum Erro';
            console.log(texto);
         } else {
            console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
