@@ -18,7 +18,7 @@ page.open('https://www.facebook.com', function(status){
             
 
            setTimeout(function(){
-              page.render('t2.png');
+              page.render('inicio.png');
                
               page.evaluate(function (args) {
                  
