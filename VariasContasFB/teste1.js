@@ -48,7 +48,7 @@ page.open('https://m.facebook.com', function(status){
            setTimeout(function(){
               page.render('t6.png');
               page.evaluate(function (args) {
-                 document.querySelectorAll('[value="Not Now"]')[0].click();
+                 document.querySelectorAll('[type="submit"]')[0].click();
               }, args);   
            }, 4000);  
             
