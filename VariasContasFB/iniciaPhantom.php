@@ -22,6 +22,8 @@ echo $stdOut;
 echo '</br>Fim Phantom</br>';  
 
 echo '<br>sign</br><img src="sign.png" style="width:250px;height:250px;">';
+echo '<br>myprofile</br><img src="myprofile.png" style="width:250px;height:250px;">';
+echo '<br>click_input</br><img src="click_input.png" style="width:250px;height:250px;">';
 echo '<br>input_image</br><img src="input_image.png" style="width:250px;height:250px;">';
 echo '<br>submit_image</br><img src="submit_image.png" style="width:250px;height:250px;">';
 echo '<br>fim</br><img src="fim.png" style="width:250px;height:250px;">';
