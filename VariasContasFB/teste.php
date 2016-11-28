@@ -14,8 +14,8 @@ echo $stdOut;
 echo '</br>Fim Phantom</br>';  
 
   
-echo '</br>inicio</br><img src="t2.png" >';
-echo '</br>logou</br><img src="logou.png" >';
-echo '</br>finished</br><img src="finished.png" >';
-echo '</br>fim</br><img src="fim.png" >';
+echo '</br>inicio</br><img src="t2.png" style="width:128px;height:128px;">';
+echo '</br>logou</br><img src="logou.png" style="width:128px;height:128px;">';
+echo '</br>finished</br><img src="finished.png" style="width:128px;height:128px;">';
+echo '</br>fim</br><img src="fim.png" style="width:128px;height:128px;">';
 ?>
