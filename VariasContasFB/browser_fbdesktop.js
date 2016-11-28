@@ -93,20 +93,20 @@ page.open('https://www.facebook.com', function(status){
                 document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
             }, args);
             page.render('submit_image.png'); 
-        }, 230000);
+        }, 23000);
         
 
         //post pic to wall       
-        setTimeout(function(){
-            page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
-            page.render('input_image.png'); 
-        }, 70000);
-        setTimeout(function(){
-            page.evaluate(function (args) {
-                document.querySelectorAll('[data-testid="react-composer-post-button"]')[0].click(); 
-            }, args);
-            page.render('submit_image.png'); 
-        }, 120000);
+  //      setTimeout(function(){
+  //          page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
+  //          page.render('input_image.png'); 
+  //      }, 7000);
+  //      setTimeout(function(){
+  //          page.evaluate(function (args) {
+  //              document.querySelectorAll('[data-testid="react-composer-post-button"]')[0].click(); 
+  //          }, args);
+  //          page.render('submit_image.png'); 
+  //      }, 12000);
            
            
           
