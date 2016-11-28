@@ -81,22 +81,22 @@ page.open('https://www.facebook.com', function(status){
         //navigate to profile page        
         setTimeout(tarefas[0], 5000);    
         //post profile pic
+//        setTimeout(function(){
+//            page.evaluate(function (args) {
+//                document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
+//            }, args);
+//            page.render('click_input.png'); 
+//        }, 9000);
         setTimeout(function(){
-            page.evaluate(function (args) {
-                document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
-            }, args);
-            page.render('click_input.png'); 
-        }, 9000);
-        setTimeout(function(){
-            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
+//            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
             page.render('input_image.png'); 
         }, 13000);
-        setTimeout(function(){
-            page.evaluate(function (args) {
-                document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
-            }, args);
-            page.render('submit_image.png'); 
-        }, 17000);
+//        setTimeout(function(){
+//            page.evaluate(function (args) {
+//                document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
+//            }, args);
+//            page.render('submit_image.png'); 
+//        }, 17000);
         
 
         //post pic to wall       
@@ -124,6 +124,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 21000);
+        }, 15000);
     
 });
