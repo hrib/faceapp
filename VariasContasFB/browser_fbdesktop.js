@@ -5,9 +5,9 @@ var texto = args[3] + ' ' + args[4] + ' ' + args[9];
 var signtype = args[9];
 
 function myprofile(){
-    page.evaluate(function (args) {
-        document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
-    }, args);
+    //page.evaluate(function (args) {
+    //    document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
+    //}, args);
     page.render('myprofile.png'); 
 };
 
