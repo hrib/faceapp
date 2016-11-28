@@ -11,11 +11,5 @@ echo $stdOutv . "<br/>";
 $pathToJsScript = dirname(__FILE__). '/teste1.js';
 $stdOut = exec(sprintf('%s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $varin1, $varin2), $out);
 echo $stdOut;
-
-echo '</br></br>'; 
-
-$pathToJsScript = dirname(__FILE__). '/teste2.js';
-$stdOut = exec(sprintf('%s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $varin1, $varin2), $out);
-echo $stdOut;
 echo '</br>Fim Phantom</br>';   
 ?>
