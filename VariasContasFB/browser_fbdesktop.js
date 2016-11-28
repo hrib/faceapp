@@ -80,12 +80,22 @@ page.open('https://www.facebook.com', function(status){
         //post profile pic
         setTimeout(function(){
             page.evaluate(function (args) {
-                document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/]')[0].click(); 
+                document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
             }, args);
             page.render('click_input.png'); 
         }, 12000);
+        setTimeout(function(){
+            page.uploadFile('input[type="file"]', 'square.jpg'); 
+            page.render('input_image.png'); 
+        }, 17000);
+        setTimeout(function(){
+            page.evaluate(function (args) {
+                document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
+            }, args);
+            page.render('submit_image.png'); 
+        }, 23000);
         
-       
+
         //post pic to wall       
         setTimeout(function(){
             page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
@@ -111,6 +121,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 18000);
+        }, 28000);
     
 });
