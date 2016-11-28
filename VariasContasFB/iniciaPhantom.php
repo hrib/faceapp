@@ -1,7 +1,7 @@
 <?php
 echo 'Iniciando Phantom. </br>';
 $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
-$pathToJsScript = dirname(__FILE__). '/browser_SignUpteste.js';
+$pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
 
 $nome = 'Marculano'
 $sobrenome = 'Silvatal'
