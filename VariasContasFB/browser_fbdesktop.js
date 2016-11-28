@@ -5,10 +5,17 @@ var texto = args[3] + ' ' + args[4] + ' ' + args[9];
 var signtype = args[9];
 
 function myprofile(){
-    //page.evaluate(function (args) {
-    //    document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
-    //}, args);
+    page.evaluate(function (args) {
+        document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
+    }, args);
     page.render('myprofile.png'); 
+};
+
+function click_input(){
+    page.evaluate(function (args) {
+        document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
+    }, args);
+    page.render('click_input.png'); 
 };
 
 
@@ -80,6 +87,7 @@ page.open('https://www.facebook.com', function(status){
         var tarefas = [myprofile, click_input]; 
         //navigate to profile page        
         setTimeout(tarefas[0](), 5000);    
+       setTimeout(tarefas[1](), 9000);  
         //post profile pic
 //        setTimeout(function(){
 //            page.evaluate(function (args) {
@@ -88,7 +96,7 @@ page.open('https://www.facebook.com', function(status){
 //            page.render('click_input.png'); 
 //        }, 9000);
         setTimeout(function(){
-//            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
+            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
             page.render('input_image.png'); 
         }, 13000);
 //        setTimeout(function(){
