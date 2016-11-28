@@ -49,20 +49,11 @@ page.open('https://www.facebook.com', function(status){
       }
             
           
-           setTimeout(function(){
-              page.render('uploaddesktop1.png'); 
-              //page.evaluate(function (args) {
-                 //var a = document.querySelectorAll('[name*="composer_photo"]');
-                 //var a = document.querySelectorAll('[accept*="video"]'); 
-                 //console.log(a[0]);
-                 //a[0].click();
-              //}, args);   
-           }, 4000);
-           
+    
             
            
            
-           
+           //navega pra outra pagina
            //setTimeout(function(){
               //page.render('logou.png');
               //page.open('https://m.facebook.com/photos/upload/?profile_pic&upload_source=profile_pic_upload&profile_pic_source=tagged_photos_page', function(status){
@@ -77,38 +68,34 @@ page.open('https://www.facebook.com', function(status){
           //       a[0].click();
           //    }, args);   
           // }, 6000);
-          
-           setTimeout(function(){
-              page.render('upload.png'); 
-              page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
-              //page.uploadFile('input[name="file1"]', 'square.jpg'); 
-              
-              //page.evaluate(function (args) {
-                // document.getElementsByName('file1')[0].click();
-              //}, args);   
-           }, 6000);
+        
+        //post pic to wall
+        setTimeout(function(){
+            page.uploadFile('input[name="composer_photo[]"]', 'square.jpg'); 
+            page.render('input_image.png'); 
+        }, 4000);
            
            
-           setTimeout(function(){
-              page.render('uploaded.png');
-              page.evaluate(function (args) {
-                 var a = document.querySelectorAll('[data-testid="react-composer-post-button"]'); 
-                 a[0].click();
-              }, args);   
-           }, 10000);
+        setTimeout(function(){
+            page.evaluate(function (args) {
+                document.querySelectorAll('[data-testid="react-composer-post-button"]')[0].click(); 
+            }, args);
+            page.render('submit_image.png'); 
+        }, 6000);
            
            
           
 
-           texto = texto + '<br>' + 'no error';
-           console.log(texto);
+        texto = texto + '<br>' + 'no error';
+
         } else {
            console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
         }
         
         setTimeout(function(){
            page.render('fim.png');
+           console.log(texto);
            phantom.exit();
-        }, 15000);
+        }, 8000);
     
 });
