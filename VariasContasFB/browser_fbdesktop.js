@@ -1,76 +1,60 @@
-//var system = require('system');
 var args = require('system').args;
 var page = require('webpage').create();
 
-//page.onFilePicker = function(oldFile) {
-//   page.render('carregando.png'); 
-//   return('square.jpg');
-//}
+var texto = args[3] + ' ' + args[4] + ' ' + args[9];
+var signtype = args[9];
 
 
 page.open('https://www.facebook.com', function(status){
-
-   var email = args[1];
-   var pass = args[2];
-   var texto = email + pass;
     
-        console.log("status: " + status);
-        if(status === "success"){
-            
-           //page.onLoadFinished = function() {
-           
-           //};
-           //page.render('loaded.png');
-           
-           //var title2 = page.evaluate(function (s) {
-              //page.render nao funciona aqui e da erro na funcao
-           //   document.getElementById("u_0_1").value = "1axeval1";
-           //   document.getElementById("u_0_3").value = "1bxeval1";
-           //   return document.title;
-           //}, 'title2');
-           //texto = texto + '<br>' + title2;
-
-           setTimeout(function(){
-              page.render('t2.png');
-               
-              page.evaluate(function (args) {
-                 
-                 document.getElementsByName("email")[0].value = args[1]; 
-                 document.getElementsByName("pass")[0].value = args[2]; 
-                 document.getElementById("loginbutton").click();
-
-              }, args);
-              //texto = texto + '<br>' + 'Page Eval';
+   console.log("status: " + status);
+   if(status === "success"){
+      
+      // SingIn or SingUp
+      if(signtype === "signin"){
+         texto = texto + '<br>' + 'Sign In';
+         setTimeout(function(){
+            page.render('t2.png');
+            page.evaluate(function (args) {
+               document.getElementsByName("email")[0].value = args[3]; 
+               document.getElementsByName("pass")[0].value = args[4]; 
+               document.getElementById("loginbutton").click();
+            }, args);
+            page.render('sign.png');
+         }, 2000);  
+      }else if(signtype === "signup"){
+         texto = texto + '<br>' + 'Sign Up';
+         setTimeout(function(){
+            page.render('t3.png');
+            page.evaluate(function (args) {
+               document.getElementsByName("firstname")[0].value = args[1]; 
+               document.getElementsByName("lastname")[0].value = args[2]; 
+               document.getElementsByName("reg_email__")[0].value = args[3]; 
+               document.getElementsByName("reg_email_confirmation__")[0].value = args[3]; 
+               document.getElementsByName("reg_passwd__")[0].value = args[4]; 
+               document.getElementById("day").value = args[5];
+               document.getElementById("month").value = args[6];
+               document.getElementById("year").value = args[7];
+               if(args[8] === "female"){
+                  document.getElementsByName("sex")[0].checked = true; 
+                  document.getElementsByName("sex")[1].checked = false; 
+               } else {
+                  document.getElementsByName("sex")[0].checked = false; 
+                  document.getElementsByName("sex")[1].checked = true;   
+               }
+               document.getElementsByName('websubmit')[0].click();
+            }, args);
+            page.render('sign.png');
+         }, 2000);
+      }
                   
-           }, 2000);
+
+
 
            
            
            
-           
-           setTimeout(function(){
-              page.render('t3.png');
-               
-              page.evaluate(function (args) {
-                 
-                 document.getElementsByName("firstname")[0].value = 'manue'; 
-                 document.getElementsByName("lastname")[0].value = 'loaco'; 
-                 document.getElementsByName("reg_email__")[0].value = 'emailqqnaput1@gmail.com'; 
-                 document.getElementsByName("reg_email_confirmation__")[0].value = 'emailqqnaput1@gmail.com'; 
-                 document.getElementsByName("reg_passwd__")[0].value = 'senhaqq'; 
-                 
-                 document.getElementById("day").value = '10';
-                 document.getElementById("month").value = '11';
-                 document.getElementById("year").value = '1985';
-                 
-                 document.getElementsByName("sex")[0].checked = false; 
-                 document.getElementsByName("sex")[1].checked = true; 
-                 //document.getElementsByName('websubmit')[0].click();
 
-              }, args);
-              //texto = texto + '<br>' + 'Page Eval';
-                  
-           }, 3000);
            
           
            setTimeout(function(){
