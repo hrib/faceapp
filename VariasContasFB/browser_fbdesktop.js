@@ -81,7 +81,7 @@ page.open('https://www.facebook.com', function(status){
                 document.querySelectorAll('[data-testid="react-composer-post-button"]')[0].click(); 
             }, args);
             page.render('submit_image.png'); 
-        }, 8000);
+        }, 10000);
            
            
           
@@ -96,6 +96,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 10000);
+        }, 14000);
     
 });
