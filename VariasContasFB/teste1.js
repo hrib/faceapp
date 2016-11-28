@@ -46,10 +46,12 @@ page.open('https://www.facebook.com', function(status){
         } else {
            console.log("Error opening url \"" + page.reason_url + "\": " + page.reason);
         }
-        
-        setTimeout(function(){
-           page.render('fim.png');
-           phantom.exit();
-        }, 10000);
+
     
 });
+
+
+setTimeout(function(){
+   page.render('fim.png');
+   phantom.exit();
+}, 10000);
