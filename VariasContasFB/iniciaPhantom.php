@@ -19,5 +19,8 @@ echo $stdOutv . "<br/>";
 $stdOut = exec(sprintf('%s %s %s %s %s %s %s %s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $nome, $sobrenome, $email, $pass, $day, $month, $year, $sex, $signtype), $out);
 echo $stdOut;
 
-echo '</br>Fim Phantom</br>';   
+echo '</br>Fim Phantom</br>';  
+
+echo '<br>sign</br><img src="sign.png" style="width:250px;height:250px;">';
+
 ?>
