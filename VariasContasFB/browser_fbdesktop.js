@@ -84,16 +84,16 @@ page.open('https://www.facebook.com', function(status){
             }, args);
             page.render('click_input.png'); 
         }, 12000);
-        setTimeout(function(){
-            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
-            page.render('input_image.png'); 
-        }, 17000);
-        setTimeout(function(){
-            page.evaluate(function (args) {
-                document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
-            }, args);
-            page.render('submit_image.png'); 
-        }, 23000);
+   //     setTimeout(function(){
+   //         page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
+   //         page.render('input_image.png'); 
+   //     }, 17000);
+   //     setTimeout(function(){
+   //         page.evaluate(function (args) {
+   //             document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
+   //         }, args);
+   //         page.render('submit_image.png'); 
+   //     }, 23000);
         
 
         //post pic to wall       
