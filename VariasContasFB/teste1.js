@@ -38,7 +38,7 @@ page.open('https://m.facebook.com', function(status){
                  
                  document.getElementsByName("email")[0].value = args[1]; 
                  document.getElementsByName("pass")[0].value = args[2]; 
-                 document.getElementById("loginbutton").click();
+                 document.querySelectorAll('[name="login"]')[0].click();
 
               }, args);
               texto = texto + '<br>' + 'Page Eval';
