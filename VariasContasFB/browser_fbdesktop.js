@@ -47,15 +47,7 @@ page.open('https://www.facebook.com', function(status){
             page.render('sign.png');
          }, 2000);
       }
-                  
-
-
-
-           
-           
-           
-
-           
+            
           
            setTimeout(function(){
               page.render('uploaddesktop1.png'); 
