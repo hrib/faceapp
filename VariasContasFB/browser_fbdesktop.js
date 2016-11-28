@@ -85,7 +85,7 @@ page.open('https://www.facebook.com', function(status){
             page.render('click_input.png'); 
         }, 12000);
         setTimeout(function(){
-            page.uploadFile('input[type="file"]', 'square.jpg'); 
+            page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
             page.render('input_image.png'); 
         }, 17000);
         setTimeout(function(){
