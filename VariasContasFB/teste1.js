@@ -27,7 +27,7 @@ page.open('https://www.facebook.com', function(status){
               }, args);
               texto = texto + '<br>' + 'Page Eval';
                   
-           }, 2000);
+           }, 6000);
 
            
            
@@ -36,7 +36,7 @@ page.open('https://www.facebook.com', function(status){
            setTimeout(function(){
               page.render('logou.png'); 
   
-           }, 6000);
+           }, 12000);
            
           
 
@@ -53,4 +53,4 @@ page.open('https://www.facebook.com', function(status){
 setTimeout(function(){
    page.render('fim.png');
    phantom.exit();
-}, 10000);
+}, 20000);
