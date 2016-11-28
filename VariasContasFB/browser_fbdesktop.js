@@ -4,6 +4,14 @@ var page = require('webpage').create();
 var texto = args[3] + ' ' + args[4] + ' ' + args[9];
 var signtype = args[9];
 
+function myprofile(){
+    page.evaluate(function (args) {
+        document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
+    }, args);
+    page.render('myprofile.png'); 
+};
+
+
 
 page.open('https://www.facebook.com', function(status){
     
@@ -21,7 +29,7 @@ page.open('https://www.facebook.com', function(status){
                document.getElementById("loginbutton").click();
             }, args);
             page.render('sign.png');
-         }, 2000);  
+         }, 1000);  
       }else if(signtype === "signup"){
          texto = texto + '<br>' + 'Sign Up';
          setTimeout(function(){
@@ -45,7 +53,7 @@ page.open('https://www.facebook.com', function(status){
                document.getElementsByName('websubmit')[0].click();
             }, args);
             page.render('sign.png');
-         }, 2000);
+         }, 1000);
       }
             
           
@@ -71,12 +79,7 @@ page.open('https://www.facebook.com', function(status){
         
 
         //navigate to profile page        
-        setTimeout(function(){
-            page.evaluate(function (args) {
-                document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
-            }, args);
-            page.render('myprofile.png'); 
-        }, 5000);
+        setTimeout(myprofile(), 5000);    
         //post profile pic
         setTimeout(function(){
             page.evaluate(function (args) {
