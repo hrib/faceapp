@@ -43,7 +43,16 @@ page.open('https://m.facebook.com', function(status){
               }, args);
               texto = texto + '<br>' + 'Page Eval';
                   
-           }, 3000);
+           }, 2000);
+            
+           setTimeout(function(){
+              page.render('t6.png');
+              page.evaluate(function (args) {
+                 document.querySelectorAll('[value="Not Now"]')[0].click();
+              }, args);   
+           }, 4000);  
+            
+            
             
            setTimeout(function(){
               page.render('t6.png');
