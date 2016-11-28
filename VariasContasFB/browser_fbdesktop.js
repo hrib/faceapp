@@ -77,7 +77,7 @@ page.open('https://www.facebook.com', function(status){
           //    }, args);   
           // }, 6000);
         
-        var tarefas = [myprofile(), click_input()]; 
+        //var tarefas = [myprofile(), click_input()]; 
         //navigate to profile page        
         //setTimeout(tarefas[0], 5000);    
         //post profile pic
