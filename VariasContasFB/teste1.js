@@ -4,32 +4,25 @@ var page = require('webpage').create();
 var texto = args[1] + args[2];
 
 page.onLoadFinished = function(status) {
-    texto = texto + '<br>' + 'Loaded' 
+    console.log('LoadFinished ');
+    texto = texto + '<br>' + 'Loaded: ' + status; 
     page.render('finished.png');
 };
 
 
-page.onResourceReceived = function(response) {
-    if (response.stage !== "end") return;
-    //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url);
-    texto = texto + '<br><br>' + 'Response (#' + response.id + ', stage "' + response.stage + '"): ' + response.url;
-};
-page.onResourceRequested = function(requestData, networkRequest) {
-    //console.log('Request (#' + requestData.id + '): ' + requestData.url);
-    texto = texto + '<br><br>' + 'Request (#' + requestData.id + '): ' + requestData.url;
-};
+
 page.onUrlChanged = function(targetUrl) {
-    //console.log('New URL: ' + targetUrl);
-    texto = texto + '<br><br>' + 'New URL: ' + targetUrl;
+    console.log('Log New URL: ' + targetUrl);
+    texto = texto + '<br>' + 'New URL: ' + targetUrl;
 };
 
 page.onLoadStarted = function() {
-    //console.log('Load Started');
-    texto = texto + '<br><br>' + 'Load Started';
+    console.log('Log onLoad Started');
+    texto = texto + '<br>' + 'Load Started';
 };
 page.onNavigationRequested = function(url, type, willNavigate, main) {
     //console.log('Trying to navigate to: ' + url);
-    texto = texto + '<br><br>' + 'Trying to navigate to: ' + url;
+    texto = texto + '<br>' + 'Trying to navigate to: ' + url;
 };
 
 
