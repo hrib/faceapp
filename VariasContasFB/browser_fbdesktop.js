@@ -86,8 +86,8 @@ page.open('https://www.facebook.com', function(status){
         
         var tarefas = [myprofile, click_input]; 
         //navigate to profile page        
-        setTimeout(tarefas[0](), 5000);    
-       setTimeout(tarefas[1](), 9000);  
+        setTimeout(function(){tarefas[0]()}, 5000);    
+        setTimeout(function(){tarefas[1]()}, 9000);  
         //post profile pic
 //        setTimeout(function(){
 //            page.evaluate(function (args) {
