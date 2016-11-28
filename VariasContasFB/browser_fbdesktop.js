@@ -79,7 +79,7 @@ page.open('https://www.facebook.com', function(status){
         
 
         //navigate to profile page        
-        setTimeout(myprofile(), 5000);    
+        //setTimeout(myprofile(), 5000);    
         //post profile pic
         setTimeout(function(){
             page.evaluate(function (args) {
