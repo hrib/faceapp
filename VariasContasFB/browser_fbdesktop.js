@@ -3,33 +3,46 @@ var page = require('webpage').create();
 
 var texto = args[3] + ' ' + args[4] + ' ' + args[9];
 var signtype = args[9];
+var anotherURL = args[10];
 
-function myprofile(){
+function browse_myprofile(){
     page.evaluate(function (args) {
         document.querySelectorAll('[data-testid="blue_bar_profile_link"]')[0].click(); 
     }, args);
-    page.render('myprofile.png'); 
+    page.render('browse_myprofile.png'); 
 };
 
-function click_input(){
+function click_change_myprofilepic(){
     page.evaluate(function (args) {
         document.querySelectorAll('[ajaxify*="/profile/picture/menu_dialog/"]')[0].click(); 
     }, args);
-    page.render('click_input.png'); 
+    page.render('click_change_myprofilepic.png'); 
 };
 
-function input_image(){
+function input_change_myprofilepic(){
     page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
     page.render('input_image.png'); 
 };
 
-function submit_image(){
+function submit_change_myprofilepic(){
     page.evaluate(function (args) {
         document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
     }, args);
     page.render('submit_image.png'); 
 };
 
+function browse_another_wall(){
+    page.open(anotherURL, function(status){});
+    page.render('browse_another_wall.png');
+};
+
+
+function like_post_on_another_wall(){
+    page.evaluate(function (args) {
+        var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]')[0].click();
+    }, args);   
+    page.render('like_post_on_another_wall.png');
+};
 
 
 page.open('https://www.facebook.com', function(status){
@@ -76,32 +89,15 @@ page.open('https://www.facebook.com', function(status){
       }
             
           
-    
-            
-           
-           
-           //navega pra outra pagina
-           //setTimeout(function(){
-              //page.render('logou.png');
-              //page.open('https://m.facebook.com/photos/upload/?profile_pic&upload_source=profile_pic_upload&profile_pic_source=tagged_photos_page', function(status){
-              //});
-           //}, 4000);
  
-          // Like post on friends wall 
-          //setTimeout(function(){
-          //    page.render('pessoal.png');
-          //    page.evaluate(function (args) {
-          //       var a = document.querySelectorAll('[data-testid="fb-ufi-likelink"]'); 
-          //       a[0].click();
-          //    }, args);   
-          // }, 6000);
-        
-        var tarefas = [myprofile, click_input, input_image, submit_image]; 
-        //navigate to profile page        
+        var tarefas = [browse_myprofile, click_change_myprofilepic, input_change_myprofilepic, submit_change_myprofilepic]; 
+        var tarefas = [browse_another_wall, like_post_on_another_wall]; 
+ 
+       //navigate to profile page        
         setTimeout(function(){tarefas[0]()}, 5000);    
         setTimeout(function(){tarefas[1]()}, 9000);  
-        setTimeout(function(){tarefas[2]()}, 13000);  
-        setTimeout(function(){tarefas[3]()}, 17000);  
+        //setTimeout(function(){tarefas[2]()}, 13000);  
+        //setTimeout(function(){tarefas[3]()}, 17000);  
        
 
         //post pic to wall       
@@ -129,6 +125,6 @@ page.open('https://www.facebook.com', function(status){
            page.render('fim.png');
            console.log(texto);
            phantom.exit();
-        }, 25000);
+        }, 20000);
     
 });
