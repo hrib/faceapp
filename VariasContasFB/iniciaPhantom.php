@@ -12,11 +12,12 @@ $month = '10';
 $year = '1985';
 $sex = 'male'; // male|female
 $signtype = 'signin'; // signup|signin
+$anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
 
 $stdOutv = exec(sprintf('%s %s', $pathToPhatomJs, '--version'), $out);
 echo $stdOutv . "<br/>";
 
-$stdOut = exec(sprintf('%s %s %s %s %s %s %s %s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $nome, $sobrenome, $email, $pass, $day, $month, $year, $sex, $signtype), $out);
+$stdOut = exec(sprintf('%s %s %s %s %s %s %s %s %s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $nome, $sobrenome, $email, $pass, $day, $month, $year, $sex, $signtype, $anotherURL), $out);
 echo $stdOut;
 
 echo '</br>Fim Phantom</br>';  
