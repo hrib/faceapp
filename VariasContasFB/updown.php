@@ -32,6 +32,8 @@ $res = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHE
 $raw = pg_fetch_result($res, 'data');
 
 // Convert to binary and send to the browser
-header('Content-type: image/jpeg');
+//header('Content-type: image/jpeg');
+$imagem = base64_decode($raw);
 echo base64_decode($raw);
+echo '<img src=' $imagem . '>';
 ?>
