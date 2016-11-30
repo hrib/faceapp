@@ -19,9 +19,9 @@ function SQLquery($query){
   $db = new PDO($dsn);
 
   $result = $db->query($query);
-  $resultado->fetch(PDO::FETCH_ASSOC);
+  
   echo '<br><br>';
-  echo var_dump($resultado);
+  echo var_dump($result->fetch(PDO::FETCH_ASSOC));
   echo '<br><br>';
   
   
