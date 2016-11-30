@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$query = $_GET["query"];
+$query = $_POST["query"];
 echo $query;
 SQLquery($query);
 
