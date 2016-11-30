@@ -22,7 +22,9 @@ $data = file_get_contents('http://xoax.net/cpp/ref/cstd/incl/cstdio/fn/fwrite/fw
 $escaped = bin2hex( $data );
 
 // Insert it into the database
-$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', decode('{$escaped}' , 'hex'))" );
+//$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', decode('{$escaped}' , 'hex'))" );
+$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', '/300')" );
+
 
 // Get the bytea data
 $res = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHERE name='Pine trees'");  
