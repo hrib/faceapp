@@ -16,10 +16,10 @@ if (!$conn) {
 }  
 
 // Read in a binary file
-$data = file_get_contents('http://xoax.net/cpp/ref/cstd/incl/cstdio/fn/fwrite/fwriteInputFile.png');
+//$data = file_get_contents('http://xoax.net/cpp/ref/cstd/incl/cstdio/fn/fwrite/fwriteInputFile.png');
 
 // Escape the binary data to avoid problems with encoding
-$escaped = bin2hex( $data );
+//$escaped = bin2hex( $data );
 
 // Insert it into the database
 //$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', decode('{$escaped}' , 'hex'))" );
