@@ -33,10 +33,10 @@ else
     //echo "<td>" . $row["id"] . "</td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>";
-      header("Content-length: $size");
-      header("Content-type: $type");
-      header("Content-Disposition: attachment; filename=$name");
-      echo $content;
+      header("Content-length: " . $row['size']);
+      header("Content-type: " . $row['type']);
+      header("Content-Disposition: attachment; filename=" . $row['name']);
+      echo pg_unescape_bytea($row['content']);
     echo "</td>";
     
     echo "</tr>";
