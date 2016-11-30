@@ -39,10 +39,14 @@ if (!$conn) {
   
   
 pg_query('SET bytea_output = "escape";');
-$lquery ="select content from upload";
+$lquery ="select size, type, content from upload";
 $lq = pg_query($conn, $lquery) or die(pg_last_error());
 $lqq=pg_fetch_row($lq,'content');
-header("conent-type:image");
+$sss=pg_fetch_row($lq,'size');
+$ttt=pg_fetch_row($lq,'type');
+  
+header("Content-length:" . $sss[0]);
+header("Content-type:" . $ttt[0]);
 echo pg_unescape_bytea($lqq[0]);  
   
   
