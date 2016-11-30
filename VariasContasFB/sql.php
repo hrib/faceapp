@@ -21,7 +21,7 @@ function SQLquery($query){
   $result = $db->query($query);
   
   echo '<br><br>';
-  echo var_dump($result->fetch(PDO::FETCH_ASSOC));
+  echo var_dump($result);
   echo '<br><br>';
   
   
@@ -38,6 +38,9 @@ function SQLquery($query){
     echo "<td>" . $row["sex"] . "</td>";
     echo "<td>" . $row["ultimo_acesso"] . "</td>";
     echo "<td>" . $row["status"] . "</td>";
+        echo "<td>" . $row["name"] . "</td>";
+        echo "<td>" . $row["content"] . "</td>";
+    
     echo "</tr>";
   }
   echo "</table>";
