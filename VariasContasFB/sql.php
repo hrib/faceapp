@@ -41,6 +41,7 @@ function SQLquery($query){
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>" . $row["content"] . "</td>";
         $raw = base64_encode($row["content"]);
+    echo "<td>" . $raw . "</td>";
         $dataUri = "data:image/jpeg;base64," . $raw;
         echo "<td><img src='$dataUri' /></td>";
         //$dataUri = "data:image/jpeg;base64," . $row["data"];
