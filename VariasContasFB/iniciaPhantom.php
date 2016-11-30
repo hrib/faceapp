@@ -24,7 +24,7 @@ SQL <input type="text" name="query"><br>
 <?php
 
 $stdOutv = exec(sprintf('%s %s', $pathToPhatomJs, '--version'), $out);
-echo $stdOutv . "<br/>";
+echo "PhantomJS v." $stdOutv . "<br/>";
 
 $stdOut = exec(sprintf('%s %s %s %s %s %s %s %s %s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $nome, $sobrenome, $email, $pass, $day, $month, $year, $sex, $signtype, $anotherURL), $out);
 echo $stdOut;
