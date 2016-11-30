@@ -50,11 +50,11 @@ $lqq=pg_fetch_row($lq,'content');
 header("conent-type:image");
 echo pg_unescape_bytea($lqq[0]);  
 
-$query2 = "select size, type, content from upload";
+$query2 = "select size, type, content from upload where id = 1";
 $res = pg_query($conn, $query2) or die (pg_last_error($con)); 
 
 $data = pg_fetch_result($res, 'content');
-$unes_image = pg_unescape_bytea($data[0]);
+$unes_image = pg_unescape_bytea($data);
 
 $file_name = "woman2.jpg";
 $img = fopen($file_name, 'wb') or die("cannot open image\n");
