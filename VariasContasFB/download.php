@@ -49,6 +49,22 @@ $lqq=pg_fetch_row($lq,'content');
 //header("Content-type:" . $ttt[0]);
 header("conent-type:image");
 echo pg_unescape_bytea($lqq[0]);  
+
+$query2 = "select size, type, content from upload";
+$res = pg_query($conn, $query2) or die (pg_last_error($con)); 
+
+$data = pg_fetch_result($res, 'content');
+$unes_image = pg_unescape_bytea($data[0]);
+
+$file_name = "woman2.jpg";
+$img = fopen($file_name, 'wb') or die("cannot open image\n");
+fwrite($img, $unes_image) or die("cannot write image data\n");
+fclose($img);
+
+pg_close($con);
+  
+<img src="woman2.jpg">
+  
   
   
   
@@ -65,8 +81,8 @@ else
     //echo "<td>" . $row["id"] . "</td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>";
-      header("Content-length: " . $row['size']);
-      header("Content-type: " . $row['type']);
+      //header("Content-length: " . $row['size']);
+      //header("Content-type: " . $row['type']);
       //header("Content-Disposition: attachment; filename=" . $row['name']);
       //echo pg_unescape_bytea($row['content']);
     echo "</td>";
