@@ -5,7 +5,7 @@ $query = $_GET["query"];
 echo $query;
 SQLquery($query);
 
-function SQLquery(query){
+function SQLquery($query){
 
   $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "pgsql:"
