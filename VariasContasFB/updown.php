@@ -25,8 +25,8 @@ $escaped = bin2hex( $data );
 $res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', decode('{$escaped}' , 'hex'))" );
 
 // Get the bytea data
-$res = pg_query($conn, "SELECT encode(data, 'base64') AS data FROM upload WHERE name='Pine trees'");  
-$raw = pg_fetch_result($res, 'data');
+$res = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHERE name='Pine trees'");  
+$raw = pg_fetch_result($res, 'content');
 
 // Convert to binary and send to the browser
 header('Content-type: image/jpeg');
