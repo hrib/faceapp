@@ -40,6 +40,8 @@ function SQLquery($query){
     echo "<td>" . $row["status"] . "</td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>content: " . $row["content"] . "</td>";
+     echo "<td>content: " . pg_unescape_bytea($row["content"]) . "</td>";
+     echo "<td>content: " . pg_escape_bytea($row["content"]) . "</td>";
         $raw = base64_encode($row["content"]);
     echo "<td>encode: " . $raw . "</td>";
         $dataUri = "data:image/jpeg;base64," . $raw;
