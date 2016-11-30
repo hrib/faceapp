@@ -22,9 +22,16 @@ $query = "SELECT name, type, size, content FROM upload";
 $result = $db->query($query) or die('Error, query failed');
 
   
+$conn = pg_pconnect($dsn);
+if (!$conn) {
+  echo "An error occurred: conn.\n";
+  exit;
+}  
+  
+  
 pg_query('SET bytea_output = "escape";');
 $lquery ="select content from upload";
-$lq = pg_query($db, $lquery) or die(pg_last_error());
+$lq = pg_query($conn, $lquery) or die(pg_last_error());
 $lqq=pg_fetch_row($lq,'content');
 header("conent-type:image");
 echo pg_unescape_bytea($lqq[0]);  
