@@ -34,9 +34,11 @@ $raw = pg_fetch_result($res, 'data');
 // Convert to binary and send to the browser
 //header('Content-type: image/jpeg');
 //echo base64_decode($raw);
+
 //$imagem = base64_decode($raw);
 //echo base64_decode($raw);
 //echo '<img src=' . base64_decode($raw) . '>';
-$dataUri = "data:image/jpeg;base64," . base64_encode($raw);
+
+$dataUri = "data:image/jpeg;base64," . $raw;
 echo "<img src='$dataUri' />";
 ?>
