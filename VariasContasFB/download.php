@@ -18,7 +18,7 @@
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
 
-$query = "SELECT id, name FROM upload";
+$query = "SELECT name, type, size, content FROM upload";
 $result = $db->query($query) or die('Error, query failed');
  
 if($result == 0)
@@ -32,6 +32,13 @@ else
     echo "<tr>";
     echo "<td>" . $row["id"] . "</td>";
     echo "<td>" . $row["name"] . "</td>";
+    echo "<td>";
+      header("Content-length: $size");
+      header("Content-type: $type");
+      header("Content-Disposition: attachment; filename=$name");
+      echo $content;
+    echo "</td>";
+    
     echo "</tr>";
   }
   echo "</table>";
@@ -41,5 +48,6 @@ else
 }
 $result->closeCursor();
 ?>
-</body>
-</html>
+
+
+
