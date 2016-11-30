@@ -30,7 +30,7 @@ else
   echo "<table>";
   while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
-    echo "<td>" . $row["id"] . "</td>";
+    //echo "<td>" . $row["id"] . "</td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>";
       header("Content-length: $size");
