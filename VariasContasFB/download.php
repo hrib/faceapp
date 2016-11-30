@@ -27,12 +27,17 @@ if($result == 0)
 }
 else
 {
-  while ($row = $result->fetch(PDO::FETCH_ASSOC)){
-  {
-    ?>
-    <a href="download.php?id=<?php=$row['id'];?>"><?php=$row['name'];?></a> <br>
-    <?php
+  echo "<table>";
+  while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "<tr>";
+    echo "<td>" . $row["id"] . "</td>";
+    echo "<td>" . $row["name"] . "</td>";
+    echo "</tr>";
   }
+  echo "</table>";
+  
+  
+  
 }
 $result->closeCursor();
 ?>
