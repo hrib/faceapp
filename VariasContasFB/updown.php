@@ -27,8 +27,9 @@ $res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees'
 
 
 // Get the bytea data
+//$res = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHERE name='Pine trees'");  
 $res = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHERE name='Pine trees'");  
-$raw = pg_fetch_result($res, 'content');
+$raw = pg_fetch_result($res, 'data');
 
 // Convert to binary and send to the browser
 header('Content-type: image/jpeg');
