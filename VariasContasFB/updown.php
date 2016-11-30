@@ -23,7 +23,7 @@ $escaped = bin2hex( $data );
 
 // Insert it into the database
 //$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', decode('{$escaped}' , 'hex'))" );
-$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', '/300')" );
+//$res1 = pg_query($conn, "INSERT INTO upload (name, content) VALUES ('Pine trees', '/300')" );
 
 
 // Get the bytea data
