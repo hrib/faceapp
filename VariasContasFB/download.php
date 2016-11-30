@@ -63,7 +63,7 @@ fclose($img);
 
 pg_close($con);
   
-<img src="woman2.jpg">
+echo '<img src="woman2.jpg">';
   
   
   
