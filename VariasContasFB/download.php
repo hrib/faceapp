@@ -18,11 +18,20 @@
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
 
+
 $query = "SELECT name, type, size, content FROM upload";
 $result = $db->query($query) or die('Error, query failed');
 
+
+  $dsn2 = "host=" . $dbopts["host"] . ";"
+      . "dbname=". ltrim($dbopts["path"],'/') . ";"
+      . "user=" . $dbopts["user"] . ";"
+      . "port=" . $dbopts["port"] . ";"
+      . "sslmode=require;"
+      . "password=" . $dbopts["pass"];  
   
-$conn = pg_pconnect($dsn);
+  
+$conn = pg_pconnect($dsn2);
 if (!$conn) {
   echo "An error occurred: conn.\n";
   exit;
