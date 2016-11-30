@@ -24,7 +24,7 @@ $result = $db->query($query) or die('Error, query failed');
   
 pg_query('SET bytea_output = "escape";');
 $lquery ="select content from upload";
-$lq = $db->pg_query($lquery) or die(pg_last_error());
+$lq = pg_query($db, $lquery) or die(pg_last_error());
 $lqq=pg_fetch_row($lq,'content');
 header("conent-type:image");
 echo pg_unescape_bytea($lqq[0]);  
