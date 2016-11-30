@@ -19,14 +19,26 @@ if(isset($_POST['upload']) && $_FILES['userfile']['size'] > 0)
   $fileType = $_FILES['userfile']['type'];
 
   $fp      = fopen($tmpName, 'r');
-  $content = fread($fp, filesize($tmpName));
-  $content = addslashes($content);
+  $data = fread($fp, filesize($tmpName));
+  //$content = addslashes($content);
+  $content = pg_escape_bytea($data); 
   fclose($fp);
 
   if(!get_magic_quotes_gpc())
   {
       $fileName = addslashes($fileName);
   }
+  
+  
+  //$fi =  $_FILES['thumbnail']['tmp_name'];
+  //$p=fopen($fi,'r');
+  //$data=fread($p,filesize($fi));
+  //$data=addslashes($data);
+  //$dat= pg_escape_bytea($data); 
+  //$q="update userinfo set image='{$dat}' where email='$user'";
+  //$e=pg_query($q)or die(pg_last_error());
+  
+  
 
   $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "pgsql:"
