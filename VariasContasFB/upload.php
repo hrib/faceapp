@@ -43,10 +43,10 @@ if(isset($_POST['upload']) && $_FILES['userfile']['size'] > 0)
   $result = $db->query($query);
 
   echo '<br><br>';
-  //echo var_dump($result->fetch(PDO::FETCH_ASSOC));
+  echo var_dump($result->fetch(PDO::FETCH_ASSOC));
   echo '<br><br>';
 
-  //$result->closeCursor();
+  $result->closeCursor();
   echo "<br>File $fileName uploaded<br>";
 }
 ?>
