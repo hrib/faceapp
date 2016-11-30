@@ -36,5 +36,7 @@ $raw = pg_fetch_result($res, 'data');
 //echo base64_decode($raw);
 //$imagem = base64_decode($raw);
 //echo base64_decode($raw);
-echo '<img src=' . base64_decode($raw) . '>';
+//echo '<img src=' . base64_decode($raw) . '>';
+$dataUri = "data:image/png;base64," . base64_encode($raw);
+echo "<img src='$dataUri' />";
 ?>
