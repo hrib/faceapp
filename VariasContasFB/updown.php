@@ -1,5 +1,5 @@
 <?php 
-
+  $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "host=" . $dbopts["host"] . " "
       . "dbname=". ltrim($dbopts["path"],'/') . " "
       . "user=" . $dbopts["user"] . " "
