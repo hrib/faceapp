@@ -39,8 +39,9 @@ function SQLquery($query){
     echo "<td>" . $row["ultimo_acesso"] . "</td>";
     echo "<td>" . $row["status"] . "</td>";
     echo "<td>" . $row["name"] . "</td>";
+    echo "<td>" . $row["data"] . "</td>";
         //$raw = base64_encode($row["data"]);
-        $dataUri = "data:image/jpeg;base64," . $data;
+        $dataUri = "data:image/jpeg;base64," . $row["data"];
         echo "<td><img src='$dataUri' /></td>";
     
     echo "</tr>";
