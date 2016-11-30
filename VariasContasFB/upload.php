@@ -38,7 +38,7 @@ if(isset($_POST['upload']) && $_FILES['userfile']['size'] > 0)
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
 
-  $query = "INSERT INTO upload (name, size, type, content ) VALUES ('$fileName', '$fileSize', '$fileType', 'content')";
+  $query = "INSERT INTO upload (name, size, type) VALUES ('$fileName', '$fileSize', '$fileType')";
   echo '<br>' . $query . '<br>';
   $result = $db->query($query);
 
