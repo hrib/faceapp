@@ -35,8 +35,8 @@ else
     echo "<td>";
       header("Content-length: " . $row['size']);
       header("Content-type: " . $row['type']);
-      header("Content-Disposition: attachment; filename=" . $row['name']);
-      echo pg_unescape_bytea($row['content']);
+      //header("Content-Disposition: attachment; filename=" . $row['name']);
+      //echo pg_unescape_bytea($row['content']);
     echo "</td>";
     
     echo "</tr>";
