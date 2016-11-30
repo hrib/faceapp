@@ -23,11 +23,11 @@ $query = "SELECT name, type, size, content FROM upload";
 $result = $db->query($query) or die('Error, query failed');
 
 
-  $dsn2 = "host=" . $dbopts["host"] . ";"
-      . "dbname=". ltrim($dbopts["path"],'/') . ";"
-      . "user=" . $dbopts["user"] . ";"
-      . "port=" . $dbopts["port"] . ";"
-      . "sslmode=require;"
+  $dsn2 = "host=" . $dbopts["host"] . " "
+      . "dbname=". ltrim($dbopts["path"],'/') . " "
+      . "user=" . $dbopts["user"] . " "
+      . "port=" . $dbopts["port"] . " "
+      . "sslmode=require "
       . "password=" . $dbopts["pass"];  
   
   
