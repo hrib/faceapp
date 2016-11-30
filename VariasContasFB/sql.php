@@ -2,7 +2,8 @@
 session_start();
 
 $query = $_GET["query"];
-SQLquery(query);
+echo $query;
+SQLquery($query);
 
 function SQLquery(query){
 
@@ -18,6 +19,7 @@ function SQLquery(query){
   $db = new PDO($dsn);
 
   $result = $db->query($query);
+  echo '<br><br>';
   echo var_dump($result);
   echo '<br><br>';
   
