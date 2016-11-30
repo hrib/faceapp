@@ -38,8 +38,8 @@ function SQLquery($query){
     echo "<td>" . $row["sex"] . "</td>";
     echo "<td>" . $row["ultimo_acesso"] . "</td>";
     echo "<td>" . $row["status"] . "</td>";
-        echo "<td>" . $row["name"] . "</td>";
-        echo "<td>" . base64_decode(encode($row["content"], 'base64')) . "</td>";
+        //echo "<td>" . $row["name"] . "</td>";
+        //echo "<td>" . base64_decode(encode($row["content"], 'base64')) . "</td>";
     
     echo "</tr>";
   }
