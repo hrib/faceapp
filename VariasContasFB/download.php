@@ -20,7 +20,18 @@
 
 $query = "SELECT name, type, size, content FROM upload";
 $result = $db->query($query) or die('Error, query failed');
- 
+
+  
+pg_query('SET bytea_output = "escape";');
+$lquery ="select content from upload";
+$lq = pg_query($lquery) or die(pg_last_error());
+$lqq=pg_fetch_row($lq,'content');
+header("conent-type:image");
+echo pg_unescape_bytea($lqq[0]);  
+  
+  
+  
+  
 if($result == 0)
 {
   echo "Database is empty <br>";
