@@ -30,7 +30,8 @@ function SQLquery($query){
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
   $result = $db->query($query);
-  $retorno = $result['nome'];
+  $retorno = $result->fetch(PDO::FETCH_ASSOC)
+  var_dump($retorno);
   echo $retorno;
   $result->closeCursor();
   return $retorno;
