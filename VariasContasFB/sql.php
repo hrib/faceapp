@@ -17,39 +17,11 @@ function SQLquery($query){
       . "password=" . $dbopts["pass"];
 
   $db = new PDO($dsn);
-  
-  //$conn = pg_pconnect($dsn);
-  //if (!$conn) {
-    //echo "An error occurred: conn.\n";
-    //exit;
-  //}  
-  //$result = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHERE name='Pine trees'");  
-
   $result = $db->query($query);
-  
- // $result1 = $result->fetchColumn();
- // print_r($result1);
- // echo "<table>";
-
-  //foreach($result1 as $key => $value){
-    //foreach($value as $key2 => $value2){
-      //echo "<tr>";
-      //echo "<td>" . $key . $key2 . $value2 . "</td>";
-      //print "$key $key2 => $value2\n<br />\n";
-      //echo "</tr>";
-
-    //}
-  //}
-  //echo "</table>";
 
   
-  
-  //echo '<br><br>';
-  //echo var_dump($result);
-  //echo '<br><br>';
-  
-  //$all = $result->fetch(PDO::FETCH_ASSOC);
-  echo "<table>";
+  //$result->fetch(PDO::FETCH_ASSOC);
+  echo "<table border="1>";
   while ($row = $result->fetch(PDO::FETCH_NUM)) {
     echo "<tr>";
     foreach($row as $key => $value){
