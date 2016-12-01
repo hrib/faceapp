@@ -34,7 +34,7 @@ function SQLquery($query){
   echo var_dump($result);
   echo '<br><br>';
   
-  $all = $result->fetch(PDO::FETCH_ASSOC));
+  //$all = $result->fetch(PDO::FETCH_ASSOC);
   echo "<table>";
   while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
