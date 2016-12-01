@@ -34,7 +34,7 @@ function SQLquery($query){
   foreach($result1 as $key => $value){
     foreach($value as $key2 => $value2){
       echo "<tr>";
-      echo "<td>" . $key $key2 => $value2 . "</td>";
+      echo "<td>" . $key . $key2 => $value2 . "</td>";
       //print "$key $key2 => $value2\n<br />\n";
       echo "</tr>";
 
