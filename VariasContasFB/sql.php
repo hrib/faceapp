@@ -27,20 +27,20 @@ function SQLquery($query){
 
   $result = $db->query($query);
   
-  $result1 = $result->fetchAll(PDO::FETCH_ARRAY);
-  print_r($result1);
-  echo "<table>";
+ // $result1 = $result->fetchColumn();
+ // print_r($result1);
+ // echo "<table>";
 
-  foreach($result1 as $key => $value){
-    foreach($value as $key2 => $value2){
-      echo "<tr>";
-      echo "<td>" . $key . $key2 . $value2 . "</td>";
+  //foreach($result1 as $key => $value){
+    //foreach($value as $key2 => $value2){
+      //echo "<tr>";
+      //echo "<td>" . $key . $key2 . $value2 . "</td>";
       //print "$key $key2 => $value2\n<br />\n";
-      echo "</tr>";
+      //echo "</tr>";
 
-    }
-  }
-  echo "</table>";
+    //}
+  //}
+  //echo "</table>";
 
   
   
@@ -49,11 +49,11 @@ function SQLquery($query){
   //echo '<br><br>';
   
   //$all = $result->fetch(PDO::FETCH_ASSOC);
-  //echo "<table>";
-  //while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-   // echo "<tr>";
-    //echo "<td>" . $row["tipo_nome"] . "</td>";
-    //echo "<td>" . $row["nome"] . "</td>";
+  echo "<table>";
+  while ($row = $result->fetch(PDO::FETCH_NUM)) {
+    echo "<tr>";
+    echo "<td>" . $row[0] . "</td>";
+    echo "<td>" . $row[1] . "</td>";
     //echo "<td>" . $row[0] . "</td>";
     //echo "<td>" . $row["sobrenome"] . "</td>";
     //echo "<td>" . $row[1] . "</td>";
@@ -74,10 +74,10 @@ function SQLquery($query){
         //$dataUri = "data:image/jpeg;base64," . $row["data"];
         //echo "<td><img src='$dataUri' /></td>";
     
-    //echo "</tr>";
-  //}
-  //echo "</table>";
-  //$result->closeCursor();
+    echo "</tr>";
+  }
+  echo "</table>";
+  $result->closeCursor();
 
   
 }
