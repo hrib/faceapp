@@ -28,8 +28,9 @@ if (isset($_GET['signup'])) {
   $sex = $nome_gerado['sex']; // male|female
   $signtype = 'signin'; // signup|signin
   $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
-  
-  //SQLinsereUsuarioNovo("$query");
+  $Tempo = TempoAgora();
+  $query = "INSERT INTO cadastro (email, passw, nome, sobrenome, day, month, year, sex, ultimo_acesso, status) VALUES ('$email', '$pass', '$nome', '$sobrenome', $day, $month, $year, $sex, '$Tempo', 'ativo');"
+  SQLinsereUsuarioNovo("$query");
 }
 
 
@@ -69,6 +70,13 @@ function strip_punctuation($string) {
     //$string = preg_replace('/[^u]+/i', 'u', $string); 
     //echo $string . '|';
     return $string;
+}
+
+function TempoAgora(){
+  $t=time();
+  //echo($t . "<br>");
+  retorno = date("Y-m-d",$t);
+  return $retorno
 }
 
 ?>
