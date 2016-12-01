@@ -10,11 +10,10 @@ function GeraNome(){
   
   $query = "SELECT nome FROM bercario WHERE tipo_nome = '$sex' ORDER BY RANDOM() LIMIT 1";
   $retorno_firstname = SQLquery($query);
-  $nome['firstname'] = $retorno_firstname[0];
-  echo $nome['firstname'];
+  $nome['firstname'] = $retorno_firstname['nome'];
   $query = "SELECT nome FROM bercario WHERE tipo_nome = 'sobrenome' ORDER BY RANDOM() LIMIT 1";
   $retorno_lastname = SQLquery($query);
-  $nome['lastname'] = $retorno_lastname[0];
+  $nome['lastname'] = $retorno_lastname['nome'];
   return $nome; 
 }
 
