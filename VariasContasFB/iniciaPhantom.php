@@ -15,8 +15,8 @@ echo "<a href='?signup=true'>Sign Up</a></br>";
 if (isset($_GET['signup'])) {
   $nome_gerado = GeraNome();
   echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
-  echo strip_punctuation($nome_gerado['firstname']) . '<br>';
-  echo strip_punctuation($nome_gerado['lastname']) . '<br>';
+  //echo strip_punctuation($nome_gerado['firstname']) . '<br>';
+  //echo strip_punctuation($nome_gerado['lastname']) . '<br>';
   
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
@@ -56,12 +56,15 @@ echo '<br>fim</br><img src="fim.png" style="width:250px;height:250px;">';
 function strip_punctuation($string) {
     $string = strtolower($string);
     echo $string . '|';
+    $string  = rtrim($string);
+    echo $string . '|';
+    $string = str_replace(' ', '', $string);
+    echo $string . '|';
     $string = preg_replace('/[^a-z]+/i', '_', $string); 
     echo $string . '|';
     //$string = preg_replace("/[^a-zA-Z 0-9]+/", "", $string);
     //$string = str_replace(" ", ".", $string);
-    $string  = rtrim($string);
-    echo $string . '|';
+
     return $string;
 }
 
