@@ -21,7 +21,7 @@ function SQLquery($query){
   $result = $db->query($query);
   
   echo '<br><br>';
-  //echo var_dump($result);
+  echo var_dump($result);
   echo '<br><br>';
   
   
