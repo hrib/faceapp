@@ -9,17 +9,17 @@ function GeraNome(){
   }
   
   $query = "SELECT nome FROM bercario WHERE tipo_nome = '" . $nome['sex'] . "' ORDER BY RANDOM() LIMIT 1";
-  echo $query;
-  $retorno_firstname = SQLquery($query);
-  echo $retorno_firstname['nome'];
+  $retorno_firstname = QueryGeraNome($query);
   $nome['firstname'] = $retorno_firstname['nome'];
+  
   $query = "SELECT nome FROM bercario WHERE tipo_nome = 'sobrenome' ORDER BY RANDOM() LIMIT 1";
-  $retorno_lastname = SQLquery($query);
+  $retorno_lastname = QueryGeraNome($query);
   $nome['lastname'] = $retorno_lastname['nome'];
+  
   return $nome; 
 }
 
-function SQLquery($query){
+function QueryGeraNome($query){
   $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "pgsql:"
       . "host=" . $dbopts["host"] . ";"
@@ -31,8 +31,6 @@ function SQLquery($query){
   $db = new PDO($dsn);
   $result = $db->query($query);
   $retorno = $result->fetch(PDO::FETCH_ASSOC);
-  //var_dump($retorno);
-  //echo $retorno;
   $result->closeCursor();
   return $retorno;
 }
