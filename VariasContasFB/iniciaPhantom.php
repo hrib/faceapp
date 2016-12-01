@@ -15,14 +15,13 @@ echo "<a href='?signup=true'>Sign Up</a></br>";
 if (isset($_GET['signup'])) {
   $nome_gerado = GeraNome();
   echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
-  //echo strip_punctuation($nome_gerado['firstname']) . '<br>';
-  //echo strip_punctuation($nome_gerado['lastname']) . '<br>';
   
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
   $email = strip_punctuation($nome_gerado['firstname']).mt_rand(0,9) . '.' . strip_punctuation($nome_gerado['lastname']).mt_rand(0,9) . '@gmail.com' ;
-  echo $email;
-  $pass = getenv('pass');
+  echo $email . '<br>';
+  $pass = ucfirst(substr($nome, 1, 3)).substr($sobrenome, 1, 3).mt_rand(10,99);
+  echo $pass . '<br>';
   $day = mt_rand(1,28);
   $month = mt_rand(1,12);
   $year = mt_rand(1970,1994);
