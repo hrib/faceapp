@@ -29,7 +29,7 @@ function SQLquery($query){
   $db = new PDO($dsn);
   $result = $db->query($query);
   //$result->closeCursor();
-  return $result
+  return $result;
 }
 
 
