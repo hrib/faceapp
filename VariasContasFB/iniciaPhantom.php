@@ -55,7 +55,7 @@ echo '<br>fim</br><img src="fim.png" style="width:250px;height:250px;">';
 
 function strip_punctuation($string) {
     $string = strtolower($string);
-    $string = preg_replace("/[:punct:]+/", "", $string);
+    $string = preg_replace("/[^a-zA-Z 0-9]+/", " ", $string);
     $string = str_replace(" +", "_", $string);
     return $string;
 }
