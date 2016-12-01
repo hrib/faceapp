@@ -52,28 +52,9 @@ function SQLquery($query){
   echo "<table>";
   while ($row = $result->fetch(PDO::FETCH_NUM)) {
     echo "<tr>";
-    echo "<td>" . $row[0] . "</td>";
-    echo "<td>" . $row[1] . "</td>";
-    //echo "<td>" . $row[0] . "</td>";
-    //echo "<td>" . $row["sobrenome"] . "</td>";
-    //echo "<td>" . $row[1] . "</td>";
-    //echo "<td>" . $row["day"] . "</td>";
-    //echo "<td>" . $row["month"] . "</td>";
-    //echo "<td>" . $row["year"] . "</td>";
-    //echo "<td>" . $row["sex"] . "</td>";
-    //echo "<td>" . $row["ultimo_acesso"] . "</td>";
-    //echo "<td>" . $row["status"] . "</td>";
-    //echo "<td>" . $row["name"] . "</td>";
-    //echo "<td>content: " . $row["content"] . "</td>";
-     //echo "<td>content: " . pg_unescape_bytea($row["content"]) . "</td>";
-     //echo "<td>content: " . pg_escape_bytea($row["content"]) . "</td>";
-        //$raw = base64_encode($row["content"]);
-    //echo "<td>encode: " . $raw . "</td>";
-        //$dataUri = "data:image/jpeg;base64," . $raw;
-        //echo "<td>image: <img src='$dataUri' /></td>";
-        //$dataUri = "data:image/jpeg;base64," . $row["data"];
-        //echo "<td><img src='$dataUri' /></td>";
-    
+    foreach($row as $key => $value){
+      echo "<td>" . $value . "</td>";
+    }
     echo "</tr>";
   }
   echo "</table>";
