@@ -3,9 +3,9 @@
 function GeraNome(){
   
   if(mt_rand(1,2) = 1){
-    $nome['sex'] = 'male'
-  }else {
-    $nome['sex'] = 'female'
+    $nome['sex'] = 'male';
+  } else {
+    $nome['sex'] = 'female';
   }
   
   $query = "SELECT nome FROM bercario WHERE tipo_nome = '$sex'";
