@@ -11,21 +11,15 @@ echo '<br><input type="submit">';
 echo '</form></br>';
 
 
-
-//echo '<form action="GeraNome()" method="post">';
-//echo '<br><button type="button" name="acao">Sign Up</button> ';
-//echo '<input type="submit">';
-//echo '</form></br>';
-//echo $_POST["acao"];
-
-echo "<a href='?signup=true'>Sign Up</a>";
+echo "<a href='?signup=true'>Sign Up</a></br>";
 if (isset($_GET['signup'])) {
   $nome_gerado = GeraNome();
   echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
 
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
-  $email = getenv('email');
+  $email = $nome_gerado['firstname'] . mt_rand(0,9) . '.' . $nome_gerado['lastname'] . mt_rand(0,9) . '@gmail.com' ;
+  echo $email;
   $pass = getenv('pass');
   $day = mt_rand(1,28);
   $month = mt_rand(1,12);
@@ -35,7 +29,7 @@ if (isset($_GET['signup'])) {
   $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
 }
 
-echo 'Iniciando Phantom. </br>';
+echo '<br> Iniciando Phantom. </br>';
 
 $stdOutv = exec(sprintf('%s %s', $pathToPhatomJs, '--version'), $out);
 echo '<br>PhantomJS v.' . $stdOutv . '<br/>';
