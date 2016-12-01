@@ -34,7 +34,8 @@ function SQLquery($query){
   foreach($result1 as $key => $value){
     foreach($value as $key2 => $value2){
       echo "<tr>";
-      print "$key $key2 => $value2\n<br />\n";
+      echo "<td>" . $key $key2 => $value2 . "</td>";
+      //print "$key $key2 => $value2\n<br />\n";
       echo "</tr>";
 
     }
@@ -48,21 +49,21 @@ function SQLquery($query){
   //echo '<br><br>';
   
   //$all = $result->fetch(PDO::FETCH_ASSOC);
-  echo "<table>";
-  while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    echo "<tr>";
-    echo "<td>" . $row["tipo_nome"] . "</td>";
-    echo "<td>" . $row["nome"] . "</td>";
-    echo "<td>" . $row[0] . "</td>";
-    echo "<td>" . $row["sobrenome"] . "</td>";
-    echo "<td>" . $row[1] . "</td>";
-    echo "<td>" . $row["day"] . "</td>";
-    echo "<td>" . $row["month"] . "</td>";
-    echo "<td>" . $row["year"] . "</td>";
-    echo "<td>" . $row["sex"] . "</td>";
-    echo "<td>" . $row["ultimo_acesso"] . "</td>";
-    echo "<td>" . $row["status"] . "</td>";
-    echo "<td>" . $row["name"] . "</td>";
+  //echo "<table>";
+  //while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+   // echo "<tr>";
+    //echo "<td>" . $row["tipo_nome"] . "</td>";
+    //echo "<td>" . $row["nome"] . "</td>";
+    //echo "<td>" . $row[0] . "</td>";
+    //echo "<td>" . $row["sobrenome"] . "</td>";
+    //echo "<td>" . $row[1] . "</td>";
+    //echo "<td>" . $row["day"] . "</td>";
+    //echo "<td>" . $row["month"] . "</td>";
+    //echo "<td>" . $row["year"] . "</td>";
+    //echo "<td>" . $row["sex"] . "</td>";
+    //echo "<td>" . $row["ultimo_acesso"] . "</td>";
+    //echo "<td>" . $row["status"] . "</td>";
+    //echo "<td>" . $row["name"] . "</td>";
     //echo "<td>content: " . $row["content"] . "</td>";
      //echo "<td>content: " . pg_unescape_bytea($row["content"]) . "</td>";
      //echo "<td>content: " . pg_escape_bytea($row["content"]) . "</td>";
@@ -73,10 +74,10 @@ function SQLquery($query){
         //$dataUri = "data:image/jpeg;base64," . $row["data"];
         //echo "<td><img src='$dataUri' /></td>";
     
-    echo "</tr>";
-  }
-  echo "</table>";
-  $result->closeCursor();
+    //echo "</tr>";
+  //}
+  //echo "</table>";
+  //$result->closeCursor();
 
   
 }
