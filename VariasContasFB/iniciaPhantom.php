@@ -6,8 +6,8 @@ $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
 
 echo '<form action="sql.php" method="post">';
-echo 'SQL <br>  <textarea name="query" cols="80" rows="5"></textarea>';
-echo '<input type="submit">';
+echo 'SQL<br><textarea name="query" cols="80" rows="5"></textarea>';
+echo '<br><input type="submit">';
 echo '</form></br>';
 
 
