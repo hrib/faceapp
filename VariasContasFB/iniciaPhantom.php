@@ -30,7 +30,7 @@ if (isset($_GET['signup'])) {
   $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
   $Tempo = TempoAgora();
   $query = "INSERT INTO cadastro (email, passw, nome, sobrenome, day, month, year, sex, ultimo_acesso, status) VALUES ('$email', '$pass', '$nome', '$sobrenome', $day, $month, $year, $sex, '$Tempo', 'ativo');"
-  SQLinsereUsuarioNovo("$query");
+  QueryGeraNome($query);
 }
 
 
