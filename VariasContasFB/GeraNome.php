@@ -10,12 +10,11 @@ function GeraNome(){
   
   $query = "SELECT nome FROM bercario WHERE tipo_nome = '$sex' ORDER BY RANDOM() LIMIT 1";
   $retorno_firstname = SQLquery($query);
-  //$nome['firstname'] = $retorno_firstname[mt_rand(0, count($retorno_firstname) - 1)];
-  $nome['firstname'] = $retorno_firstname;
+  $nome['firstname'] = $retorno_firstname[0];
   echo $nome['firstname'];
   $query = "SELECT nome FROM bercario WHERE tipo_nome = 'sobrenome' ORDER BY RANDOM() LIMIT 1";
   $retorno_lastname = SQLquery($query);
-  //$nome['lastname'] = $retorno_lastname[mt_rand(0, count($retorno_lastname) - 1)];
+  $nome['lastname'] = $retorno_lastname[0];
   return $nome; 
 }
 
@@ -31,8 +30,8 @@ function SQLquery($query){
   $db = new PDO($dsn);
   $result = $db->query($query);
   $retorno = $result->fetch(PDO::FETCH_ASSOC);
-  var_dump($retorno);
-  echo $retorno;
+  //var_dump($retorno);
+  //echo $retorno;
   $result->closeCursor();
   return $retorno;
 }
