@@ -29,10 +29,23 @@ function SQLquery($query){
   
   $result1 = $result->fetchAll();
   print_r($result1);
+  echo "<table>";
+
+  foreach($result1 as $key => $value){
+    foreach($value as $key2 => $value2){
+      echo "<tr>";
+      print "$key $key2 => $value2\n<br />\n";
+      echo "</tr>";
+
+    }
+  }
+  echo "</table>";
+
   
-  echo '<br><br>';
-  echo var_dump($result);
-  echo '<br><br>';
+  
+  //echo '<br><br>';
+  //echo var_dump($result);
+  //echo '<br><br>';
   
   //$all = $result->fetch(PDO::FETCH_ASSOC);
   echo "<table>";
