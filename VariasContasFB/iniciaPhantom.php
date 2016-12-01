@@ -1,30 +1,41 @@
 <?php
 session_start();
 
+include 'GeraNome.php';
+$pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
+$pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
+
 echo '<form action="sql.php" method="post">';
 echo 'SQL <br>  <textarea name="query" cols="80" rows="5"></textarea>';
 echo '<input type="submit">';
 echo '</form></br>';
 
+
+
+//echo '<form action="GeraNome()" method="post">';
+//echo '<br><button type="button" name="acao">Sign Up</button> ';
+//echo '<input type="submit">';
+//echo '</form></br>';
+//echo $_POST["acao"];
+
+echo "<a href='?signup=true'>Sign Up</a>";
+if (isset($_GET['signup'])) {
+  $nome_gerado = GeraNome();
+  echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
+
+  $nome = $nome_gerado['firstname'];
+  $sobrenome = $nome_gerado['lastname'];
+  $email = getenv('email');
+  $pass = getenv('pass');
+  $day = mt_rand(1,28);
+  $month = mt_rand(1,12);
+  $year = mt_rand(1970,1994);
+  $sex = $nome_gerado['sex']; // male|female
+  $signtype = 'signin'; // signup|signin
+  $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
+}
+
 echo 'Iniciando Phantom. </br>';
-
-include 'GeraNome.php';
-$pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
-$pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
-
-$nome_gerado = GeraNome();
-echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
-
-$nome = $nome_gerado['firstname'];
-$sobrenome = $nome_gerado['lastname'];
-$email = getenv('email');
-$pass = getenv('pass');
-$day = mt_rand(1,28);
-$month = mt_rand(1,12);
-$year = mt_rand(1970,1994);
-$sex = $nome_gerado['sex']; // male|female
-$signtype = 'signin'; // signup|signin
-$anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
 
 $stdOutv = exec(sprintf('%s %s', $pathToPhatomJs, '--version'), $out);
 echo '<br>PhantomJS v.' . $stdOutv . '<br/>';
