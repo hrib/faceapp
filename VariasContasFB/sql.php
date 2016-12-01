@@ -17,14 +17,24 @@ function SQLquery($query){
       . "password=" . $dbopts["pass"];
 
   $db = new PDO($dsn);
+  
+  //$conn = pg_pconnect($dsn);
+  //if (!$conn) {
+    //echo "An error occurred: conn.\n";
+    //exit;
+  //}  
+  //$result = pg_query($conn, "SELECT encode(content, 'base64') AS data FROM upload WHERE name='Pine trees'");  
 
   $result = $db->query($query);
+  
+  $result1 = $result->fetchAll();
+  print_r($result1);
   
   echo '<br><br>';
   echo var_dump($result);
   echo '<br><br>';
   
-  
+  $all = $result->fetch(PDO::FETCH_ASSOC));
   echo "<table>";
   while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
