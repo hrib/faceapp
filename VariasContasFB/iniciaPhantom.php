@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-echo 'form action="sql.php" method="post">';
+echo '<form action="sql.php" method="post">';
 echo 'SQL <br>  <textarea name="query" cols="80" rows="5"></textarea>';
 echo '<input type="submit">';
-echo '</form>';
+echo '</form></br>';
 
 echo 'Iniciando Phantom. </br>';
 
@@ -25,11 +25,6 @@ $year = mt_rand(1970,1994);
 $sex = $nome_gerado['sex']; // male|female
 $signtype = 'signin'; // signup|signin
 $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
-?>
-
-
-
-<?php
 
 $stdOutv = exec(sprintf('%s %s', $pathToPhatomJs, '--version'), $out);
 echo '<br>PhantomJS v.' . $stdOutv . '<br/>';
