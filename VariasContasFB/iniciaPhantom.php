@@ -15,7 +15,9 @@ echo "<a href='?signup=true'>Sign Up</a></br>";
 if (isset($_GET['signup'])) {
   $nome_gerado = GeraNome();
   echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
-
+  echo strip_punctuation($nome_gerado['firstname']);
+  echo strip_punctuation($nome_gerado['lastname']);
+  
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
   $email = strip_punctuation($nome_gerado['firstname']).mt_rand(0,9) . '.' . strip_punctuation($nome_gerado['lastname']).mt_rand(0,9) . '@gmail.com' ;
