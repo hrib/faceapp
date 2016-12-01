@@ -21,7 +21,7 @@ function SQLquery($query){
 
   
   //$result->fetch(PDO::FETCH_ASSOC);
-  echo "<table border="1>";
+  echo "<table border='1'>";
   while ($row = $result->fetch(PDO::FETCH_NUM)) {
     echo "<tr>";
     foreach($row as $key => $value){
