@@ -27,7 +27,7 @@ function SQLquery($query){
 
   $result = $db->query($query);
   
-  $result1 = $result->fetchAll();
+  $result1 = $result->fetch(PDO::FETCH_ARRAY);
   print_r($result1);
   echo "<table>";
 
