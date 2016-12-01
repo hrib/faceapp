@@ -18,7 +18,7 @@ if (isset($_GET['signup'])) {
 
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
-  $email = $nome_gerado['firstname'] . mt_rand(0,9) . '.' . $nome_gerado['lastname'] . mt_rand(0,9) . '@gmail.com' ;
+  $email = $nome_gerado['firstname'] + mt_rand(0,9) . '.' . $nome_gerado['lastname'] + mt_rand(0,9) . '@gmail.com' ;
   echo $email;
   $pass = getenv('pass');
   $day = mt_rand(1,28);
