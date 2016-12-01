@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+echo 'form action="sql.php" method="post">';
+echo 'SQL <br>  <textarea name="query" cols="80" rows="5"></textarea>';
+echo '<input type="submit">';
+echo '</form>';
+
 echo 'Iniciando Phantom. </br>';
 
 include 'GeraNome.php';
@@ -21,10 +27,7 @@ $signtype = 'signin'; // signup|signin
 $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
 ?>
 
-<form action="sql.php" method="post">
-SQL  <textarea name="query" cols="80" rows="5"></textarea>
-<input type="submit">
-</form>
+
 
 <?php
 
