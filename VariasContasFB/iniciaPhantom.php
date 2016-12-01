@@ -1,8 +1,16 @@
 <?php
 session_start();
+
+include 'GeraNome.php';
+
 echo 'Iniciando Phantom. </br>';
 $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
+
+$nome_gerado = GeraNome();
+echo $nome_gerado['firstname'] . '<br>';
+echo $nome_gerado['lastname'] . '<br>';
+echo $nome_gerado['sex'] . '<br>';
 
 $nome = 'Marculano';
 $sobrenome = 'Silvatal';
@@ -17,7 +25,7 @@ $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL 
 ?>
 
 <form action="sql.php" method="post">
-SQL <input type="text" name="query"><br>
+SQL  <textarea name="query" cols="80" rows="5"></textarea>
 <input type="submit">
 </form>
 
