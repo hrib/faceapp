@@ -8,6 +8,7 @@ $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
 
 $nome_gerado = GeraNome();
+var_dump[$nome_gerado];
 echo $nome_gerado['firstname'] . '<br>';
 echo $nome_gerado['lastname'] . '<br>';
 echo $nome_gerado['sex'] . '<br>';
