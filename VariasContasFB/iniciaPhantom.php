@@ -28,7 +28,11 @@ if (isset($_GET['signup'])) {
   $sex = $nome_gerado['sex']; // male|female
   $signtype = 'signin'; // signup|signin
   $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
+  
+  //SQLinsereUsuarioNovo("$query");
 }
+
+
 
 echo '<br> Iniciando Phantom. </br>';
 
