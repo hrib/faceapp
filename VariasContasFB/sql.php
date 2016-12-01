@@ -30,8 +30,9 @@ function SQLquery($query){
     echo "<tr>";
     echo "<td>" . $row["tipo_nome"] . "</td>";
     echo "<td>" . $row["nome"] . "</td>";
-    echo "<td>" . $row["nome"] . "</td>";
+    echo "<td>" . $row[0] . "</td>";
     echo "<td>" . $row["sobrenome"] . "</td>";
+    echo "<td>" . $row[1] . "</td>";
     echo "<td>" . $row["day"] . "</td>";
     echo "<td>" . $row["month"] . "</td>";
     echo "<td>" . $row["year"] . "</td>";
