@@ -18,7 +18,7 @@ if (isset($_GET['signup'])) {
 
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
-  $email = $nome_gerado['firstname'] + mt_rand(0,9) . '.' . $nome_gerado['lastname'] + mt_rand(0,9) . '@gmail.com' ;
+  $email = strip_punctuation($nome_gerado['firstname']) mt_rand(0,9) . '.' . strip_punctuation($nome_gerado['lastname'])  mt_rand(0,9) . '@gmail.com' ;
   echo $email;
   $pass = getenv('pass');
   $day = mt_rand(1,28);
@@ -51,6 +51,11 @@ echo '<br>like_post_on_another_wall</br><img src="like_post_on_another_wall.png"
 
 echo '<br>fim</br><img src="fim.png" style="width:250px;height:250px;">';
 
-
+function strip_punctuation($string) {
+    $string = strtolower($string);
+    $string = preg_replace("/[:punct:]+/", "", $string);
+    $string = str_replace(" +", "_", $string);
+    return $string;
+}
 
 ?>
