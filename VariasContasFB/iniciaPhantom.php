@@ -76,7 +76,7 @@ function TempoAgora(){
   $t=time();
   //echo($t . "<br>");
   $retorno = date("Y-m-d",$t);
-  return $retorno
+  return $retorno;
 }
 
 ?>
