@@ -1,26 +1,22 @@
 <?php
 session_start();
+echo 'Iniciando Phantom. </br>';
 
 include 'GeraNome.php';
-
-echo 'Iniciando Phantom. </br>';
 $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
 
 $nome_gerado = GeraNome();
-var_dump($nome_gerado);
-echo $nome_gerado['firstname'] . '<br>';
-echo $nome_gerado['lastname'] . '<br>';
-echo $nome_gerado['sex'] . '<br>';
+echo $nome_gerado['firstname'] . ' | ' . $nome_gerado['lastname'] . ' | ' . $nome_gerado['sex'] . '<br>';
 
-$nome = 'Marculano';
-$sobrenome = 'Silvatal';
+$nome = $nome_gerado['firstname'];
+$sobrenome = $nome_gerado['lastname'];
 $email = getenv('email');
 $pass = getenv('pass');
-$day = '01';
-$month = '10';
-$year = '1985';
-$sex = 'male'; // male|female
+$day = mt_rand(1,28);
+$month = mt_rand(1,12);
+$year = mt_rand(1970,1994);
+$sex = $nome_gerado['sex']; // male|female
 $signtype = 'signin'; // signup|signin
 $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
 ?>
