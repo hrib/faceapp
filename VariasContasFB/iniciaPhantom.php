@@ -58,12 +58,12 @@ function strip_punctuation($string) {
     //echo $string . '|';
     $string  = rtrim($string);
     //echo $string . '|';
-    //$string = preg_replace('/[^a-z]+/i', 'a', $string); 
-    $string = preg_replace('/[^a]+/i', 'a', $string); 
-    $string = preg_replace('/[^e]+/i', 'e', $string); 
-    $string = preg_replace('/[^i]+/i', 'i', $string); 
-    $string = preg_replace('/[^o]+/i', 'o', $string); 
-    $string = preg_replace('/[^u]+/i', 'u', $string); 
+    $string = preg_replace('/[^a-z]+/i', 'a', $string); 
+    //$string = preg_replace('/[^a]+/i', 'a', $string); 
+    //$string = preg_replace('/[^e]+/i', 'e', $string); 
+    //$string = preg_replace('/[^i]+/i', 'i', $string); 
+    //$string = preg_replace('/[^o]+/i', 'o', $string); 
+    //$string = preg_replace('/[^u]+/i', 'u', $string); 
     //echo $string . '|';
     return $string;
 }
