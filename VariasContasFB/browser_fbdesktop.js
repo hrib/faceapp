@@ -1,6 +1,13 @@
 var args = require('system').args;
 var page = require('webpage').create();
 
+page.settings.userAgent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36';
+page.settings.javascriptEnabled = true;
+//page.settings.loadImages = false;//Script is much faster with this field set to false
+phantom.cookiesEnabled = true;
+phantom.javascriptEnabled = true;
+
+
 var texto = args[3] + ' ' + args[4] + ' ' + args[9];
 var signtype = args[9];
 var anotherURL = args[10];
