@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+//
 include 'GeraNome.php';
 $pathToPhatomJs = dirname(__FILE__). '/../bin/phantomjs';
 $pathToJsScript = dirname(__FILE__). '/browser_fbdesktop.js';
