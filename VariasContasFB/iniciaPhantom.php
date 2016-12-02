@@ -19,7 +19,7 @@ if (isset($_GET['signup'])) {
   $nome = $nome_gerado['firstname'];
   $sobrenome = $nome_gerado['lastname'];
   $email = strip_punctuation($nome_gerado['firstname']).mt_rand(0,9) . '.' . strip_punctuation($nome_gerado['lastname']).mt_rand(0,9) . '@gmail.com' ;
-  $email = 'meuhmail1232@gmail.com';
+  //$email = 'meuhmail1232@gmail.com';
   echo $email . '<br>';
   $pass = ucfirst(substr(strip_punctuation($nome), 1, 3)).substr(strip_punctuation($sobrenome), 1, 3).mt_rand(10,99);
   echo $pass . '<br>';
