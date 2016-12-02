@@ -21,14 +21,14 @@ function click_change_myprofilepic(){
 
 function input_change_myprofilepic(){
     page.uploadFile('input[accept="image/*"]', 'square.jpg'); 
-    page.render('input_image.png'); 
+    page.render('input_change_myprofilepic.png'); 
 };
 
 function submit_change_myprofilepic(){
     page.evaluate(function (args) {
         document.querySelectorAll('[data-testid="profilePicSaveButton"]')[0].click(); 
     }, args);
-    page.render('submit_image.png'); 
+    page.render('submit_change_myprofilepic.png'); 
 };
 
 function browse_another_wall(){
