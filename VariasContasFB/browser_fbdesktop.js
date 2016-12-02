@@ -91,13 +91,13 @@ page.open('https://www.facebook.com', function(status){
           
  
         var tarefas = [browse_myprofile, click_change_myprofilepic, input_change_myprofilepic, submit_change_myprofilepic]; 
-        var tarefas = [browse_another_wall, like_post_on_another_wall]; 
+        //var tarefas = [browse_another_wall, like_post_on_another_wall]; 
  
-       //navigate to profile page        
+       //navigate tarefas        
         setTimeout(function(){tarefas[0]()}, 5000);    
         setTimeout(function(){tarefas[1]()}, 9000);  
-        //setTimeout(function(){tarefas[2]()}, 13000);  
-        //setTimeout(function(){tarefas[3]()}, 17000);  
+        setTimeout(function(){tarefas[2]()}, 13000);  
+        setTimeout(function(){tarefas[3]()}, 17000);  
        
 
         //post pic to wall       
