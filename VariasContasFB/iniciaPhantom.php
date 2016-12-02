@@ -27,13 +27,13 @@ if (isset($_GET['signup'])) {
   $year = mt_rand(1970,1994);
   $sex = $nome_gerado['sex']; // male|female
   $signtype = 'signin'; // signup|signin
-  $anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
+  //$anotherURL = 'https://www.facebook.com/profile.php?id=100009466980633'; // URL da wall para dar like no post
   $Tempo = TempoAgora();
   //$Tempo = 'tempoqq';
   $query = "INSERT INTO cadastro (email, passw, nome, sobrenome, day, month, year, sex, ultimo_acesso, status) VALUES ('$email', '$pass', '$nome', '$sobrenome', $day, $month, $year, '$sex', '$Tempo', 'ativo');";
   echo $query;
   QueryGeraNome($query);
-}
+
 
 
 
@@ -42,8 +42,8 @@ echo '<br> Iniciando Phantom. </br>';
 $stdOutv = exec(sprintf('%s %s', $pathToPhatomJs, '--version'), $out);
 echo '<br>PhantomJS v.' . $stdOutv . '<br/>';
 
-//$stdOut = exec(sprintf('%s %s %s %s %s %s %s %s %s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $nome, $sobrenome, $email, $pass, $day, $month, $year, $sex, $signtype, $anotherURL), $out);
-//echo $stdOut;
+$stdOut = exec(sprintf('%s %s %s %s %s %s %s %s %s %s %s %s', $pathToPhatomJs, '--ssl-protocol=any --ignore-ssl-errors=yes', $pathToJsScript, $nome, $sobrenome, $email, $pass, $day, $month, $year, $sex, $signtype), $out);
+echo $stdOut;
 
 echo '</br>Fim Phantom</br>';  
 
@@ -58,7 +58,8 @@ echo '<br>browse_another_wall</br><img src="browse_another_wall.png" style="widt
 echo '<br>like_post_on_another_wall</br><img src="like_post_on_another_wall.png" style="width:250px;height:250px;">';
 
 echo '<br>fim</br><img src="fim.png" style="width:250px;height:250px;">';
-
+}
+  
 function strip_punctuation($string) {
     $string = strtolower($string);
     //echo $string . '|';
