@@ -77,7 +77,9 @@ function strip_punctuation($string) {
 function TempoAgora(){
   $t=time();
   //echo($t . "<br>");
-  $retorno = date("Y-m-d",$t);
+  //$retorno = date("Y-m-d",$t);
+  $retorno = date("Y-m-d h:i:sa",$t);
+  
   return $retorno;
 }
 
