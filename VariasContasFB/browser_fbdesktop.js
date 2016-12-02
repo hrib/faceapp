@@ -45,8 +45,8 @@ function like_post_on_another_wall(){
 };
 
 
-page.open('https://www.facebook.com', function(status){
-    
+//page.open('https://www.facebook.com', function(status){
+page.open('https://www.google.co.uk/search?q=what+is+my+ip', function(status){    
    console.log("status: " + status);
    if(status === "success"){
       
