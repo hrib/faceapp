@@ -37,6 +37,22 @@ $t11 = 'Would you like a sensual massage? ';
 $t12 = 'Don`t tell anyone! ;) Book your sensual massage today. ';
 $t13 = 'Tag a friend who needs a massage ';
 $t14 = 'Did you have time to enjoy yourself this week? Book a sensual massage! ';
+$t15 = 'My name is Eva and I am an independent, mature and experienced tantric masseuse who offers the best erotic massage in London. I am available to provide my massage for gentlemen in Central London near Earl’s Court Station, in West London!';
+$t16 = 'My erotic massage Body to Body technique is gentle and deep, thorough and sensual experience where you will feel my energy tingling from feet to head. I am fun and playful, discreet and well mannered. Time spent with me is casual, relaxing and unforgettable.';
+$t17 = 'Allow me to release your stress and infuse energy into your life.';
+$t18 = 'I am located in very central apartment in Earls Court area, 5 min walk from the tube station and for outcall massage service in Central London visiting hotels and private residencies only.';
+$t19 = 'Erotic Massage London B2B with gorgeous babe with 34FF. Full Sensual Erotic Massage, Mutual Ritual Massage, Sensual Body2body. *** OUTCALL *** AVAILIABLE ***';
+$t20 = 'Naturist sessions (we will be on the same energy level at all times)';
+$t21 = 'Nice, clean, safe location - with shower facilities available';
+$t22 = 'You are allowed to caress my body.';
+$t23 = 'On the *** Mutual Ritual Massage *** you can try your massage skills on me with lots of body contact.';
+$t24 = '*** Sensual Body to Body *** type of massage where I use my entire body to massage your body. I use my 34FF natural breasts to massage you on both sides and especially on your front side.';
+$t25 = '*** Full Sensual Erotic *** for a more erotic experience that will leave you breathless.';
+$t26 = 'During this extraordinarily loving erotic ceremony you will be completely naked, nurtured and pampered in my arms, providing you with a feeling of comfort and sense of wellbeing.';
+$t27 = 'Please text me to arrange erotic massage in advance. This service is for serious and respectful men only who appreciate to be cared for and want to spend unforgettable moments with me!';
+$t28 = 'Best Erotic Massage by Independent Masseuse in Central London near Earls Court';
+$t29 = ' Erotic massage helps every adult to feel comfortable and relaxed after a very tiring day at work.  Well, many adults in London have agreed to this, the reason that many of them have considered erotic massage as a kind of mini vacation from the stress and tensions of everyday hectic and stressful life. Aside from this, a number of researches in London revealed the fact that erotic massage aids the mind to increase mental alertness and decreases the stress hormone - cortisol.  This is particularly suitable for those who are affected by high level of pollution and stressful life in London. Well, whatever associations you may have in your mind for “erotic massage”, one main thing remains true – adult massage, be it sensual or not, can be a great tool for building stronger and healthier living. Call Eva today and arrange your session for best erotic massage in London the UK!';
+
 
 
 
