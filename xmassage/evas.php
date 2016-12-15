@@ -2,7 +2,7 @@
 session_start(); 
 
 $aleatorio = mt_rand(0, 23);
-if($aleatorio < 21){
+if($aleatorio < -21){
  echo $aleatorio . " fim";  
  exit;
 }
