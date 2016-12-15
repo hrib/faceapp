@@ -20,7 +20,7 @@ $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
 
 $pageTarget = '280153979049408'; //ok
 $page_access_token = getenv('FB_TOKEN_APOSTAGOL_EVAS');
-$albumTarget = '280158259048980'; //ok
+$albumTarget = '280253342372805'; //timeline album ok
 
 $t1 = 'Using massage oils helps in getting the right balance between grip and slip on the skin, and the smell enhances the experience by stimulating a second sense that we pay relatively little attention to most of the time. ';
 $t2 = 'The Legs “Move up the legs in long, smooth strokes, using the full surface of your palm and keeping your fingers together. The purpose of sensual massage is to build excitement, so stroke over his buttocks.
