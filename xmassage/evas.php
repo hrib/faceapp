@@ -23,20 +23,21 @@ $page_access_token = getenv('FB_TOKEN_APOSTAGOL_XMASSAGE');
 $albumTarget = '1330244656992410';
 
 $t1 = 'Using massage oils helps in getting the right balance between grip and slip on the skin, and the smell enhances the experience by stimulating a second sense that we pay relatively little attention to most of the time. ';
-$t2 = 'The Legs “Move up the legs in long, smooth strokes, using the full surface of your palm and keeping your fingers together. The purpose of sensual massage is to build excitement, so stroke over her buttocks.
-You could at this point stroke gently down between her legs and gently excite her with your fingers. It’s very important to always maintain a very gentle touch." ';
-$t3 = 'For women who want to enjoy the firm yet the tender touch of a man without the need to perform or give back sexually. ';
+$t2 = 'The Legs “Move up the legs in long, smooth strokes, using the full surface of your palm and keeping your fingers together. The purpose of sensual massage is to build excitement, so stroke over his buttocks.
+You could at this point stroke gently down between his legs and gently excite him with your fingers. It’s very important to always maintain a very gentle touch." ';
+$t3 = 'For men who want to enjoy the firm yet the tender touch of a woman without the need to perform or give back sexually. ';
 $t4 = 'This can be you. Book your sensual massage and enjoy yourself. ';
-$t5 = 'The therapy will take you into the heart and bloom of the flower of your femininity. An orgasm is not the goal, but rather sexual healing in whatever form it is expressed. The therapy is an opportunity to receive without any expectations. It is the absolute opportunity to experience the beauty and pleasure of sensual touch from another - totally as the receiver. Orgasmic delight is often experienced and has been described as ‘riding the wave’. ';
+$t5 = 'The therapy will take you into the heart and bloom of the flower of your masculinity. An orgasm is not the goal, but rather sexual healing in whatever form it is expressed. The therapy is an opportunity to receive without any expectations. It is the absolute opportunity to experience the beauty and pleasure of sensual touch from another - totally as the receiver. Orgasmic delight is often experienced and has been described as ‘riding the wave’. ';
 $t6 = 'Enjoy your body! Book a sensual massage. ';
-$t7 = 'Sensual Massage is a wonderful way in which therapeutic Massage is blended with eroticism and allows ladies to release daily stresses, emotional and physical tensions away. ';
+$t7 = 'Sensual Massage is a wonderful way in which therapeutic Massage is blended with eroticism and allows gentlemen to release daily stresses, emotional and physical tensions away. ';
 $t8 = 'Using massage oils helps in getting the right balance between grip and slip on the skin, and the smell enhances the experience by stimulating a second sense that we pay relatively little attention to most of the time. ';
-$t9 = 'The #female clients that come to see me are of course are all #attractive, but attractiveness is not just about the #physical. The #women I see for #sensual #massage come in all #shapes and sizes and from all age groups. The most frequent age group I see is between 30 years and 55 years, but I have also given a sensual massage to women aged from 18 years to women in their 70’s. I see women from all #cultures and #nationalities, many of who live in the UK but also many who are #visiting #London and the UK on #business or for #pleasure who want to take the #opportunity to #explore their #sensuality away from the #sensitivity of their home. ';
-$t10 = 'The goal of the Yoni massage is not solely to achieve orgasm, although orgasm is often a pleasant and welcome side effect. The goal can be as simple as to pleasure and massage the Yoni. From this perspective both receiver and giver can relax, and do not have to worry about achieving any particular goal. When orgasm does occur it is usually more expanded, more intense and more satisfying. It`s also helpful for the giver to not expect anything in return, but simply allow the receiver to enjoy the massage and to relax into herself. ';
+$t9 = 'The male clients that come to see me are of course are all attractive, but attractiveness is not just about the physical. The men I see for sensual massage come in all shapes and sizes and from all age groups. The most frequent age group I see is between 30 years and 55 years, but I have also given a sensual massage to men aged from 18 years to men in their 70’s. I see men from all cultures and nationalities, many of who live in the UK but also many who are visiting London and the UK on business or for pleasure who want to take the opportunity to explore their sensuality away from the sensitivity of their home. ';
+$t10 = 'The goal of the massage is not solely to achieve orgasm, although orgasm is often a pleasant and welcome side effect. The goal can be as simple as to pleasure and massage your full body. From this perspective both receiver and giver can relax, and do not have to worry about achieving any particular goal. When orgasm does occur it is usually more expanded, more intense and more satisfying. It`s also helpful for the giver to not expect anything in return, but simply allow the receiver to enjoy the massage and to relax into himself. ';
 $t11 = 'Would you like a sensual massage? ';
 $t12 = 'Don`t tell anyone! ;) Book your sensual massage today. ';
 $t13 = 'Tag a friend who needs a massage ';
 $t14 = 'Did you have time to enjoy yourself this week? Book a sensual massage! ';
+
 
 
 $textos = Array($t1, $t2, $t3, $t4, $t5, $t6, $t7, $t8, $t9, $t10, $t11, $t12, $t13, $t14);
