@@ -15,17 +15,17 @@ $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
 $scope = 'email,publish_actions';
 
 // Init the Facebook SDK
-$facebook = new Facebook(array(
+$fb = new Facebook\Facebook(array(
      'appId'  => $app_id,
      'secret' => $app_secret,
 ));
 
 // Get the current user
-$user = $facebook->getUser();
+$user = $fb->getUser();
 
 // If the user has not installed the app, redirect them to the Login Dialog
 if (!$user) {
-        $loginUrl = $facebook->getLoginUrl(array(
+        $loginUrl = $fb->getLoginUrl(array(
         'scope' => $scope,
         'redirect_uri' => $app_url,
         ));
