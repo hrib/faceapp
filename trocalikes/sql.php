@@ -14,7 +14,7 @@ $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui<br><br>';
 $query = "CREATE TABLE tl_cadastro ("
-    . "ID int "
+    . "ID int, "
     . "user_id int, "
     . "user_name VARCHAR(50), "
     . "pagina VARCHAR(80) "
