@@ -34,14 +34,14 @@ $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui<br><br>';
 echo "<table>";
-while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    echo "<tr>";
-    echo "<td>" . $row["ID"] . "</td>";
-    echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
-    echo "<td>" . htmlspecialchars($row["user_name"]) . "</td>";
-    echo "<td>" . htmlspecialchars($row["pagina"]) . "</td>";
-    echo "</tr>";
-}
+//while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+//    echo "<tr>";
+//    echo "<td>" . $row["ID"] . "</td>";
+//    echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
+//    echo "<td>" . htmlspecialchars($row["user_name"]) . "</td>";
+//    echo "<td>" . htmlspecialchars($row["pagina"]) . "</td>";
+//    echo "</tr>";
+//}
 echo "</table>";
 $result->closeCursor();
 //$app->register(new Herrera\Pdo\PdoServiceProvider(), $zica);
