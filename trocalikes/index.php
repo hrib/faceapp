@@ -31,7 +31,7 @@ try {
 if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
-  $permissions = ['manage_pages']; // optionnal
+  $permissions = ['public_profile']; // optionnal
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
   echo "<script>window.top.location.href='".$loginUrl."'</script>";
