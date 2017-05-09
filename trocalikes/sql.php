@@ -28,10 +28,10 @@ $query = "INSERT INTO tl_cadastro(user_id, user_name, pagina) VALUES('1210119742
 $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui<br><br>';
-$query = "SELECT ID, user_id, user_name, pagina FROM tl_cadastro";
+$query = "SELECT ID, user_id, user_name, pagina FROM tl_cadastro;";
 $result = $db->query($query);
 echo var_dump($result);
-echo 'aqui<br><br>';
+echo 'aqui resultados<br><br>';
 echo "<table>";
 //while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 //    echo "<tr>";
