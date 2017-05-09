@@ -29,8 +29,9 @@ try {
 if (! isset($accessToken)) {
   echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
-	$loginUrl = $helper->getLoginUrl('https://apps.facebook.com/apostagolapp/', $permissions);
-	echo "<script>window.top.location.href='".$loginUrl."'</script>";
+  $permissions = ['email']; // optionnal
+  $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/apostagolapp/', $permissions);
+  echo "<script>window.top.location.href='".$loginUrl."'</script>";
   
   exit;
 }
