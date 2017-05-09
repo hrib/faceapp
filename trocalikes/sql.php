@@ -32,7 +32,8 @@ $query = "SELECT ID, user_id, user_name, pagina FROM tl_cadastro;";
 $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui resultados<br><br>';
-echo "<table>";
+
+echo '<table border="1" style="font-family:arial; font-size:7px;">';
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
     echo "<td>" . $row["ID"] . "</td>";
