@@ -22,7 +22,6 @@ $db = new PDO($dsn);
     $query = "SELECT pagina FROM tl_cadastro WHERE user_id = '" . $user_id . "';";
     $result = $db->query($query);
     $retorno = $result->fetch();
-    echo  '<br>Pagina: ' . $retorno["pagina"] . '<br>';
     return $retorno["pagina"];
     
 }
