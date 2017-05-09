@@ -43,7 +43,7 @@ echo "<table>";
 //    echo "</tr>";
 //}
 echo "</table>";
-$result->closeCursor();
+//$result->closeCursor();
 //$app->register(new Herrera\Pdo\PdoServiceProvider(), $zica);
 echo 'aqui<br><br>';
 ?>
