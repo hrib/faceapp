@@ -8,7 +8,7 @@ $dsn = "pgsql:"
     . "sslmode=require;"
     . "password=" . $dbopts["pass"];
     
-global $db = new PDO($dsn);
+GLOBALS['db'] = new PDO($dsn);
 
 
 function db_usuario($user_id, $user_name){
