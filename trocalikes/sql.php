@@ -9,7 +9,7 @@ $dsn = "pgsql:"
     . "password=" . $dbopts["pass"];
     
 $db = new PDO($dsn);
-//$query = "DROP TABLE dados";
+$query = "DROP TABLE tl_cadastro";
 //$result = $db->query($query);
 //echo var_dump($result);
 echo 'aqui<br><br>';
