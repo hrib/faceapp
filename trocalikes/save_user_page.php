@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $dsn = "pgsql:"
