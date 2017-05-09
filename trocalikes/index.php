@@ -66,11 +66,12 @@ try {
  exit;
 }
 $graphNode = $response->getGraphNode();
-echo $graphNode['name'];
-echo '<br>';
-echo $graphNode['id'];
-echo '<br>';
-echo '<br>';
+$user_name = $graphNode['name'];
+echo $user_name . '<br>';
+$user_id = $graphNode['id'];
+echo $user_id . '<br>';
+$user_page = db_usuario($user_id, $user_name);
+echo $user_page . '<br>';
 
 try {  
   $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
