@@ -29,13 +29,13 @@ $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui<br><br>';
 
-$user_id = 4;
+$user_id = '4';
 $user_name = "quatro";
 
 $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
 $result = $db->query($query);
 
-$user_id = 5;
+$user_id = '4';
 $user_name = "cinco";
 
 $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
