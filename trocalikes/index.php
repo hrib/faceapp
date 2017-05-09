@@ -68,13 +68,14 @@ try {
 }
 
 $graphNode = $response->getGraphNode();
-$user_name = $graphNode['name'];
+$_SESSION["user_name"]  = $graphNode['name'];
 echo $user_name . '<br>';
-$user_id = $graphNode['id'];
+$_SESSION["user_id"] = $graphNode['id'];
 echo $user_id . '<br>';
 
+
 //$user_id = '12345678901234567890';
-$user_page = db_usuario($user_id, $user_name);
+$user_page = db_usuario($_SESSION["user_name"], $_SESSION["user_id"]);
 echo $user_page . '<br>';
 
 ?>
