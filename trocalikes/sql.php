@@ -36,7 +36,7 @@ $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "',
 $result = $db->query($query);
 
 $user_id = "4";
-$user_name = "quantroB";
+$user_name = "quatroB";
 
 $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
 $result = $db->query($query);
@@ -49,6 +49,21 @@ $result = $db->query($query);
 
 $user_id = "6";
 $user_name = "seis";
+
+$query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
+$result = $db->query($query);
+
+
+$user_id = "4";
+$user_name = "quatroC";
+
+$query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
+$result = $db->query($query);
+
+
+
+$user_id = "7";
+$user_name = "sete";
 
 $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
 $result = $db->query($query);
