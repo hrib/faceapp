@@ -45,7 +45,7 @@ $result = $db->query($query);
 
     $query = "SELECT pagina FROM tl_cadastro WHERE user_id = " . $user_id . ";";
     $result = $db->query($query);
-    echo $result["user_name"];
+    //echo $result["user_name"];
     $row = $result->fetch(PDO::FETCH_ASSOC);
     echo $row["user_name"];
 
