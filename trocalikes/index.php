@@ -21,10 +21,26 @@ $fb = new Facebook\Facebook(array(
 ));
 
 // Get the current user
-$user = $fb->getUser();
+//$user = $fb->getUser();
+
+$helper = $fb->getCanvasHelper();
+
+try {
+  $accessToken = $helper->getAccessToken();
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  //exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  //exit;
+}
+
+
 
 // If the user has not installed the app, redirect them to the Login Dialog
-if (!$user) {
+if (!$accessToken) {
         $loginUrl = $fb->getLoginUrl(array(
         'scope' => $scope,
         'redirect_uri' => $app_url,
@@ -34,7 +50,7 @@ if (!$user) {
 
 
 var_dump($accessToken);
-var_dump($user);
+//var_dump($user);
 
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
