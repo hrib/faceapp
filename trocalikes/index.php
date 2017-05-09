@@ -77,6 +77,30 @@ echo $user_id . '<br>';
 $user_page = db_usuario($user_id, $user_name);
 echo $user_page . '<br>';
 
+?>
+
+<div class="dentro">
+  <form action="save_user_page.php" method="post">
+      <table  border="0">
+        <tr valign="middle">
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>Digite a URL da sua página: </b></font></td>
+        </tr>
+        <tr valign="middle">
+          <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
+        </tr>
+      </table>
+  </form>
+</div>
+
+
+<?php
+
+
+
+
+
+
+
 try {  
   $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -114,15 +138,3 @@ html {
   background-size: cover;
 }
 </style>
-<div class="dentro">
-  <form action="save_userpage_url.php" method="post">
-      <table  border="0">
-        <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>Digite a URL da sua página: </b></font></td>
-        </tr>
-        <tr valign="middle">
-          <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
-        </tr>
-      </table>
-  </form>
-</div>
