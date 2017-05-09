@@ -31,6 +31,7 @@ if (! isset($accessToken)) {
   $helper = $fb->getRedirectLoginHelper();
   $permissions = ['email']; // optionnal
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/apostagolapp/', $permissions);
+  //confirme que essa url de login esta autorizada no aplicativo
   echo "<script>window.top.location.href='".$loginUrl."'</script>";
   
   exit;
