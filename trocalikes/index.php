@@ -75,7 +75,7 @@ echo $_SESSION["user_id"] . '<br>';
 
 
 //$user_id = '12345678901234567890';
-$user_page = db_usuario($_SESSION["user_name"], $_SESSION["user_id"]);
+$user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
 
 ?>
