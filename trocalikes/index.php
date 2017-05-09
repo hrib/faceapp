@@ -39,11 +39,11 @@ if (! isset($accessToken)) {
 }
 
 // Logged in
-echo '<h3>Signed Request</h3>';
-var_dump($helper->getSignedRequest());
+//echo '<h3>Signed Request</h3>';
+//var_dump($helper->getSignedRequest());
 
-echo '<h3>Access Token</h3>';
-var_dump($accessToken->getValue());
+//echo '<h3>Access Token</h3>';
+//var_dump($accessToken->getValue());
 
 
 
