@@ -1,7 +1,9 @@
 <?php
 session_start(); 
-
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
+
+echo 'Digite a URL da sua pagina: <input type="text" name="userpage_url">';
+
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
