@@ -1,6 +1,4 @@
 <?php
-
-function db_usuario($user_id, $user_name){
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $dsn = "pgsql:"
     . "host=" . $dbopts["host"] . ";"
@@ -10,19 +8,17 @@ $dsn = "pgsql:"
     . "sslmode=require;"
     . "password=" . $dbopts["pass"];
     
-$db = new PDO($dsn);
+global $db = new PDO($dsn);
 
-$query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT " . $user_id . ", '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = " . $user_id . ");";
-$result = $db->query($query);
 
+function db_usuario($user_id, $user_name){
+
+    $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
+    $result = $db->query($query);
+    $query = "SELECT pagina FROM tl_cadastro WHERE user_id = '" . $user_id . "';";
+    $result = $db->query($query);
+    $retorno = $result->fetch();
+    return $retorno["pagina"];
     
-//    INSERT INTO table (id, field, field2)
-//       SELECT 3, 'C', 'Z'
-//       WHERE NOT EXISTS (SELECT 1 FROM table WHERE id=3);
-
-//insert into company (unique_id, company_name)
-//select 42, 'New Company Name'
-//from company
-//where not exists (select 1 from company where unique_id = 42);
 }
 ?>
