@@ -73,7 +73,7 @@ echo $user_name . '<br>';
 $user_id = $graphNode['id'];
 echo $user_id . '<br>';
 
-$user_id = '12345678901234567890';
+//$user_id = '12345678901234567890';
 $user_page = db_usuario($user_id, $user_name);
 echo $user_page . '<br>';
 
