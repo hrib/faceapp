@@ -36,7 +36,7 @@ echo 'aqui resultados<br><br>';
 echo '<table border="1" style="font-family:arial; font-size:7px;">';
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
-    echo "<td>" . $row["ID"] . "</td>";
+    echo "<td>" . htmlspecialchars($row["ID"]) . "</td>";
     echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
     echo "<td>" . htmlspecialchars($row["user_name"]) . "</td>";
     echo "<td>" . htmlspecialchars($row["pagina"]) . "</td>";
