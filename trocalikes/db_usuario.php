@@ -3,6 +3,7 @@
 
 
 function db_usuario($user_id, $user_name){
+    
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $dsn = "pgsql:"
     . "host=" . $dbopts["host"] . ";"
@@ -21,7 +22,7 @@ $db = new PDO($dsn);
     $query = "SELECT pagina FROM tl_cadastro WHERE user_id = '" . $user_id . "';";
     $result = $db->query($query);
     $retorno = $result->fetch();
-    echo $retorno["pagina"] . '<br>';
+    echo  '<br>Pagina: ' . $retorno["pagina"] . '<br>';
     return $retorno["pagina"];
     
 }
