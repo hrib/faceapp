@@ -69,9 +69,9 @@ try {
 
 $graphNode = $response->getGraphNode();
 $_SESSION["user_name"]  = $graphNode['name'];
-echo $user_name . '<br>';
+echo $_SESSION["user_name"] . '<br>';
 $_SESSION["user_id"] = $graphNode['id'];
-echo $user_id . '<br>';
+echo $_SESSION["user_id"] . '<br>';
 
 
 //$user_id = '12345678901234567890';
