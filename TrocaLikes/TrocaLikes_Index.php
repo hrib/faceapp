@@ -16,7 +16,7 @@ $fb = new Facebook\Facebook([
   
 
 try {  
-  $response = $fb->get('/'. $paginaID .'?fields=posts{comments}');
+  $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
