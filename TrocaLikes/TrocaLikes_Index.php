@@ -19,7 +19,6 @@ html {
           <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:10px; width: 180px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
       </table>
-      <input type="submit" value="Submit" style="width:280px;height:105px;">
   </form>
 </div>
 
