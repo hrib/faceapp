@@ -37,7 +37,7 @@ echo 'aqui<br><br>';
 $user_id = "4";
 $user_name = "quatroA";
 
-$query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' FROM tl_cadastro where not exists (select 1 from tl_cadastro where user_id = '" . $user_id . "');";
+$query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' where not exists (select id from tl_cadastro where user_id = '" . $user_id . "') RETURNING id;";
 $result = $db->query($query);
 
 $user_id = "4";
