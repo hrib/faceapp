@@ -31,7 +31,7 @@ try {
 if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
-  $permissions = ['email']; // optionnal
+  $permissions = ['manage_pages']; // optionnal
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
   echo "<script>window.top.location.href='".$loginUrl."'</script>";
@@ -40,10 +40,10 @@ if (! isset($accessToken)) {
 }
 
 // Logged in
-echo '<h3>Signed Request</h3>';
+//echo '<h3>Signed Request</h3>';
 //var_dump($helper->getSignedRequest());
 
-echo '<h3>Access Token</h3>';
+//echo '<h3>Access Token</h3>';
 //var_dump($accessToken->getValue());
 
 
@@ -55,7 +55,7 @@ $fb = new Facebook\Facebook([
 
 
 try {  
-  $response = $fb->get('/me', $accessToken);
+  $response = $fb->get('/me?fields=id,name,accounts', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
