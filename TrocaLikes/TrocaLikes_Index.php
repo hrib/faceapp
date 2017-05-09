@@ -30,11 +30,12 @@ try {
   
 $graphNode = $response->getGraphNode();
 echo '<table border="1" style="font-family:arial; font-size:9px;">';
-foreach ($graphNode['posts'] as $post) {
-  foreach ($post['likes'] as $like) {
+foreach ($graphNode['posts'] as $posts) {
+  foreach ($posts['likes'] as $likes) {
     echo '<tr>';
-    echo '<td>' . $like['name'] . '</td>';
-    echo '<td>' . $like['id'] . '</td>';
+    echo '<td>' . $posts['id'] . '</td>';
+    echo '<td>' . $likes['name'] . '</td>';
+    echo '<td>' . $likes['id'] . '</td>';
     echo '</tr>';
   }
 } 
