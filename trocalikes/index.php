@@ -6,6 +6,11 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $paginaID = 'rconstantinoliberal';
 
+
+
+
+
+
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
@@ -29,12 +34,16 @@ try {
   //exit;
 }
 
+
+
+
+
 if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
   $permissions = ['email']; // Optional permissions
-  $loginUrl = $helper->getLoginUrl('https://apostagol.herokuapp.com/trocalikes/index.php', $permissions);
-  echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+  $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/apostagolapp/', $permissions);
+  echo '<a href="' . htmlspecialchars($loginUrl) . '"> login </a>';
   exit;
 }
 
