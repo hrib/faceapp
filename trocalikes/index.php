@@ -89,6 +89,9 @@ echo $user_page . '<br>';
         <tr valign="middle">
           <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
+        <tr valign="middle">
+          <td align="left"><input type="submit"></td>
+        </tr>        
       </table>
   </form>
 </div>
