@@ -39,14 +39,6 @@ try {
 
 
 
-// If the user has not installed the app, redirect them to the Login Dialog
-if (!$accessToken) {
-        $loginUrl = $fb->getLoginUrl(array(
-        'scope' => $scope,
-        'redirect_uri' => $app_url,
-        ));
-        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
-}
 
 
 var_dump($accessToken);
