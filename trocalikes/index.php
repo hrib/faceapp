@@ -4,6 +4,8 @@ require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
+$app_name = 'apostagolapp';
+
 $paginaID = 'rconstantinoliberal';
 
 $fb = new Facebook\Facebook([
@@ -27,10 +29,10 @@ try {
 }
 
 if (! isset($accessToken)) {
-  echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
+  //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
   $permissions = ['email']; // optionnal
-  $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/apostagolapp/', $permissions);
+  $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
   echo "<script>window.top.location.href='".$loginUrl."'</script>";
   
@@ -39,23 +41,16 @@ if (! isset($accessToken)) {
 
 // Logged in
 echo '<h3>Signed Request</h3>';
-var_dump($helper->getSignedRequest());
+//var_dump($helper->getSignedRequest());
 
 echo '<h3>Access Token</h3>';
-var_dump($accessToken->getValue());
+//var_dump($accessToken->getValue());
 
-
-
-
-
-var_dump($accessToken);
-//var_dump($user);
 
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
   'default_graph_version' => 'v2.9', // change to 2.5
-  //'access_token' => $accessToken
 ]);
 
 
@@ -72,6 +67,7 @@ try {
 }
 $graphNode = $response->getGraphNode();
 echo $graphNode['name'];
+echo '<br>';
 echo $graphNode['id'];
 echo '.<br>';
 echo '.<br>';
