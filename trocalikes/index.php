@@ -44,7 +44,7 @@ if (! isset($accessToken)) {
 
 //echo '<h3>Access Token</h3>';
 //var_dump($accessToken->getValue());
-
+var_dump($accessToken);
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
