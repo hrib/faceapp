@@ -16,7 +16,7 @@ $fb = new Facebook\Facebook([
   
 
 try {
-  $response = $fb->get('/?ids='. $paginaID .'&fields=posts.limit(100){source,full_picture,message}');
+  $response = $fb->get('/'. $paginaID .'?fields=feed');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
