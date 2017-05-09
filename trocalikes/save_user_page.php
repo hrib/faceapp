@@ -1,6 +1,6 @@
 <?php
-function db_usuario($user_id, $user_name){
-    
+
+
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $dsn = "pgsql:"
     . "host=" . $dbopts["host"] . ";"
@@ -11,14 +11,13 @@ $dsn = "pgsql:"
     . "password=" . $dbopts["pass"];
     
 $db = new PDO($dsn);
+
+$user_name = $_SESSION["user_name"]
+$user_id = $_SESSION["user_id"]    
+
+$query = "UPDATE tl_cadastro SET pagina = $_POST['new_user_page'] WHERE user_id = '" . $user_id . "';";
+$result = $db->query($query);
+echo "<script>window.top.location.href='https://apps.facebook.com/trocalikes'</script>";   
     
-    $query = "INSERT INTO tl_cadastro(user_id, user_name) SELECT '" . $user_id . "', '" . $user_name . "' where not exists (select id from tl_cadastro where user_id = '" . $user_id . "') RETURNING id;";
-    $result = $db->query($query);
-    
-    $query = "SELECT pagina FROM tl_cadastro WHERE user_id = '" . $user_id . "';";
-    $result = $db->query($query);
-    $retorno = $result->fetch();
-    return $retorno["pagina"];
-    
-}
+
 ?>
