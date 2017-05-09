@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
+require_once('db_usuario.php');
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
