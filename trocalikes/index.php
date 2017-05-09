@@ -10,50 +10,32 @@ $paginaID = 'rconstantinoliberal';
 
 
 
+$app_namespace = 'apostagolapp';
+$app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
+$scope = 'email,publish_actions';
 
-$fb = new Facebook\Facebook([
-  'app_id' => $app_id,
-  'app_secret' => $app_secret,
-  'default_graph_version' => 'v2.9', // change to 2.5
-  'default_access_token' => $app_id . '|' . $app_secret
-]);
+// Init the Facebook SDK
+$facebook = new Facebook(array(
+     'appId'  => $app_id,
+     'secret' => $app_secret,
+));
 
+// Get the current user
+$user = $facebook->getUser();
 
-
-$helper = $fb->getCanvasHelper();
-
-try {
-  $accessToken = $helper->getAccessToken();
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
-  // When Graph returns an error
-  echo 'Graph returned an error: ' . $e->getMessage();
-  //exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-  // When validation fails or other local issues
-  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  //exit;
+// If the user has not installed the app, redirect them to the Login Dialog
+if (!$user) {
+        $loginUrl = $facebook->getLoginUrl(array(
+        'scope' => $scope,
+        'redirect_uri' => $app_url,
+        ));
+        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
 }
 
 
-
-
-
-if (! isset($accessToken)) {
-  //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
-  $helper = $fb->getRedirectLoginHelper();
-  $permissions = ['email']; // Optional permissions
-  $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/apostagolapp/', $permissions);
-  echo '<a href="' . htmlspecialchars($loginUrl) . '"> login </a>';
-  exit;
-}
-
-// Logged in
-//echo '<h3>Signed Request</h3>';
-//var_dump($helper->getSignedRequest());
-
-//echo '<h3>Access Token</h3>';
-//var_dump($accessToken->getValue());
 var_dump($accessToken);
+var_dump($user);
+
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
