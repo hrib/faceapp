@@ -31,11 +31,24 @@ $graphNode = $response->getGraphNode();
 echo '<table border="1" style="font-family:arial; font-size:9px;">';
 foreach ($graphNode['feed'] as $key => $value) {
   echo '<tr>';
-  echo '<td>' . $key . ':' . $value['message'] . '</td>>';
+  echo '<td>' . $key . ':' . $value['message'] . '</td>';
   echo '</tr>';
 }
 echo '</table>';
+echo '<br><br>';
   
-  
+$response = $fb->get('/'. $paginaID .'?fields=posts{comments}');
+$graphNode = $response->getGraphNode();
+echo '<table border="1" style="font-family:arial; font-size:9px;">';
+foreach ($graphNode['posts'] as $key => $value) {
+  foreach ($value['comments'] as $key2 => $value2) {
+    echo '<tr>';
+    echo '<td>' . $key . ':' . $key2 . '>>>' . $value2['message'] . '</td>';
+    echo '<td>' . $key . ':' . $key2 . '>>>' . $value2['from']['name'] . '</td>';
+    echo '<td>' . $key . ':' . $key2 . '>>>' . $value2['from']['id'] . '</td>';
+    echo '</tr>';
+  }
+} 
+echo '</table>';
 
 ?>
