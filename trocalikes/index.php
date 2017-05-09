@@ -4,7 +4,7 @@ require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
-$app_name = 'apostagolapp';
+$app_name = 'trocalikes';
 
 $paginaID = 'rconstantinoliberal';
 
