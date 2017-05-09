@@ -45,11 +45,16 @@ if (! isset($accessToken)) {
 //echo '<h3>Access Token</h3>';
 //var_dump($accessToken->getValue());
 
-
+$fb = new Facebook\Facebook([
+  'app_id' => $app_id,
+  'app_secret' => $app_secret,
+  'default_graph_version' => 'v2.9', // change to 2.5
+  'access_token' => $accessToken
+]);
 
 
 try {  
-  $response = $fb->get('/me');
+  $response = $fb->get('/me', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
@@ -66,7 +71,7 @@ echo '<br>';
 echo '<br>';
 
 try {  
-  $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}');
+  $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
