@@ -12,8 +12,8 @@ $dsn = "pgsql:"
     
 $db = new PDO($dsn);
 
-$user_name = $_SESSION["user_name"]
-$user_id = $_SESSION["user_id"]    
+$user_name = $_SESSION["user_name"];
+$user_id = $_SESSION["user_id"];
 
 $query = "UPDATE tl_cadastro SET pagina = $_POST['new_user_page'] WHERE user_id = '" . $user_id . "';";
 $result = $db->query($query);
