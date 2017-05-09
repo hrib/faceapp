@@ -18,7 +18,7 @@ html {
           <td><font style="font-family: Impact, Charcoal, sans-serif; font-size:18px;"><b>Digite a URL da sua página: </b></font></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:10px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
+          <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
       </table>
   </form>
