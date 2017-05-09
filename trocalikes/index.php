@@ -6,22 +6,11 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $paginaID = 'rconstantinoliberal';
 
-
-
-
-
-$app_namespace = 'apostagolapp';
-$app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
-$scope = 'email,publish_actions';
-
-// Init the Facebook SDK
-$fb = new Facebook\Facebook(array(
-     'app_id'  => $app_id,
-     'app_secret' => $app_secret,
-));
-
-// Get the current user
-//$user = $fb->getUser();
+$fb = new Facebook\Facebook([
+  'app_id' => $app_id,
+  'app_secret' => $app_secret,
+  'default_graph_version' => 'v2.9',
+  ]);
 
 $helper = $fb->getCanvasHelper();
 
@@ -30,12 +19,24 @@ try {
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
-  //exit;
+  exit;
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
   // When validation fails or other local issues
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  //exit;
+  exit;
 }
+
+if (! isset($accessToken)) {
+  echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
+  exit;
+}
+
+// Logged in
+echo '<h3>Signed Request</h3>';
+var_dump($helper->getSignedRequest());
+
+echo '<h3>Access Token</h3>';
+var_dump($accessToken->getValue());
 
 
 
