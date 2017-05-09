@@ -65,6 +65,8 @@ try {
  echo 'Facebook SDK returned an error: ' . $e->getMessage();
  exit;
 }
+
+$user_id = '12345678901234567890'
 $graphNode = $response->getGraphNode();
 $user_name = $graphNode['name'];
 echo $user_name . '<br>';
