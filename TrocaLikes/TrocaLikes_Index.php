@@ -15,7 +15,7 @@ html {
   <form action="save_userpage_url.php" method="post">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Trebuchet MS, Helvetica, sans-serif; font-size:18px;"><b>Digite a URL da sua página: </b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>Digite a URL da sua página: </b></font></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
