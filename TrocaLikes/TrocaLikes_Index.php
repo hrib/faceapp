@@ -15,37 +15,27 @@ $fb = new Facebook\Facebook([
 ]);
   
 
-try {
-  $response = $fb->get('/'. $paginaID .'?fields=feed');
+try {  
+  $response = $fb->get('/'. $paginaID .'?fields=posts{comments}');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
- //exit;
+ exit;
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
  // When validation fails or other local issues
  echo 'Facebook SDK returned an error: ' . $e->getMessage();
- //exit;
+ exit;
 }
 
-$graphNode = $response->getGraphNode();
-echo '<table border="1" style="font-family:arial; font-size:9px;">';
-foreach ($graphNode['feed'] as $key => $value) {
-  echo '<tr>';
-  echo '<td>' . $key . ':' . $value['message'] . '</td>';
-  echo '</tr>';
-}
-echo '</table>';
-echo '<br><br>';
   
-$response = $fb->get('/'. $paginaID .'?fields=posts{comments}');
 $graphNode = $response->getGraphNode();
 echo '<table border="1" style="font-family:arial; font-size:9px;">';
-foreach ($graphNode['posts'] as $key => $value) {
-  foreach ($value['comments'] as $key2 => $value2) {
+foreach ($graphNode['posts'] as $post) {
+  foreach ($post['comments'] as $comment) {
     echo '<tr>';
-    echo '<td>' . $key . ':' . $key2 . '>>>' . $value2['message'] . '</td>';
-    echo '<td>' . $key . ':' . $key2 . '>>>' . $value2['from']['name'] . '</td>';
-    echo '<td>' . $key . ':' . $key2 . '>>>' . $value2['from']['id'] . '</td>';
+    echo '<td>' . $comment['message'] . '</td>';
+    echo '<td>' . $comment['from']['name'] . '</td>';
+    echo '<td>' . $comment['from']['id'] . '</td>';
     echo '</tr>';
   }
 } 
