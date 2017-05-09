@@ -34,8 +34,7 @@ foreach ($graphNode['posts'] as $post) {
   foreach ($post['likes'] as $like) {
     echo '<tr>';
     echo '<td>' . $like['name'] . '</td>';
-    echo '<td>' . $like['from']['name'] . '</td>';
-    echo '<td>' . $like['from']['id'] . '</td>';
+    echo '<td>' . $like['id'] . '</td>';
     echo '</tr>';
   }
 } 
