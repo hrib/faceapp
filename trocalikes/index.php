@@ -16,8 +16,8 @@ $scope = 'email,publish_actions';
 
 // Init the Facebook SDK
 $fb = new Facebook\Facebook(array(
-     'appId'  => $app_id,
-     'secret' => $app_secret,
+     'app_id'  => $app_id,
+     'app_secret' => $app_secret,
 ));
 
 // Get the current user
