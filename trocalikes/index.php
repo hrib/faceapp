@@ -49,7 +49,7 @@ $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
   'default_graph_version' => 'v2.9', // change to 2.5
-  'access_token' => $accessToken
+  //'access_token' => $accessToken
 ]);
 
 
@@ -67,8 +67,8 @@ try {
 $graphNode = $response->getGraphNode();
 echo $graphNode['name'];
 echo $graphNode['id'];
-echo '<br>';
-echo '<br>';
+echo '.<br>';
+echo '.<br>';
 
 try {  
   $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
