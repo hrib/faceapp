@@ -10,8 +10,8 @@ $dsn = "pgsql:"
     
 $db = new PDO($dsn);
 $query = "DROP TABLE tl_cadastro";
-//$result = $db->query($query);
-//echo var_dump($result);
+$result = $db->query($query);
+echo var_dump($result);
 echo 'aqui<br><br>';
 $query = "CREATE TABLE tl_cadastro ("
     . "ID int "
@@ -19,8 +19,8 @@ $query = "CREATE TABLE tl_cadastro ("
     . "user_name VARCHAR(50), "
     . "pagina VARCHAR(80) "
     . ");";
-//$result = $db->query($query);
-//echo var_dump($result);
+$result = $db->query($query);
+echo var_dump($result);
 echo 'aqui<br><br>';
 $query = "INSERT INTO tl_cadastro(user_id, user_name, pagina) VALUES('121011974285544429', 'fulano de tal muito louco', 'http://facebook.com/rconstantinoliberal/');";
 
