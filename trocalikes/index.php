@@ -55,7 +55,7 @@ $fb = new Facebook\Facebook([
 
 
 try {  
-  $response = $fb->get('/me?fields=id,name,accounts', $accessToken);
+  $response = $fb->get('/me?fields=id,name', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
@@ -69,8 +69,8 @@ $graphNode = $response->getGraphNode();
 echo $graphNode['name'];
 echo '<br>';
 echo $graphNode['id'];
-echo '.<br>';
-echo '.<br>';
+echo '<br>';
+echo '<br>';
 
 try {  
   $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
