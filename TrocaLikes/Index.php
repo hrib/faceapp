@@ -32,8 +32,8 @@ try {
 if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
-  //$permissions = ['email']; // Optional permissions
-  $loginUrl = $helper->getLoginUrl('TrocaLikes_Index.php', $permissions);
+  $permissions = ['email']; // Optional permissions
+  $loginUrl = $helper->getLoginUrl('Index.php', $permissions);
   echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
   exit;
 }
