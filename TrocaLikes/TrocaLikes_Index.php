@@ -16,7 +16,7 @@ html {
       <table  border="0">
         <tr valign="middle">
           <td><font style="font-family:arial; font-size:10px;"><b>Digite a URL da sua página: </b></font></td>
-          <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:10px; width: 180px; margin-left: 0px; margin-top: 0px;"></td>
+          <td align="left"><input type="text" name="userpage_url" style="font-family:arial; font-size:10px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
       </table>
   </form>
