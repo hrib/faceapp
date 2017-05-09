@@ -14,10 +14,10 @@ $result = $db->query($query);
 //echo var_dump($result);
 echo 'aqui<br><br>';
 $query = "CREATE TABLE tl_cadastro ("
-    . "ID int NOT NULL AUTO_INCREMENT, "
-    . "zz int, "
-    . "zzz int, "
-    . "user_id int, "
+    . "id SERIAL, "
+    . "zz INT, "
+    . "zzz INT, "
+    . "user_id INT, "
     . "user_name VARCHAR(50), "
     . "pagina VARCHAR(50) "
     . ");";
@@ -38,7 +38,7 @@ echo 'aqui resultados<br><br>';
 echo '<table border="1" style="font-family:arial; font-size:7px;">';
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
-    echo "<td>" . htmlspecialchars($row["ID"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
     echo "<td>" . htmlspecialchars($row["zz"]) . "</td>";
     echo "<td>" . htmlspecialchars($row["zzz"]) . "</td>";
     echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
