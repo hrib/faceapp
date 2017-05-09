@@ -30,7 +30,7 @@ $query = "INSERT INTO tl_cadastro(zz, zzz, user_id, user_name, pagina) VALUES(2,
 $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui<br><br>';
-$query = "SELECT ID, zz, zzz, user_id, user_name, pagina FROM tl_cadastro;";
+$query = "SELECT id, zz, zzz, user_id, user_name, pagina FROM tl_cadastro;";
 $result = $db->query($query);
 echo var_dump($result);
 echo 'aqui resultados<br><br>';
