@@ -82,12 +82,13 @@ echo $user_page . '<br>';
 <script>
 $('#envia').click(function()
 {
+    alert('oimsg');
     $.ajax({
-        url: user_page_frame.php,
+        url: "user_page_frame.php",
         type:'POST',
         data:
         {
-            pagina: new_user_page,
+            pagina: "new_user_page",
             message: "zzzzz"
         },
         success: function(msg)
