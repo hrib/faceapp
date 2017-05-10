@@ -1,9 +1,9 @@
 <?php
 session_start(); 
-echo 'fim';   
+//echo 'fim';   
 $pagina = $_POST['new_user_page'];
 if (isset($pagina )) { 
-echo $pagina;
+//echo $pagina;
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $dsn = "pgsql:"
     . "host=" . $dbopts["host"] . ";"
