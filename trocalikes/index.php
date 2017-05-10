@@ -77,6 +77,7 @@ echo $_SESSION["user_id"] . '<br>';
 //$user_id = '12345678901234567890';
 echo '<div align="left" id="div_user_page">' ;
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
+echo '<input type="text" id="form_user_page">';
 echo $user_page . '<br>';
 echo '</div>' ;
 ?>
@@ -87,6 +88,7 @@ $(document).ready(function(){
  $("#envia").click(function(){
    alert('2');
    novapagina = document.getElementById("new_user_page").value;
+	 
    $.ajax({
         url: 'user_page_frame.php',
         type: 'POST',
@@ -94,15 +96,8 @@ $(document).ready(function(){
         data: {new_user_page: novapagina},
     })
     .done(function(data) {
-		if(data.success=='ok'){
-			console.log("done: success OK");
-			$("#div_user_page").load(location.href+" #div_user_page>*","");
-			console.log(data);
-		}else{
-			console.log("done: success NOT ok");
-			$("#div_user_page").html(data);
-			console.log(data);
-		}
+	   	console.log(data);
+		document.getElementById("form_user_page").value = data;
     })
     .fail(function() {
         console.log("error");
@@ -111,12 +106,7 @@ $(document).ready(function(){
         console.log("complete");
     });
    
-   
-   
-   
-   
-   
-   
+
  });
 });
 </script> 
