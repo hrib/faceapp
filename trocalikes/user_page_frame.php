@@ -19,8 +19,10 @@ $user_id = $_SESSION["user_id"];
 echo $user_id . " : " . $pagina ;
 $query = "UPDATE tl_cadastro SET pagina = '" . $pagina  . "' WHERE user_id = '" . $user_id . "';";
 $result = $db->query($query);
+
 echo $query;
-echo "<script>window.top.location.href='https://apps.facebook.com/trocalikes'</script>";   
+$_POST['new_user_page'] = NULL;
+echo "<script>window.top.location.href='user_page_frame.php'</script>";   
 }
     
 ?>
