@@ -95,10 +95,12 @@ $(document).ready(function(){
     })
     .done(function(data) {
 		if(data.success=='ok'){
+			console.log("done: success OK");
 			$("#div_user_page").load(location.href+" #div_user_page>*","");
 			console.log(data);
 		}else{
 			console.log("done: success NOT ok");
+			$("#div_user_page").load(location.href+" #div_user_page>*","");
 			console.log(data);
 		}
     })
