@@ -78,8 +78,10 @@ echo $_SESSION["user_id"] . '<br>';
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
 
+echo '<div align="right" id="user_page_frame">';
+include 'user_page_frame.php';
+echo '</div>';
 
-echo "<iframe src='user_page_frame.php'></iframe>";
 
 
 
