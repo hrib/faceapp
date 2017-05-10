@@ -26,14 +26,16 @@ if (isset($query)) {
   $db = new PDO($dsn);
   $result = $db->query($query);
 
+  print_r($result);
+  
   echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $result->fetch(PDO::FETCH_BOTH)) {
       echo "<tr>";
-      var_dump($row);
       echo "<td>" . htmlspecialchars($row[0]) . "</td>";
       echo "<td>" . htmlspecialchars($row[1]) . "</td>";
       echo "<td>" . htmlspecialchars($row[2]) . "</td>";
       echo "<td>" . htmlspecialchars($row[3]) . "</td>";
+      echo "<td>" . sizeof($row) . "</td>";
       echo "</tr>";
   }
   echo "</table>";
