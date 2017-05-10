@@ -101,7 +101,7 @@ $('#envia').click(function()
 
 
 
-<div align="right" id="user_page_frame">
+<div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
           <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>zDigite a URL da sua página nesse iframe: </b></font></td>
