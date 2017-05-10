@@ -78,8 +78,10 @@ echo $_SESSION["user_id"] . '<br>';
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
 
-?>
 
+echo "<iframe src='user_page_frame.php'></iframe>";
+
+?>
 <div class="dentro">
   <form action="save_user_page.php" method="post">
       <table  border="0">
