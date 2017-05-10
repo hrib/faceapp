@@ -82,17 +82,34 @@ echo $user_page . '<br>';
 <script>
 $(document).ready(function(){
  $("#envia").click(function(){
-    alert('oimsg');
-    $.ajax({
-        url: 'user_page_frame.php',
-        type:'POST',
-        data: { pagina: 'new_user_page', location: 'Boston' }
-        },
-        success: function(msg)
-        {
-            alert(msg);
-        }               
+    alert('2');
+
+   	$.ajax({
+        url: 'user_page_fram.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {new_user_page: 'novapagina'},
+    })
+    .done(function(data) {
+		if(data.success=='ok'){
+			$('#refresh').html(div);
+		}else{
+		// show errors.
+		}
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
     });
+   
+   
+   
+   
+   
+   
+   
  });
 });
 </script> 
@@ -102,7 +119,7 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>5Digite a URL da sua página nesse iframe: </b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>6Digite a URL da sua página nesse iframe: </b></font></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
