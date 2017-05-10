@@ -78,10 +78,10 @@ echo $_SESSION["user_id"] . '<br>';
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
 ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-function atualiza_user_page()
-{
+$(document).ready(function(){
+ $("#envia").click(function(){
     alert('oimsg');
     $.ajax({
         url: "user_page_frame.php",
@@ -96,7 +96,8 @@ function atualiza_user_page()
             alert(msg);
         }               
     });
-};
+ });
+});
 </script> 
 
 
@@ -110,7 +111,7 @@ function atualiza_user_page()
           <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="submit" id="envia" onclick="atualiza_user_page()"></td>
+          <td align="left"><input type="submit" id="envia"></td>
         </tr>        
       </table>
 </div>
