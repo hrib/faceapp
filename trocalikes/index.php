@@ -83,13 +83,13 @@ echo $user_page . '<br>';
 <script>
 $(document).ready(function(){
  $("#envia").click(function(){
-    alert('2');
-
-   	$.ajax({
+   alert('2');
+   novapagina = document.getElementById("new_user_page").value;
+   $.ajax({
         url: 'user_page_frame.php',
         type: 'POST',
         dataType: 'text',
-        data: {new_user_page: 'novapagina'},
+        data: {new_user_page: novapagina},
     })
     .done(function(data) {
 		if(data.success=='ok'){
@@ -104,6 +104,7 @@ $(document).ready(function(){
     })
     .always(function() {
         console.log("complete");
+	console.log(novapagina);
     });
    
    
@@ -124,7 +125,7 @@ $(document).ready(function(){
           <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>6Digite a URL da sua página nesse iframe: </b></font></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
+          <td align="left"><input type="text" id="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="submit" id="envia"></td>
