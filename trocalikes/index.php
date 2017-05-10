@@ -75,8 +75,10 @@ echo $_SESSION["user_id"] . '<br>';
 
 
 //$user_id = '12345678901234567890';
+echo '<div align="left" id="div_user_page">' ;
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
+echo '</div>' ;
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -93,9 +95,10 @@ $(document).ready(function(){
     })
     .done(function(data) {
 		if(data.success=='ok'){
-			$('#refresh').html(div);
+			$("#div_user_page").load(location.href+" #div_user_page>*","");
 			console.log(data);
 		}else{
+			console.log("done: success NOT ok");
 			console.log(data);
 		}
     })
@@ -104,7 +107,6 @@ $(document).ready(function(){
     })
     .always(function() {
         console.log("complete");
-	console.log(novapagina);
     });
    
    
