@@ -80,7 +80,7 @@ echo $user_page . '<br>';
 ?>
 
 <script>
-$('#envia').click(function()
+function atualiza_user_page()
 {
     alert('oimsg');
     $.ajax({
@@ -96,7 +96,7 @@ $('#envia').click(function()
             alert(msg);
         }               
     });
-});
+};
 </script> 
 
 
@@ -110,7 +110,7 @@ $('#envia').click(function()
           <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="submit" id="envia"></td>
+          <td align="left"><input type="submit" id="envia" onclick="atualiza_user_page()"></td>
         </tr>        
       </table>
 </div>
