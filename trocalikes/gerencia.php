@@ -1,6 +1,14 @@
-<html>
- <body>
-  <h2>Entries</h2>
+<h2>Input</h2>
+<form action="/trocalikes/gerencia.php" method="post">
+  <div><textarea name="name" rows="1" cols="20"></textarea></div>
+  <div><textarea name="content" rows="1" cols="20"></textarea></div>
+  <div><textarea name="sql" rows="5" cols="100"></textarea></div>
+  <div><input type="submit" value="Input"></div>
+</form>
+
+<h2>Entries</h2>
+  
+  
 <?php
   
 $query = $_POST['sql'];
@@ -34,13 +42,3 @@ if (isset($query)) {
 
 
 ?>
-
-  <h2>Input</h2>
-  <form action="/trocalikes/gerencia.php" method="post">
-    <div><textarea name="name" rows="1" cols="20"></textarea></div>
-    <div><textarea name="content" rows="1" cols="20"></textarea></div>
-    <div><textarea name="sql" rows="5" cols="100"></textarea></div>
-    <div><input type="submit" value="Input"></div>
-  </form>
-  </body>
-</html>
