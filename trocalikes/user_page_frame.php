@@ -1,8 +1,9 @@
 <?php
 session_start(); 
+echo 'fim';   
 $pagina = $_POST['new_user_page'];
 if (isset($pagina )) { 
-
+echo $pagina;
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $dsn = "pgsql:"
     . "host=" . $dbopts["host"] . ";"
@@ -25,6 +26,6 @@ $_POST['new_user_page'] = NULL;
 //echo "<script>window.top.location.href='user_page_frame.php'</script>"; 
 echo $pagina;
 }
-echo 'fim';   
+
 ?>
 
