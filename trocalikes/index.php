@@ -94,8 +94,9 @@ $(document).ready(function(){
     .done(function(data) {
 		if(data.success=='ok'){
 			$('#refresh').html(div);
+			console.log("data");
 		}else{
-		// show errors.
+			console.log("data");
 		}
     })
     .fail(function() {
