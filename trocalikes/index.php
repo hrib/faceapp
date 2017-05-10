@@ -78,6 +78,7 @@ echo $_SESSION["user_id"] . '<br>';
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
 ?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -85,9 +86,9 @@ $(document).ready(function(){
     alert('2');
 
    	$.ajax({
-        url: 'user_page_fram.php',
+        url: 'user_page_frame.php',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'text',
         data: {new_user_page: 'novapagina'},
     })
     .done(function(data) {
