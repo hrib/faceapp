@@ -77,12 +77,41 @@ echo $_SESSION["user_id"] . '<br>';
 //$user_id = '12345678901234567890';
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
+?>
+  
+<div align="right" id="user_page_frame">;
+<scrip>
+$('#envia').click(function()
+{
+    $.ajax({
+        url: user_page_frame.php,
+        type:'POST',
+        data:
+        {
+            pagina: new_user_page,
+            message: "zzzzz"
+        },
+        success: function(msg)
+        {
+            alert(msg);
+        }               
+    });
+});
+</scrip>   
+      <table  border="0">
+        <tr valign="middle">
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>Digite a URL da sua página nesse iframe: </b></font></td>
+        </tr>
+        <tr valign="middle">
+          <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
+        </tr>
+        <tr valign="middle">
+          <td align="left"><input type="submit" id="envia"></td>
+        </tr>        
+      </table>
+</div>;
 
-echo '<div align="right" id="user_page_frame">';
-include 'user_page_frame.php';
-echo '</div>';
-
-
+<?php
 
 
 try {  
