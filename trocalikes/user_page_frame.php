@@ -22,7 +22,8 @@ $result = $db->query($query);
 
 echo $query;
 $_POST['new_user_page'] = NULL;
-//echo "<script>window.top.location.href='user_page_frame.php'</script>";   
+//echo "<script>window.top.location.href='user_page_frame.php'</script>"; 
+echo $pagina;
 }
     
 ?>
