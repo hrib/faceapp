@@ -78,8 +78,7 @@ echo $_SESSION["user_id"] . '<br>';
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 echo $user_page . '<br>';
 ?>
-  
-<div align="right" id="user_page_frame">;
+
 <script>
 $('#envia').click(function()
 {
@@ -97,7 +96,11 @@ $('#envia').click(function()
         }               
     });
 });
-</script>   
+</script> 
+
+
+
+<div align="right" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
           <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>zDigite a URL da sua página nesse iframe: </b></font></td>
@@ -109,7 +112,7 @@ $('#envia').click(function()
           <td align="left"><input type="submit" id="envia"></td>
         </tr>        
       </table>
-</div>;
+</div>
 
 <?php
 
