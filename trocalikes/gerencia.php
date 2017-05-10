@@ -29,7 +29,7 @@ if (isset($query)) {
   echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $result->fetch(PDO::FETCH_BOTH)) {
       echo "<tr>";
-      vardump($row);
+      var_dump($row);
       echo "<td>" . htmlspecialchars($row[0]) . "</td>";
       echo "<td>" . htmlspecialchars($row[1]) . "</td>";
       echo "<td>" . htmlspecialchars($row[2]) . "</td>";
