@@ -1,6 +1,6 @@
 <h2>Input</h2>
 <form action="/trocalikes/gerencia.php" method="post">
-  <div><textarea name="content" value="SELECT * FROM tl_cadastro 'r 2"  rows="5" cols="20"></textarea>SELECT * FROM tl_cadastro ORDER BY id&#13;&#10 SELECT * FROM tl_cadastro; </div>
+  <div><textarea name="content" rows="5" cols="20">SELECT * FROM tl_cadastro ORDER BY id&#13;&#10 SELECT * FROM tl_cadastro; </textarea></div>
   <div><textarea name="sql" rows="5" cols="100">select * from tl_cadastro order by id</textarea></div>
   <div><input type="submit" value="Input"></div>
 </form>
