@@ -104,7 +104,7 @@ function atualiza_user_page()
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>zDigite a URL da sua página nesse iframe: </b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>1Digite a URL da sua página nesse iframe: </b></font></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
