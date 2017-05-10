@@ -86,10 +86,7 @@ $(document).ready(function(){
     $.ajax({
         url: "user_page_frame.php",
         type:'POST',
-        data:
-        {
-            pagina: "new_user_page",
-            message: "zzzzz"
+        pagina: 'new_user_page',
         },
         success: function(msg)
         {
@@ -105,7 +102,7 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>2Digite a URL da sua página nesse iframe: </b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>3Digite a URL da sua página nesse iframe: </b></font></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="text" name="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
