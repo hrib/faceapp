@@ -80,7 +80,7 @@ echo $user_page . '<br>';
 ?>
   
 <div align="right" id="user_page_frame">;
-<scrip>
+<script>
 $('#envia').click(function()
 {
     $.ajax({
@@ -97,7 +97,7 @@ $('#envia').click(function()
         }               
     });
 });
-</scrip>   
+</script>   
       <table  border="0">
         <tr valign="middle">
           <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>zDigite a URL da sua página nesse iframe: </b></font></td>
