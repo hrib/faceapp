@@ -100,7 +100,7 @@ $(document).ready(function(){
 			console.log(data);
 		}else{
 			console.log("done: success NOT ok");
-			$("#div_user_page").load(location.href+" #div_user_page>*","");
+			$("#div_user_page").html(data);
 			console.log(data);
 		}
     })
