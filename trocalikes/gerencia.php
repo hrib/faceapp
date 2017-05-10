@@ -31,11 +31,9 @@ if (isset($query)) {
   echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $result->fetch(PDO::FETCH_BOTH)) {
       echo "<tr>";
-      echo "<td>" . htmlspecialchars($row[0]) . "</td>";
-      echo "<td>" . htmlspecialchars($row[1]) . "</td>";
-      echo "<td>" . htmlspecialchars($row[2]) . "</td>";
-      echo "<td>" . htmlspecialchars($row[3]) . "</td>";
-      echo "<td>" . sizeof($row) . "</td>";
+      foreach($row as $item) {
+        echo "<td>" . htmlspecialchars($item) . "</td>";
+      }
       echo "</tr>";
   }
   echo "</table>";
