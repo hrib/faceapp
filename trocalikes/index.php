@@ -84,9 +84,9 @@ $(document).ready(function(){
  $("#envia").click(function(){
     alert('oimsg');
     $.ajax({
-        url: "user_page_frame.php",
+        url: 'user_page_frame.php',
         type:'POST',
-        pagina: 'new_user_page',
+        data: { pagina: 'new_user_page', location: 'Boston' }
         },
         success: function(msg)
         {
