@@ -97,7 +97,7 @@ $(document).ready(function(){
     .done(function(data) {
 	   	console.log(data);
 		document.getElementById("form_user_page").value = data;
-	   	$("form_user_page").prop('disabled', true);
+	   	document.getElementById("form_user_page").disabled = true;
     })
     .fail(function() {
         console.log("error");
