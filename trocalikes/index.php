@@ -151,6 +151,7 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
   echo "</table>";
 $retorno->closeCursor();
 
+sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE clicker_id = '" . $_SESSION['user_id'] . "' AND clicker_check = 'esperando';"); 
 
 ?>
   
