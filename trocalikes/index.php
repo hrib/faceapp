@@ -143,7 +143,7 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       $check_face = checa_clique_post($row['dono_post'], $row['clicker_id'], $fb, $accessToken);
       echo "<td>" . htmlspecialchars($row['dono_post']) . "</td>";
       echo "<td>" . htmlspecialchars($row['clicker_id']) . "</td>";
-      echo "<td>" . htmlspecialchars($check_face) . "</td>";	
+      //echo "<td>" . htmlspecialchars($check_face) . "</td>";	
       echo "</tr>";
   }
   echo "</table>";
