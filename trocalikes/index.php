@@ -167,7 +167,6 @@ $sobra = sql_query("SELECT T1.clicker_id, (T1.n_creditos - T2.n_usados_prontos) 
   echo "</table>";
 $sobra->closeCursor();
 
-alocador_de_posts();
 
 sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando' FROM (SELECT id FROM tl_cliques WHERE  clicker_id = ''  AND clicker_check = 'gerado' ORDER BY tempo LIMIT 9) AS T WHERE tl_cliques.id = T.id;");
 $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
