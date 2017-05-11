@@ -1,5 +1,5 @@
 <?php
-$dono_post = 135158248503;
+$dono_post = 10157159468328504;
 
 try {  
   $response = $fb->get('/'. $dono_post .'?fields=likes.limit(25){id}', $accessToken);
