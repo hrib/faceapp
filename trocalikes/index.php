@@ -85,28 +85,41 @@ $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
- $("#envia").click(function(){
-   novapagina = document.getElementById("form_user_page").value;
-	 
-   $.ajax({
-        url: 'user_page_frame.php',
-        type: 'POST',
-        dataType: 'text',
-        data: {new_user_page: novapagina},
-    })
-    .done(function(data) {
-	   	console.log(data);
-		document.getElementById("form_user_page").value = data;
-	   	document.getElementById("form_user_page").disabled = true;
-    })
-    .fail(function() {
-        console.log("error");
-    })
-    .always(function() {
-        console.log("complete");
-    });
+	
+   novapagina = document.getElementById("form_user_page").value;	
+   if (novapagina = "") {
+	document.getElementById("form_user_page").disabled = false;   
+   } else {
+	document.getElementById("form_user_page").disabled = true;    
+   }
+	
+ $("#botao_pagina").click(function(){
+   	novapagina = document.getElementById("form_user_page").value;
    
-
+	if (document.getElementById("form_user_page").disabled) {
+		document.getElementById("form_user_page").disabled = false; 
+		document.getElementById("botao_pagina").value = "Salvar";
+   	} else {
+		$.ajax({
+			url: 'user_page_frame.php',
+			type: 'POST',
+			dataType: 'text',
+			data: {new_user_page: novapagina},
+		})
+		.done(function(data) {
+			console.log(data);
+			document.getElementById("form_user_page").value = data;
+			document.getElementById("form_user_page").disabled = true;
+			document.getElementById("botao_pagina").value = "Editar";
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+   
+   	} 
  });
 });
 </script> 
@@ -122,7 +135,7 @@ $(document).ready(function(){
           <td align="left"><input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="submit" id="envia"></td>
+          <td align="left"><input type="submit" id="botao_pagina" value="Editar"></td>
         </tr>        
       </table>
 </div>
