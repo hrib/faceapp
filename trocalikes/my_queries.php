@@ -47,14 +47,20 @@ try {
 }
   
 $graphNode = $response->getGraphNode();
-echo '<table border="1" style="font-family:arial; font-size:9px;">';
+//echo '<table border="1" style="font-family:arial; font-size:9px;">';
+check_click = "nao clicado";
 foreach ($graphNode['likes'] as $likes) {
-    echo '<tr>';
-    echo '<td>' . $likes['id'] . '</td>';
-    echo '</tr>';
+    if( $likes['id'] == $clicker_id)
+    {
+        check_click = "clicado";
+        break;
+    }
+    //echo '<tr>';
+    //echo '<td>' . $likes['id'] . '</td>';
+    //echo '</tr>';
 } 
-echo '</table>';
-
+//echo '</table>';
+return check_click;
 }
 
 
