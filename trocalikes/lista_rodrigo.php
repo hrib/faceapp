@@ -1,4 +1,5 @@
 <?php
+//$paginaID = 'rconstantinoliberal';
 try {  
   $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
