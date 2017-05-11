@@ -177,7 +177,12 @@ foreach ($graphNode['posts'] as $posts) {
 echo '</table>';
 
 ?>
-
+  
+iframe
+<br>
+<iframe src="https://www.facebook.com/rconstantinoliberal/posts/1172359352892530/"></iframe> 
+<br>
+fim iframe
 <style>
 html { 
   background: url("http://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_1.jpg") no-repeat center center fixed; 
