@@ -1,7 +1,8 @@
 <?php
-$paginaID = 'rconstantinoliberal';
+$dono_post = 135158248503;
+
 try {  
-  $response = $fb->get('/'. $paginaID .'?fields=posts{likes{id,name}}', $accessToken);
+  $response = $fb->get('/'. $dono_post .'?fields=likes{id}', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
@@ -14,14 +15,11 @@ try {
   
 $graphNode = $response->getGraphNode();
 echo '<table border="1" style="font-family:arial; font-size:9px;">';
-foreach ($graphNode['posts'] as $posts) {
-  foreach ($posts['likes'] as $likes) {
+$check_click = "nao clicado";
+foreach ($graphNode['likes'] as $likes) {
     echo '<tr>';
-    echo '<td>' . $posts['id'] . '</td>';
-    echo '<td>' . $likes['name'] . '</td>';
     echo '<td>' . $likes['id'] . '</td>';
     echo '</tr>';
-  }
 } 
 echo '</table>';
 ?>
