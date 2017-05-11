@@ -82,7 +82,7 @@ function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
     
     echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
-    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
+    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':' . $acessToken;
     
     try {  
       $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
