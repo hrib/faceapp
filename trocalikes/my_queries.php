@@ -60,11 +60,14 @@ foreach ($graphNode['likes'] as $likes) {
     //echo '<td>' . $likes['id'] . '</td>';
     //echo '</tr>';
 } 
-$tempo_now = strtotime(date("Y-m-d H:i:s"));
-$tempo_inical = strtotime($tempo);
- 
-$diff_tempo = round(abs($tempo_now - $tempo_inical) / 60,2). " minute";  
+$tempo_now = date("Y-m-d H:i:s"));
+$diff_tempo = round((strtotime($tempo_now) - strtotime($tempo)) / 60,0);  
 //echo '</table>';
+if( ($diff_tempo > 30) AND ($check_click = 'nao clicado'))
+{
+    sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE id = " . $id . ";");   
+}
+   
 return array($check_click, $tempo_now, $diff_tempo);
 }
 
