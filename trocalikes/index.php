@@ -130,7 +130,7 @@ $(document).ready(function(){
 <?php
 
 
-require_once('lista_rodrigo.php');
+//require_once('lista_rodrigo.php');
 require_once('lista_IE.php');
 
 $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
