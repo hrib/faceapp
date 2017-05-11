@@ -2,7 +2,7 @@
 $dono_post = 135158248503;
 
 try {  
-  $response = $fb->get('/'. $dono_post .'?fields=likes{id}', $accessToken);
+  $response = $fb->get('/'. $dono_post .'?fields=likes.limit(500){id}', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
