@@ -162,7 +162,7 @@ $sobra = sql_query("SELECT T1.clicker_id, (T1.n_creditos - T2.n_usados_prontos) 
         echo "<td>" . htmlspecialchars($item) . "</td>";
       }
       echo "</tr>";
-      gerador_de_posts($fb, $acessToken, $row['clicker_id'], $row['sobra']);	  
+      gerador_de_posts($fb, $accessToken, $row['clicker_id'], $row['sobra']);	  
   }
   echo "</table>";
 $sobra->closeCursor();
