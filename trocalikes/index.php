@@ -86,7 +86,6 @@ $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 <script>
 $(document).ready(function(){
  $("#envia").click(function(){
-   alert('2');
    novapagina = document.getElementById("form_user_page").value;
 	 
    $.ajax({
@@ -98,6 +97,7 @@ $(document).ready(function(){
     .done(function(data) {
 	   	console.log(data);
 		document.getElementById("form_user_page").value = data;
+	   	$("form_user_page").prop('disabled', true);
     })
     .fail(function() {
         console.log("error");
