@@ -67,6 +67,7 @@ if( ($diff_tempo > 30) AND ($check_click == 'nao clicado'))
 {
     sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE id = " . $id . ";");   
 }
+  
    
 return array($check_click, $tempo_now, $diff_tempo);
 }
