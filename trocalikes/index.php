@@ -153,8 +153,17 @@ $retorno->closeCursor();
 
 sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE clicker_id = '" . $_SESSION['user_id'] . "' AND clicker_check = 'esperando';"); 
 
-sql_query("SELECT T1.clicker_id, (T1.n_creditos - T2.n_usados_prontos) AS sobra FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 JOIN (SELECT dono_id, COUNT(*) as n_usados_prontos FROM tl_cliques WHERE clicker_check = 'gerado' OR clicker_check = 'esperando' OR clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id;"); 
-
+$sobra = sql_query("SELECT T1.clicker_id, (T1.n_creditos - T2.n_usados_prontos) AS sobra FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 JOIN (SELECT dono_id, COUNT(*) as n_usados_prontos FROM tl_cliques WHERE clicker_check = 'gerado' OR clicker_check = 'esperando' OR clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id;"); 
+  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  while ($row = $sobra->fetch(PDO::FETCH_ASSOC)) {
+      echo "<tr>";
+      foreach($row as $item) {
+        echo "<td>" . htmlspecialchars($item) . "</td>";
+      }
+      echo "</tr>";
+  }
+  echo "</table>";
+$sobra->closeCursor();
 
 ?>
   
