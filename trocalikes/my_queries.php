@@ -75,7 +75,7 @@ return array($check_click, $tempo_now, $diff_tempo);
 function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
     
     $paginaID = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
-    
+    $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
     try {  
       $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
     } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -90,6 +90,7 @@ function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
 
     $graphNode = $response->getGraphNode();
     $contrador = 0;
+    $gera_n = 99999;
     $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post) VALUES ";
     echo '<table border="1" style="font-family:arial; font-size:9px;">';
     foreach ($graphNode['posts'] as $posts) {
@@ -97,11 +98,16 @@ function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
         echo '<td>' . $posts['id'] . '</td>';
         echo '</tr>';
         $contador = $contrador + 1;
+        if( $contador > $gera_n)
+        {
+            break;
+        }
         $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "'),";
+        
     } 
     echo '</table>';
     
-    $query = substr($query, strlen($query) - 1);
+    $query = substr($query, 0, strlen($query) - 1);
     sql_query($query);
     
     
