@@ -99,7 +99,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
     $graphNode = $response->getGraphNode();
     $contrador = 0;
     //$gera_n = 99999;
-    $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post) VALUES ";
+    $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
     //echo '<table border="1" style="font-family:arial; font-size:9px;">';
     foreach ($graphNode['posts'] as $posts) {
         //echo '<tr>';
@@ -110,7 +110,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         {
             break;
         }
-        $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "'),";
+        $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "', 'gerado'),";
         
     } 
     //echo '</table>';
