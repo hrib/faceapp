@@ -61,7 +61,9 @@ foreach ($graphNode['likes'] as $likes) {
     //echo '</tr>';
 } 
 $tempo_now = date("Y-m-d H:i:s");
-$diff_tempo = $tempo_now - $tempo;
+$tempo_inical = strtotime($tempo);
+ 
+$diff_tempo = round(abs($tempo_now - $tempo_inical) / 60,2). " minute";  
 //echo '</table>';
 return array($check_click, $tempo_now, $diff_tempo);
 }
