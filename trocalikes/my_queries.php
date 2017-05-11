@@ -72,6 +72,39 @@ if( ($diff_tempo > 30) AND ($check_click == 'nao clicado'))
 return array($check_click, $tempo_now, $diff_tempo);
 }
 
+function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
+    
+    $paginaID = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
+    
+    try {  
+      $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+     // When Graph returns an error
+     echo 'Graph returned an error: ' . $e->getMessage();
+     exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+     // When validation fails or other local issues
+     echo 'Facebook SDK returned an error: ' . $e->getMessage();
+     exit;
+    }
 
+    $graphNode = $response->getGraphNode();
+    $contrador = 0;
+    $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post) VALUES ";
+    echo '<table border="1" style="font-family:arial; font-size:9px;">';
+    foreach ($graphNode['posts'] as $posts) {
+        echo '<tr>';
+        echo '<td>' . $posts['id'] . '</td>';
+        echo '</tr>';
+        $contador = $contrador + 1;
+        $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "'),";
+    } 
+    echo '</table>';
+    
+    $query = substr($query, strlen($query) - 1);
+    sql_query($query);
+    
+    
+}
 
 ?>
