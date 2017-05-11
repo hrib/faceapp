@@ -1,6 +1,26 @@
 <?php
+function todos_esperando(){
+
+    
+}
 
 
+function sql_query($query){
+    
+$dbopts = parse_url(getenv('DATABASE_URL'));
+$dsn = "pgsql:"
+    . "host=" . $dbopts["host"] . ";"
+    . "dbname=". ltrim($dbopts["path"],'/') . ";"
+    . "user=" . $dbopts["user"] . ";"
+    . "port=" . $dbopts["port"] . ";"
+    . "sslmode=require;"
+    . "password=" . $dbopts["pass"];
+    
+$db = new PDO($dsn);
+$result = $db->query($query);   
+return $result;    
+    
+}
 
 function db_usuario($user_id, $user_name){
     
