@@ -2,6 +2,7 @@
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('my_queries.php');
+// AO MUDAR A PAGINA NO CADASTRO, TEM QUE RESETAR OS POTS GERADOS EM ABERTO DO USUARIO
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
@@ -161,6 +162,7 @@ $sobra = sql_query("SELECT T1.clicker_id, (T1.n_creditos - T2.n_usados_prontos) 
         echo "<td>" . htmlspecialchars($item) . "</td>";
       }
       echo "</tr>";
+      gerador_de_posts($fb, $acessToken, $row['clicker_id'], $row['sobra']);	  
   }
   echo "</table>";
 $sobra->closeCursor();
