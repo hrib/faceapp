@@ -87,7 +87,7 @@ $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 $(document).ready(function(){
 	
    novapagina = document.getElementById("form_user_page").value;	
-   if (novapagina = "") {
+   if (novapagina == "") {
 	document.getElementById("form_user_page").disabled = false;   
    } else {
 	document.getElementById("form_user_page").disabled = true;    
