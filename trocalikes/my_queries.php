@@ -35,7 +35,7 @@ function db_usuario($user_id, $user_name){
 function checa_clique_post($dono_post, $clicker_id, $fb, $accessToken){
 
 try {  
-  $response = $fb->get('/'. $dono_post .'?fields=likes{id}', $accessToken);
+  $response = $fb->get('/'. $dono_post .'?fields=likes.limit(500){id}', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
