@@ -176,6 +176,21 @@ foreach ($graphNode['posts'] as $posts) {
 } 
 echo '</table>';
 
+
+$retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
+
+  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  while ($row = $retorno->fetch(PDO::FETCH_ASSOC)) {
+      echo "<tr>";
+      foreach($row as $item) {
+        echo "<td>" . htmlspecialchars($item) . "</td>";
+      }
+      echo "</tr>";
+  }
+  echo "</table>";
+$retorno->closeCursor();
+
+
 ?>
   
 iframe1
