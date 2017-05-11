@@ -180,7 +180,9 @@ echo '</table>';
   
 iframe
 <br>
-<iframe src="https://www.facebook.com/rconstantinoliberal/posts/1172359352892530/"></iframe> 
+
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHugoMayfair%2Fposts%2F1686406321664768&width=500" width="500" height="232" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
 <br>
 fim iframe
 <style>
