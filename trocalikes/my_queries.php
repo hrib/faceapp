@@ -75,6 +75,7 @@ return array($check_click, $tempo_now, $diff_tempo);
 function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
     
     $paginaID = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
+    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
     echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     try {  
