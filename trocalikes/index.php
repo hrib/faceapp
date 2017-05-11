@@ -167,6 +167,26 @@ $sobra = sql_query("SELECT T1.clicker_id, (T1.n_creditos - T2.n_usados_prontos) 
   echo "</table>";
 $sobra->closeCursor();
 
+alocador_de_posts();
+
+sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando' FROM (SELECT id FROM tl_cliques WHERE  clicker_id = ''  AND clicker_check = 'gerado' ORDER BY tempo LIMIT 9) AS T WHERE tl_cliques.id = T.id;");
+$frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
+  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  while ($row = $frames->fetch(PDO::FETCH_ASSOC)) {
+      echo "<tr>";
+      foreach($row as $item) {
+        echo "<td>" . htmlspecialchars($item) . "</td>";
+	$page_esperando_id = stristr($item,'_',true) ;
+	$post_esperando_id = substr(stristr($item,'_',false),1);
+	echo "<td>" . htmlspecialchars($page_esperando_id) . "</td>";
+	echo "<td>" . htmlspecialchars($post_esperando_id) . "</td>";
+	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='232' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe></td>";
+      }
+      echo "</tr>";
+  }
+  echo "</table>";
+$frames->closeCursor();
+
 ?>
   
 iframe1
