@@ -48,11 +48,11 @@ try {
   
 $graphNode = $response->getGraphNode();
 //echo '<table border="1" style="font-family:arial; font-size:9px;">';
-check_click = "nao clicado";
+$check_click = "nao clicado";
 foreach ($graphNode['likes'] as $likes) {
     if( $likes['id'] == $clicker_id)
     {
-        check_click = "clicado";
+        $check_click = "clicado";
         break;
     }
     //echo '<tr>';
@@ -60,7 +60,7 @@ foreach ($graphNode['likes'] as $likes) {
     //echo '</tr>';
 } 
 //echo '</table>';
-return check_click;
+return $check_click;
 }
 
 
