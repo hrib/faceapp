@@ -72,7 +72,7 @@ if( ($diff_tempo > 30) AND ($check_click == 'nao clicado'))
 return array($check_click, $tempo_now, $diff_tempo);
 }
 
-function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
+function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
     
     $result = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
     $retorno = $result->fetch();
@@ -82,7 +82,7 @@ function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
     
     echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
-    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':' . $acessToken;
+    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     
     try {  
       $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
