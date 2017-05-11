@@ -9,7 +9,7 @@ SELECT * FROM tl_cadastro ORDER BY id;
 CREATE TABLE tl_cliques (id SERIAL, tempo TIMESTAMP, dono_id VARCHAR(30), dono_page VARCHAR(80), dono_post VARCHAR(100), clicker_id VARCHAR(30), clicker_check INT);
 INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post , clicker_id , clicker_check) VALUES (now(), 'dono id 123', 'dono page site', 'dono post postagem', 'click erid identidade', 0);  
     </textarea></div>
-  <div><textarea name="sql" rows="5" cols="180">select * from tl_cadastro order by id</textarea></div>
+  <div><textarea name="sql" rows="5" cols="180">SELECT * FROM tl_cliques ORDER BY id; </textarea></div>
   <div><input type="submit" value="Input"></div>
 </form>
 
