@@ -60,7 +60,7 @@ foreach ($graphNode['likes'] as $likes) {
     //echo '<td>' . $likes['id'] . '</td>';
     //echo '</tr>';
 } 
-$tempo_now = date("Y-m-d H:i:s"));
+$tempo_now = date("Y-m-d H:i:s");
 $diff_tempo = round((strtotime($tempo_now) - strtotime($tempo)) / 60,0);  
 //echo '</table>';
 if( ($diff_tempo > 30) AND ($check_click == 'nao clicado'))
