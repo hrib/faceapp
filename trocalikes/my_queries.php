@@ -76,6 +76,7 @@ function gerador_de_posts($fb, $acessToken, $usuario, $gera_n){
     
     $paginaID = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
     $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
+    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     try {  
       $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
     } catch(Facebook\Exceptions\FacebookResponseException $e) {
