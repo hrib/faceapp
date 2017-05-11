@@ -32,7 +32,7 @@ function db_usuario($user_id, $user_name){
     
 }
 
-function checa_clique_post($id, $dono_post, $clicker_id, $fb, $accessToken){
+function checa_clique_post($id, $tempo, $dono_post, $clicker_id, $fb, $accessToken){
 
 try {  
   $response = $fb->get('/'. $dono_post .'?fields=likes.limit(1000){id}', $accessToken);
@@ -60,8 +60,10 @@ foreach ($graphNode['likes'] as $likes) {
     //echo '<td>' . $likes['id'] . '</td>';
     //echo '</tr>';
 } 
+$tempo_now = date("Y-m-d H:i:s");
+$diff_tempo = $tempo_now - $tempo;
 //echo '</table>';
-return $check_click;
+return array($check_click, $tempo_now, $diff_tempo);
 }
 
 
