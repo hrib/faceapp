@@ -40,20 +40,6 @@ if (! isset($accessToken)) {
   exit;
 }
 
-// Logged in
-//echo '<h3>Signed Request</h3>';
-//var_dump($helper->getSignedRequest());
-
-//echo '<h3>Access Token</h3>';
-//var_dump($accessToken->getValue());
-
-
-$fb = new Facebook\Facebook([
-  'app_id' => $app_id,
-  'app_secret' => $app_secret,
-  'default_graph_version' => 'v2.9', // change to 2.5
-]);
-
 
 try {  
   $response = $fb->get('/me?fields=id,name', $accessToken);
@@ -73,13 +59,8 @@ echo $_SESSION["user_name"] . '<br>';
 $_SESSION["user_id"] = $graphNode['id'];
 echo $_SESSION["user_id"] . '<br>';
 
-
-//$user_id = '12345678901234567890';
-//echo '<div align="left" id="div_user_page">' ;
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
-//echo '<input type="text" id="form_user_page">';
-//echo $user_page . '<br>';
-//echo '</div>' ;
+
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
