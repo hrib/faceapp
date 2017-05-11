@@ -32,7 +32,7 @@ function db_usuario($user_id, $user_name){
     
 }
 
-function checa_clique_post($dono_post, $clicker_id, $fb, $accessToken){
+function checa_clique_post($id, $dono_post, $clicker_id, $fb, $accessToken){
 
 try {  
   $response = $fb->get('/'. $dono_post .'?fields=likes.limit(1000){id}', $accessToken);
@@ -53,6 +53,7 @@ foreach ($graphNode['likes'] as $likes) {
     if( $likes['id'] == $clicker_id)
     {
         $check_click = "clicado";
+        sql_query("UPDATE tl_cliques SET clicker_check = 'clicado' WHERE id = " . $id . ";"); 
         break;
     }
     //echo '<tr>';
