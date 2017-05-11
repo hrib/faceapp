@@ -75,11 +75,11 @@ echo $_SESSION["user_id"] . '<br>';
 
 
 //$user_id = '12345678901234567890';
-echo '<div align="left" id="div_user_page">' ;
+//echo '<div align="left" id="div_user_page">' ;
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
-echo '<input type="text" id="form_user_page">';
-echo $user_page . '<br>';
-echo '</div>' ;
+//echo '<input type="text" id="form_user_page">';
+//echo $user_page . '<br>';
+//echo '</div>' ;
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -87,7 +87,7 @@ echo '</div>' ;
 $(document).ready(function(){
  $("#envia").click(function(){
    alert('2');
-   novapagina = document.getElementById("new_user_page").value;
+   novapagina = document.getElementById("form_user_page").value;
 	 
    $.ajax({
         url: 'user_page_frame.php',
@@ -116,10 +116,10 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>6Digite a URL da sua página nesse iframe: </b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>Digite a URL da sua página nesse iframe: </b></font></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="text" id="new_user_page" style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
+          <td align="left"><input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="submit" id="envia"></td>
