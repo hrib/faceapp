@@ -7,7 +7,6 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $app_name = 'trocalikes';
 
-$paginaID = 'rconstantinoliberal';
 
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
@@ -131,7 +130,7 @@ $(document).ready(function(){
 <?php
 
 
-require_once('lista_rodrigo.php');
+//require_once('lista_rodrigo.php');
 
 $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
 
