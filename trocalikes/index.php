@@ -179,7 +179,7 @@ $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_
 	$post_esperando_id = substr(stristr($item,'_',false),1);
 	echo "<td>" . htmlspecialchars($page_esperando_id) . "</td>";
 	echo "<td>" . htmlspecialchars($post_esperando_id) . "</td>";
-	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='500' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe></td>";
+	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0' allowTransparency='true'></iframe></td>";
       }
       echo "</tr>";
   }
