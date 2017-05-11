@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
-require_once('sql_queries.php');
+require_once('my_queries.php');
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
@@ -140,7 +140,7 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       foreach($row as $item) {
         echo "<td>" . htmlspecialchars($item) . "</td>";
       }
-      $check_face = checa_clique_post($row['dono_post'], $row['clicker_id'], $accessToken);
+      $check_face = checa_clique_post($row['dono_post'], $row['clicker_id'], $fb, $accessToken);
       echo "<td>" . htmlspecialchars($row['dono_post']) . "</td>";
       echo "<td>" . htmlspecialchars($row['clicker_id']) . "</td>";
       echo "<td>" . htmlspecialchars($check_face) . "</td>";	
