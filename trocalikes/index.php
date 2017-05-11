@@ -103,6 +103,7 @@ $(document).ready(function(){
 	if (document.getElementById("form_user_page").disabled) {
 		document.getElementById("form_user_page").disabled = false; 
 		document.getElementById("botao_pagina").value = "Salvar";
+		document.getElementById("texto_pagina").innerHTML="Digite a URL da sua página: ";
 
    	} else {
 		$.ajax({
@@ -116,6 +117,7 @@ $(document).ready(function(){
 			document.getElementById("form_user_page").value = data;
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
+			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
 		})
 		.fail(function() {
 			console.log("error");
