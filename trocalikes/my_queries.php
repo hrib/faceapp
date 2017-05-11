@@ -80,9 +80,9 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
     $result->closeCursor();
     
     
-    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
+    //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
-    echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
+    //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
     
     try {  
       $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
@@ -98,13 +98,13 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
 
     $graphNode = $response->getGraphNode();
     $contrador = 0;
-    $gera_n = 99999;
+    //$gera_n = 99999;
     $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post) VALUES ";
-    echo '<table border="1" style="font-family:arial; font-size:9px;">';
+    //echo '<table border="1" style="font-family:arial; font-size:9px;">';
     foreach ($graphNode['posts'] as $posts) {
-        echo '<tr>';
-        echo '<td>' . $posts['id'] . '</td>';
-        echo '</tr>';
+        //echo '<tr>';
+        //echo '<td>' . $posts['id'] . '</td>';
+        //echo '</tr>';
         $contador = $contrador + 1;
         if( $contador > $gera_n)
         {
@@ -113,7 +113,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "'),";
         
     } 
-    echo '</table>';
+    //echo '</table>';
     
     $query = substr($query, 0, strlen($query) - 1);
     sql_query($query);
