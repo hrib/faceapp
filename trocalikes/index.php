@@ -140,9 +140,10 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       foreach($row as $item) {
         echo "<td>" . htmlspecialchars($item) . "</td>";
       }
-      echo "<td>" . checa_clique_post($row['dono_post'], $row['clicker_id'], $fb, $accessToken) . "</td>";
+  
       echo "<td>" . htmlspecialchars($row['dono_post']) . "</td>";
       echo "<td>" . htmlspecialchars($row['clicker_id']) . "</td>";
+      echo "<td>" . checa_clique_post($row['dono_post'], $row['clicker_id'], $fb, $accessToken) . "</td>";	  
       //echo "<td>" . htmlspecialchars($check_face) . "</td>";	
       echo "</tr>";
   }
