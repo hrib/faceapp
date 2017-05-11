@@ -156,7 +156,7 @@ foreach ($graphNode['posts'] as $posts) {
   }
 } 
 echo '</table>';
-
+require_once('lista_rodrigo.php');
 
 $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
 
@@ -166,6 +166,8 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       foreach($row as $item) {
         echo "<td>" . htmlspecialchars($item) . "</td>";
       }
+      $check_face = checa_clique_post($row['dono_post'], $row['clicker_id']);
+      echo "<td>" . htmlspecialchars($check_face) . "</td>";	
       echo "</tr>";
   }
   echo "</table>";
