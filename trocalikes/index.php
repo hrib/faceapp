@@ -88,9 +88,13 @@ $(document).ready(function(){
 	
    novapagina = document.getElementById("form_user_page").value;	
    if (novapagina == "") {
-	document.getElementById("form_user_page").disabled = false;   
+	document.getElementById("form_user_page").disabled = false;
+	document.getElementById("botao_pagina").value = "Salvar";
+        document.getElementById("texto_pagina").innerHTML="Digite a URL da sua página: ";
    } else {
-	document.getElementById("form_user_page").disabled = true;    
+	document.getElementById("form_user_page").disabled = true;
+	document.getElementById("botao_pagina").value = "Editar";
+	document.getElementById("texto_pagina").innerHTML="Sua página: ";   
    }
 	
  $("#botao_pagina").click(function(){
@@ -99,6 +103,7 @@ $(document).ready(function(){
 	if (document.getElementById("form_user_page").disabled) {
 		document.getElementById("form_user_page").disabled = false; 
 		document.getElementById("botao_pagina").value = "Salvar";
+
    	} else {
 		$.ajax({
 			url: 'user_page_frame.php',
@@ -129,13 +134,13 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>Digite a URL da sua página nesse iframe: </b></font></td>
+          <td><span id="texto_pagina"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b>URL</b></font></span></td>
         </tr>
         <tr valign="middle">
           <td align="left"><input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;"></td>
         </tr>
         <tr valign="middle">
-          <td align="left"><input type="submit" id="botao_pagina" value="Editar"></td>
+          <td align="left"><input type="submit" id="botao_pagina" value="Botao"></td>
         </tr>        
       </table>
 </div>
