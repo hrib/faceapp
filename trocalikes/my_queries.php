@@ -63,7 +63,7 @@ foreach ($graphNode['likes'] as $likes) {
 $tempo_now = date("Y-m-d H:i:s"));
 $diff_tempo = round((strtotime($tempo_now) - strtotime($tempo)) / 60,0);  
 //echo '</table>';
-if( ($diff_tempo > 30) AND ($check_click = 'nao clicado'))
+if( ($diff_tempo > 30) AND ($check_click == 'nao clicado'))
 {
     sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE id = " . $id . ";");   
 }
