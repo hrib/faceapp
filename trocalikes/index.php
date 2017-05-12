@@ -2,7 +2,10 @@
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('my_queries.php');
-// AO MUDAR A PAGINA NO CADASTRO, TEM QUE RESETAR OS POTS GERADOS EM ABERTO DO USUARIO
+// AO MUDAR A PAGINA NO CADASTRO, TEM QUE RESETAR OS POST GERADOS EM ABERTO DO USUARIO
+// SHARED VIDEOS mostram post da pagina original no iframe. Bloquear shared video
+// Limite para checar likes = 1000 likes
+// iframes tem que auto-atualizar a cada 30min, que e' o tempo para expiracao do 'esperando'.
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
@@ -179,7 +182,7 @@ $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_
 	$post_esperando_id = substr(stristr($item,'_',false),1);
 	echo "<td>" . htmlspecialchars($page_esperando_id) . "</td>";
 	echo "<td>" . htmlspecialchars($post_esperando_id) . "</td>";
-	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0' allowTransparency='true'></iframe></td>";
+	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0' allowTransparency='false'></iframe></td>";
       }
       echo "</tr>";
   }
@@ -187,7 +190,7 @@ $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_
 $frames->closeCursor();
 
 ?>
-  
+<!--  
 iframe1
 <br>
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHugoMayfair%2Fposts%2F1686406321664768&width=500" width="500" height="232" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -201,6 +204,7 @@ iframe3
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D1072132882921227%26id%3D798157940318724&width=500" width="500" height="305" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 <br>
 fim iframe
+-->
 <style>
 html { 
   background: url("http://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_1.jpg") no-repeat center center fixed; 
