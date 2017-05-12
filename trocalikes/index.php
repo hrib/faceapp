@@ -6,6 +6,7 @@ require_once('my_queries.php');
 // SHARED VIDEOS mostram post da pagina original no iframe. Bloquear shared video
 // Limite para checar likes = 1000 likes
 // iframes tem que auto-atualizar a cada 30min, que e' o tempo para expiracao do 'esperando'.
+// se for gerado um post_id que o cliente ja clicou, esse post_id nunca sera oferecido e 'gerado' ate um novo usuario aparecer.
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
