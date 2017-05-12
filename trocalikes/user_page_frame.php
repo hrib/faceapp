@@ -30,7 +30,7 @@ $user_id = $_SESSION["user_id"];
         $accessToken = $_SESSION["token"];
         
         //$paginaID = substr($pagina, 25, strlen($pagina) - 26);
-        $paginaID = $pagina
+        $paginaID = $pagina;
         $paginaFull = 'https://www.facebook.com/'. $paginaID .'/';
         $erro = '';
         try {  
