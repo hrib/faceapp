@@ -131,7 +131,7 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b><span id="texto_pagina">URL</span></b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:12px;"><b><span id="texto_pagina">URL</span></b></font></td>
           <td align="left">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</td>
           <td align="left"><input type="submit" id="botao_pagina" value="Botao"></td>
         </tr>
