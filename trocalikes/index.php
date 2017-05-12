@@ -107,7 +107,7 @@ $(document).ready(function(){
 			data: {new_user_page: novapagina},
 		})
 		.done(function(data) {
-			console.log(data.resultado['pagina']);
+			console.log(JSON.stringify(jsonStr));
 			document.getElementById("form_user_page").value = data;
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
