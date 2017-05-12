@@ -135,9 +135,11 @@ $(document).ready(function(){
           <td align="left">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</td>
           <td align="left"><input type="submit" id="botao_pagina" value="Botao"></td>
         </tr>
+	<tr valign="middle">
 	  <td></td>
 	  <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="resposta"></span></b></font></td>
           <td></td>
+        </tr>
       </table>
 </div>
 
