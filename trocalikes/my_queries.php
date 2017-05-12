@@ -100,27 +100,32 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         }
 
         $graphNode = $response->getGraphNode();
-        $contador = 1;
+        //$contador = 1;
         $n_posts = count($graphNode['posts']);
-        $randomico = mt_rand (1, $n_posts);
-        echo $graphNode['posts'][$randomico]['id'];
-        echo $n_posts;
+       
         //$gera_n = 99999;
         $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
         //echo '<table border="1" style="font-family:arial; font-size:9px;">';
-        foreach ($graphNode['posts'] as $posts) {
+        //foreach ($graphNode['posts'] as $posts) {
             //echo '<tr>';
             //echo '<td>' . $posts['id'] . '</td>';
             //echo '</tr>';
-            if( $contador > $gera_n)
-            {
-                break;
-            }
+            for ($x = 1; $x <= $gera_n; $x++) {
+                $randomico = mt_rand (0, $n_posts - 1);
+                $postid = $graphNode['posts'][$randomico]['id'];
+                //echo $n_posts;
+                $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" .  $postid . "', 'gerado'),";
+            } 
+        
+            //if( $contador > $gera_n)
+            //{
+            //    break;
+            //}
             
-            $contador = $contador + 1;
-            $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "', 'gerado'),";
+            //$contador = $contador + 1;
+            
 
-        } 
+        //} 
         //echo '</table>';
 
         $query = substr($query, 0, strlen($query) - 1);
