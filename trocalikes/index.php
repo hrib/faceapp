@@ -149,7 +149,6 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       echo "<td>" . $check_inicial[0] . "</td>";	
       echo "<td>" . $check_inicial[1] . "</td>";
       echo "<td>" . $check_inicial[2] . "</td>";
-      //echo "<td>" . htmlspecialchars($check_face) . "</td>";	
       echo "</tr>";
   }
   echo "</table>";
