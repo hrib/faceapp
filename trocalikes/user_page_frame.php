@@ -27,7 +27,7 @@ $user_id = $_SESSION["user_id"];
           'default_graph_version' => 'v2.9',
           ]);
     
-        $accessToken = $fb->getToken();
+        $accessToken = $_SESSION["token"];
         
         $paginaID = substr($pagina, 25, strlen($pagina) - 26);
         echo "page:".$paginaID;
