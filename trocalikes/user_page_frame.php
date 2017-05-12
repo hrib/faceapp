@@ -30,32 +30,43 @@ $user_id = $_SESSION["user_id"];
         $accessToken = $_SESSION["token"];
         
         $paginaID = substr($pagina, 25, strlen($pagina) - 26);
-        echo "page:".$paginaID;
-        //echo "token:".$accessToken;
+        $erro = '';
         try {  
           $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
          // When Graph returns an error
-         echo 'Graph returned an error: ' . $e->getMessage();
-         exit;
+         $erro = 'Graph returned an error: ' . $e->getMessage();
+         //exit;
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
          // When validation fails or other local issues
-         echo 'Facebook SDK returned an error: ' . $e->getMessage();
-         exit;
+         $erro = 'Facebook SDK returned an error: ' . $e->getMessage();
+         //exit;
         }
     
-        $graphNode = $response->getGraphNode();
-        $n_posts = count($graphNode['posts']);
-        echo $n_posts;
-    
+        //echo $n_posts;
+        if(($erro == ''))
+        {
+            
+            $graphNode = $response->getGraphNode();
+            $n_posts = count($graphNode['posts']);
+            $erro = 'n'.$n_posts;
+            if(isset($n_posts))
+            {
+                $query = "UPDATE tl_cadastro SET pagina = '" . $pagina  . "' WHERE user_id = '" . $user_id . "';";
+                $result = $db->query($query);
+            }
+        }
 //echo $user_id . " : " . $pagina ;
-$query = "UPDATE tl_cadastro SET pagina = '" . $pagina  . "' WHERE user_id = '" . $user_id . "';";
-$result = $db->query($query);
+
 
 //echo $query;
 $_POST['new_user_page'] = NULL;
 //echo "<script>window.top.location.href='user_page_frame.php'</script>"; 
-echo $pagina;
+var jsonP = "'resultado' : [ { 'pagina' : '".$paginaID."', 'texto' : '".$erro."' }]";
+echo $jsonP;   
+    
+    
+//echo $pagina;
 }
 
 ?>
