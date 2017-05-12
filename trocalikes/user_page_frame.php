@@ -62,7 +62,7 @@ $user_id = $_SESSION["user_id"];
             //}
         }else {
             
-            $erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais. (' . $erro .');
+            $erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais. (' . $erro .')';
         }
 //echo $user_id . " : " . $pagina ;
 
