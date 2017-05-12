@@ -27,24 +27,11 @@ $user_id = $_SESSION["user_id"];
           'default_graph_version' => 'v2.9',
           ]);
     
-        $helper = $fb->getCanvasHelper();
-        try {
-          $accessToken = $helper->getToken();
-        } catch(Facebook\Exceptions\FacebookResponseException $e) {
-          // When Graph returns an error
-          echo 'Graph returned an error: ' . $e->getMessage();
-          exit;
-        } catch(Facebook\Exceptions\FacebookSDKException $e) {
-          // When validation fails or other local issues
-          echo 'Facebook SDK returned an error: ' . $e->getMessage();
-          exit;
-        }
-    
+        $accessToken = $fb->getToken();
         
         $paginaID = substr($pagina, 25, strlen($pagina) - 26);
         echo "page:".$paginaID;
         echo "token:".$accessToken;
-        echo "token2:". $fb->getToken();
         try {  
           $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
