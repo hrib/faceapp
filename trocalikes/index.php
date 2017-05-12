@@ -83,7 +83,7 @@ $(document).ready(function(){
    if (novapagina == "") {
 	document.getElementById("form_user_page").disabled = false;
 	document.getElementById("botao_pagina").value = "Salvar";
-        document.getElementById("texto_pagina").innerHTML="Digite a URL da sua página: ";
+        document.getElementById("texto_pagina").innerHTML="Digite o nome ou ID da sua página: ";
    } else {
 	document.getElementById("form_user_page").disabled = true;
 	document.getElementById("botao_pagina").value = "Editar";
@@ -96,7 +96,7 @@ $(document).ready(function(){
 	if (document.getElementById("form_user_page").disabled) {
 		document.getElementById("form_user_page").disabled = false; 
 		document.getElementById("botao_pagina").value = "Salvar";
-		document.getElementById("texto_pagina").innerHTML="Digite a URL da sua página: ";
+		document.getElementById("texto_pagina").innerHTML="Digite o nome ou ID da sua página: ";
 
    	} else {
 		$.ajax({
@@ -109,6 +109,7 @@ $(document).ready(function(){
 		.done(function(data) {
 			console.log(JSON.stringify(data));
 			document.getElementById("form_user_page").value = data.pagina;
+			document.getElementById("resposta").value = data.texto;
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
@@ -131,13 +132,12 @@ $(document).ready(function(){
       <table  border="0">
         <tr valign="middle">
           <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:16px;"><b><span id="texto_pagina">URL</span></b></font></td>
-        </tr>
-        <tr valign="middle">
           <td align="left">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</td>
-        </tr>
-        <tr valign="middle">
           <td align="left"><input type="submit" id="botao_pagina" value="Botao"></td>
-        </tr>        
+        </tr>
+	  <td></td>
+	  <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="resposta"></span></b></font></td>
+          <td></td>
       </table>
 </div>
 
