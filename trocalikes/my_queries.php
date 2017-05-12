@@ -88,7 +88,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
 
         try {  
-          $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
+          $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
          // When Graph returns an error
          echo 'Graph returned an error: ' . $e->getMessage();
