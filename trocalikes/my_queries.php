@@ -73,6 +73,12 @@ return array($check_click, $tempo_now, $diff_tempo);
 }
 
 function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
+    $contrador = 1;
+    if( $contador > $gera_n)
+    {
+       return;
+    }
+    
     
     $result = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
     $retorno = $result->fetch();
@@ -97,7 +103,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
     }
 
     $graphNode = $response->getGraphNode();
-    $contrador = 0;
+    //$contrador = 0;
     //$gera_n = 99999;
     $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
     //echo '<table border="1" style="font-family:arial; font-size:9px;">';
@@ -105,11 +111,12 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         //echo '<tr>';
         //echo '<td>' . $posts['id'] . '</td>';
         //echo '</tr>';
-        $contador = $contrador + 1;
+
         if( $contador > $gera_n)
         {
             break;
         }
+        $contador = $contrador + 1;
         $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "', 'gerado'),";
         
     } 
