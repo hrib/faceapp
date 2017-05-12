@@ -72,6 +72,7 @@ $_SESSION["token"] = (string) $accessToken;
 
 
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
+$user_page = substr($user_page, 25, strlen($user_page) - 26);
 
 ?>
 
