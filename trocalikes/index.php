@@ -170,7 +170,7 @@ $sobra = sql_query("SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COA
 $sobra->closeCursor();
 
 
-sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando' FROM (SELECT id FROM tl_cliques WHERE  clicker_id IS NULL  AND clicker_check = 'gerado' ORDER BY tempo LIMIT 9) AS T WHERE tl_cliques.id = T.id;");
+sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando' FROM (SELECT id FROM tl_cliques WHERE  clicker_id IS NULL  AND clicker_check = 'gerado' AND dono_id <> '" . $_SESSION["user_id"]  . "' ORDER BY tempo LIMIT 9) AS T WHERE tl_cliques.id = T.id;");
 $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
   echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $frames->fetch(PDO::FETCH_ASSOC)) {
