@@ -109,7 +109,7 @@ $(document).ready(function(){
 		.done(function(data) {
 			console.log(JSON.stringify(data));
 			document.getElementById("form_user_page").value = data.pagina;
-			document.getElementById("resposta").value = data.texto;
+			document.getElementById("resposta").innerHTML = data.texto;
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
