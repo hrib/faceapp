@@ -147,9 +147,9 @@ $(document).ready(function(){
 //VERIFICACAO
 //Verifica se cada "esperando" foi ou nao clicado, mudando para "clicado" 
 $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
-  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  //echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $retorno->fetch(PDO::FETCH_ASSOC)) {
-      echo "<tr>";
+      //echo "<tr>";
       foreach($row as $item) {
         //echo "<td>" . htmlspecialchars($item) . "</td>";
       }
@@ -157,9 +157,9 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       //echo "<td>" . $check_inicial[0] . "</td>";	
       //echo "<td>" . $check_inicial[1] . "</td>";
       //echo "<td>" . $check_inicial[2] . "</td>";
-      echo "</tr>";
+      //echo "</tr>";
   }
-  echo "</table>";
+  //echo "</table>";
 $retorno->closeCursor();
 
 
@@ -170,16 +170,16 @@ sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE clicker_id = 
 //CALCULO
 //recalcula todos os creditos e cria novos "gerados"
 $sobra = sql_query("SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados_prontos,0)) as Alocados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados_prontos, 0)) as Sobra FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados_prontos FROM tl_cliques  WHERE clicker_check = 'gerado' OR clicker_check = 'esperando' OR clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id;"); 
-  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  //echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $sobra->fetch(PDO::FETCH_ASSOC)) {
-      echo "<tr>";
+      //echo "<tr>";
       foreach($row as $item) {
         //echo "<td>" . htmlspecialchars($item) . "</td>";
       }
-      echo "</tr>";
+      //echo "</tr>";
       gerador_de_posts($fb, $accessToken, $row['usuario'], $row['sobra']);	  
   }
-  echo "</table>";
+  //echo "</table>";
 $sobra->closeCursor();
 
 //ALOCACAO
