@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+require_once('my_queries.php');
 //echo 'fim';   
 $pagina = str_replace('/', '' , $_POST['new_user_page']);
 
