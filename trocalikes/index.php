@@ -143,12 +143,12 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
   while ($row = $retorno->fetch(PDO::FETCH_ASSOC)) {
       echo "<tr>";
       foreach($row as $item) {
-        echo "<td>" . htmlspecialchars($item) . "</td>";
+        //echo "<td>" . htmlspecialchars($item) . "</td>";
       }
       $check_inicial = checa_clique_post($row['id'], $row['tempo'], $row['dono_post'], $row['clicker_id'], $fb, $accessToken);	
-      echo "<td>" . $check_inicial[0] . "</td>";	
-      echo "<td>" . $check_inicial[1] . "</td>";
-      echo "<td>" . $check_inicial[2] . "</td>";
+      //echo "<td>" . $check_inicial[0] . "</td>";	
+      //echo "<td>" . $check_inicial[1] . "</td>";
+      //echo "<td>" . $check_inicial[2] . "</td>";
       echo "</tr>";
   }
   echo "</table>";
@@ -161,7 +161,7 @@ $sobra = sql_query("SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COA
   while ($row = $sobra->fetch(PDO::FETCH_ASSOC)) {
       echo "<tr>";
       foreach($row as $item) {
-        echo "<td>" . htmlspecialchars($item) . "</td>";
+        //echo "<td>" . htmlspecialchars($item) . "</td>";
       }
       echo "</tr>";
       gerador_de_posts($fb, $accessToken, $row['usuario'], $row['sobra']);	  
