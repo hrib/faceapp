@@ -2,11 +2,17 @@
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('my_queries.php');
+
 // AO MUDAR A PAGINA NO CADASTRO, TEM QUE RESETAR OS POST GERADOS EM ABERTO DO USUARIO
+
 // SHARED VIDEOS mostram post da pagina original no iframe. Bloquear shared video
+
 // Limite para checar likes = 1000 likes
+
 // iframes tem que auto-atualizar a cada 30min, que e' o tempo para expiracao do 'esperando'.
-// se for gerado um post_id que o cliente ja clicou, esse post_id nunca sera oferecido e 'gerado' ate um novo usuario aparecer.
+
+// se for gerado um post_id que o cliente ja clicou, esse post_id nunca sera oferecido ate um novo usuario aparecer.
+//Isso vai congelar o credito do cliente por algum tempo. Possivel solucao: expirar o "gerado" para liberar o credito
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
