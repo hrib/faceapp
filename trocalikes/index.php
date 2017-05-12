@@ -120,7 +120,7 @@ $(document).ready(function(){
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
-			var myVar = setInterval(myTimer, 5000);
+			var myVar = setInterval(myTimer, 15000);
 		})
 		.fail(function() {
 			console.log("error");
