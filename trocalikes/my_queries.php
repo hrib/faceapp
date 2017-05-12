@@ -103,7 +103,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         $contador = 1;
         $n_posts = count($graphNode['posts']);
         $randomico = mt_rand (1, $n_posts);
-        echo $graphNode['posts'][$randomico];
+        echo $graphNode['posts'][$randomico]['id'];
         echo $n_posts;
         //$gera_n = 99999;
         $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
