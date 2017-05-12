@@ -73,58 +73,55 @@ return array($check_click, $tempo_now, $diff_tempo);
 }
 
 function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
-    $contrador = 1;
-    if( $contador > $gera_n)
+
+    if( $gera_n > 0)
     {
-       return;
-    }
-    
-    
-    $result = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
-    $retorno = $result->fetch();
-    $paginaID = $retorno["pagina"];
-    $result->closeCursor();
-    
-    
-    //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
-    $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
-    //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
-    
-    try {  
-      $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
-    } catch(Facebook\Exceptions\FacebookResponseException $e) {
-     // When Graph returns an error
-     echo 'Graph returned an error: ' . $e->getMessage();
-     exit;
-    } catch(Facebook\Exceptions\FacebookSDKException $e) {
-     // When validation fails or other local issues
-     echo 'Facebook SDK returned an error: ' . $e->getMessage();
-     exit;
-    }
+ 
+        $result = sql_query("SELECT pagina FROM tl_cadastro where user_id = '" . $usuario . "'");
+        $retorno = $result->fetch();
+        $paginaID = $retorno["pagina"];
+        $result->closeCursor();
 
-    $graphNode = $response->getGraphNode();
-    //$contrador = 0;
-    //$gera_n = 99999;
-    $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
-    //echo '<table border="1" style="font-family:arial; font-size:9px;">';
-    foreach ($graphNode['posts'] as $posts) {
-        //echo '<tr>';
-        //echo '<td>' . $posts['id'] . '</td>';
-        //echo '</tr>';
 
-        if( $contador > $gera_n)
-        {
-            break;
+        //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
+        $paginaID = substr($paginaID, 25, strlen($paginaID) - 26);
+        //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
+
+        try {  
+          $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(10){id}', $accessToken);
+        } catch(Facebook\Exceptions\FacebookResponseException $e) {
+         // When Graph returns an error
+         echo 'Graph returned an error: ' . $e->getMessage();
+         exit;
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+         // When validation fails or other local issues
+         echo 'Facebook SDK returned an error: ' . $e->getMessage();
+         exit;
         }
-        $contador = $contrador + 1;
-        $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "', 'gerado'),";
-        
-    } 
-    //echo '</table>';
-    
-    $query = substr($query, 0, strlen($query) - 1);
-    sql_query($query);
-    
+
+        $graphNode = $response->getGraphNode();
+        $contrador = 1;
+        //$gera_n = 99999;
+        $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
+        //echo '<table border="1" style="font-family:arial; font-size:9px;">';
+        foreach ($graphNode['posts'] as $posts) {
+            //echo '<tr>';
+            //echo '<td>' . $posts['id'] . '</td>';
+            //echo '</tr>';
+
+            if( $contador > $gera_n)
+            {
+                break;
+            }
+            $contador = $contrador + 1;
+            $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "', 'gerado'),";
+
+        } 
+        //echo '</table>';
+
+        $query = substr($query, 0, strlen($query) - 1);
+        sql_query($query);
+    }
     
 }
 
