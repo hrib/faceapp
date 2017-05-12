@@ -17,6 +17,16 @@ $db = new PDO($dsn);
 $user_name = $_SESSION["user_name"];
 $user_id = $_SESSION["user_id"];
     
+        
+        $app_id = getenv('FB_APP_ID');
+        $app_secret = getenv('FB_APP_SECRET');
+        $fb = new Facebook\Facebook([
+          'app_id' => $app_id,
+          'app_secret' => $app_secret,
+          'default_graph_version' => 'v2.9',
+          ]);
+    
+    
         $paginaID = substr($pagina, 25, strlen($pagina) - 26);
         echo $paginaID;
         try {  
