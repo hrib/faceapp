@@ -18,6 +18,7 @@ $user_name = $_SESSION["user_name"];
 $user_id = $_SESSION["user_id"];
     
         
+        require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
         $app_id = getenv('FB_APP_ID');
         $app_secret = getenv('FB_APP_SECRET');
         $fb = new Facebook\Facebook([
@@ -26,7 +27,20 @@ $user_id = $_SESSION["user_id"];
           'default_graph_version' => 'v2.9',
           ]);
     
+        $helper = $fb->getCanvasHelper();
+        try {
+          $accessToken = $helper->getAccessToken();
+        } catch(Facebook\Exceptions\FacebookResponseException $e) {
+          // When Graph returns an error
+          echo 'Graph returned an error: ' . $e->getMessage();
+          exit;
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+          // When validation fails or other local issues
+          echo 'Facebook SDK returned an error: ' . $e->getMessage();
+          exit;
+        }
     
+        
         $paginaID = substr($pagina, 25, strlen($pagina) - 26);
         echo $paginaID;
         try {  
