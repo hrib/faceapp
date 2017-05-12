@@ -100,7 +100,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         }
 
         $graphNode = $response->getGraphNode();
-        $contrador = 1;
+        $contador = 1;
         //$gera_n = 99999;
         $query = "INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post, clicker_check) VALUES ";
         //echo '<table border="1" style="font-family:arial; font-size:9px;">';
@@ -113,7 +113,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
             {
                 break;
             }
-            $contador = $contrador + 1;
+            $contador = $contador + 1;
             $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" . $posts['id'] . "', 'gerado'),";
 
         } 
