@@ -62,7 +62,7 @@ $user_id = $_SESSION["user_id"];
 //echo $query;
 $_POST['new_user_page'] = NULL;
 //echo "<script>window.top.location.href='user_page_frame.php'</script>"; 
-var jsonP = "'resultado' : [ { 'pagina' : '".$paginaID."', 'texto' : '".$erro."' }]";
+jsonP = "'resultado' : [ { 'pagina' : '".$paginaID."', 'texto' : '".$erro."' }]";
 echo $jsonP;   
     
     
