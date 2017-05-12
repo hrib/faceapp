@@ -29,7 +29,9 @@ $user_id = $_SESSION["user_id"];
     
         $accessToken = $_SESSION["token"];
         
-        $paginaID = substr($pagina, 25, strlen($pagina) - 26);
+        //$paginaID = substr($pagina, 25, strlen($pagina) - 26);
+        $paginaID = $pagina
+        $paginaFull = 'https://www.facebook.com/'. $paginaID .'/';
         $erro = '';
         try {  
           $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
@@ -52,7 +54,7 @@ $user_id = $_SESSION["user_id"];
             $erro = 'n'.$n_posts;
             if(isset($n_posts))
             {
-                $query = "UPDATE tl_cadastro SET pagina = '" . $pagina  . "' WHERE user_id = '" . $user_id . "';";
+                $query = "UPDATE tl_cadastro SET pagina = '" . $paginaFull  . "' WHERE user_id = '" . $user_id . "';";
                 $result = $db->query($query);
             }
         }
