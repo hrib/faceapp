@@ -102,11 +102,12 @@ $(document).ready(function(){
 		$.ajax({
 			url: 'user_page_frame.php',
 			type: 'POST',
-			dataType: 'text',
+			//dataType: 'text',
+			dataType: 'json',
 			data: {new_user_page: novapagina},
 		})
 		.done(function(data) {
-			console.log(data);
+			console.log(data.resultado['pagina']);
 			document.getElementById("form_user_page").value = data;
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
