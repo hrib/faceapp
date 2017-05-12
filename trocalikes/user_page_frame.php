@@ -66,9 +66,9 @@ $user_id = $_SESSION["user_id"];
 //echo $query;
 $_POST['new_user_page'] = NULL;
 //echo "<script>window.top.location.href='user_page_frame.php'</script>"; 
-    
+$paginaGravada = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);    
         $data = array(
-            "pagina"     => $paginaID,
+            "pagina"     => $paginaGravada,
             "texto"  => $erro
         );
         echo json_encode($data);    
