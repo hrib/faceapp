@@ -44,6 +44,7 @@ $user_id = $_SESSION["user_id"];
         $paginaID = substr($pagina, 25, strlen($pagina) - 26);
         echo "page:".$paginaID;
         echo "token:".$accessToken;
+        echo "token2:". $fb->getToken();
         try {  
           $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
