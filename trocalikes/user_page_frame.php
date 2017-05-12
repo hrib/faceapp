@@ -29,7 +29,7 @@ $user_id = $_SESSION["user_id"];
     
         $helper = $fb->getCanvasHelper();
         try {
-          $accessToken = $helper->getAccessToken();
+          $accessToken = $helper->getToken();
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
           // When Graph returns an error
           echo 'Graph returned an error: ' . $e->getMessage();
