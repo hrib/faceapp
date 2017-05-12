@@ -77,6 +77,13 @@ $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+function myTimer() {
+  document.getElementById("resposta").innerHTML = '';
+  clearInterval(myVar);
+}
+
+
+	
 $(document).ready(function(){
 	
    novapagina = document.getElementById("form_user_page").value;	
@@ -89,7 +96,7 @@ $(document).ready(function(){
 	document.getElementById("botao_pagina").value = "Editar";
 	document.getElementById("texto_pagina").innerHTML="Sua página: ";   
    }
-	
+
  $("#botao_pagina").click(function(){
    	novapagina = document.getElementById("form_user_page").value;
    
@@ -107,12 +114,13 @@ $(document).ready(function(){
 			data: {new_user_page: novapagina},
 		})
 		.done(function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			document.getElementById("form_user_page").value = data.pagina;
 			document.getElementById("resposta").innerHTML = data.texto;
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
+			var myVar = setInterval(myTimer, 5000);
 		})
 		.fail(function() {
 			console.log("error");
