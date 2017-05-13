@@ -121,8 +121,8 @@ $sobra->closeCursor();
 
 $creditos_cliente = sql_query("SELECT Creditos, Usados, Saldo FROM (SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Saldo FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id) FINAL WHERE usuario = '" . $_SESSION["user_id"] ."';");
 while ($row = $creditos_cliente->fetch(PDO::FETCH_ASSOC)) {
-    $credito = $row['Creditos'];
-    $usado = $row['Usados'];
+    $creditos = $row['Creditos'];
+    $usados = $row['Usados'];
     $saldo = $row['Saldo'];
 }
 $creditos_cliente->closeCursor();
@@ -208,11 +208,22 @@ $(document).ready(function(){
           <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
-          <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="creditos">Creditos: <b><?php echo $creditos; ?></b></span></font></td>
-	  
-	      </tr>
-	</table>
-	<table align="center" border="0"  style="background-color:white; display:none;" id="tabela_erro">
+          <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="creditos">Cliques Efetuados: <b><?php echo $creditos; ?></b></span></font></td>
+	</tr>
+	<tr>
+	  <td> </td>
+	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+	  <td> </td>
+		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+	  <td> </td>
+	  <td> </td>
+		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Cliques Recebidos: <b><?php echo $usados; ?></b></span></font></td>
+
+	</tr>
+      </table>
+      <table align="center" border="0"  style="background-color:white; display:none;" id="tabela_erro">
 	<tr valign="middle">	
 	  <td><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
         </tr>
