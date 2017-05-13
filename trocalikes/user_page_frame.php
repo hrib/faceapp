@@ -61,8 +61,8 @@ $user_id = $_SESSION["user_id"];
                 $result = $db->query($query);
             //}
         }else {
-            
-            $erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais. <br><br> (' . $erro .')';
+            $erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais.';
+            //$erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais. <br><br> (' . $erro .')';
         }
 //echo $user_id . " : " . $pagina ;
 
