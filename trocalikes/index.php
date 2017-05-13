@@ -85,6 +85,7 @@ $user_page = substr($user_page, 25, strlen($user_page) - 26);
 
 //VERIFICACAO
 //Verifica se cada "esperando" foi ou nao clicado, mudando para "clicado" 
+//cancela alocados com tempo > 30min
 $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
   //echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $retorno->fetch(PDO::FETCH_ASSOC)) {
@@ -92,7 +93,7 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
       foreach($row as $item) {
         //echo "<td>" . htmlspecialchars($item) . "</td>";
       }
-      $check_inicial = checa_clique_post($row['id'], $row['tempo'], $row['dono_post'], $row['clicker_id'], $fb, $accessToken);	
+      $check_inicial = checa_clique_post($row['id'], $row['tempo_update'], $row['dono_post'], $row['clicker_id'], $fb, $accessToken);	
       //echo "<td>" . $check_inicial[0] . "</td>";	
       //echo "<td>" . $check_inicial[1] . "</td>";
       //echo "<td>" . $check_inicial[2] . "</td>";
