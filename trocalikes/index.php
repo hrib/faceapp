@@ -304,7 +304,7 @@ fim iframe
 <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
 <br>
 <div align="center" >
-<input type="button" value="Mais Posts >>" onClick="window.location.reload()">
+<input type="button" value="Mais Posts >>" onClick="window.location=window.location;">
 </div>
 <br>
 <br>
