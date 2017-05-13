@@ -12,7 +12,7 @@ html {
   background-size: cover;
 }
 </style>
-<meta property="og:image" content="icone.png" />
+<meta property="og:image" content="http://apostagol.herokuapp.com/trocalikes/icone.png" />
 <meta property="og:description" content="TROCA LIKES de forma JUSTA" />
 
 
