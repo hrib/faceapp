@@ -1,6 +1,7 @@
 <?php
   
 $query = $_POST['sql'];
+$query2 = $_POST['sql2'];
 ?>
 
 <h2>Input</h2>
@@ -19,11 +20,15 @@ INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post , clicker_id , c
 </form>
 
 <form action="/trocalikes/gerencia.php" method="post">
-  <div><textarea name="sql" rows="5" cols="200">SELECT * FROM tl_cadastro ORDER BY id</textarea></div>
+  <div><textarea name="sql2" rows="5" cols="200">SELECT * FROM tl_cadastro ORDER BY id</textarea></div>
   <div><input type="submit" value="Lista Cadastro"></div>
 </form>
 
 
+<form action="/trocalikes/gerencia.php" method="post">
+  <div><textarea name="sql2" rows="5" cols="200">SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Sobra FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id;</textarea></div>
+  <div><input type="submit" value="Creditos"></div>
+</form>
 
 
 
@@ -31,7 +36,10 @@ INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post , clicker_id , c
   
   
 <?php
-  
+
+echo '<table border="1" style="font-family:arial; font-size:7px;">';  
+echo '<tr>';
+echo '<td>';
 if (isset($query)) {  
   $dbopts = parse_url(getenv('DATABASE_URL'));
   $dsn = "pgsql:"
@@ -56,7 +64,34 @@ if (isset($query)) {
   echo "</table>";
   $result->closeCursor();
 }
+echo '</td>';
+echo '<td>';
+if (isset($query2)) {  
+  $dbopts = parse_url(getenv('DATABASE_URL'));
+  $dsn = "pgsql:"
+      . "host=" . $dbopts["host"] . ";"
+      . "dbname=". ltrim($dbopts["path"],'/') . ";"
+      . "user=" . $dbopts["user"] . ";"
+      . "port=" . $dbopts["port"] . ";"
+      . "sslmode=require;"
+      . "password=" . $dbopts["pass"];
 
+  $db = new PDO($dsn);
+  $result = $db->query($query2);
 
+  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+      echo "<tr>";
+      foreach($row as $item) {
+        echo "<td>" . htmlspecialchars($item) . "</td>";
+      }
+      echo "</tr>";
+  }
+  echo "</table>";
+  $result->closeCursor();
+}
+echo '</td>';
+echo '</tr>';
+echo "</table>";
 
 ?>
