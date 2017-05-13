@@ -122,11 +122,14 @@ $sobra->closeCursor();
 $creditos_cliente = sql_query("SELECT Creditos, Usados, Saldo FROM (SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Saldo FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id) FINAL WHERE usuario = '" . $_SESSION["user_id"] ."';");
 while ($row = $creditos_cliente->fetch(PDO::FETCH_ASSOC)) {
     $creditos = $row['Creditos'];
-    echo 'c'. $creditos;
+    echo 'c' . $creditos;
     $usados = $row['Usados'];
-    echo 'u'. $usados;
+    echo 'u' . $usados;
     $saldo = $row['Saldo'];
-    echo 's'. $saldo;
+    echo 's' . $saldo;
+    foreach($row as $item) {
+        echo $item;
+    }
 }
 $creditos_cliente->closeCursor();
   
@@ -294,7 +297,7 @@ fim iframe
 <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
 <br>
 <div align="center" >
-<input type="button" value="Mais Posts >>" onClick="window.location.href=window.location.href">
+<input type="button" value="Mais Posts >>" onClick="window.location.href='https://apps.facebook.com/trocalikes/'">
 </div>
 <br>
 <br>
