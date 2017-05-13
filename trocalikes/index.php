@@ -18,7 +18,7 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $app_name = 'trocalikes';
 
-echo 'aqui1<br>';
+//echo 'aqui1<br>';
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
@@ -39,7 +39,7 @@ try {
   exit;
 }
 
-echo 'aqui2<br>';
+//echo 'aqui2<br>';
 if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
@@ -51,7 +51,7 @@ if (! isset($accessToken)) {
   exit;
 }
 
-echo 'aqui3<br>';
+//echo 'aqui3<br>';
 
 try {  
   $response = $fb->get('/me?fields=id,name', $accessToken);
@@ -64,13 +64,13 @@ try {
  echo 'Facebook SDK returned an error: ' . $e->getMessage();
  exit;
 }
-echo 'aqui4<br>';
+//echo 'aqui4<br>';
 
 $graphNode = $response->getGraphNode();
 $_SESSION["user_name"]  = $graphNode['name'];
-echo $_SESSION["user_name"] . '<br>';
+//echo $_SESSION["user_name"] . '<br>';
 $_SESSION["user_id"] = $graphNode['id'];
-echo $_SESSION["user_id"] . '<br>';
+//echo $_SESSION["user_id"] . '<br>';
 $_SESSION["token"] = (string) $accessToken; 
 
 
@@ -78,7 +78,7 @@ $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 $user_page = substr($user_page, 25, strlen($user_page) - 26);
 
 
-echo 'aqui5<br>';
+//echo 'aqui5<br>';
 
 //require_once('lista_rodrigo.php');
 //require_once('lista_IE.php');
@@ -101,14 +101,14 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
   //echo "</table>";
 $retorno->closeCursor();
 
-echo 'aqui6<br>';
+//echo 'aqui6<br>';
 
 
 //LIMPEZA
 //Cancela todos os cliques "esperando" do cliente
 sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE clicker_id = '" . $_SESSION['user_id'] . "' AND clicker_check = 'esperando';"); 
 
-echo 'aqui7<br>';
+//echo 'aqui7<br>';
 
 
 //CALCULO
@@ -143,7 +143,7 @@ $creditos_cliente->closeCursor();
 $ids_selecionados = "SELECT id FROM (SELECT min(id) as id, min(tempo) as tempo, post_gerado FROM (SELECT id, post_gerado, tempo FROM (SELECT id, dono_post as post_gerado, tempo FROM tl_cliques WHERE  clicker_id IS NULL  AND clicker_check = 'gerado' AND dono_id <> '" . $_SESSION["user_id"] . "') AS T1 FULL OUTER JOIN  (SELECT dono_post as post_clicado FROM tl_cliques WHERE  clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'clicado' GROUP BY dono_post) AS T2 ON post_gerado = post_clicado WHERE post_clicado IS NULL) AS TA GROUP BY post_gerado ORDER BY tempo LIMIT 10) FINAL";
 sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando' FROM (" . $ids_selecionados . ") AS T WHERE tl_cliques.id = T.id;");
 
-echo 'aqui8<br>';
+//echo 'aqui8<br>';
 
 
 ?>
@@ -259,7 +259,7 @@ $(document).ready(function(){
 
 
 
-echo 'aqui9<br>';
+//echo 'aqui9<br>';
 
 
 
