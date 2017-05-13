@@ -62,7 +62,7 @@ if (! isset($accessToken)) {
   $permissions = ['public_profile']; // optionnal
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
-  echo '<br><br><br><br><br><br>';
+  echo '<br><br><br><br><br><br><br>';
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
   echo "<div align='center' valign='middle' >";
   echo "<input type='image' src='facebook-login.png'  width='400' height='50' value='Login' onClick='logar();'>";
