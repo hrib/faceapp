@@ -49,7 +49,7 @@ if (! isset($accessToken)) {
   //confirme que essa url de login esta autorizada no aplicativo
   echo "<script></script>";
   echo "<div align='center' >";
-  echo "<input type='button' value='Login' onClick='window.top.location.href='".$loginUrl."''>";
+  echo "<input type='button' value='Login' onClick='window.top.location.href=".$loginUrl."'>";
   echo "</div>";
   
   exit;
