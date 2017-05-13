@@ -200,6 +200,17 @@ $sobra = sql_query("SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COA
   //echo "</table>";
 $sobra->closeCursor();
 
+
+$creditos_cliente = sql_query("SELECT Creditos, Usados, Saldo FROM (SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Saldo FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id) FINAL WHERE usuario = '" . $_SESSION["user_id"] ."';");
+while ($row = $creditos_cliente->fetch(PDO::FETCH_ASSOC)) {
+    $credito = $row['Creditos'];
+    $usado = $row['Usados'];
+    $saldo = $row['Saldo'];
+}
+$creditos_cliente->closeCursor();
+  
+
+
 //ALOCACAO
 //Seleciona os IDs das linhas "GERADO" e nao "ALOCADAS", mas que cliente NAO e' DONO e NAO clicou em post igual.
 //Tb NAO seleciona linhas com o mesmo POST
