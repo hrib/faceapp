@@ -253,6 +253,17 @@ $(document).ready(function(){
 	</tr>
       </table>
 </div>
+<br>
+<br>
+<br>
+<div align="left" id="user_page_frame" style="background-color:white;">
+      <table  border="0">
+        <tr valign="middle">
+          <td align="center"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome">Curta os POSTS abaixo para ganhar créditos e ter os posts da sua página divulgados para outros usuários</span></b></font></td>
+	</tr>
+      </table>
+</div>
+
 
 <?php
 
