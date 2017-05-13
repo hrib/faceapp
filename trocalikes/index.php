@@ -206,7 +206,7 @@ $(document).ready(function(){
 	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <td align="right"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="texto_pagina">URL</span></font></td>
           <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</font></td>
+	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 280px; margin-left: 0px; margin-top: 0px;">/</font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
           <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="creditos">Cliques Efetuados: <b><?php echo $creditos; ?></b></span></font></td>
