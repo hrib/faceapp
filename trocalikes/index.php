@@ -208,17 +208,20 @@ sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', cl
 //Cria frames de acordo com oq foi alocado "ESPERANDO"
 $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
   echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  $z = 0;
   while ($row = $frames->fetch(PDO::FETCH_ASSOC)) {
-      echo "<tr>";
+      if($z == 0){echo "<tr>";}
       foreach($row as $item) {
         //echo "<td>" . htmlspecialchars($item) . "</td>";
 	$page_esperando_id = stristr($item,'_',true) ;
 	$post_esperando_id = substr(stristr($item,'_',false),1);
 	//echo "<td>" . htmlspecialchars($page_esperando_id) . "</td>";
 	//echo "<td>" . htmlspecialchars($post_esperando_id) . "</td>";
-	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' height='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0' allowTransparency='false'></iframe></td>";
+	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0'></iframe></td>";
       }
-      echo "</tr>";
+      if($z == 1){echo "</tr>";}
+      $z = $z + 1
+      if($z == 2){$z = 0;}	      
   }
   echo "</table>";
 $frames->closeCursor();
