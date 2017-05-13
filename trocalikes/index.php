@@ -216,7 +216,7 @@ $(document).ready(function(){
 	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
+	  <td align="center" ><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
 	  <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Cliques Recebidos: <b><?php echo $usados; ?></b></span></font></td>
@@ -233,11 +233,6 @@ $(document).ready(function(){
 		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Saldo: <b><?php echo $saldo; ?></b></span></font></td>
 
 	</tr>
-      </table>
-      <table align="center" border="0"  style="background-color:white; display:none;" id="tabela_erro">
-	<tr valign="middle" align="center" >	
-	  <td></td>
-        </tr>
       </table>
 </div>
 
