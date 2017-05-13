@@ -78,6 +78,7 @@ $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 $user_page = substr($user_page, 25, strlen($user_page) - 26);
 
 
+echo 'aqui5<br>';
 
 //require_once('lista_rodrigo.php');
 //require_once('lista_IE.php');
@@ -100,10 +101,14 @@ $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando'
   //echo "</table>";
 $retorno->closeCursor();
 
+echo 'aqui6<br>';
+
 
 //LIMPEZA
 //Cancela todos os cliques "esperando" do cliente
 sql_query("UPDATE tl_cliques SET clicker_check = 'cancelado' WHERE clicker_id = '" . $_SESSION['user_id'] . "' AND clicker_check = 'esperando';"); 
+
+echo 'aqui7<br>';
 
 
 //CALCULO
@@ -251,6 +256,7 @@ $(document).ready(function(){
 
 
 
+echo 'aqui8<br>';
 
 
 
