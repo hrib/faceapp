@@ -64,12 +64,13 @@ try {
  echo 'Facebook SDK returned an error: ' . $e->getMessage();
  exit;
 }
+echo 'aqui4<br>';
 
 $graphNode = $response->getGraphNode();
 $_SESSION["user_name"]  = $graphNode['name'];
-//echo $_SESSION["user_name"] . '<br>';
+echo $_SESSION["user_name"] . '<br>';
 $_SESSION["user_id"] = $graphNode['id'];
-//echo $_SESSION["user_id"] . '<br>';
+echo $_SESSION["user_id"] . '<br>';
 $_SESSION["token"] = (string) $accessToken; 
 
 
