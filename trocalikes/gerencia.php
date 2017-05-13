@@ -18,6 +18,15 @@ INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post , clicker_id , c
   <div><input type="submit" value="Input"></div>
 </form>
 
+<form action="/trocalikes/gerencia.php" method="post">
+  <div><textarea name="sql" rows="5" cols="200">SELECT * FROM tl_cadastro ORDER BY id</textarea></div>
+  <div><input type="submit" value="Lista Cadastro"></div>
+</form>
+
+
+
+
+
 <h2>Entries</h2>
   
   
