@@ -66,7 +66,7 @@ if (! isset($accessToken)) {
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
   echo "<div align='center' valign='middle' >";
   echo "<input type='image' src='facebook-login.png'  width='400' height='50' value='Login' onClick='logar();'>";
-  echo "<input type='button' style='background: url(facebook-login.png); width:400px; height:50px;'  value='Login' onClick='logar();'>";
+  echo "<input type='button' style='background: url(facebook-login.png); background-size: 400px 50px; width:400px; height:50px;'  value='Login' onClick='logar();'>";
   //echo "<input type='button' src='facebook-login.png'  value='Login' onClick='logar();'>";
   echo "</div>";
   echo '<br><br><br><br><br><br><br><br><br><br>';	
