@@ -112,7 +112,7 @@ $(document).ready(function(){
 			data: {new_user_page: novapagina},
 		})
 		.done(function(data) {
-			//console.log(JSON.stringify(data));
+			console.log(JSON.stringify(data));
 			document.getElementById("form_user_page").value = data.pagina;
 			document.getElementById("resposta").innerHTML = data.texto;
 			document.getElementById("tabela_erro").style.display = "inline"; 
