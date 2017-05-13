@@ -220,7 +220,7 @@ $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_
 	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0'></iframe></td>";
       }
       if($z == 1){echo "</tr>";}
-      $z = $z + 1
+      $z = $z + 1;
       if($z == 2){$z = 0;}	      
   }
   echo "</table>";
