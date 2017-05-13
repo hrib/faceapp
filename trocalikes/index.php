@@ -78,10 +78,7 @@ $user_page = substr($user_page, 25, strlen($user_page) - 26);
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-function myTimer() {
-  document.getElementById("resposta").innerHTML = '';
-  clearInterval(myVar);
-}
+  
 
 
 	
@@ -121,7 +118,7 @@ $(document).ready(function(){
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
-			var myVar = setInterval(myTimer, 15000);
+			setTimeout(function(){ document.getElementById("resposta").innerHTML = ''; }, 15000);
 		})
 		.fail(function() {
 			console.log("error");
@@ -146,7 +143,7 @@ $(document).ready(function(){
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
         </tr>
 	</table>
-	<table  border="0">
+	<table  border="0"  style="background-color:white">
 	<tr valign="middle">	  
 	  <td><font style="font-family: Lucida Console; color:red; font-size:11px;"><b><span id="resposta"></span></b></font></td>
         </tr>
