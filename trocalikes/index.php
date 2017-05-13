@@ -75,7 +75,7 @@ if (! isset($accessToken)) {
   echo 'Ao logar, o aplicativo mostrará uma lista de posts para você curtir e ganhar créditos para cada LIKE que der.<br>'; 
   echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
   echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
-  echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.<br><br><br>';
+  echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.';
   echo '  </font>';
   echo '</div>';
   echo '';
