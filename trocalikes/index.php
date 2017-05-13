@@ -141,8 +141,8 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_name"]; ?></span></b></font></td>
-	  <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="texto_pagina">URL</span></font></td>
+          <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_name"] . "        "; ?></span></b></font></td>
+	  <td align="right"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="texto_pagina">URL</span></font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
         </tr>
@@ -207,7 +207,7 @@ sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', cl
 //PROPAGANDA
 //Cria frames de acordo com oq foi alocado "ESPERANDO"
 $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
-  echo '<table border="0" style="font-family:arial; font-size:7px;">';
+  echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $frames->fetch(PDO::FETCH_ASSOC)) {
       echo "<tr>";
       foreach($row as $item) {
@@ -216,7 +216,7 @@ $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_
 	$post_esperando_id = substr(stristr($item,'_',false),1);
 	//echo "<td>" . htmlspecialchars($page_esperando_id) . "</td>";
 	//echo "<td>" . htmlspecialchars($post_esperando_id) . "</td>";
-	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' width='500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0' allowTransparency='false'></iframe></td>";
+	echo "<td><iframe src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F" . $page_esperando_id . "%2Fposts%2F" . $post_esperando_id . "&width=500' height='700' style='border:none;overflow:hidden' scrolling='yes' frameborder='0' allowTransparency='false'></iframe></td>";
       }
       echo "</tr>";
   }
