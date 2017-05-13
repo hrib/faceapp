@@ -2,6 +2,21 @@
 session_start(); 
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('my_queries.php');
+?>
+<style>
+html { 
+  background: url("fundo.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+
+
+
+
+<?php
 
 // AO MUDAR A PAGINA NO CADASTRO, TEM QUE RESETAR OS POST GERADOS EM ABERTO DO USUARIO
 
@@ -49,7 +64,7 @@ if (! isset($accessToken)) {
   //confirme que essa url de login esta autorizada no aplicativo
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
   echo "<div align='center' valign='middle' >";
-  echo "<img src='facebook-login.png'  value='Login' onClick='logar();'>";
+  echo "<img src='facebook-login.png'  width='400' height='50' value='Login' onClick='logar();'>";
   //echo "<input type='button' src='facebook-login.png'  value='Login' onClick='logar();'>";
   echo "</div>";
   
@@ -326,12 +341,4 @@ fim iframe
 <br>
 Troca Likes App - Todos os Direitos Reservados
 </font>
-<style>
-html { 
-  background: url("fundo.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-</style>
+
