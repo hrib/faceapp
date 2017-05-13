@@ -292,7 +292,7 @@ iframe3
 fim iframe
 -->
 <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
-<input type="button" value="Mais Posts >>" onClick="window.location.reload()">
+<input type="button" value="Mais Posts >>" onClick="window.location.href=window.location.href">
 <br>
 <br>
 Troca Likes App - Todos os Direitos Reservados
