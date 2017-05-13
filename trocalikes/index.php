@@ -201,7 +201,7 @@ $sobra->closeCursor();
 //ALOCACAO
 //Seleciona os IDs das linhas "GERADO" e nao "ALOCADAS", mas que cliente NAO e' DONO e NAO clicou em post igual.
 //Tb NAO seleciona linhas com o mesmo POST
-$ids_selecionados = "SELECT id FROM (SELECT min(id) as id, min(tempo) as tempo, post_gerado FROM (SELECT id, post_gerado, tempo FROM (SELECT id, dono_post as post_gerado, tempo FROM tl_cliques WHERE  clicker_id IS NULL  AND clicker_check = 'gerado' AND dono_id <> '" . $_SESSION["user_id"] . "') AS T1 FULL OUTER JOIN  (SELECT dono_post as post_clicado FROM tl_cliques WHERE  clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'clicado' GROUP BY dono_post) AS T2 ON post_gerado = post_clicado WHERE post_clicado IS NULL) AS TA GROUP BY post_gerado ORDER BY tempo LIMIT 9) FINAL";
+$ids_selecionados = "SELECT id FROM (SELECT min(id) as id, min(tempo) as tempo, post_gerado FROM (SELECT id, post_gerado, tempo FROM (SELECT id, dono_post as post_gerado, tempo FROM tl_cliques WHERE  clicker_id IS NULL  AND clicker_check = 'gerado' AND dono_id <> '" . $_SESSION["user_id"] . "') AS T1 FULL OUTER JOIN  (SELECT dono_post as post_clicado FROM tl_cliques WHERE  clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'clicado' GROUP BY dono_post) AS T2 ON post_gerado = post_clicado WHERE post_clicado IS NULL) AS TA GROUP BY post_gerado ORDER BY tempo LIMIT 10) FINAL";
 sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando' FROM (" . $ids_selecionados . ") AS T WHERE tl_cliques.id = T.id;");
 
 //PROPAGANDA
