@@ -286,7 +286,7 @@ fim iframe
 <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
 <br>
 <div align="center" >
-<input type="button" value="Mais Posts >>" onClick="window.location.href='https://apps.facebook.com/trocalikes/'">
+<input type="button" value="Mais Posts >>" onClick="window.location.reload()">
 </div>
 <br>
 <br>
