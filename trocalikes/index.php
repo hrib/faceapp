@@ -122,8 +122,11 @@ $sobra->closeCursor();
 $creditos_cliente = sql_query("SELECT Creditos, Usados, Saldo FROM (SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Saldo FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id) FINAL WHERE usuario = '" . $_SESSION["user_id"] ."';");
 while ($row = $creditos_cliente->fetch(PDO::FETCH_ASSOC)) {
     $creditos = $row['Creditos'];
+    echo 'c'. $creditos;
     $usados = $row['Usados'];
+    echo 'u'. $usados;
     $saldo = $row['Saldo'];
+    echo 's'. $saldo;
 }
 $creditos_cliente->closeCursor();
   
@@ -220,6 +223,17 @@ $(document).ready(function(){
 	  <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Cliques Recebidos: <b><?php echo $usados; ?></b></span></font></td>
+
+	</tr>
+	<tr>
+	  <td> </td>
+	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+	  <td> </td>
+		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+	  <td> </td>
+	  <td> </td>
+		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Saldo: <b><?php echo $saldo; ?></b></span></font></td>
 
 	</tr>
       </table>
