@@ -115,10 +115,14 @@ $(document).ready(function(){
 			//console.log(JSON.stringify(data));
 			document.getElementById("form_user_page").value = data.pagina;
 			document.getElementById("resposta").innerHTML = data.texto;
+			document.getElementById("tabela_erro").style.display = "inline"; 
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
-			setTimeout(function(){ document.getElementById("resposta").innerHTML = ''; }, 15000);
+			setTimeout(function(){ 
+				document.getElementById("resposta").innerHTML = ''; 
+				document.getElementById("tabela_erro").style.display = "none"; 
+			}, 15000);
 		})
 		.fail(function() {
 			console.log("error");
@@ -137,13 +141,13 @@ $(document).ready(function(){
 <div align="left" id="user_page_frame">
       <table  border="0">
         <tr valign="middle">
-          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php $_SESSION["user_id"]; ?></span></b></font></td>
+          <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_id"]; ?></span></b></font></td>
 	  <td><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="texto_pagina">URL</span></b></font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
         </tr>
 	</table>
-	<table  border="0"  style="background-color:white">
+	<table  border="0"  style="background-color:white; display:none;" id="tabela_erro">
 	<tr valign="middle">	  
 	  <td><font style="font-family: Lucida Console; color:red; font-size:11px;"><b><span id="resposta"></span></b></font></td>
         </tr>
