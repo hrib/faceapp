@@ -176,13 +176,13 @@ $(document).ready(function(){
 			console.log(JSON.stringify(data));
 			document.getElementById("form_user_page").value = data.pagina;
 			document.getElementById("resposta").innerHTML = data.texto;
-			document.getElementById("tabela_erro").style.display = "inline"; 
+			//document.getElementById("resposta").style.display = "inline"; 
 			document.getElementById("form_user_page").disabled = true;
 			document.getElementById("botao_pagina").value = "Editar";
 			document.getElementById("texto_pagina").innerHTML="Sua página: ";   
 			setTimeout(function(){ 
 				document.getElementById("resposta").innerHTML = ''; 
-				document.getElementById("resposta").style.display = "none"; 
+				//document.getElementById("resposta").style.display = "none"; 
 			}, 15000);
 		})
 		.fail(function() {
