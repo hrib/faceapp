@@ -13,7 +13,7 @@ html {
 }
 </style>
 <meta property="og:image" content="http://apostagol.herokuapp.com/trocalikes/icone.jpg" />
-<meta property="og:description" content="TROCA LIKES de forma JUSTA" />
+<meta property="og:description" content="TROCA LIKES: Aplicativo para troca de likes de forma JUSTA" />
 
 
 
