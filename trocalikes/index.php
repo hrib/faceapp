@@ -294,7 +294,7 @@ Troca Likes App - Todos os Direitos Reservados
 </font>
 <style>
 html { 
-  background: url("http://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_1.jpg") no-repeat center center fixed; 
+  background: url("fundo.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
