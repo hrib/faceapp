@@ -144,12 +144,13 @@ $(document).ready(function(){
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_name"] . "        "; ?></span></b></font></td>
 	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <td align="right"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="texto_pagina">URL</span></font></td>
-          <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</font></td>
+          <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 380px; margin-left: 0px; margin-top: 0px;">/</font></td>
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
         </tr>
 	</table>
-	<table  border="0"  style="background-color:white; display:none;" id="tabela_erro">
-	<tr valign="middle">	  
+	<table align="center" border="0"  style="background-color:white; display:none;" id="tabela_erro">
+	<tr valign="middle">	
 	  <td><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
         </tr>
       </table>
@@ -208,7 +209,7 @@ sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', cl
 //PROPAGANDA
 //Cria frames de acordo com oq foi alocado "ESPERANDO"
 $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
-  echo '<table border="1" style="font-family:arial; font-size:7px;">';
+  echo '<table align="center" border="1" style="font-family:arial; font-size:7px;">';
   $z = 0;
   while ($row = $frames->fetch(PDO::FETCH_ASSOC)) {
       if($z == 0){echo "<tr>";}
