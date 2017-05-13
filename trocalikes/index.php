@@ -62,6 +62,11 @@ if (! isset($accessToken)) {
   $permissions = ['public_profile']; // optionnal
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
+  echo '<br><br><br>';
+  echo '<div align="center" id="instrucoes" style="background-color:white;">';
+  echo '   <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="instrucoesslogin">Clique no botao abaixo para logar e ganhe creditos para cada LIKE que voce der. <br>Esses creditos sao automaticamente convertidos em LIKES para sua propria pagina.</span></font>';
+  echo '</div>';
+  echo '<br><br><br><br>';
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
   echo "<div align='center' valign='middle' >";
   echo "<img src='facebook-login.png'  width='400' height='50' value='Login' onClick='logar();'>";
