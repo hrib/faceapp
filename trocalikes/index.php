@@ -66,13 +66,13 @@ if (! isset($accessToken)) {
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
   echo "<div align='center' valign='middle' >";
   //echo "<input type='image' src='facebook-login.png'  width='400' height='50' value='' onClick='logar();'>";
-  echo "<input type='button' style='background: url(facebook-login.png); background-size: 390px 40px; width:400px; height:50px;'  value='' onClick='logar();'>";
+  echo "<input type='button' style='background: url(facebook-login.png); background-size: 390px 40px; background-repeat: no-repeat; width:400px; height:50px;'  value='' onClick='logar();'>";
   echo '<br>';
 	echo '<br>';
-echo "<input type='button' style='background: url(facebook-login.png); background-size: 390px 40px; width:410px; height:60px;'  value='' onClick='logar();'>";
+echo "<input type='button' style='background: url(facebook-login.png); background-size: 390px 40px; background-repeat: no-repeat; width:410px; height:60px;'  value='' onClick='logar();'>";
   echo '<br>';
 	echo '<br>';
-	echo "<input type='button' style='background: url(facebook-login.png); background-size: 400px 50px; width:370px; height:35px;'  value='' onClick='logar();'>";
+	echo "<input type='button' style='background: url(facebook-login.png); background-size: 400px 50px; background-repeat: no-repeat; width:370px; height:35px;'  value='' onClick='logar();'>";
   	
 	
   //echo "<input type='button' src='facebook-login.png'  value='Login' onClick='logar();'>";
