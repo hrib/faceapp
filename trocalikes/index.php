@@ -63,8 +63,14 @@ if (! isset($accessToken)) {
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
   echo '<br><br><br>';
-  echo '<div align="center" id="instrucoes" style="background-color:white;">';
-  echo '   <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="instrucoesslogin">Clique no botao abaixo para logar e ganhe creditos para cada LIKE que voce der. <br>Esses creditos sao automaticamente convertidos em LIKES para sua propria pagina.</span></font>';
+  echo '<div align="center" id="instrucoes" style="background-color:blue;">';
+  echo '  <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="instrucoesslogin">';
+  echo 'TROCA LIKES é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
+  echo 'Ao logar, o aplicativo mostrará uma lista de posts para você curtir e ganhar créditos para cada LIKE que der.<br>'; 
+  echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
+  echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
+  echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participante.';
+  echo '  </span></font>';
   echo '</div>';
   echo '<br><br><br><br>';
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
