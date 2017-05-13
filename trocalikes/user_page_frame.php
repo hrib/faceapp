@@ -61,6 +61,7 @@ $user_id = $_SESSION["user_id"];
                 $result = $db->query($query);
             //}
         }else {
+            $erroOFICIAL = $erro;
             $erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais.';
             //$erro = $paginaID . ': ERRO. Utilize o nome ou ID da sua página, não são aceitos perfis pessoais. <br><br> (' . $erro .')';
         }
@@ -74,7 +75,8 @@ $paginaGravada = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 $paginaGravada = substr($paginaGravada, 25, strlen($paginaGravada) - 26);
         $data = array(
             "pagina"     => $paginaGravada,
-            "texto"  => $erro
+            "texto"  => $erro,
+            "erroOFICIAL" => $erroOFICIAL
         );
         echo json_encode($data);    
     
