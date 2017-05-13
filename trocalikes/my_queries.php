@@ -91,12 +91,14 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
           $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
          // When Graph returns an error
-         echo 'Graph returned an error: ' . $e->getMessage();
-         exit;
+         echo 'Gerador de Posts > Graph returned an error: ' . $e->getMessage();
+         return;
+         //exit;
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
          // When validation fails or other local issues
-         echo 'Facebook SDK returned an error: ' . $e->getMessage();
-         exit;
+         echo 'Gerador de Posts > Facebook SDK returned an error: ' . $e->getMessage();
+         return;
+         //exit;
         }
 
         $graphNode = $response->getGraphNode();
