@@ -155,7 +155,7 @@ echo 'aqui8<br>';
 
 	
 $(document).ready(function(){
-	
+   alert('ready');	
    novapagina = document.getElementById("form_user_page").value;	
    if (novapagina == "") {
 	document.getElementById("form_user_page").disabled = false;
@@ -169,7 +169,7 @@ $(document).ready(function(){
 
  $("#botao_pagina").click(function(){
    	novapagina = document.getElementById("form_user_page").value;
-   
+        alert('clicado');
 	if (document.getElementById("form_user_page").disabled) {
 		document.getElementById("form_user_page").disabled = false; 
 		document.getElementById("botao_pagina").value = "Salvar";
