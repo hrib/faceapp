@@ -18,7 +18,7 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $app_name = 'trocalikes';
 
-
+echo 'aqui1<br>';
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
@@ -39,6 +39,7 @@ try {
   exit;
 }
 
+echo 'aqui2<br>';
 if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
@@ -50,6 +51,7 @@ if (! isset($accessToken)) {
   exit;
 }
 
+echo 'aqui3<br>';
 
 try {  
   $response = $fb->get('/me?fields=id,name', $accessToken);
