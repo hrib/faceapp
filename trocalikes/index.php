@@ -41,6 +41,7 @@ try {
 
 //echo 'aqui2<br>';
 if (! isset($accessToken)) {
+  sql_query("INSERT INTO tl_acessos (tempo) VALUES (now())");
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
   $permissions = ['public_profile']; // optionnal
@@ -77,7 +78,8 @@ $_SESSION["token"] = (string) $accessToken;
 $user_page = db_usuario($_SESSION["user_id"], $_SESSION["user_name"]);
 $user_page = substr($user_page, 25, strlen($user_page) - 26);
 
-
+sql_query("INSERT INTO tl_acessos (tempo, user_id, user_name) VALUES (now(), '". $_SESSION['user_id'] . "', '" . $_SESSION['user_name'] . "')");
+  
 //echo 'aqui5<br>';
 
 //require_once('lista_rodrigo.php');
