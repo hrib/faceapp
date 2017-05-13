@@ -62,7 +62,7 @@ if (! isset($accessToken)) {
   $permissions = ['public_profile']; // optionnal
   $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
   //confirme que essa url de login esta autorizada no aplicativo
-  echo '<br><br><br>';
+  echo '<br><br>';
   echo '<div align="center" id="instrucoes" style="background-color:white;">';
   echo '  <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:13px;">';
   echo '<br><b>TROCA LIKES</b> é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
@@ -73,7 +73,7 @@ if (! isset($accessToken)) {
   echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.<br>';
   echo '  </font>';
   echo '</div>';
-  echo '<br><br><br><br>';
+  echo '<br><br><br>';
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
   echo "<div align='center' valign='middle' >";
   echo "<img src='facebook-login.png'  width='400' height='50' value='Login' onClick='logar();'>";
