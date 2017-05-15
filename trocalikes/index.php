@@ -357,6 +357,6 @@ fim iframe
 </div>
 <br>
 <br>
-Troca Likes App - Todos os Direitos Reservados
+Troca Likes App - Todos os Direitos Reservados ::  <a href="privacy_policy.html">Privacy Policy</a> ::  <a href="privacy_policy.html">Terms of Service</a> 
 </font>
 
