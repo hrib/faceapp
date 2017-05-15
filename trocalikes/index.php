@@ -285,8 +285,13 @@ $("#atualiza").click(function(){
 <div align="left" id="user_page_frame" style="background-color:white;">
       <table  border="0">
         <tr valign="middle">
+		<!-- 
           <td align="center"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="nome">Curta os POSTS abaixo para ganhar créditos e ter os posts da sua página divulgados para outros usuários</span></font></td>
-	</tr>
+	-->
+          <td align="center"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="nome">O que acha dos Posts abaixo?</span></font></td>
+	
+
+         </tr>
       </table>
 </div>
 
