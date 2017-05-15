@@ -246,6 +246,7 @@ $("#atualiza").click(function(){
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <!-- 
 	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Cliques Efetuados: <b><span id="creditos"></span></b></font></td>
+-->
 </tr>
 	<tr>
 	  <td> </td>
@@ -254,7 +255,7 @@ $("#atualiza").click(function(){
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 
 		<td align="center" ><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
--->	
+	
 
 <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
@@ -274,9 +275,9 @@ $("#atualiza").click(function(){
 	  <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  
+	<!--   
 		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Saldo: <b><span id="saldo"></span></b></font></td>
-
+-->
 	</tr>
       </table>
 </div>
