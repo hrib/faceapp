@@ -1,4 +1,21 @@
-function calcula_creditos_individual($user_id, $fb, $accessToken){
+<?php
+session_start(); 
+require_once('my_queries.php');
+$user_name = $_SESSION["user_name"];
+$user_id = $_SESSION["user_id"];
+
+
+        require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
+        $app_id = getenv('FB_APP_ID');
+        $app_secret = getenv('FB_APP_SECRET');
+        $fb = new Facebook\Facebook([
+          'app_id' => $app_id,
+          'app_secret' => $app_secret,
+          'default_graph_version' => 'v2.9',
+          ]);
+    
+        $accessToken = $_SESSION["token"];
+
   //VERIFICACAO
   $retorno = sql_query("SELECT * FROM tl_cliques WHERE clicker_check = 'esperando' ORDER BY id;"); 
   while ($row = $retorno->fetch(PDO::FETCH_ASSOC)) {
@@ -14,5 +31,12 @@ function calcula_creditos_individual($user_id, $fb, $accessToken){
         $saldo = $row['saldo'];
   }
   $creditos_cliente->closeCursor();
-  return array($creditos, $usados, $saldo);
-}
+
+        $data = array(
+            "creditos"     => $creditos,
+            "usados"  => $usados,
+            "saldo" => $saldo
+        );
+        echo json_encode($data); 
+
+
