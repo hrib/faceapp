@@ -76,7 +76,7 @@ if (! isset($accessToken)) {
   echo '<br><br><br><br><br><br><br><br><br><br>';	
   echo '<div align="center" id="instrucoes" style="background-color:white;">';
   echo '  <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:13px;">';
-  echo 'Based on your profile we suggest posts you might enjoy!';
+  echo 'Based on your profile we suggest posts you might enjoy!<br>';
   echo 'Baseado no seu perfil, sugerimos posts que voce poderá gostar!';
  
 	// echo '<b>TROCA LIKES</b></font><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"> é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
