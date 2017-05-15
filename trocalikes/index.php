@@ -42,8 +42,8 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.9',
   ]);
 
-$helper = $fb->getCanvasHelper();
-
+//$helper = $fb->getCanvasHelper();
+$helper = $fb->getRedirectLoginHelper();
 try {
   $accessToken = $helper->getAccessToken();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
