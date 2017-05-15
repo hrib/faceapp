@@ -76,11 +76,14 @@ if (! isset($accessToken)) {
   echo '<br><br><br><br><br><br><br><br><br><br>';	
   echo '<div align="center" id="instrucoes" style="background-color:white;">';
   echo '  <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:13px;">';
-  echo '<b>TROCA LIKES</b></font><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"> é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
-  echo 'Ao logar, o aplicativo mostrará uma lista de posts para você curtir e ganhar créditos para cada LIKE que der.<br>'; 
-  echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
-  echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
-  echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.';
+  echo 'Based on your profile we suggest posts you might enjoy!';
+  echo 'Baseado no seu perfil, sugerimos posts que voce poderá gostar!';
+ 
+	// echo '<b>TROCA LIKES</b></font><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"> é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
+ // echo 'Ao logar, o aplicativo mostrará uma lista de posts para você curtir e ganhar créditos para cada LIKE que der.<br>'; 
+ // echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
+ // echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
+ // echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.';
   echo '  </font>';
   echo '</div>';
   echo '';
