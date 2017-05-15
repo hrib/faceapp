@@ -146,6 +146,10 @@ $(document).ready(function(){
 	document.getElementById("resposta").innerHTML="";   
    }
    loadQueryResults();
+	
+$("#atualiza").click(function(){
+   loadQueryResults();
+	)}
 
  $("#botao_pagina").click(function(){
    	novapagina = document.getElementById("form_user_page").value;
@@ -270,7 +274,9 @@ fim iframe
 <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
 <br>
 <div align="center" >
-<a href="https://apps.facebook.com/trocalikes/">Mais Posts >></a>
+<font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
+<input type="submit" id="atualiza" value="Mais Posts >>">
+</font>
 </div>
 <br>
 <br>
