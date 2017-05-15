@@ -84,7 +84,7 @@ if (! isset($accessToken)) {
   echo '  </font>';
   echo '</div>';
   echo '';
-
+  echo '<br><br><br><br><br><br>Troca Likes App - Todos os Direitos Reservados ::  <a href="privacy_policy.html">Privacy Policy</a> ::  <a href="privacy_policy.html">Terms of Service</a>';
   
   exit;
 }
