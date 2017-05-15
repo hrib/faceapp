@@ -1,6 +1,20 @@
 <?php
+session_start(); 
+require_once('my_queries.php');
+//echo 'fim';   
+$user_name = $_SESSION["user_name"];
+$user_id = $_SESSION["user_id"];
+$accessToken = $_SESSION["token"];
 
 
+        require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
+        $app_id = getenv('FB_APP_ID');
+        $app_secret = getenv('FB_APP_SECRET');
+        $fb = new Facebook\Facebook([
+          'app_id' => $app_id,
+          'app_secret' => $app_secret,
+          'default_graph_version' => 'v2.9',
+          ]);
 
 //VERIFICACAO
 //Verifica se cada "esperando" foi ou nao clicado, mudando para "clicado" 
@@ -64,127 +78,6 @@ $ids_selecionados = "SELECT id FROM (SELECT min(id) as id, min(tempo) as tempo, 
 sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', clicker_check = 'esperando', tempo_update = now() FROM (" . $ids_selecionados . ") AS T WHERE tl_cliques.id = T.id;");
 
 //echo 'aqui8<br>';
-
-
-?>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  
-
-
-	
-$(document).ready(function(){
-   //alert('ready');	
-   novapagina = document.getElementById("form_user_page").value;	
-   if (novapagina == "") {
-	document.getElementById("form_user_page").disabled = false;
-	document.getElementById("botao_pagina").value = "Salvar";
-        document.getElementById("resposta").innerHTML="Digite o nome ou ID da sua página";
-   } else {
-	document.getElementById("form_user_page").disabled = true;
-	document.getElementById("botao_pagina").value = "Editar";
-	document.getElementById("resposta").innerHTML="";   
-   }
-
- $("#botao_pagina").click(function(){
-   	novapagina = document.getElementById("form_user_page").value;
-        //alert('clicado');
-	if (document.getElementById("form_user_page").disabled) {
-		document.getElementById("form_user_page").disabled = false; 
-		document.getElementById("botao_pagina").value = "Salvar";
-		document.getElementById("resposta").innerHTML="Digite o nome ou ID da sua página";
-
-   	} else {
-		$.ajax({
-			url: 'user_page_frame.php',
-			type: 'POST',
-			//dataType: 'text',
-			dataType: 'json',
-			data: {new_user_page: novapagina},
-		})
-		.done(function(data) {
-			console.log(JSON.stringify(data));
-			document.getElementById("form_user_page").value = data.pagina;
-			document.getElementById("resposta").innerHTML = data.texto;
-			//document.getElementById("resposta").style.display = "inline"; 
-			document.getElementById("form_user_page").disabled = true;
-			document.getElementById("botao_pagina").value = "Editar";
-			//document.getElementById("resposta").innerHTML="Sua página: ";   
-			setTimeout(function(){ 
-				document.getElementById("resposta").innerHTML = ''; 
-				//document.getElementById("resposta").style.display = "none"; 
-			}, 15000);
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-   
-   	} 
- });
-});
-</script> 
-
-
-
-<div align="left" id="user_page_frame" style="background-color:white;">
-      <table  border="0">
-        <tr valign="middle">
-          <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_name"] . "        "; ?></span></b></font></td>
-	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td align="right"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="texto_pagina">Minha Página:</span></font></td>
-          <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">https://www.facebook.com/<input type="text" id="form_user_page" value="<?php echo $user_page; ?>"  style="font-family:arial; font-size:12px; width: 280px; margin-left: 0px; margin-top: 0px;">/</font></td>
-          <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
-          <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  
-	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="creditos">Cliques Efetuados: <b><?php echo $creditos; ?></b></span></font></td>
-	</tr>
-	<tr>
-	  <td> </td>
-	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td align="center" ><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
-	  <td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  
-		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Cliques Recebidos: <b><?php echo $usados; ?></b></span></font></td>
-
-	</tr>
-	<tr>
-	  <td> </td>
-	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <td> </td>
-	  <td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  
-		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Saldo: <b><?php echo $saldo; ?></b></span></font></td>
-
-	</tr>
-      </table>
-</div>
-<br>
-<div align="left" id="user_page_frame" style="background-color:white;">
-      <table  border="0">
-        <tr valign="middle">
-          <td align="center"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="nome">Curta os POSTS abaixo para ganhar créditos e ter os posts da sua página divulgados para outros usuários</span></font></td>
-	</tr>
-      </table>
-</div>
-
-
-<?php
-
-
 
 
 
