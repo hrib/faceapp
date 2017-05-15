@@ -151,6 +151,7 @@ $("#atualiza").click(function(){
    loadQueryResults();
 	});
 
+
  $("#botao_pagina").click(function(){
    	novapagina = document.getElementById("form_user_page").value;
         //alert('clicado');
@@ -194,8 +195,36 @@ $("#atualiza").click(function(){
 	
   function loadQueryResults() {
     $('#DisplayDiv').load('bloco.php');
+    consulta_credito();
     return false;
   }
+	
+	
+ function consulta_credito(){	
+
+		$.ajax({
+			url: 'consulta_credito.php',
+			type: 'POST',
+			//dataType: 'text',
+			dataType: 'json',
+			//data: {new_user_page: novapagina},
+		})
+		.done(function(data) {
+			console.log(JSON.stringify(data));
+			document.getElementById("creditos").innerHTML = data.creditos;
+			document.getElementById("usados").innerHTML = data.usados;
+			document.getElementById("saldo").innerHTML = data.saldo;
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+  	 
+  }
+	
+	
 });
 </script> 
 
@@ -213,7 +242,7 @@ $("#atualiza").click(function(){
           <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  
-	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="creditos">Cliques Efetuados: <b><?php echo $creditos; ?></b></span></font></td>
+	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Cliques Efetuados: <span id="creditos"><b></b></span></font></td>
 	</tr>
 	<tr>
 	  <td> </td>
@@ -225,7 +254,7 @@ $("#atualiza").click(function(){
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  
-		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Cliques Recebidos: <b><?php echo $usados; ?></b></span></font></td>
+		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Cliques Recebidos: <span id="usados"><b></b></span></font></td>
 
 	</tr>
 	<tr>
@@ -238,7 +267,7 @@ $("#atualiza").click(function(){
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  
-		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="usados">Saldo: <b><?php echo $saldo; ?></b></span></font></td>
+		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Saldo: <span id="saldo"><b></b></span></font></td>
 
 	</tr>
       </table>
