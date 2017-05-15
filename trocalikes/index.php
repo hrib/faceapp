@@ -149,7 +149,7 @@ $(document).ready(function(){
 	
 $("#atualiza").click(function(){
    loadQueryResults();
-	)};
+	});
 
  $("#botao_pagina").click(function(){
    	novapagina = document.getElementById("form_user_page").value;
