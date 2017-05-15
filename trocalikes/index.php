@@ -62,7 +62,9 @@ if (! isset($accessToken)) {
   //echo 'No OAuth data could be obtained from the signed request. User has not authorized your app yet.';
   $helper = $fb->getRedirectLoginHelper();
   $permissions = ['public_profile']; // optionnal
-  $loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
+  //$loginUrl = $helper->getLoginUrl('https://apps.facebook.com/' . $app_name . '/', $permissions);
+  //$loginUrl = $helper->getLoginUrl('https://m.facebook.com/apps/' . $app_name . '/', $permissions);	
+  $loginUrl = $helper->getLoginUrl('https://apostagol.herokuapp.com/' . $app_name . '/', $permissions);	
   //confirme que essa url de login esta autorizada no aplicativo
   echo '<br><br><br><br><br><br><br>';
   echo "<script>function logar(){window.top.location.href='".$loginUrl."';}</script>";
