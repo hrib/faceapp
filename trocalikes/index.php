@@ -125,8 +125,6 @@ sql_query("INSERT INTO tl_acessos (tempo, user_id, user_name) VALUES (now(), '".
 //require_once('lista_rodrigo.php');
 //require_once('lista_IE.php');
 ?>
-<div id='DisplayDiv'>
-</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -250,6 +248,8 @@ $(document).ready(function(){
       </table>
 </div>
 
+<div id='DisplayDiv'>
+</div>
 
 <!--  
 iframe1
