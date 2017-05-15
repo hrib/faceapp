@@ -81,11 +81,14 @@ if (! isset($accessToken)) {
   echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
   echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
   echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.';
-  echo '<br><br><br>Troca Likes App - Todos os Direitos Reservados ::  <a href="privacy_policy.html">Privacy Policy</a> ::  <a href="privacy_policy.html">Terms of Service</a>';
   echo '  </font>';
   echo '</div>';
   echo '';
-  
+	
+  echo '<div align="center" id="final" >';
+  echo '<font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">';
+  echo '<br><br><br>Troca Likes App - Todos os Direitos Reservados ::  <a href="privacy_policy.html">Privacy Policy</a> ::  <a href="privacy_policy.html">Terms of Service</a>';
+  echo '</font></div>';
   exit;
 }
 
