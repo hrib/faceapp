@@ -357,7 +357,7 @@ fim iframe
 <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">
 <br>
 <div align="center" >
-<a href="index.php">Mais Posts >></a>
+<a href="https://apps.facebook.com/trocalikes/">Mais Posts >></a>
 </div>
 <br>
 <br>
