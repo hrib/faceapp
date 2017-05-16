@@ -26,7 +26,7 @@ INSERT INTO tl_cliques (tempo , dono_id , dono_page , dono_post , clicker_id , c
 
 
 <form action="/trocalikes/gerencia.php" method="post">
-  <div><textarea name="sql2" rows="5" cols="200">SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Sobra FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id;</textarea></div>
+  <div><textarea name="sql2" rows="5" cols="200">SELECT * FROM ((SELECT coalesce(T1.clicker_id,  T2.dono_id) as usuario, (COALESCE(T1.n_creditos,0)) as Creditos, (COALESCE(T2.n_usados,0)) as Usados, (COALESCE(T1.n_creditos,0) + COALESCE(T2.n_usados, 0)) as Sobra FROM (SELECT clicker_id, COUNT(*) as n_creditos FROM tl_cliques WHERE clicker_check = 'clicado' GROUP BY clicker_id) AS T1 FULL OUTER JOIN (SELECT dono_id, -COUNT(*) as n_usados FROM tl_cliques  WHERE clicker_check = 'clicado' GROUP BY dono_id) AS T2 ON T1.clicker_id = T2.dono_id) AS TA FULL OUTER JOIN (SELECT user_id, user_name FROM tl_cadastro) AS TB ON TA.usuario = TB.user_id)</textarea></div>
   <div><input type="submit" value="Creditos"></div>
 </form>
 
