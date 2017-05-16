@@ -19,6 +19,7 @@ html {
   z-index: 999;
   width: 95%;
   height: 50px;
+  margin: auto;
 }
 	
 </style>
