@@ -223,9 +223,9 @@ $("#atualiza").click(function(){
 		})
 		.done(function(data) {
 			console.log(JSON.stringify(data));
-			document.getElementById("creditos").innerHTML = data.creditos;
-			document.getElementById("usados").innerHTML = data.usados;
-			document.getElementById("saldo").innerHTML = data.saldo;
+			//document.getElementById("creditos").innerHTML = data.creditos;
+			//document.getElementById("usados").innerHTML = data.usados;
+			//document.getElementById("saldo").innerHTML = data.saldo;
 		})
 		.fail(function() {
 			console.log("error");
