@@ -11,6 +11,16 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+	
+#user_page_frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 23px;
+}
+	
 </style>
 <meta property="og:image" content="http://apostagol.herokuapp.com/trocalikes/icone.jpg" />
 <meta property="og:description" content="TROCA LIKES: Aplicativo para troca de likes de forma JUSTA" />
@@ -282,7 +292,7 @@ $("#atualiza").click(function(){
       </table>
 </div>
 <br>
-<div align="left" id="user_page_frame" style="background-color:white;">
+<div align="left" id="instrucoes_na_tela" style="background-color:white;">
       <table  border="0">
         <tr valign="middle">
 		<!-- 
