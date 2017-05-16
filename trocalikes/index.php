@@ -18,7 +18,7 @@ html {
   background-color: white; 
   top: 0;
   left: 0;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 	
