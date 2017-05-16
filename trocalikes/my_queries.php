@@ -117,10 +117,10 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
                 $postid = $graphNode['posts'][$randomico]['id'];
                 $story = $graphNode['posts'][$randomico]['story'];
                 //echo $n_posts;
-                if (strpos($story, 'shared') == false) {
-                    if (strpos($story, 'video.') == false) {
-                         $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" .  $postid . "', 'gerado'),";
-                    }
+                if (strpos($story, 'shared') !== false) AND (strpos($story, 'video.') !== false){
+  
+                } else {
+                      $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" .  $postid . "', 'gerado'),";
                 }
                 
             } 
