@@ -12,11 +12,7 @@ html {
   background-size: cover;
 }
 	
-#user_page_frame {
-  position: fixed;
-  z-index: 999;
 
-}
 	
 </style>
 <meta property="og:image" content="http://apostagol.herokuapp.com/trocalikes/icone.jpg" />
