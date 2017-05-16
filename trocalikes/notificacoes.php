@@ -15,7 +15,7 @@ $fb = new Facebook\Facebook([
 $data = array(
     'href'=> '?texto=123',
     'access_token'=> $accessToken,
-    'template'=> 'Voce precisa cadastrar sua pagina para comecar a ganhar likes!'
+    'template'=> 'Você precisa cadastrar sua página para começar a ganhar likes'
 );
 //$sendnotification = $facebook->api('/USER_ID/notifications', 'post', $data);
 
