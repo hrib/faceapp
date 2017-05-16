@@ -12,9 +12,18 @@ $fb = new Facebook\Facebook([
   
   $accessToken = $app_id . '|' . $app_secret;
 
+$data = array(
+    'href'=> 'https://apps.facebook.com/trocalikes/',
+    'access_token'=> $accessToken,
+    'template'=> 'Voce precisa cadastrar sua pagina para comecar a ganhar likes!'
+);
+//$sendnotification = $facebook->api('/USER_ID/notifications', 'post', $data);
+
+
+
 try {  
   //$response = $fb->post('/1580952695552959/notifications?access_token=' . $accessToken .' &href=?retorno=123&template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!', $accessToken);
-  $response = $fb->post('/1580952695552959/notifications?', $accessToken, 'retorno=123' , 'template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!');
+  $response = $fb->post('/1580952695552959/notifications', $data);
 
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
