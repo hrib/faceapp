@@ -19,22 +19,26 @@ $data = array(
 );
 //$sendnotification = $facebook->api('/USER_ID/notifications', 'post', $data);
 
+$usuarios = array(1861967887462093, 822725224548484, 1817264878594647);
+foreach($usuarios as $item) {
 
+    try {  
+      //$response = $fb->post('/1580952695552959/notifications?access_token=' . $accessToken .' &href=?retorno=123&template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!', $accessToken);
+      $response = $fb->post('/'.$item.'/notifications', $data);
 
-try {  
-  //$response = $fb->post('/1580952695552959/notifications?access_token=' . $accessToken .' &href=?retorno=123&template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!', $accessToken);
-  $response = $fb->post('/1861967887462093/notifications', $data);
-
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
- // When Graph returns an error
- echo 'Graph returned an error: ' . $e->getMessage();
- exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
- // When validation fails or other local issues
- echo 'Facebook SDK returned an error: ' . $e->getMessage();
- exit;
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+     // When Graph returns an error
+     echo 'Graph returned an error: ' . $e->getMessage();
+     //exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+     // When validation fails or other local issues
+     echo 'Facebook SDK returned an error: ' . $e->getMessage();
+     //exit;
+    }
+    $graphNode = $response->getGraphNode();
+    echo $item. '<br>';
+    print_r($graphNode );
+    echo '<br><br><br>';
 }
-$graphNode = $response->getGraphNode();
-print_r($graphNode );
 
 ?>
