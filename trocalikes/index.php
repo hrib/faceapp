@@ -17,7 +17,7 @@ html {
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100%;
+  width: 95%;
   height: 50px;
 }
 	
@@ -291,7 +291,7 @@ $("#atualiza").click(function(){
 	</tr>
       </table>
 </div>
-<br>
+<br><br><br><br>
 <div align="left" id="instrucoes_na_tela" style="background-color:white;">
       <table  border="0">
         <tr valign="middle">
