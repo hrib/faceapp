@@ -13,7 +13,7 @@ $fb = new Facebook\Facebook([
   $accessToken = $app_id . '|' . $app_secret;
 
 $data = array(
-    'href'=> 'https://apps.facebook.com/trocalikes/',
+    'href'=> '?texto=123',
     'access_token'=> $accessToken,
     'template'=> 'Voce precisa cadastrar sua pagina para comecar a ganhar likes!'
 );
