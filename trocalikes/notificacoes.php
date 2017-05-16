@@ -23,7 +23,7 @@ $data = array(
 
 try {  
   //$response = $fb->post('/1580952695552959/notifications?access_token=' . $accessToken .' &href=?retorno=123&template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!', $accessToken);
-  $response = $fb->post('/1580952695552959/notifications', $data);
+  $response = $fb->post('/1861967887462093/notifications', $data);
 
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
