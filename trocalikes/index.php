@@ -241,7 +241,7 @@ $("#atualiza").click(function(){
 
 
 <div align="center" id="user_page_frame" >
-      <table  border="0" style="background-color:white;">
+      <table  border="0" style="background-color:white; width:100%;">
         <tr valign="middle">
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_name"] . "        "; ?></span></b></font></td>
 	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
