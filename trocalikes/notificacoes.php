@@ -13,7 +13,9 @@ $fb = new Facebook\Facebook([
   $accessToken = $app_id . '|' . $app_secret;
 
 try {  
-  $response = $fb->post('/1580952695552959/notifications?access_token=' . $accessToken .' &href=?retorno=123&template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!', $accessToken);
+  //$response = $fb->post('/1580952695552959/notifications?access_token=' . $accessToken .' &href=?retorno=123&template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!', $accessToken);
+  $response = $fb->post('/1580952695552959/notifications?', $accessToken, 'retorno=123' , 'template=Voce precisa cadastrar sua pagina para comecar a ganhar likes!');
+
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
  // When Graph returns an error
  echo 'Graph returned an error: ' . $e->getMessage();
