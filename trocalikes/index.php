@@ -87,14 +87,14 @@ if (! isset($accessToken)) {
   echo '<br><br><br><br><br><br><br><br><br><br>';	
   echo '<div align="center" id="instrucoes" style="background-color:white;">';
   echo '  <font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:13px;">';
-  echo 'Based on your profile we suggest posts you might enjoy!<br>';
-  echo 'Baseado no seu perfil, sugerimos posts que voce poderá gostar!';
+  //echo 'Based on your profile we suggest posts you might enjoy!<br>';
+  //echo 'Baseado no seu perfil, sugerimos posts que voce poderá gostar!';
  
-	// echo '<b>TROCA LIKES</b></font><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"> é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
- // echo 'Ao logar, o aplicativo mostrará uma lista de posts para você curtir e ganhar créditos para cada LIKE que der.<br>'; 
- // echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
- // echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
- // echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.';
+  echo '<b>TROCA LIKES</b></font><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"> é um aplicativo GRATUITO para aumentar o número de curtidas nos posts de sua página no Facebook.<br><br>';
+  echo 'Ao logar, o aplicativo mostrará uma lista de posts para você curtir e ganhar créditos para cada LIKE que der.<br>'; 
+  echo 'Esses créditos são convertidos em LIKES de outros usuários para sua própria página.<br><br>';
+  echo 'O aplicativo checa automaticamente se cada usário realmente curtiu o post para merecer o crédito.<br>';
+  echo 'Dessa forma, oferecemos uma troca JUSTA e GARANTIDA entre todos os participantes.';
   echo '  </font>';
   echo '</div>';
   echo '';
@@ -225,9 +225,9 @@ $("#atualiza").click(function(){
 		})
 		.done(function(data) {
 			console.log(JSON.stringify(data));
-			//document.getElementById("creditos").innerHTML = data.creditos;
-			//document.getElementById("usados").innerHTML = data.usados;
-			//document.getElementById("saldo").innerHTML = data.saldo;
+			document.getElementById("creditos").innerHTML = data.creditos;
+			document.getElementById("usados").innerHTML = data.usados;
+			document.getElementById("saldo").innerHTML = data.saldo;
 		})
 		.fail(function() {
 			console.log("error");
@@ -255,27 +255,19 @@ $("#atualiza").click(function(){
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><input type="submit" id="botao_pagina" value="Botao"></font></td>
           <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <!-- 
 	  <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Cliques Efetuados: <b><span id="creditos"></span></b></font></td>
--->
-</tr>
+
+	</tr>
 	<tr>
 	  <td> </td>
 	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 	  <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-
 		<td align="center" ><font style="font-family: Arial; color:red; font-size:12px;"><span id="resposta"></span></font></td>
-	
-
-<td> </td>
+		<td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	  <!-- 
-	  
 		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Cliques Recebidos: <b><span id="usados"></span></b></font></td>
--->	
-
 	</tr>
 	<tr>
 	  <td> </td>
@@ -286,9 +278,7 @@ $("#atualiza").click(function(){
 	  <td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
 		<td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-	<!--   
 		<td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;">Saldo: <b><span id="saldo"></span></b></font></td>
--->
 	</tr>
       </table>
 </div>
@@ -296,12 +286,7 @@ $("#atualiza").click(function(){
 <div align="left" id="instrucoes_na_tela" style="background-color:white;">
       <table  border="0">
         <tr valign="middle">
-		<!-- 
           <td align="center"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="nome">Curta os POSTS abaixo para ganhar créditos e ter os posts da sua página divulgados para outros usuários</span></font></td>
-	-->
-          <td align="center"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><span id="nome">O que acha dos Posts abaixo?</span></font></td>
-	
-
          </tr>
       </table>
 </div>
