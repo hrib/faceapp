@@ -88,7 +88,7 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
         //echo 'Gerando posts para: ' . $usuario . ':' . $paginaID . ':';
 
         try {  
-          $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id}', $accessToken);
+          $response = $fb->get('/'. $paginaID .'/?fields=posts.limit(50){id,story}', $accessToken);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
          // When Graph returns an error
          console.log($paginaID . ': Gerador de Posts > Graph returned an error: ' . $e->getMessage());
@@ -115,8 +115,14 @@ function gerador_de_posts($fb, $accessToken, $usuario, $gera_n){
             for ($x = 1; $x <= $gera_n; $x++) {
                 $randomico = mt_rand (0, $n_posts - 1);
                 $postid = $graphNode['posts'][$randomico]['id'];
+                $story = $graphNode['posts'][$randomico]['story'];
                 //echo $n_posts;
-                $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" .  $postid . "', 'gerado'),";
+                if (strpos($story, 'shared') == false) {
+                    if (strpos($story, 'video.') == false) {
+                         $query = $query . " ( now(), '" . $usuario . "', '" . $paginaID . "', '" .  $postid . "', 'gerado'),";
+                    }
+                }
+                
             } 
         
             //if( $contador > $gera_n)
