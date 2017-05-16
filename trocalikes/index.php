@@ -14,8 +14,6 @@ html {
 	
 #user_page_frame {
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 999;
   width: 95%;
   height: 50px;
