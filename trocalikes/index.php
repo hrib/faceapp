@@ -15,9 +15,7 @@ html {
 #user_page_frame {
   position: fixed;
   z-index: 999;
-  width: 95%;
-  height: 50px;
-  margin: auto;
+
 }
 	
 </style>
