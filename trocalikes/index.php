@@ -16,7 +16,7 @@ html {
   position: fixed;
   z-index: 999;
   background-color: white; 
-  width: 95%;
+  width: 99%;
   margin: auto;
 }
 	
