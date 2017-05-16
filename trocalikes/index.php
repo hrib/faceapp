@@ -12,7 +12,11 @@ html {
   background-size: cover;
 }
 	
+#user_page_frame {
+  position: fixed;
+  z-index: 999;
 
+}
 	
 </style>
 <meta property="og:image" content="http://apostagol.herokuapp.com/trocalikes/icone.jpg" />
@@ -236,8 +240,8 @@ $("#atualiza").click(function(){
 
 
 
-<div align="center" id="user_page_frame" style="background-color:white;">
-      <table  border="0">
+<div align="center" id="user_page_frame" >
+      <table  border="0" style="background-color:white;">
         <tr valign="middle">
           <td align="left"><font style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size:11px;"><b><span id="nome"><?php echo $_SESSION["user_name"] . "        "; ?></span></b></font></td>
 	  <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
