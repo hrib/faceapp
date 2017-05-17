@@ -51,7 +51,7 @@ if (isset($query)) {
       . "password=" . $dbopts["pass"];
 
   $db = new PDO($dsn);
-  $result = $db->query($query);
+  //$result = $db->query($query);
   print_r($query);
   echo '<br>';
   echo '<br>';
