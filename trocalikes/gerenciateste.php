@@ -1,8 +1,8 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 <?php
   
-$query = $_POST['sql'];
-$query2 = $_POST['sql2'];
+//$query = $_POST['sql'];
+//$query2 = $_POST['sql2'];
 //echo $query;
 ?>
 
