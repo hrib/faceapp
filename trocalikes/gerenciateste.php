@@ -6,7 +6,7 @@ echo $query;
 ?>
 
 <h2>Input</h2>
-<form action="/trocalikes/gerenciateste.php" method="post">
+<form action="/trocalikes/gerenciateste2.php" method="post">
   <div>
     <textarea name="content" rows="10" cols="200">
 DELETE FROM tl_cadastro WHERE id = 1; 
