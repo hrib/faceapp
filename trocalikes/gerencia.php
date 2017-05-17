@@ -52,7 +52,7 @@ if (isset($query)) {
 
   $db = new PDO($dsn);
   $result = $db->query($query);
-
+  print_r($result);
   echo '<table border="1" style="font-family:arial; font-size:7px;">';
   while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
       echo "<tr>";
