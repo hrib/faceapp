@@ -212,6 +212,10 @@ $("#atualiza").click(function(){
     consulta_credito();
     return false;
   }
+
+  $(window).blur( function() {
+  	console.log("Blur");
+  });	
 	
 	
  function consulta_credito(){	
