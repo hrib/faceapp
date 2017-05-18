@@ -228,6 +228,7 @@ $("#atualiza").click(function(){
 	
   $(window).blur( function() {
   	console.log("Blur");
+	consulta_credito();  
 	//$("#atualiza").focus();  
   });
 	
