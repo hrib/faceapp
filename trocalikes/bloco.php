@@ -81,7 +81,7 @@ sql_query("UPDATE tl_cliques SET clicker_id = '" . $_SESSION["user_id"] . "', cl
 //PROPAGANDA
 //Cria frames de acordo com oq foi alocado "ESPERANDO"
 $frames = sql_query("SELECT dono_post FROM tl_cliques WHERE clicker_id = '" . $_SESSION["user_id"] . "' AND clicker_check = 'esperando';");
-  echo '<br><br><table align="center" border="1" style="font-family:arial; font-size:7px; background-color:white;">';
+  echo '<br><br><table id="tabelabloco" align="center" border="1" style="font-family:arial; font-size:7px; background-color:white;">';
   $z = 0;
   while ($row = $frames->fetch(PDO::FETCH_ASSOC)) {
       if($z == 0){echo "<tr>";}
