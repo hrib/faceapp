@@ -229,7 +229,7 @@ $("#atualiza").click(function(){
   $(window).blur( function() {
   	console.log("Blur");
 	consulta_credito(); 
-	$("#user_page_frame").focus();
+	$("#atualiza").focus();
 	//$("#atualiza").focus();  
   });
 	
