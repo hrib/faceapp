@@ -218,7 +218,7 @@ $("#atualiza").click(function(){
 	//$("#atualiza").focus();  
   });
 	
-    $('iframe').hover( function() {
+    $('#FBiframe').hover( function() {
 		console.log("hover IN");
     }, function() {
 		console.log("hover OUT");
