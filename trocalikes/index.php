@@ -218,7 +218,12 @@ $("#atualiza").click(function(){
 	//$("#atualiza").focus();  
   });
 	
-    $('#FBiframe').hover( function() {
+  $(window).focus( function() {
+  	console.log("Foco");
+	//$("#atualiza").focus();  
+  });
+	
+    $('#tabelabloco').hover( function() {
 		console.log("hover IN");
     }, function() {
 		console.log("hover OUT");
