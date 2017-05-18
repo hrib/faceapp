@@ -229,7 +229,6 @@ $("#atualiza").click(function(){
   $(window).blur( function() {
   	console.log("Blur");
 	consulta_credito(); 
-	$("#atualiza").focus();
 	//$("#atualiza").focus();  
   });
 	
@@ -248,6 +247,7 @@ $("#atualiza").click(function(){
 			document.getElementById("creditos").innerHTML = data.creditos;
 			document.getElementById("usados").innerHTML = data.usados;
 			document.getElementById("saldo").innerHTML = data.saldo;
+			document.getElementById("saldo").focus();
 		})
 		.fail(function() {
 			console.log("error");
@@ -255,7 +255,7 @@ $("#atualiza").click(function(){
 		.always(function() {
 			console.log("complete");
 		});
-  	 
+  	        
   }
 	
 	
