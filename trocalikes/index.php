@@ -247,7 +247,7 @@ $("#atualiza").click(function(){
 			document.getElementById("creditos").innerHTML = data.creditos;
 			document.getElementById("usados").innerHTML = data.usados;
 			document.getElementById("saldo").innerHTML = data.saldo;
-			document.getElementById("saldo").focus();
+			document.getElementById("botao_pagina").focus();
 		})
 		.fail(function() {
 			console.log("error");
