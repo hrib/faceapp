@@ -228,7 +228,7 @@ $("#atualiza").click(function(){
 	
   $(window).blur( function() {
   	console.log("Blur");
-	consulta_credito(); 
+	setTimeout(consulta_credito(); , 5000);
 	//$("#atualiza").focus();  
   });
 	
