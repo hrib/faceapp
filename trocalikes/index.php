@@ -215,7 +215,7 @@ $("#atualiza").click(function(){
 
   $(window).blur( function() {
   	console.log("Blur");
-	$("#atualiza").focus();  
+	//$("#atualiza").focus();  
   });
 	
     $('iframe').hover( function() {
