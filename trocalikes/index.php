@@ -216,7 +216,13 @@ $("#atualiza").click(function(){
   $(window).blur( function() {
   	console.log("Blur");
 	$("#atualiza").focus();  
-  });	
+  });
+	
+    $('iframe').hover( function() {
+		console.log("hover IN");
+    }, function() {
+		console.log("hover OUT");
+    });
 	
 	
  function consulta_credito(){	
