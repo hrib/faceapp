@@ -213,21 +213,23 @@ $("#atualiza").click(function(){
     return false;
   }
 
-  $(window).blur( function() {
-  	console.log("Blur");
-	//$("#atualiza").focus();  
-  });
 	
   $(window).focus( function() {
   	console.log("Foco");
 	//$("#atualiza").focus();  
   });
 	
-    $('#tabelabloco').hover( function() {
-		console.log("hover IN");
-    }, function() {
-		console.log("hover OUT");
-    });
+  $("#tabelabloco").hover( function() {
+    console.log("hover IN");
+  }, function() {
+    console.log("hover OUT");
+  });
+	
+	
+  $(window).blur( function() {
+  	console.log("Blur");
+	//$("#atualiza").focus();  
+  });
 	
 	
  function consulta_credito(){	
