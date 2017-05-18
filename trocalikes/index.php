@@ -219,7 +219,7 @@ $("#atualiza").click(function(){
 	//$("#atualiza").focus();  
   });
 	
-  $("#tabelabloco").hover( function() {
+  $("#FBiframe").hover( function() {
     console.log("hover IN");
   }, function() {
     console.log("hover OUT");
