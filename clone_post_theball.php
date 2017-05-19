@@ -7,24 +7,9 @@ $myalbumid = '1509106142644949';
 //$pageOriginal = 'mblivre';
 $pageOriginal = 'FuteDaDepressao,LibertadoresDaDepressao,RIPfutebolclube,humoresportivonaarea';
 
-
-$dbopts = parse_url(getenv('DATABASE_URL'));
-$dsn = "pgsql:"
-    . "host=" . $dbopts["host"] . ";"
-    . "dbname=". ltrim($dbopts["path"],'/') . ";"
-    . "user=" . $dbopts["user"] . ";"
-    . "port=" . $dbopts["port"] . ";"
-    . "sslmode=require;"
-    . "password=" . $dbopts["pass"];
-$db = new PDO($dsn);
-$query = "SELECT id1, id2, id3, id4 FROM dados WHERE id1 = 'theball'";
-$result = $db->query($query);
-$row = $result->fetch(PDO::FETCH_ASSOC);
-$result->closeCursor();
-
-$app_id = $row["id2"];
-$app_secret = $row["id3"];
-$page_access_token = $row["id4"];
+$app_id = getenv('FB_APP_ID');
+$app_secret = getenv('FB_APP_SECRET');
+$page_access_token = getenv('FB_TOKEN_APOSTAGOL_THEBALL');
 
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
