@@ -9,7 +9,7 @@ $pageOriginal = 'FuteDaDepressao,LibertadoresDaDepressao,RIPfutebolclube,humores
 
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
-$page_access_token = getenv('FB_TOKEN_APOSTAGOL_THEBALL');
+$page_access_token = getenv('FB_TOKEN_TESTE_THEBALL');
 
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
