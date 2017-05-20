@@ -58,7 +58,7 @@ while($graphNode) {
         $graphNode = $fb->next($graphNode);
 }
 echo '</table>';
-echo '<br><br>';
+echo '<br>fim<br>';
 
 
 
