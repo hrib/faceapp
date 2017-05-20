@@ -8,6 +8,10 @@ $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 $postid = '1717137268528382_1934505183458255';
 
 $agora = date("Y-m-d");
+$chaves = array('divulgacao','blog+pessoal');
+$chaves = array('blog+pessoal');
+
+$chave = $chaves[mt_rand(0, sizeof($chaves) - 1)] 
 
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
@@ -18,7 +22,7 @@ $fb = new Facebook\Facebook([
 
 
 try {
-   $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)', $userToken);
+   $response = $fb->get('/search?q='.$chave.'&type=page&fields=id,name,fan_count,posts.limit(1)', $userToken);
  } catch(Facebook\Exceptions\FacebookResponseException $e) {
    // When Graph returns an error
    echo 'Graph returned an error: ' . $e->getMessage();
