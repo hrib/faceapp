@@ -49,8 +49,10 @@ try {
   }
   echo '</table>';
 
-echo '<br><br>';
-
+echo '<br>.<br>';
+echo $graphNode['paging']['next'];
+echo '<br>.<br>';
+echo $graphNode[1]['next'];
 
 while(($graphNode['paging']) && array_key_exists("next", $graphNode["paging"])) {
         $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'&offset='.$offset.'', $userToken);
