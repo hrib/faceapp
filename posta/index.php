@@ -108,7 +108,8 @@ function pagina_post_comenta($fb, $postid, $userToken){
 
     try {
        $response = $fb->post($target, $data, $userToken);
-       $resposta = $response->fetchAll();
+       $graphNode = $response->getGraphNode();
+       $resposta = print_r($graphNode,true);
      } catch(Facebook\Exceptions\FacebookResponseException $e) {
        // When Graph returns an error
        $resposta =  'Posta: Graph returned an error: ' . $e->getMessage();
