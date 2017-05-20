@@ -18,12 +18,8 @@ $fb = new Facebook\Facebook([
   ]);
 
 
-
-
-
-$limit = 25;
 try {
-   $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'', $userToken);
+   $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)', $userToken);
  } catch(Facebook\Exceptions\FacebookResponseException $e) {
    // When Graph returns an error
    echo 'Graph returned an error: ' . $e->getMessage();
@@ -34,26 +30,9 @@ try {
    //exit;
  }
 
- $graphNode = $response->getGraphEdge();
-  
-  echo '<table border="1" style="font-family:arial; font-size:9px;">';
-  foreach ($graphNode as $pagina) {
-        echo '<tr>';
-        echo '<td>' . $pagina['id'] . '</td>';
-        echo '<td>' . $pagina['name'] . '</td>';
-        echo '<td>' . $pagina['fan_count'] . '</td>';
-        echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
-        echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
-        echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
-        echo '</tr>';
-  }
-  echo '</table>';
-
-echo '<br>.<br>';
-$graphNode = $fb->next($graphNode);
-
+$graphNode = $response->getGraphEdge();
+echo '<table border="1" style="font-family:arial; font-size:9px;">';
 while($graphNode) {
-        echo '<table border="1" style="font-family:arial; font-size:9px;">';
         foreach ($graphNode as $pagina) {
             echo '<tr>';
             echo '<td>' . $pagina['id'] . '</td>';
@@ -64,14 +43,12 @@ while($graphNode) {
             echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
             echo '</tr>';
         }
-        echo '</table>';
         $graphNode = $fb->next($graphNode);
 }
- 
+echo '</table>';
 echo '<br><br>';
  
-  print_r($graphNode);
-  exit;  
+exit;  
 
 
 $data = [
