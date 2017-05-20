@@ -9,7 +9,7 @@ $postid = '1717137268528382_1934505183458255';
 $texto = '!';
 $media = 'https://www.clipartsgram.com/image/347684311-14-like-symbol-on-facebook-free-cliparts-that-you-can-download-to-you-0wvbv9-clipart.jpg';
 
-$agora = date_format(now(), 'Y-m-d');
+$agora = date("Y-m-d");
 
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
