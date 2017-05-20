@@ -52,7 +52,7 @@ try {
 echo '<br><br>';
 
 
-while(in_array("paging", $graphNode) && array_key_exists("next", $graphNode["paging"])) {
+while(($graphNode['paging']) && array_key_exists("next", $graphNode["paging"])) {
         $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'&offset='.$offset.'', $userToken);
         $graphNode = $response->getGraphEdge();
         $offset += $limit;
