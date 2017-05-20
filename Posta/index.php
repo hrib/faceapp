@@ -5,9 +5,11 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 
-$postid = '1092972697443376_1485285631545412';
+$postid = '1717137268528382_1934505183458255';
 $texto = '!';
-    
+$media = 'https://www.clipartsgram.com/image/347684311-14-like-symbol-on-facebook-free-cliparts-that-you-can-download-to-you-0wvbv9-clipart.jpg';
+
+
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
     'app_secret' => $app_secret,
@@ -16,6 +18,7 @@ $fb = new Facebook\Facebook([
   ]);
 
 $data = [
+  'source' => $fb->fileToUpload($media),
   'message' => $texto,
 ];
 
