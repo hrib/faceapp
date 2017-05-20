@@ -68,8 +68,8 @@ function pagina_post_comenta($fb, $postid, $userToken){
     Cada usuario curte a pagina do outro e todo mundo ganha. 
     Abs. 
     
-    https://trocalikes.herokuapp.com/';
-    $media = 'https://apostagol.herokuapp.com/posta/maislikes.jpg';
+    ';
+    $media = 'https://apostagol.herokuapp.com/posta/maislikeslink.jpg';
 
     
     $data = [
