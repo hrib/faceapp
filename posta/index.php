@@ -45,8 +45,9 @@ while($graphNode) {
             echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
             echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
             if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] > ($limite - 1000)) AND ($pagina['fan_count'] < $limite)){
-                echo '<td>X</td>';
-                pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
+                $retorno = pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
+                echo '<td>'.$retorno.'</td>';
+                
                 SalvaSQL("INSERT INTO post_comenta (tempo, page, post) VALUES (now(),'".$pagina['id']."','".$pagina['posts'][0]['id']."');");
             } else {
                 echo '<td>-</td>';   
@@ -90,6 +91,7 @@ function pagina_post_comenta($fb, $postid, $userToken){
        echo 'Facebook SDK returned an error: ' . $e->getMessage();
        //exit;
      }
+    return $response;
 }
 
 function SalvaSQL($query){
