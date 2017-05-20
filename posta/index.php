@@ -21,9 +21,9 @@ $fb = new Facebook\Facebook([
 
 
 
-
+$limit = 25
 try {
-   $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)', $userToken);
+   $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'', $userToken);
  } catch(Facebook\Exceptions\FacebookResponseException $e) {
    // When Graph returns an error
    echo 'Graph returned an error: ' . $e->getMessage();
@@ -48,6 +48,27 @@ try {
         echo '</tr>';
   }
   echo '</table>';
+
+echo '<br><br>';
+
+
+while(in_array("paging", $graphNode) && array_key_exists("next", $graphNode["paging"])) {
+        $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'&offset='.$offset.'', $userToken);
+        $graphNode = $response->getGraphEdge();
+        $offset += $limit;
+        echo '<table border="1" style="font-family:arial; font-size:9px;">';
+        foreach ($graphNode as $pagina) {
+            echo '<tr>';
+            echo '<td>' . $pagina['id'] . '</td>';
+            echo '<td>' . $pagina['name'] . '</td>';
+            echo '<td>' . $pagina['fan_count'] . '</td>';
+            echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
+            echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
+            echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+}
  
 echo '<br><br>';
  
