@@ -40,7 +40,7 @@ while($graphNode) {
             echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
             echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
             echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
-            if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] < 200)){
+            if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] < 1000)){
                 echo '<td>X</td>';
                 pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
             } else {
