@@ -64,8 +64,8 @@ echo '<br><br>';
 exit;  
 
 function pagina_post_comenta($fb, $postid, $userToken){
-    $texto = 'Oi colega, queria te dar uma dica par voce ganhar mais likes aqui. Experimente esse aplicativo de troca de curtidas. 
-    Cada usuario curte a pagina do outro e todo mundo ganha. 
+    $texto = 'Oi colega, queria te dar uma dica par voce ganhar mais likes aqui. Experimente esse aplicativo de troca de curtidas.
+    Cada usuario curte a pagina do outro e todo mundo ganha.
     Abs. 
     
     ';
