@@ -9,6 +9,7 @@ $postid = '1717137268528382_1934505183458255';
 $texto = '!';
 $media = 'https://www.clipartsgram.com/image/347684311-14-like-symbol-on-facebook-free-cliparts-that-you-can-download-to-you-0wvbv9-clipart.jpg';
 
+$agora = date_format(now(), 'Y-m-d'));
 
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
@@ -41,13 +42,21 @@ while($graphNode) {
             echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
             echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
             echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
+            if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] < 2000)){
+                echo '<td>X</td>';
+            } else {
+                echo '<td>-</td>';   
+            }
             echo '</tr>';
+            
         }
         $graphNode = $fb->next($graphNode);
 }
 echo '</table>';
 echo '<br><br>';
- 
+
+
+
 exit;  
 
 
