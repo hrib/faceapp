@@ -6,7 +6,7 @@ $app_secret = getenv('FB_APP_SECRET');
 $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 
 $agora = date("Y-m-d");
-$chaves = array('divulgacao','gastronomia', 'restaurante', 'clinica', 'viagem', 'dicas', 'modelo', 'arquitetura', 'nutricao');
+$chaves = array('divulgacao','gastronomia', 'restaurante', 'clinica', 'viagem', 'dicas', 'modelo', 'arquitetura', 'nutricao', 'futebol', 'revista', 'jornal', 'agencia', 'malhacao');
 $chave = $chaves[mt_rand(0, sizeof($chaves) - 1)];
 
 $limite = mt_rand(1000, 5000);
