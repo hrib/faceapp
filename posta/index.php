@@ -8,8 +8,8 @@ $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 $postid = '1717137268528382_1934505183458255';
 
 $agora = date("Y-m-d");
-$chaves = array('divulgacao','blog+pessoal');
-$chaves = array('blog+pessoal');
+$chaves = array('divulgacao','blog pessoal');
+$chaves = array('blog pessoal');
 $chave = $chaves[mt_rand(0, sizeof($chaves) - 1)];
 
 $limite = mt_rand(1000, 5000);
