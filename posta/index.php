@@ -50,14 +50,9 @@ try {
   echo '</table>';
 
 echo '<br>.<br>';
-echo $graphNode['paging']['next'];
-echo '<br>.<br>';
-echo $graphNode[1]['next'];
+$graphNode = $fb->next($graphNode);
 
-while(($graphNode['paging']) && array_key_exists("next", $graphNode["paging"])) {
-        $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'&offset='.$offset.'', $userToken);
-        $graphNode = $response->getGraphEdge();
-        $offset += $limit;
+while($graphNode) {
         echo '<table border="1" style="font-family:arial; font-size:9px;">';
         foreach ($graphNode as $pagina) {
             echo '<tr>';
@@ -70,6 +65,7 @@ while(($graphNode['paging']) && array_key_exists("next", $graphNode["paging"])) 
             echo '</tr>';
         }
         echo '</table>';
+        $graphNode = $fb->next($graphNode);
 }
  
 echo '<br><br>';
