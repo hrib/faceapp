@@ -106,7 +106,10 @@ function SalvaSQL($query){
       . "password=" . $dbopts["pass"];
   $db = new PDO($dsn);
   $result = $db->query($query);
-  //$result->fetchAll();
+   if($result)
+   {
+    console.log($result->fetchAll());
+   }
   return $result;     
 }
  ?>
