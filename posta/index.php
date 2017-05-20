@@ -17,6 +17,40 @@ $fb = new Facebook\Facebook([
     'default_access_token' => $app_id . '|' . $app_secret
   ]);
 
+
+
+
+
+
+try {
+   $response = $fb->get('/search?q=divulgacao+internet&type=page&fields=id,name,fan_count,posts.limit(1)', $userToken);
+ } catch(Facebook\Exceptions\FacebookResponseException $e) {
+   // When Graph returns an error
+   echo 'Graph returned an error: ' . $e->getMessage();
+   //exit;
+ } catch(Facebook\Exceptions\FacebookSDKException $e) {
+   // When validation fails or other local issues
+   echo 'Facebook SDK returned an error: ' . $e->getMessage();
+   //exit;
+ }
+
+ $graphNode = $response->getGraphNode();
+  
+  echo '<table border="1" style="font-family:arial; font-size:9px;">';
+  foreach ($graphNode as $pagina) {
+        echo '<tr>';
+        echo '<td>' . $pagina['id'] . '</td>';
+        echo '<td>' . $pagina['posts']['id'] . '</td>';
+        echo '<td>' . $pagina['posts']['created_time'] . '</td>';
+        echo '<td>' . $pagina['posts']['story'] . '</td>';
+        echo '</tr>';
+  }
+  echo '</table>';
+ 
+    
+  exit;  
+
+
 $data = [
   'source' => $fb->fileToUpload($media),
   'message' => $texto,
