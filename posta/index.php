@@ -13,7 +13,7 @@ $media = 'https://www.clipartsgram.com/image/347684311-14-like-symbol-on-faceboo
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
     'app_secret' => $app_secret,
-    'default_graph_version' => 'v2.6', // change to 2.5
+    'default_graph_version' => 'v2.9', // change to 2.5
     'default_access_token' => $app_id . '|' . $app_secret
   ]);
 
@@ -34,7 +34,7 @@ try {
    //exit;
  }
 
- $graphNode = $response->getGraphNode();
+ $graphNode = $response->getGraphEdge();
   
   echo '<table border="1" style="font-family:arial; font-size:9px;">';
   foreach ($graphNode as $pagina) {
