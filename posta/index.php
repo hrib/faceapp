@@ -23,7 +23,7 @@ $fb = new Facebook\Facebook([
 
 
 try {
-   $response = $fb->get('/search?q=divulgacao+internet&type=page&fields=id,name,fan_count,posts.limit(1)', $userToken);
+   $response = $fb->get('/search?q=divulgacao+internet&type=page&limit=50&fields=id,name,fan_count,posts.limit(1)', $userToken);
  } catch(Facebook\Exceptions\FacebookResponseException $e) {
    // When Graph returns an error
    echo 'Graph returned an error: ' . $e->getMessage();
