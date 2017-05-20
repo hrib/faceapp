@@ -65,11 +65,37 @@ echo '<br>fim<br>';
 exit;  
 
 function pagina_post_comenta($fb, $postid, $userToken){
-    $texto = 'Oi colega, queria te dar uma dica par voce ganhar mais likes aqui. Experimente esse aplicativo de troca de curtidas.
+    $t1 = 'Oi colega, queria te dar uma dica pra voce ganhar mais likes aqui. Experimente esse aplicativo de troca de curtidas.
     Cada usuario curte a pagina do outro e todo mundo ganha.
     Abs. 
     
     ';
+    
+    $t2 = 'Ola amigo, vim passar uma dica legal para ganhar likes aqui. Tente esse app de troca de curtidas.
+    Cada pessoa curte a pagina do outro e todos ganham.
+    Vlw. 
+    
+    ';
+    
+    $t3 = 'Ola colega, queria te passar uma dica boa para voce ganhar mais likes aqui. Experimente esse app de troca de likes.
+    Cada usuario curte a pagina do outro e todos ganham!
+    Abs. 
+    
+    ';
+
+    $t4 = 'Oi colega, vim te dizer como ganhar likes aqui. Tente esse site de troca de curtidas.
+    Cada pessoa curte a pagina do outro e todo mundo ganha.
+    :) 
+    
+    ';
+    
+    $textos = array($t1, $t2, $t3, $t4);
+    $texto = $textos[mt_rand(0, sizeof($textos) - 1)];
+
+    
+    
+    
+    
     $media = 'https://apostagol.herokuapp.com/posta/maislikeslink.jpg';
 
     
