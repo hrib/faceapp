@@ -5,8 +5,6 @@ $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 
-$postid = '1717137268528382_1934505183458255';
-
 $agora = date("Y-m-d");
 $chaves = array('divulgacao','gastronima', 'restaurante', 'clinica', 'viagem', 'dicas', 'modelo', 'arquitetura', 'nutricao');
 $chave = $chaves[mt_rand(0, sizeof($chaves) - 1)];
@@ -47,10 +45,12 @@ while($graphNode) {
             if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] > ($limite - 1000)) AND ($pagina['fan_count'] < $limite)){
                 $retorno = pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
                 echo '<td>'.$retorno.'</td>';
+                $sqlretorno = SalvaSQL("INSERT INTO post_comenta (tempo, page, post) VALUES (now(),'".$pagina['id']."','".$pagina['posts'][0]['id']."','"$retorno"');");
+                echo '<td>'.$sqlretorno.'</td>';
                 
-                SalvaSQL("INSERT INTO post_comenta (tempo, page, post) VALUES (now(),'".$pagina['id']."','".$pagina['posts'][0]['id']."');");
             } else {
-                echo '<td>-</td>';   
+                echo '<td>-</td>';
+                echo '<td>-</td>';
             }
             echo '</tr>';
             
@@ -106,7 +106,6 @@ function SalvaSQL($query){
   $db = new PDO($dsn);
   $result = $db->query($query);
   $result->fetchAll();
-  print_r($result);
-  $result->closeCursor();     
+  return $result;     
 }
  ?>
