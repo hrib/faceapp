@@ -108,8 +108,11 @@ function SalvaSQL($query){
   $result = $db->query($query);
    if($result)
    {
-    console.log($result->fetchAll());
+      $resp_aux = $result->fetchAll();
+      $resposta = print_r($resp_aux,true);
+   } else {
+      $resposta = 'Vazio';   
    }
-  return $result;     
+  return $resposta;     
 }
  ?>
