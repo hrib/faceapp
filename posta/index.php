@@ -40,9 +40,9 @@ try {
   foreach ($graphNode as $pagina) {
         echo '<tr>';
         echo '<td>' . $pagina['id'] . '</td>';
-        echo '<td>' . $pagina['posts']['id'] . '</td>';
-        echo '<td>' . $pagina['posts']['created_time'] . '</td>';
-        echo '<td>' . $pagina['posts']['story'] . '</td>';
+        echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
+        echo '<td>' . $pagina['posts'][0]['created_time'] . '</td>';
+        echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
         echo '</tr>';
   }
   echo '</table>';
