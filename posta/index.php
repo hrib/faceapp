@@ -10,8 +10,9 @@ $postid = '1717137268528382_1934505183458255';
 $agora = date("Y-m-d");
 $chaves = array('divulgacao','blog+pessoal');
 $chaves = array('blog+pessoal');
-
 $chave = $chaves[mt_rand(0, sizeof($chaves) - 1)] 
+
+$limite = mt_rand(1000, 5000);
 
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
@@ -44,7 +45,7 @@ while($graphNode) {
             echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
             echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
             echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
-            if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] < 1000)){
+            if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] > ($limite - 1000)) AND ($pagina['fan_count'] < $limite)){
                 echo '<td>X</td>';
                 pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
             } else {
