@@ -82,16 +82,17 @@ function pagina_post_comenta($fb, $postid, $userToken){
 
     try {
        $response = $fb->post($target, $data, $userToken);
+       $resposta = $response->fetchAll();
      } catch(Facebook\Exceptions\FacebookResponseException $e) {
        // When Graph returns an error
-       $response = 'Posta: Graph returned an error: ' . $e->getMessage();
+       $resposta =  'Posta: Graph returned an error: ' . $e->getMessage();
        //exit;
      } catch(Facebook\Exceptions\FacebookSDKException $e) {
        // When validation fails or other local issues
-       $response = 'Posta: Facebook SDK returned an error: ' . $e->getMessage();
+       $resposta =  'Posta: Facebook SDK returned an error: ' . $e->getMessage();
        //exit;
      }
-    return $response;
+    return $resposta;
 }
 
 function SalvaSQL($query){
