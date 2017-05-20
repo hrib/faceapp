@@ -21,7 +21,7 @@ $fb = new Facebook\Facebook([
 
 
 
-$limit = 25
+$limit = 25;
 try {
    $response = $fb->get('/search?q=divulgacao&type=page&fields=id,name,fan_count,posts.limit(1)&limit='.$limit.'', $userToken);
  } catch(Facebook\Exceptions\FacebookResponseException $e) {
