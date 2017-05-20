@@ -41,7 +41,7 @@ try {
         echo '<tr>';
         echo '<td>' . $pagina['id'] . '</td>';
         echo '<td>' . $pagina['posts'][0]['id'] . '</td>';
-        echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d'); . '</td>';
+        echo '<td>' . date_format($pagina['posts'][0]['created_time'], 'Y-m-d') . '</td>';
         echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
         echo '</tr>';
   }
