@@ -47,6 +47,7 @@ while($graphNode) {
             if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] > ($limite - 1000)) AND ($pagina['fan_count'] < $limite)){
                 echo '<td>X</td>';
                 pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
+                SalvaSQL("INSERT INTO post_comenta (tempo, page, post) VALUES (now(),'".$pagina['id'].'",'".$pagina['posts'][0]['id']."');');
             } else {
                 echo '<td>-</td>';   
             }
@@ -89,5 +90,21 @@ function pagina_post_comenta($fb, $postid, $userToken){
        echo 'Facebook SDK returned an error: ' . $e->getMessage();
        //exit;
      }
+}
+
+function SalvaSQL($query){
+  $dbopts = parse_url(getenv('DATABASE_URL'));
+  $dsn = "pgsql:"
+      . "host=" . $dbopts["host"] . ";"
+      . "dbname=". ltrim($dbopts["path"],'/') . ";"
+      . "user=" . $dbopts["user"] . ";"
+      . "port=" . $dbopts["port"] . ";"
+      . "sslmode=require;"
+      . "password=" . $dbopts["pass"];
+  $db = new PDO($dsn);
+  $result = $db->query($query);
+  $result->fetchAll();
+  print_r($result);
+  $result->closeCursor();     
 }
  ?>
