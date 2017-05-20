@@ -6,8 +6,6 @@ $app_secret = getenv('FB_APP_SECRET');
 $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 
 $postid = '1717137268528382_1934505183458255';
-$texto = '!';
-$media = 'https://www.clipartsgram.com/image/347684311-14-like-symbol-on-facebook-free-cliparts-that-you-can-download-to-you-0wvbv9-clipart.jpg';
 
 $agora = date("Y-m-d");
 
@@ -44,6 +42,7 @@ while($graphNode) {
             echo '<td>' . $pagina['posts'][0]['story'] . '</td>';
             if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] < 2000)){
                 echo '<td>X</td>';
+                pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
             } else {
                 echo '<td>-</td>';   
             }
@@ -59,24 +58,32 @@ echo '<br><br>';
 
 exit;  
 
+function pagina_post_comenta($fb, $postid, $userToken){
+    $texto = 'Oi colega, queria te dar uma dica par voce ganhar mais likes aqui. Experimente esse aplicativo de troca de curtidas. 
+    Cada usuario curte a pagina do outro e todo mundo ganha. 
+    Abs. 
+    
+    https://trocalikes.herokuapp.com/';
+    $media = 'https://apostagol.herokuapp.com/posta/maislikes.jpg';
 
-$data = [
-  'source' => $fb->fileToUpload($media),
-  'message' => $texto,
-];
+    
+    $data = [
+      'source' => $fb->fileToUpload($media),
+      'message' => $texto,
+    ];
 
-$target = '/' . $postid . '/comments';
- 
-try {
-   $response = $fb->post($target, $data, $userToken);
- } catch(Facebook\Exceptions\FacebookResponseException $e) {
-   // When Graph returns an error
-   echo 'Graph returned an error: ' . $e->getMessage();
-   //exit;
- } catch(Facebook\Exceptions\FacebookSDKException $e) {
-   // When validation fails or other local issues
-   echo 'Facebook SDK returned an error: ' . $e->getMessage();
-   //exit;
- }
- 
+    $target = '/' . $postid . '/comments';
+
+    try {
+       $response = $fb->post($target, $data, $userToken);
+     } catch(Facebook\Exceptions\FacebookResponseException $e) {
+       // When Graph returns an error
+       echo 'Graph returned an error: ' . $e->getMessage();
+       //exit;
+     } catch(Facebook\Exceptions\FacebookSDKException $e) {
+       // When validation fails or other local issues
+       echo 'Facebook SDK returned an error: ' . $e->getMessage();
+       //exit;
+     }
+}
  ?>
