@@ -45,7 +45,7 @@ while($graphNode) {
             if((date_format($pagina['posts'][0]['created_time'], 'Y-m-d') == $agora) AND ($pagina['fan_count'] > ($limite - 1000)) AND ($pagina['fan_count'] < $limite)){
                 $retorno = pagina_post_comenta($fb, $pagina['posts'][0]['id'], $userToken);
                 echo '<td>'.$retorno.'</td>';
-                $sqlretorno = SalvaSQL("INSERT INTO post_comenta (tempo, page, post) VALUES (now(),'".$pagina['id']."','".$pagina['posts'][0]['id']."','"$retorno"');");
+                $sqlretorno = SalvaSQL("INSERT INTO post_comenta (tempo, page, post) VALUES (now(),'".$pagina['id']."','".$pagina['posts'][0]['id']."','".$retorno."');");
                 echo '<td>'.$sqlretorno.'</td>';
                 
             } else {
