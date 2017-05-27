@@ -6,7 +6,7 @@ $app_secret = getenv('FB_APP_SECRET');
 $userToken = getenv('FB_TESTE_HM_USERTOKEN');
 
 $agora = date("Y-m-d");
-$chaves = array('massagem', 'salao', 'cabelo', 'unha', 'filmes', 'dieta', 'saude', 'presente', 'joias', 'noiva', 'casamento', 'troca', 'bebida', 'comida', 'viagens', 'hotel', 'imprensa', 'imoveis', 'moveis', 'beleza', 'academia', 'nutricionista', 'divulgacao', 'gastronomia', 'restaurante', 'clinica', 'viagem', 'dicas', 'modelo', 'arquitetura', 'nutricao', 'futebol', 'revista', 'jornal', 'agencia', 'malhacao');
+$chaves = array('suporte', 'frases', 'amor', 'sorte', 'vida', 'fotografia', 'arte', 'escola', 'crianca', 'mulher', 'homem', 'roupas', 'venda', 'brasil', 'salgados', 'presentes', 'doces', 'massagem', 'salao', 'cabelo', 'unha', 'filmes', 'dieta', 'saude', 'presente', 'joias', 'noiva', 'casamento', 'troca', 'bebida', 'comida', 'viagens', 'hotel', 'imprensa', 'imoveis', 'moveis', 'beleza', 'academia', 'nutricionista', 'divulgacao', 'gastronomia', 'restaurante', 'clinica', 'viagem', 'dicas', 'modelo', 'arquitetura', 'nutricao', 'futebol', 'revista', 'jornal', 'agencia', 'malhacao');
 $chave = $chaves[mt_rand(0, sizeof($chaves) - 1)];
 
 $limite = mt_rand(1000, 5000);
