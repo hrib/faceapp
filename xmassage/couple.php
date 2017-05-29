@@ -15,8 +15,7 @@ require_once('post_media_fb.php');
 $pageOriginal = '1619122641715888';  //pagina que contem as midias ok
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
-$Insta_username = getenv('INSTA_USR_LONDONFORHER');
-$Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
+
 
 $pageTarget = '280153979049408'; //ok
 $page_access_token = getenv('FB_TOKEN_APOSTAGOL_EVAS');
@@ -70,19 +69,5 @@ echo '<br><img src="'.$retorno_media[0].'"><br>';
 
 Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget);
 
-exit; // TRAVEI A EXECUCAO DO INSTAGRAM ABAIXO PQ NAO TENHO CONTA DE XMASSAGE
-
-if($tipo_media == 'foto'){
-  echo '<br>JPG<br>';
-  require_once('/app/Instagram/uploadPhoto.php');
-  Instagram_UploadPhoto($Insta_username, $Insta_passw, $media, $texto);
-}else{
-  echo '<br>MP4<br>';
-  $resizemedia = 'resize'.$media;
-  shell_exec('/app/vendor/ffmpeg/ffmpeg -i '.$media.' -vf "scale=iw*min(640/iw\,620/ih):ih*min(640/iw\,620/ih),pad=640:620:(640-iw)/2:(620-ih)/2" '.$resizemedia);
-  echo $resizemedia;
-  require_once('/app/Instagram/uploadVideo.php');
-  Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
-}
 
 ?>
