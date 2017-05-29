@@ -1,21 +1,27 @@
 <?php
 session_start(); 
+
 $aleatorio = mt_rand(0, 23);
 if($aleatorio < 21){
  echo $aleatorio . " fim";  
  exit;
 }
+
 require_once(dirname(__FILE__)."/../src/Facebook/autoload.php");
 require_once('download_media_fb.php');
 require_once('post_media_fb.php');
+
+
 $pageOriginal = '1619122641715888';  //pagina que contem as midias ok
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
+
 $pageTarget = '280153979049408'; //ok
 $page_access_token = getenv('FB_TOKEN_APOSTAGOL_EVAS');
 $albumTarget = '280253342372805'; //timeline album ok
+
 $t1 = 'Using massage oils helps in getting the right balance between grip and slip on the skin, and the smell enhances the experience by stimulating a second sense that we pay relatively little attention to most of the time. ';
 $t2 = 'The Legs “Move up the legs in long, smooth strokes, using the full surface of your palm and keeping your fingers together. The purpose of sensual massage is to build excitement, so stroke over his buttocks.
 You could at this point stroke gently down between his legs and gently excite him with your fingers. It’s very important to always maintain a very gentle touch." ';
@@ -46,18 +52,26 @@ $t26 = 'During this extraordinarily loving erotic ceremony you will be completel
 $t27 = 'Please text me to arrange erotic massage in advance. This service is for serious and respectful men only who appreciate to be cared for and want to spend unforgettable moments with me!';
 $t28 = 'Best Erotic Massage by Independent Masseuse in Central London near Earls Court';
 $t29 = ' Erotic massage helps every adult to feel comfortable and relaxed after a very tiring day at work.  Well, many adults in London have agreed to this, the reason that many of them have considered erotic massage as a kind of mini vacation from the stress and tensions of everyday hectic and stressful life. Aside from this, a number of researches in London revealed the fact that erotic massage aids the mind to increase mental alertness and decreases the stress hormone - cortisol.  This is particularly suitable for those who are affected by high level of pollution and stressful life in London. Well, whatever associations you may have in your mind for “erotic massage”, one main thing remains true – adult massage, be it sensual or not, can be a great tool for building stronger and healthier living. Call Eva today and arrange your session for best erotic massage in London the UK!';
+
+
+
+
 $textos = Array($t1, $t2, $t3, $t4, $t5, $t6, $t7, $t8, $t9, $t10, $t11, $t12, $t13, $t14);
 $textos_hashtags = array(' #spa',' #massage',' #sensual',' #tantric',' #tantra',' #relax',' #pleasure',' #oil',' #oilmassage',' #meditation',' #vibe',' #enjoy',' #skin',' #touch',' #forher',' #her',' #therapy',' #london',' #power',' #positive',' #life',' #connection',' #health',' #vibe',' #happyness');
 $sorteio_texto = mt_rand(0, sizeof($textos) - 1);
 $texto = $textos[$sorteio_texto] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)] . $textos_hashtags[mt_rand(0, sizeof($textos_hashtags) - 1)];
 echo '<br>'.$texto.'<br>';
+
 $retorno_media = Download_Media_fb($pageOriginal, $app_id, $app_secret);
 $media = $retorno_media[0];
 $tipo_media = $retorno_media[1];
 echo '<br>'.$media.'<br>';
 echo '<br><img src="'.$retorno_media[0].'"><br>';
+
 Post_Media_fb($app_id, $app_secret, $page_access_token, $media, $texto, $pageTarget, $albumTarget);
+
 exit; // TRAVEI A EXECUCAO DO INSTAGRAM ABAIXO PQ NAO TENHO CONTA DE XMASSAGE
+
 if($tipo_media == 'foto'){
   echo '<br>JPG<br>';
   require_once('/app/Instagram/uploadPhoto.php');
@@ -70,4 +84,5 @@ if($tipo_media == 'foto'){
   require_once('/app/Instagram/uploadVideo.php');
   Instagram_UploadVideo($Insta_username, $Insta_passw, $resizemedia, $texto);
 }
+
 ?>
