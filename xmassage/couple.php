@@ -12,13 +12,13 @@ require_once('download_media_fb.php');
 require_once('post_media_fb.php');
 
 
-$pageOriginal = '1619122641715888';  //pagina que contem as midias ok
+$pageOriginal = '452142295144102';  //pagina que contem as midias ok
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 
 
-$pageTarget = '280153979049408'; //ok
-$page_access_token = getenv('FB_TOKEN_APOSTAGOL_EVAS');
+$pageTarget = '1827641594124761'; //ok
+$page_access_token = getenv('FB_TOKEN_APOSTAGOL_COUPLES');
 $albumTarget = '280253342372805'; //timeline album ok
 
 $t1 = 'Using massage oils helps in getting the right balance between grip and slip on the skin, and the smell enhances the experience by stimulating a second sense that we pay relatively little attention to most of the time. ';
