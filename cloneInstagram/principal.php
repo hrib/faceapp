@@ -8,7 +8,7 @@ $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
 $aleatorio = mt_rand(1, 5);
-$aleatorio = 1;
+$aleatorio = 5;
 
 if($aleatorio <= 1){
     $Insta_username = getenv('INSTA_USR_LONDONFORHER');
@@ -28,9 +28,10 @@ if($aleatorio <= 1){
     $originaluserid = 3426972852; // @sirmasterful  
     //$originaluserid = 3674749893; // @1lifeforyou  
 }else if($aleatorio <= 5){
-    $Insta_username = 'mattz.london';
+    $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 22183904; // @matthewzorpas  
+    $originaluserid = 3155871863; // @3triphotography  
+    //$originaluserid = 22183904; // @matthewzorpas  
 }
 
 
@@ -212,7 +213,7 @@ function PegaPosts($feed){
     return $mediadata;
 }
 
-require_once('ComentaByTag.php');
+//require_once('ComentaByTag.php');
 
 exit;
 
