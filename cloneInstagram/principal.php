@@ -8,24 +8,27 @@ $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
 $aleatorio = mt_rand(1, 5);
-$aleatorio = 5;
+//$aleatorio = 5;
 
 if($aleatorio <= 1){
     $Insta_username = getenv('INSTA_USR_LONDONFORHER');
     $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
     $originaluserid = 2880433911; // Sylvia Edem Emechete ™ @sylviaemechete
 }else if($aleatorio <= 2){
-    $Insta_username = getenv('INSTA_USR_2');
+    //$Insta_username = getenv('INSTA_USR_2');
+    $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 1443400890; // fashionzine
+    $originaluserid = 2252933080; // out_in_london
 }else if($aleatorio <= 3){
-    $Insta_username = getenv('INSTA_USR_3');
+    //$Insta_username = getenv('INSTA_USR_3');
+    $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 43175003; // @louisewawrzynska  
+    $originaluserid = 3617580; // @wanderforawhile  
 }else if($aleatorio <= 4){
-    $Insta_username = getenv('INSTA_USR_4');
+    //$Insta_username = getenv('INSTA_USR_4');
+    $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 3426972852; // @sirmasterful  
+    $originaluserid = 2316265215; // @loves_bigben  
     //$originaluserid = 3674749893; // @1lifeforyou  
 }else if($aleatorio <= 5){
     $Insta_username = 'brmayfair';
