@@ -155,7 +155,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
       $dest = imagecreatefromjpeg($media_url);
       list($width, $height) = getimagesize($media_url);
-      imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1471);
+      imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1470);
 
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
       imagejpeg($dest, $media);  
