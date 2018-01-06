@@ -7,7 +7,7 @@ imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1471);
 
 $media = 'media.jpg';
 imagejpeg($dest, $media);  
-echo '<img src="media.jpg">';
+echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/media.jpg" >';
 
 imagedestroy($dest);
 imagedestroy($src);
