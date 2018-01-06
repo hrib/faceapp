@@ -3,7 +3,8 @@ $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInsta
 $dest = imagecreatefromjpeg('https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg');
 
 list($width, $height) = getimagesize('https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg');
-imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1471);
+$fator = $width/$height;
+imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470 * $fator, 1470);
 
 $media = 'media.jpg';
 imagejpeg($dest, $media);  
