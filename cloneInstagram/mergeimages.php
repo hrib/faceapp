@@ -11,7 +11,7 @@ $dest = imagecreatefromjpeg('https://media-cdn.tripadvisor.com/media/photo-s/0e/
 //imagesavealpha($dest, true);
 
 //imagecopyresampled($dest, $src, $src2x, $src2y, 0, 0, $src2w, $src2h, $src2w, $src2h);
-list($width, $height) = getimagesize($dest);
+list($width, $height) = getimagesize('https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg');
 imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1471);
 //imagecopyresampled($dest, $src, 0, 0, 0, 0, $dest2w, $dest2h, 1470, 1471);
 //imagecopyresampled($dest, $src, 0, 0, 0, 0, 1470, 1471, 1470, 1471);
