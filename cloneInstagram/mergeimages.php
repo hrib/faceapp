@@ -10,7 +10,9 @@ $dest = imagecreatefromjpeg('https://media-cdn.tripadvisor.com/media/photo-s/0e/
 //imagealphablending($dest, false);
 //imagesavealpha($dest, true);
 
-imagecopyresampled($dest, $src, $src2x, $src2y, 0, 0, $src2w, $src2h, $src2w, $src2h);
+//imagecopyresampled($dest, $src, $src2x, $src2y, 0, 0, $src2w, $src2h, $src2w, $src2h);
+imagecopyresampled($dest, $src, 0, 0, 0, 0, 550, 367, 550, 367);
+
 //imagecopymerge($src, $dest, 0, 0, 0, 0, 550, 367, 100); //have to play with these numbers for it to work for you, etc.
 
 
