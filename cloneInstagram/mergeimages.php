@@ -1,5 +1,5 @@
 <?php
-$src = imagecreatefrompng('http://apostagol.herokuapp.com/cloneInstagram/IMG-2975.png');
+$src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
 $dest = imagecreatefromjpeg('https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg');
 //header('Content-Type: image/png');
 //imagepng($dest);
