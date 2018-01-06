@@ -10,7 +10,7 @@ $src = imagecreatefromjpeg('https://media-cdn.tripadvisor.com/media/photo-s/0e/8
 imagealphablending($dest, false);
 imagesavealpha($dest, true);
 
-imagecopymerge($dest, $src, 10, 9, 0, 0, 181, 180, 100); //have to play with these numbers for it to work for you, etc.
+imagecopymerge($dest, $src, 0, 0, 0, 0, 550, 367, 100); //have to play with these numbers for it to work for you, etc.
 
 header('Content-Type: image/png');
 imagepng($dest);
