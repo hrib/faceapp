@@ -7,7 +7,7 @@ $Insta_username_antiblock = getenv('INSTA_USR_LONDONFORHER');
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
-$aleatorio = mt_rand(1, 6);
+$aleatorio = mt_rand(1, 7);
 //$aleatorio = 5;
 
 if($aleatorio <= 1){
@@ -41,6 +41,10 @@ if($aleatorio <= 1){
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 3155871863; // @3triphotography  
     //$originaluserid = 22183904; // @matthewzorpas  
+}else if($aleatorio <= 7){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 934762973; // @zanteofficial  
 }
 
 
