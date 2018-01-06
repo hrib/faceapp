@@ -158,10 +158,10 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1471);
 
       //header('Content-Type: image/jpeg');
-      //imagejpeg($dest);
+      $mediaeditada = imagejpeg($dest);
         
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
-      file_put_contents($media, file_get_contents($dest));  
+      file_put_contents($media, file_get_contents($mediaeditada));  
       //file_put_contents($media, file_get_contents($media_url));
         
             try {
