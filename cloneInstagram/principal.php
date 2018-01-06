@@ -158,9 +158,13 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       imagecopyresampled($dest, $src, 0, 0, 0, 0, $width, $height, 1470, 1470);
 
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
-      imagejpeg($dest, $media);  
-      //file_put_contents($media, file_get_contents($media_url));
         
+        
+      if($aleatorio >= 3){
+        imagejpeg($dest, $media);  
+      }else{
+        file_put_contents($media, file_get_contents($media_url));
+      }
             try {
                 $ret_upload = $i->uploadPhoto($media, $texto);
             } catch (Exception $e) {
