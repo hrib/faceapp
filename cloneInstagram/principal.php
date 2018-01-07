@@ -7,7 +7,7 @@ $Insta_username_antiblock = 'adrianoimpe1';
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
-$aleatorio = mt_rand(1, 7);
+$aleatorio = mt_rand(1, 10);
 //$aleatorio = 5;
 
 if($aleatorio <= 1){
@@ -45,6 +45,18 @@ if($aleatorio <= 1){
     $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 934762973; // @zanteofficial  
+}else if($aleatorio <= 8){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 4499680896; // @theluxuryasia  
+}else if($aleatorio <= 9){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 4503761766; // @travelelation  
+}else if($aleatorio <= 10){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 51283027; // @kelticdevil  
 }
 
 
@@ -151,8 +163,15 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
 
     if($tipo == 1){
       echo '<br>JPG<br>';
+       
+      
+      $aleatorio2 = mt_rand(1, 2);
+      if($aleatorio2 <= 1){
+        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
+      }else if($aleatorio2 <= 2){
+        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2976.PNG');
+      }
         
-      $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
       $dest = imagecreatefromjpeg($media_url);
       list($width, $height) = getimagesize($media_url);
       $dimensao = min($width,$height);
