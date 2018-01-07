@@ -8,7 +8,7 @@ $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
 $aleatorio = mt_rand(1, 10);
-$aleatorio = mt_rand(1, 2);
+//$aleatorio = mt_rand(1, 2);
 
 if($aleatorio <= 1){
     //$Insta_username = getenv('INSTA_USR_LONDONFORHER');
