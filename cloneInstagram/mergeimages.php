@@ -1,8 +1,8 @@
 <?php
 $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
-$dest = imagecreatefromjpeg('https://s1.favim.com/610/150908/beach-beach-life-blue-good-vibes-Favim.com-3262421.jpg');
+$dest = imagecreatefromjpeg('https://www.thesun.co.uk/wp-content/uploads/2016/06/nintchdbpict000247118702.jpg?w=475');
 
-list($width, $height) = getimagesize('https://s1.favim.com/610/150908/beach-beach-life-blue-good-vibes-Favim.com-3262421.jpg');
+list($width, $height) = getimagesize('https://www.thesun.co.uk/wp-content/uploads/2016/06/nintchdbpict000247118702.jpg?w=475');
 $dimensao = min($width,$height);
 $diff_width = $width - $dimensao;
 $diff_height = $height - $dimensao;
