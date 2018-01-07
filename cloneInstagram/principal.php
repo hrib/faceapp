@@ -7,7 +7,7 @@ $Insta_username_antiblock = 'adrianoimpe1';
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
-$aleatorio = mt_rand(1, 10);
+$aleatorio = mt_rand(1, 19);
 //$aleatorio = mt_rand(1, 2);
 
 if($aleatorio <= 1){
@@ -21,26 +21,21 @@ if($aleatorio <= 1){
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 719074854; // gabi.artz
 }else if($aleatorio <= 3){
-    //$Insta_username = getenv('INSTA_USR_2');
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 2252933080; // out_in_london
+    $originaluserid = 719074854; // gabi.artz
 }else if($aleatorio <= 4){
-    //$Insta_username = getenv('INSTA_USR_3');
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 3617580; // @wanderforawhile  
+    $originaluserid = 5736304053; // aboutmysummer
 }else if($aleatorio <= 5){
-    //$Insta_username = getenv('INSTA_USR_4');
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 2316265215; // @loves_bigben  
-    //$originaluserid = 3674749893; // @1lifeforyou  
+    $originaluserid = 1081745961; // cassie_cameron_
 }else if($aleatorio <= 6){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 3155871863; // @3triphotography  
-    //$originaluserid = 22183904; // @matthewzorpas  
+    $originaluserid = 1417546201; // sunny13_ps
 }else if($aleatorio <= 7){
     $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
@@ -56,7 +51,48 @@ if($aleatorio <= 1){
 }else if($aleatorio <= 10){
     $Insta_username = 'brmayfair';
     $Insta_passw = getenv('INSTA_PSW_2');
-    $originaluserid = 51283027; // @kelticdevil  
+    $originaluserid = 612747502; // @guiaviajarmelhor  
+}else if($aleatorio <= 11){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 1651025335; // @comeseephilippines  
+}else if($aleatorio <= 12){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 5659047; // @haylsa  
+}else if($aleatorio <= 13){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 1698004554; // @omaldives  
+}else if($aleatorio <= 14){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 228887204; // @hotelurbano  
+}else if($aleatorio <= 15){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 5734134739; // @beautiful__travel  
+}else if($aleatorio <= 16){
+    //$Insta_username = getenv('INSTA_USR_2');
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 2252933080; // out_in_london
+}else if($aleatorio <= 17){
+    //$Insta_username = getenv('INSTA_USR_3');
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 3617580; // @wanderforawhile  
+}else if($aleatorio <= 18){
+    //$Insta_username = getenv('INSTA_USR_4');
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 2316265215; // @loves_bigben  
+    //$originaluserid = 3674749893; // @1lifeforyou  
+}else if($aleatorio <= 19){
+    $Insta_username = 'brmayfair';
+    $Insta_passw = getenv('INSTA_PSW_2');
+    $originaluserid = 3155871863; // @3triphotography  
+    //$originaluserid = 22183904; // @matthewzorpas  
 }
 
 
@@ -132,9 +168,9 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
     var_dump($ret_mediacomments);
 
-    $extratagsarray = array('#london', '#like', '#love', '#sky', '#life', '#party', '#men', '#girls', '#style', '#happy', '#fashion', '#attitude');
+    $extratagsarray = array('#hot', '#like4like', '#sun', '#follow4follow', '#summer', '#sunglasses', '#style', '#beach', '#holidays', '#beachlife');
     shuffle($extratagsarray);
-    
+
     $y = 0;
     while($y < count($extratagsarray)) {
         $extratags = $extratags . ' ' . $extratagsarray[$y];
@@ -182,7 +218,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
         
         
-      if($aleatorio >= 3){
+      if($aleatorio >= 7){
         imagejpeg($dest, $media);  
       }else{
         file_put_contents($media, file_get_contents($media_url));
