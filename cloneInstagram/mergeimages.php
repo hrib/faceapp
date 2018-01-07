@@ -2,7 +2,7 @@
 $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
 $dest = imagecreatefromjpeg('https://cdn-blog.queensland.com/wp-content/uploads/2012/11/@hayden_quinn-whitehaven-570x570.jpg');
 
-list($width, $height) = getimagesize('https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg');
+list($width, $height) = getimagesize('https://cdn-blog.queensland.com/wp-content/uploads/2012/11/@hayden_quinn-whitehaven-570x570.jpg');
 $dimensao = min($width,$height);
 $diff_width = $width - $dimensao;
 $diff_height = $height - $dimensao;
