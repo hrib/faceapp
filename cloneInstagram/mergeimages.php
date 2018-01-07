@@ -1,6 +1,6 @@
 <?php
 $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
-$dest = imagecreatefromjpeg('http://www.aliciafashionista.com/wp-content/uploads/2016/12/IMG_5867.jpg');
+$dest = imagecreatefromjpeg('http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1499975019/tropical-vacation-IGCAPTIONS0717.jpg');
 
 list($width, $height) = getimagesize('https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg');
 $dimensao = min($width,$height);
