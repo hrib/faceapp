@@ -168,7 +168,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     //echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
     var_dump($ret_mediacomments);
 
-    $extratagsarray = array('#hot', '#like4like', '#sun', '#follow4follow', '#summer', '#sunglasses', '#style', '#beach', '#holidays', '#beachlife');
+    $extratagsarray = array('#hot', '#like4like', '#sun', '#follow4follow', '#summer', '#sunglasses', '#style', '#beach', '#holidays', '#beachlife', '#love', '#instagood', '#me', '#cute', '#tbt', '#photooftheday', '#instamood', '#iphonesia', '#tweegram', '#picoftheday', '#igers', '#girl', '#beautiful', '#instadaily', '#instagramhub', '#iphoneonly', '#follow', '#igdaily', '#bestoftheday', '#happy', '#picstitch', '#jj', '#sky', '#nofilter', '#followme', '#fun');
     shuffle($extratagsarray);
 
     $y = 0;
