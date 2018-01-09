@@ -14,7 +14,10 @@ imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dim
 
 $media = 'media.jpg';
 imagejpeg($dest, $media);  
-echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/media.jpg" >';
+echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/media.jpg" ><br>';
+echo '<img src="https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_2975.PNG" ><br>';
+echo '<img src="https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_2976.PNG" ><br>';
+echo '<img src="https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_3029.PNG" ><br>';
 
 imagedestroy($dest);
 imagedestroy($src);
