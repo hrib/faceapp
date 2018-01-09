@@ -201,11 +201,13 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       echo '<br>JPG<br>';
        
       
-      $aleatorio2 = mt_rand(1, 2);
+      $aleatorio2 = mt_rand(1, 3);
       if($aleatorio2 <= 1){
         $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2975.PNG');
       }else if($aleatorio2 <= 2){
         $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-2976.PNG');
+      }else if($aleatorio2 <= 3){
+        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG-3029.PNG');
       }
         
       $dest = imagecreatefromjpeg($media_url);
