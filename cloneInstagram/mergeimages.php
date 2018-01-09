@@ -1,8 +1,8 @@
 <?php
 $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_3029.PNG');
-$dest = imagecreatefromjpeg('https://www.thesun.co.uk/wp-content/uploads/2016/06/nintchdbpict000247118702.jpg?w=475');
+$dest = imagecreatefromjpeg('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_3029.PNG');
 
-list($width, $height) = getimagesize('https://www.thesun.co.uk/wp-content/uploads/2016/06/nintchdbpict000247118702.jpg?w=475');
+list($width, $height) = getimagesize('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_3029.PNG');
 $dimensao = min($width,$height);
 $diff_width = $width - $dimensao;
 $diff_height = $height - $dimensao;
