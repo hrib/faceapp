@@ -35,7 +35,8 @@ $i = new Instagram($curtidor, $curtidor_passw, $debug = false);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
-    $originaluserid = $originaluserid_info['pk'];
+    var_dump($originaluserid_info);
+    $originaluserid = $originaluserid_info[0]['pk'];
     var_dump($originaluserid);
 
 
