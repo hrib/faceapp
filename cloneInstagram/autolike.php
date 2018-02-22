@@ -3,27 +3,48 @@ session_start();
 set_time_limit(100);
 ini_set('max_execution_time', 100);
 
-$Insta_username_antiblock = 'adrianoimpe1';
-$Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
-$originaluserid = 6859005418; // @brmayfair
+
+
+$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'brmayfair', 'elly.tess7');
+$curtidos = array('brmayfair', 'elly.tess7');
+
+$curtidor = mt_rand(0, sizeof($curtidores) - 1);
+$curtidor_passw = getenv('INSTA_PSW_LONDONFORHER');
+
+
+$curtido = mt_rand(0, sizeof($curtidos) - 1);
+$original_usernameName = $curtido;
+//$originaluserid = 6859005418; // @brmayfair
 $commentText = ':)';
 
 
 
 require_once('/app/Instagram/src/Instagram.php');
-$i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = false);
+$i = new Instagram($curtidor, $curtidor_passw, $debug = false);
     try {
         $i->login();
     } catch (InstagramException $e) {
         echo $e->getMessage();
         exit();
     }
-    
+
+
+    try {
+        $originaluserid  = $i->searchUsername($original_usernameName);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    var_dump($originaluserid);
+
+
     try {
         $ret_originalfeed  = $i->getUserFeed($originaluserid);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+
+
+
 
 $originalpost = PegaPosts($ret_originalfeed);
     $texto =  $originalpost[0]; 
