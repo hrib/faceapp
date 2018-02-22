@@ -6,7 +6,7 @@ ini_set('max_execution_time', 100);
 $Insta_username_antiblock = 'adrianoimpe1';
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 $originaluserid = 6859005418; // @brmayfair
-
+$commentText = ':)';
 
 
 
@@ -39,8 +39,17 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-//$comenta = $i->comment($mediaId_posted, $meus_comments);
 var_dump($curtir);
+
+
+try {
+    $comentar = $i->comment($mediaId, $commentText);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+var_dump($comentar);
+
+
 
 
 function PegaPosts($feed){
