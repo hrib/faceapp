@@ -7,6 +7,7 @@ ini_set('max_execution_time', 100);
 
 $curtidores = array('adrianoimpe1', 'adrianoimperador1', 'brmayfair', 'elly.tess7');
 $curtidos = array('brmayfair', 'elly.tess7');
+$textos = array(':)', ':O', ';)', 'Amazing', 'Great', 'Cool', 'Keep it up');
 
 $curtidor = $curtidores[mt_rand(0, sizeof($curtidores) - 1)];
 $curtidor_passw = getenv('INSTA_PSW_LONDONFORHER');
@@ -14,8 +15,7 @@ $curtidor_passw = getenv('INSTA_PSW_LONDONFORHER');
 
 $curtido = $curtidos[mt_rand(0, sizeof($curtidos) - 1)];
 $original_usernameName = $curtido;
-//$originaluserid = 6859005418; // @brmayfair
-$commentText = ':)';
+$commentText = $textos[mt_rand(0, sizeof($textos) - 1)];;
 
 var_dump($curtidor);
 var_dump($original_usernameName);
