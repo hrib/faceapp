@@ -17,7 +17,8 @@ $original_usernameName = $curtido;
 //$originaluserid = 6859005418; // @brmayfair
 $commentText = ':)';
 
-
+var_dump($curtidor);
+var_dump($original_usernameName);
 
 require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($curtidor, $curtidor_passw, $debug = false);
