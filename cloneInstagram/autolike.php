@@ -5,7 +5,10 @@ ini_set('max_execution_time', 100);
 
 $Insta_username_antiblock = 'adrianoimpe1';
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
-$originaluserid = 6859005418; // @raissaralves
+$originaluserid = 6859005418; // @brmayfair
+
+
+
 
 require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = false);
@@ -21,6 +24,23 @@ $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = f
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+
+$originalpost = PegaPosts($ret_originalfeed);
+    $texto =  $originalpost[0]; 
+    $texto = str_replace("@","#", $texto);
+    $tipo = $originalpost[1];
+    $media_url = $originalpost[2];
+    $mediaId =  $originalpost[3];
+
+
+
+try {
+    $curtir = $i->like($mediaId);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+//$comenta = $i->comment($mediaId_posted, $meus_comments);
+var_dump($curtir);
 
 
 function PegaPosts($feed){
