@@ -31,10 +31,11 @@ $i = new Instagram($curtidor, $curtidor_passw, $debug = false);
 
 
     try {
-        $originaluserid  = $i->searchUsername($original_usernameName);
+        $originaluserid_info  = $i->searchUsername($original_usernameName);
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+    $originaluserid = $originaluserid_info['pk'];
     var_dump($originaluserid);
 
 
