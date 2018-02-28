@@ -1,5 +1,4 @@
 <?php
-echo 'oi';
 define('CONFIG_FILE', 'simple-php-proxy_config.php');
 /*
     Installation note:
@@ -10,8 +9,11 @@ define('CONFIG_FILE', 'simple-php-proxy_config.php');
 */
 //$dest_host = "bash.org";
 //$proxy_base_url = '/';
+
 $dest_host = "https://mail.google.com";
+echo $dest_host;
 $proxy_base_url = '/prox';
+
 $proxied_headers = array('Set-Cookie', 'Content-Type', 'Cookie', 'Location');
 // Variables you specify in the config file overwrite variables set above.
 foreach( array('./', '../', '../../') as $path_rel )
