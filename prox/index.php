@@ -3,8 +3,8 @@ $proxied_headers = array('Set-Cookie', 'Content-Type', 'Cookie', 'Location');
 
 $proxy_request_url = str_replace('"', "", $_GET['link']);
 echo $proxy_request_url . '<br>';
-$proxy_request_url = urlencode($proxy_request_url);
-echo $proxy_request_url . '<br>';
+//$proxy_request_url = urlencode($proxy_request_url);
+//echo $proxy_request_url . '<br>';
 /* Init CURL */
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $proxy_request_url);
