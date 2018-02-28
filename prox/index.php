@@ -69,9 +69,8 @@ foreach($proxied_headers as $hname)
 }
 
 echo '<br><br>**************************************************************<br><br>';
-echo '<iframe>';
-var_dump($body);
-echo '</iframe>';
+echo '<iframe srcdoc="' . print_r($body). '"></iframe>';
+//var_dump($body);
 
 //echo '<br><br>**************************************************************<br><br>';
 //var_dump($body);
