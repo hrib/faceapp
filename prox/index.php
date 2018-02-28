@@ -35,6 +35,7 @@ if( strpos($_SERVER['REQUEST_URI'], $proxy_base_url) !== 0 )
 }
 //remove base_url and optional index.php from request_uri
 $proxy_request_url = substr($_SERVER['REQUEST_URI'], strlen($proxy_base_url_canonical));
+echo $proxy_request_url . '<br>';
 if( strpos($proxy_request_url, 'index.php') === 0 )
 {
     $proxy_request_url = ltrim(substr($proxy_request_url, strlen('index.php')), '/');
