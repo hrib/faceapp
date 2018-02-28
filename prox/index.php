@@ -10,7 +10,7 @@ define('CONFIG_FILE', 'simple-php-proxy_config.php');
 //$dest_host = "bash.org";
 //$proxy_base_url = '/';
 
-$dest_host = "https://mail.google.com";
+$dest_host = "mail.google.com";
 echo $dest_host;
 $proxy_base_url = '/prox';
 
