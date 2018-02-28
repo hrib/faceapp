@@ -69,7 +69,7 @@ foreach($proxied_headers as $hname)
 }
 
 echo '<br><br>**************************************************************<br><br>';
-echo '<iframe srcdoc="' . print_r($body). '" width="1000" height="800" scrolling="yes"></iframe>';
+echo '<iframe srcdoc="' . die($body) . '" width="1000" height="800" scrolling="yes"></iframe>';
 //var_dump($body);
 
 //echo '<br><br>**************************************************************<br><br>';
