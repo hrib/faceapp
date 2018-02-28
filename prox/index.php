@@ -1,7 +1,7 @@
 <?php
 $proxied_headers = array('Set-Cookie', 'Content-Type', 'Cookie', 'Location');
 
-$proxy_request_url = $_GET['link'];
+$proxy_request_url = str_replace('"', "", $_GET['link']);
 echo $proxy_request_url . '<br>';
 /* Init CURL */
 $ch = curl_init();
