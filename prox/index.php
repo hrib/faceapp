@@ -10,7 +10,7 @@ define('CONFIG_FILE', 'simple-php-proxy_config.php');
 */
 //$dest_host = "bash.org";
 //$proxy_base_url = '/';
-$dest_host = "globo.com";
+$dest_host = "betfair.com";
 $proxy_base_url = '/prox';
 $proxied_headers = array('Set-Cookie', 'Content-Type', 'Cookie', 'Location');
 // Variables you specify in the config file overwrite variables set above.
