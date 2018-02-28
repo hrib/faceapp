@@ -11,7 +11,7 @@ define('CONFIG_FILE', 'simple-php-proxy_config.php');
 //$proxy_base_url = '/';
 
 $dest_host = "globo.com/";
-echo $dest_host;
+echo $dest_host . '<br>';
 $proxy_base_url = '/prox';
 
 $proxied_headers = array('Set-Cookie', 'Content-Type', 'Cookie', 'Location');
@@ -41,7 +41,7 @@ if( strpos($proxy_request_url, 'index.php') === 0 )
 }
 //final proxied request url
 $proxy_request_url = "https://" . rtrim($dest_host, '/ ') . '/' . $proxy_request_url;
-echo $proxy_request_url;
+echo $proxy_request_url . '<br>';
 /* Init CURL */
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $proxy_request_url);
