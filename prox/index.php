@@ -10,7 +10,7 @@ define('CONFIG_FILE', 'simple-php-proxy_config.php');
 //$dest_host = "bash.org";
 //$proxy_base_url = '/';
 
-$dest_host = "https://www.globo.com/";
+$dest_host = "globo.com/";
 echo $dest_host;
 $proxy_base_url = '/prox';
 
@@ -40,7 +40,8 @@ if( strpos($proxy_request_url, 'index.php') === 0 )
     $proxy_request_url = ltrim(substr($proxy_request_url, strlen('index.php')), '/');
 }
 //final proxied request url
-$proxy_request_url = "http://" . rtrim($dest_host, '/ ') . '/' . $proxy_request_url;
+$proxy_request_url = "https://" . rtrim($dest_host, '/ ') . '/' . $proxy_request_url;
+echo $proxy_request_url;
 /* Init CURL */
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $proxy_request_url);
