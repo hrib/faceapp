@@ -40,7 +40,8 @@ if( strpos($proxy_request_url, 'index.php') === 0 )
     $proxy_request_url = ltrim(substr($proxy_request_url, strlen('index.php')), '/');
 }
 //final proxied request url
-$proxy_request_url = "http://" . rtrim($dest_host, '/ ') . '/' . $proxy_request_url;
+//$proxy_request_url = "http://" . rtrim($dest_host, '/ ') . '/' . $proxy_request_url;
+
 echo $proxy_request_url . '<br>';
 /* Init CURL */
 $ch = curl_init();
