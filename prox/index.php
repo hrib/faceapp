@@ -104,4 +104,5 @@ foreach($proxied_headers as $hname)
         }
     }
 }
-die($body);
+var_dump($body);
+//die($body);
