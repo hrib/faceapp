@@ -70,4 +70,6 @@ foreach($proxied_headers as $hname)
 //echo '<br><br>**************************************************************<br><br>';
 //var_dump($body);
 echo '<br><br>**************************************************************<br><br>';
+echo '<div>';
 die($body);
+echo '</div>';
