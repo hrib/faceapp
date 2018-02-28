@@ -1,4 +1,5 @@
 <?php
+echo 'oi';
 define('CONFIG_FILE', 'simple-php-proxy_config.php');
 /*
     Installation note:
