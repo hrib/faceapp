@@ -1,14 +1,13 @@
 <?php
 echo $_GET['site'] . '<br>';
 
+
+
+
+
 if(isset($_GET['site'])){
-  $f = fopen($_GET['site'], 'r');
-  echo var_dump($f) . '<br>';
-  $html = '';
-  while (!feof($f)) {
-    $html .= fread($f, 24000);
-  }
-  fclose($f);
-  echo $html;
+  header('Content-Type: text/html');
+  $string = file_get_contents($_GET['site']);
+  echo $string;
 }
 ?>
