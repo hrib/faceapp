@@ -1,13 +1,20 @@
 <?php
 echo $_GET['site'] . '<br>';
 
-$context = stream_context_create([
-    'http' => [
-        'user_agent' => 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)',
-    ],
-]);
-$html = file_get_contents($_GET['site'], false, $context);
 
-print_r($http_response_header); // see response headers
-echo $html;
+$Url = $_GET['site'];
+
+if (!function_exists('curl_init')){
+    die('CURL is not installed!');
+}
+$ch = curl_init($Url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // add this one, it seems to spawn redirect 301 header
+curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13'); // spoof
+$output = curl_exec($ch);
+curl_close($ch);
+
+echo $output; // use echo to show contents
+
+
 ?>
