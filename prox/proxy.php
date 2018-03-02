@@ -9,5 +9,5 @@ $context = stream_context_create([
 $html = file_get_contents($_GET['site'], false, $context);
 
 print_r($http_response_header); // see response headers
-
+echo $html;
 ?>
