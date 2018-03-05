@@ -41,7 +41,7 @@ function showHint(str) {
                var fim = meio.substring(0,m);
                console.log(anterior + ' x ' + fim);
 	       if(fim != anterior) {
-	               document.documentElement.innerHTML = n + ' ' + m + ' ' + fim +' <iframe src="'+fim+'" style="border: 0; width: 100%; height: 100%">Your browser doesnt support iFrames.</iframe>';
+	               document.documentElement.innerHTML = '<iframe src="'+fim+'" style="border: 0; width: 100%; height: 100%">Your browser doesnt support iFrames.</iframe>';
                        anterior = fim;
                        console.log('NOVA URL:' + fim);
 	       
