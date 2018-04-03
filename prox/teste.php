@@ -11,6 +11,6 @@ $options = array(
 );
 $context = stream_context_create($options);
 $file = file_get_contents($Url, false, $context);
-//echo $file;
-echo htmlspecialchars($file);
+echo $file;
+//echo htmlspecialchars($file);
 ?>
