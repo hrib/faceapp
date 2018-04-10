@@ -10,7 +10,7 @@ $Insta_username_antiblock = $curtidor;
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
-$aleatorio = mt_rand(1, 19);
+$aleatorio = mt_rand(1, 6);
 //$aleatorio = mt_rand(1, 2);
 
 if($aleatorio <= 1){
