@@ -105,6 +105,7 @@ $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = f
     try {
         $i->login();
     } catch (InstagramException $e) {
+        echo '1';
         echo $e->getMessage();
         exit();
     }
@@ -112,6 +113,7 @@ $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = f
     try {
         $ret_originalfeed  = $i->getUserFeed($originaluserid);
     } catch (Exception $e) {
+        echo '2';
         echo $e->getMessage();
     }
 
@@ -119,6 +121,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     try {
         $i->login();
     } catch (InstagramException $e) {
+        echo '3';
         echo $e->getMessage();
         exit();
     }
@@ -126,6 +129,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
     try {
         $ret_myfeed = $i->getSelfUserFeed();
     } catch (Exception $e) {
+        echo '4';
         echo $e->getMessage();
     }
 
@@ -167,6 +171,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
             } 
         } while (!is_null($helper));
     } catch (Exception $e) {
+        echo '5';
         echo $e->getMessage();
     }
     //echo '<br><br> next page id = ' . $ret_mediacomments["next_max_id"] . '<br><br> ';
@@ -232,6 +237,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
             try {
                 $ret_upload = $i->uploadPhoto($media, $texto);
             } catch (Exception $e) {
+                echo '6';
                 echo $e->getMessage();
             }
 
@@ -248,6 +254,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
             try {
                 $ret_upload = $i->uploadVideo($resizemedia, $texto);
             } catch (Exception $e) {
+                echo '7';
                 echo $e->getMessage();
             }
         
@@ -264,6 +271,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         try {
             $comenta = $i->comment($mediaId_posted, $meus_comments);
         } catch (Exception $e) {
+            echo '8';
             echo $e->getMessage();
         }
         //$comenta = $i->comment($mediaId_posted, $meus_comments);
