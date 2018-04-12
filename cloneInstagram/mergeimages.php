@@ -1,8 +1,8 @@
 <?php
 $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/Adobe_20180412_110534.png');
-$dest = imagecreatefromjpeg('https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg');
+$dest = imagecreatefromjpeg('https://scontent-lht6-1.cdninstagram.com/vp/6f963c462b785c34af0325ea26e68095/5B56B7C0/t51.2885-15/e35/29717837_1713263295379805_3593801708695715840_n.jpg');
 
-list($width, $height) = getimagesize('https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg');
+list($width, $height) = getimagesize('https://scontent-lht6-1.cdninstagram.com/vp/6f963c462b785c34af0325ea26e68095/5B56B7C0/t51.2885-15/e35/29717837_1713263295379805_3593801708695715840_n.jpg');
 $dimensao = min($width,$height);
 $diff_width = $width - $dimensao;
 $diff_height = $height - $dimensao;
