@@ -101,7 +101,7 @@ if($aleatorio <= 1){
 
 
 require_once('/app/Instagram/src/Instagram.php');
-$i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = false);
+$i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = true);
     try {
         $i->login();
     } catch (InstagramException $e) {
