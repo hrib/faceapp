@@ -106,6 +106,7 @@ $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = f
         $i->login();
     } catch (InstagramException $e) {
         echo '1';
+        echo $Insta_username_antiblock;
         echo $e->getMessage();
         exit();
     }
@@ -114,6 +115,7 @@ $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = f
         $ret_originalfeed  = $i->getUserFeed($originaluserid);
     } catch (Exception $e) {
         echo '2';
+        echo $Insta_username_antiblock;
         echo $e->getMessage();
     }
 
@@ -122,6 +124,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
         $i->login();
     } catch (InstagramException $e) {
         echo '3';
+        echo $Insta_username;
         echo $e->getMessage();
         exit();
     }
