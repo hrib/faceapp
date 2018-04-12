@@ -211,7 +211,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       }else if($aleatorio2 <= 2){
         $src = imagecreatefrompng('xxxxxxx');
       }else if($aleatorio2 <= 3){
-        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/Adobe_20180412_102452.png');
+        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/Adobe_20180412_110534.png');
       }
         
       $dest = imagecreatefromjpeg($media_url);
@@ -219,7 +219,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       $dimensao = min($width,$height);
       $diff_width = $width - $dimensao;
       $diff_height = $height - $dimensao;
-      imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 654, 654);
+      imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 905, 905);
 
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
         
