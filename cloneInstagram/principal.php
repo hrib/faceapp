@@ -4,13 +4,13 @@ set_time_limit(100);
 ini_set('max_execution_time', 100);
 
 
-$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'brmayfair', 'elly.tess7');
+$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'elly.tess7');
 $curtidor = $curtidores[mt_rand(0, sizeof($curtidores) - 1)];
 $Insta_username_antiblock = $curtidor;
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
 
 
-$aleatorio = mt_rand(1, 6);
+$aleatorio = mt_rand(1, 19);
 //$aleatorio = mt_rand(1, 2);
 
 if($aleatorio <= 1){
@@ -40,59 +40,59 @@ if($aleatorio <= 1){
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 1417546201; // sunny13_ps
 }else if($aleatorio <= 7){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 934762973; // @zanteofficial  
 }else if($aleatorio <= 8){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 4499680896; // @theluxuryasia  
 }else if($aleatorio <= 9){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 4503761766; // @travelelation  
 }else if($aleatorio <= 10){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 612747502; // @guiaviajarmelhor  
 }else if($aleatorio <= 11){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 1651025335; // @comeseephilippines  
 }else if($aleatorio <= 12){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 5659047; // @haylsa  
 }else if($aleatorio <= 13){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 1698004554; // @omaldives  
 }else if($aleatorio <= 14){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 228887204; // @hotelurbano  
 }else if($aleatorio <= 15){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 5734134739; // @beautiful__travel  
 }else if($aleatorio <= 16){
     //$Insta_username = getenv('INSTA_USR_2');
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 2252933080; // out_in_london
 }else if($aleatorio <= 17){
     //$Insta_username = getenv('INSTA_USR_3');
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 3617580; // @wanderforawhile  
 }else if($aleatorio <= 18){
     //$Insta_username = getenv('INSTA_USR_4');
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 2316265215; // @loves_bigben  
     //$originaluserid = 3674749893; // @1lifeforyou  
 }else if($aleatorio <= 19){
-    $Insta_username = 'brmayfair';
+    $Insta_username = 'elly.tess7';
     $Insta_passw = getenv('INSTA_PSW_2');
     $originaluserid = 3155871863; // @3triphotography  
     //$originaluserid = 22183904; // @matthewzorpas  
@@ -210,7 +210,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       }else if($aleatorio2 <= 2){
         $src = imagecreatefrompng('xxxxxxx');
       }else if($aleatorio2 <= 3){
-        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/IMG_3030.PNG');
+        $src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/Adobe_20180412_102452.png');
       }
         
       $dest = imagecreatefromjpeg($media_url);
@@ -223,7 +223,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
         
         
-      if($aleatorio >= 7){
+      if($aleatorio >= 1){
         imagejpeg($dest, $media);  
       }else{
         file_put_contents($media, file_get_contents($media_url));
