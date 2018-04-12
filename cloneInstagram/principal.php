@@ -218,7 +218,7 @@ $i = new Instagram($Insta_username, $Insta_passw, $debug = false);
       $dimensao = min($width,$height);
       $diff_width = $width - $dimensao;
       $diff_height = $height - $dimensao;
-      imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 1470, 1470);
+      imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 654, 663);
 
       $media = 'media' . mt_rand(1,999) * mt_rand(1,999) . '.jpg';
         
