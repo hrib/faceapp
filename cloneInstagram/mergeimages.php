@@ -1,5 +1,5 @@
 <?php
-$src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/Adobe_20180412_102452.png');
+$src = imagecreatefrompng('https://github.com/hrib/faceapp/raw/master/cloneInstagram/Adobe_20180412_110534.png');
 $dest = imagecreatefromjpeg('https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg');
 
 list($width, $height) = getimagesize('https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg');
@@ -9,7 +9,7 @@ $diff_height = $height - $dimensao;
 echo '' . $diff_width . ', ' .  $diff_height . ', ' .  0 . ', ' .  0 . ', ' .  $dimensao . ', ' .  $dimensao . ', ' .  654 . ', ' .  654 . '<br><br>';
 //imagecopyresampled ( resource $dst_image , resource $src_image , int $dst_x , int $dst_y , int $src_x , int $src_y , int $dst_w , int $dst_h , int $src_w , int $src_h )
 //imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 1470, 1470);
-imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 654, 654);
+imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, 905, 905);
 
 
 $media = 'media.jpg';
