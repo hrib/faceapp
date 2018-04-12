@@ -4,8 +4,8 @@ set_time_limit(100);
 ini_set('max_execution_time', 100);
 
 
-//$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'elly.tess7');
-$curtidores = array('elly.tess7');
+$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'elly.tess7');
+//$curtidores = array('elly.tess7');
 $curtidor = $curtidores[mt_rand(0, sizeof($curtidores) - 1)];
 $Insta_username_antiblock = $curtidor;
 $Insta_passw_antiblock = getenv('INSTA_PSW_LONDONFORHER');
@@ -17,7 +17,7 @@ $aleatorio = mt_rand(1, 19);
 if($aleatorio <= 1){
     //$Insta_username = getenv('INSTA_USR_LONDONFORHER');
     $Insta_username = 'elly.tess7';
-    $Insta_passw = getenv('INSTA_PSW_LONDONFORHER');
+    $Insta_passw = getenv('INSTA_PSW_2');
     //$originaluserid = 2880433911; // Sylvia Edem Emechete ™ @sylviaemechete
     $originaluserid = 7525395; // @raissaralves
 }else if($aleatorio <= 2){
