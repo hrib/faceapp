@@ -3,7 +3,7 @@ session_start();
 set_time_limit(100);
 ini_set('max_execution_time', 100);
 
-
+echo 'IP do servidor: '.$_SERVER['SERVER_ADDR'].'<br>';
 $curtidores = array('adrianoimpe1', 'adrianoimperador1', 'elly.tess7', 'bruce.guandira3');
 //$curtidores = array('elly.tess7');
 $curtidor = $curtidores[mt_rand(0, sizeof($curtidores) - 1)];
@@ -98,7 +98,9 @@ if($aleatorio <= 1){
     $originaluserid = 3155871863; // @3triphotography  
     //$originaluserid = 22183904; // @matthewzorpas  
 }
-
+echo $Insta_username_antiblock;
+echo '<br>';
+echo $Insta_username;
 
 require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = true);
