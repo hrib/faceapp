@@ -1643,6 +1643,12 @@ class Instagram
         curl_setopt($ch, CURLOPT_VERBOSE, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        $fixieUrl = getenv("FIXIE_URL");
+        $parsedFixieUrl = parse_url($fixieUrl);
+        $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+        $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+        curl_setopt($ch, CURLOPT_PROXY, $proxy);
+        curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
         curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
 
