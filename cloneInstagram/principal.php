@@ -101,6 +101,7 @@ if($aleatorio <= 1){
 echo $Insta_username_antiblock;
 echo '<br>';
 echo $Insta_username;
+echo '<br>';
 
 require_once('/app/Instagram/src/Instagram.php');
 $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = false);
@@ -109,7 +110,7 @@ $i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = f
     } catch (InstagramException $e) {
         echo '1';
         echo $Insta_username_antiblock;
-        echo $e->getMessage();
+        var_dump($e->getMessage());
         exit();
     }
     
