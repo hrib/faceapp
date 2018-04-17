@@ -4,7 +4,7 @@ set_time_limit(100);
 ini_set('max_execution_time', 100);
 
 echo 'IP do servidor: '.$_SERVER['SERVER_ADDR'].'<br>';
-$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'elly.tess7', 'bruce.guandira3');
+$curtidores = array('adrianoimpe1', 'adrianoimperador1', 'elly.tess7', 'bruno.guandira1');
 //$curtidores = array('elly.tess7');
 $curtidor = $curtidores[mt_rand(0, sizeof($curtidores) - 1)];
 $Insta_username_antiblock = $curtidor;
