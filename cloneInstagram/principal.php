@@ -103,7 +103,7 @@ echo '<br>';
 echo $Insta_username;
 
 require_once('/app/Instagram/src/Instagram.php');
-$i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = true);
+$i = new Instagram($Insta_username_antiblock, $Insta_passw_antiblock, $debug = false);
     try {
         $i->login();
     } catch (InstagramException $e) {
