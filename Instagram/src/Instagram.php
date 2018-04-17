@@ -266,8 +266,8 @@ class Instagram
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
         echo $proxy;
         echo $proxyAuth;
-        curl_setopt($ch, CURLOPT_PROXY, $proxy);
-        curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+        curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
+        //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
         curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_POST, true);
@@ -349,8 +349,8 @@ class Instagram
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
         echo $proxy;
         echo $proxyAuth;
-        curl_setopt($ch, CURLOPT_PROXY, $proxy);
-        curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+        curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
+        //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
         curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_POST, true);
@@ -401,8 +401,8 @@ class Instagram
             $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
             echo $proxy;
             echo $proxyAuth;
-            curl_setopt($ch, CURLOPT_PROXY, $proxy);
-            curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+            curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
+            //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
             curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
             curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
             curl_setopt($ch, CURLOPT_POST, true);
@@ -504,8 +504,8 @@ class Instagram
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
         echo $proxy;
         echo $proxyAuth;
-        curl_setopt($ch, CURLOPT_PROXY, $proxy);
-        curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+        curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
+        //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
         curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_POST, true);
@@ -800,8 +800,8 @@ class Instagram
       $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
       echo $proxy;
       echo $proxyAuth;
-      curl_setopt($ch, CURLOPT_PROXY, $proxy);
-      curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+      curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
+      //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
       curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
       curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
       curl_setopt($ch, CURLOPT_POST, true);
@@ -1689,8 +1689,8 @@ class Instagram
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
         echo $proxy;
         echo $proxyAuth;
-        curl_setopt($ch, CURLOPT_PROXY, $proxy);
-        curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+        curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
+        //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
         curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
         curl_setopt($ch, CURLOPT_COOKIEJAR, $this->IGDataPath."$this->username-cookies.dat");
 
