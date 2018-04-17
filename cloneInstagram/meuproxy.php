@@ -17,7 +17,7 @@ function proxyRequest($url) {
 function MEUproxyRequest($url) {
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_PROXY, '46.101.72.93:80');
+  curl_setopt($ch, CURLOPT_PROXY, '213.1.255.42:8080');
   $server_output = curl_exec($ch);
   curl_close($ch);
   return $server_output;
