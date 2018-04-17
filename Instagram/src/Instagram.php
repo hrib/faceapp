@@ -1647,6 +1647,8 @@ class Instagram
         $parsedFixieUrl = parse_url($fixieUrl);
         $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+        echo $proxy;
+        echo $proxyAuth;
         curl_setopt($ch, CURLOPT_PROXY, $proxy);
         curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
         curl_setopt($ch, CURLOPT_COOKIEFILE, $this->IGDataPath."$this->username-cookies.dat");
