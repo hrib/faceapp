@@ -31,7 +31,7 @@ foreach($dest_urls as $dest_url){
     
     $media = 'media_'. rand(0,1000) .'_'. $width . '_' .  $height . '_' .  $src_width . '_' .  $src_height '.jpg';
     imagejpeg($dest, $media);  
-    echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/".$media."" ><br>';
+    echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/". $media ."" ><br>';
 
 
     imagedestroy($dest);
