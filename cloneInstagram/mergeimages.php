@@ -1,15 +1,15 @@
 <?php
-$src_urls = ['https://wildtrails.in/wp-content/uploads/2015/06/Tiger-transparent.png',
+$src_urls = array('https://wildtrails.in/wp-content/uploads/2015/06/Tiger-transparent.png',
              'https://i2.wp.com/freepngimages.com/wp-content/uploads/2018/04/transparent-background-eraser.png',
              'https://cdna.4imprint.com/prod/700/440.jpg',
              'http://goinkscape.com/wp-content/uploads/2015/04/transparent-5.png'
-            ];
-$dest_urls = ['https://www.swiss-image.ch/fileadmin/_processed_/csm_Swiss_Image_sts8595_788cf78097.jpg',
+            );
+$dest_urls = array('https://www.swiss-image.ch/fileadmin/_processed_/csm_Swiss_Image_sts8595_788cf78097.jpg',
               'https://i.pinimg.com/originals/41/8c/3c/418c3cdb8fe52098e025e15c76d46eff.jpg',
               'https://scontent-lht6-1.cdninstagram.com/vp/6f963c462b785c34af0325ea26e68095/5B56B7C0/t51.2885-15/e35/29717837_1713263295379805_3593801708695715840_n.jpg',
               'http://keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg',
               'http://www.our3dvr.com/data/wallpapers/57/WDF_1034875.jpg'
-             ];
+             );
 foreach($dest_urls as $dest_url){
   foreach($src_urls as $src_url){
     $src = imagecreatefrompng($src_url);
