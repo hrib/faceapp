@@ -28,10 +28,10 @@ foreach($dest_urls as $dest_url){
     //imagecopyresampled ( resource $dst_image , resource $src_image , int $dst_x , int $dst_y , int $src_x , int $src_y , int $dst_w , int $dst_h , int $src_w , int $src_h )
     imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, $src_width, $src_height);
 
-
-    $media = 'media.jpg';
+    
+    $media = 'media_'. rand(0,1000) .'_'. $width . '_' .  $height . '_' .  $src_width . '_' .  $src_height '.jpg';
     imagejpeg($dest, $media);  
-    echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/media.jpg" ><br>';
+    echo '<img src="http://apostagol.herokuapp.com/cloneInstagram/".$media."" ><br>';
 
 
     imagedestroy($dest);
