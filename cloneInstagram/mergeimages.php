@@ -1,11 +1,14 @@
 <?php
-$src = imagecreatefrompng('https://wildtrails.in/wp-content/uploads/2015/06/Tiger-transparent.png');
-$dest = imagecreatefromjpeg('https://scontent-lht6-1.cdninstagram.com/vp/6f963c462b785c34af0325ea26e68095/5B56B7C0/t51.2885-15/e35/29717837_1713263295379805_3593801708695715840_n.jpg');
+$src_url = 'https://wildtrails.in/wp-content/uploads/2015/06/Tiger-transparent.png';
+$dest_url = 'https://scontent-lht6-1.cdninstagram.com/vp/6f963c462b785c34af0325ea26e68095/5B56B7C0/t51.2885-15/e35/29717837_1713263295379805_3593801708695715840_n.jpg';
+
+$src = imagecreatefrompng($src_url);
+$dest = imagecreatefromjpeg($dest_url);
 
 //list($width, $height) = getimagesize('https://scontent-lht6-1.cdninstagram.com/vp/6f963c462b785c34af0325ea26e68095/5B56B7C0/t51.2885-15/e35/29717837_1713263295379805_3593801708695715840_n.jpg');
-list($src_width, $src_height) = getimagesize($src);
+list($src_width, $src_height) = getimagesize($src_url);
 $dimensao_src = min($src_width,$src_height);
-list($width, $height) = getimagesize($dest);
+list($width, $height) = getimagesize($dest_url);
 $dimensao = min($width,$height);
 $diff_width = $width - $dimensao;
 $diff_height = $height - $dimensao;
