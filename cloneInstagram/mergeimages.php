@@ -16,7 +16,7 @@ echo '' . $width . ', ' .  $height . ', ' .  $src_width . ', ' .  $src_height .'
 
 echo '' . $diff_width . ', ' .  $diff_height . ', ' .  0 . ', ' .  0 . ', ' .  $dimensao . ', ' .  $dimensao . ', ' .  $dimensao_src . ', ' .  $dimensao_src . '<br><br>';
 //imagecopyresampled ( resource $dst_image , resource $src_image , int $dst_x , int $dst_y , int $src_x , int $src_y , int $dst_w , int $dst_h , int $src_w , int $src_h )
-imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, $dimensao_src, $dimensao_src);
+imagecopyresampled($dest, $src, $diff_width, $diff_height, 0, 0, $dimensao, $dimensao, $src_width, $src_height);
 
 
 $media = 'media.jpg';
