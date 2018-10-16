@@ -12,7 +12,8 @@ require_once('download_media_fb.php');
 require_once('post_media_fb.php');
 
 
-$pageOriginal = '2116691481891705';  //pagina que contem as midias
+//$pageOriginal = '2116691481891705';  //pagina que contem as midias
+$pageOriginal = '1325563600793849'; //usando propria pagina
 $app_id = getenv('FB_APP_ID');
 $app_secret = getenv('FB_APP_SECRET');
 $Insta_username = getenv('INSTA_USR_LONDONFORHER');
